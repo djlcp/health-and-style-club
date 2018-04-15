@@ -1,0 +1,14 @@
+This is a list of all posts
+
+
+<% @posts.each do |post| %>
+
+<div class="link row clearfix">
+      <h2>
+        <%= link_to post.title, post %><br>
+      </h2>
+
+<% end %>
+
+
+<%= link_to 'Create a new post', new_post_path %>

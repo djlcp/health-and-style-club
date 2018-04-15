@@ -14,10 +14,15 @@ default: &default
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
-  password: 
+
+  password:
   host: localhost
   #port: 3306
-  #socket: /Applications/MAMP/tmp/mysql/mysql.sock
+#  socket: /Applications/MAMP/tmp/mysql/mysql.sock
+
+  password:
+  host: localhost
+
   database: hsclub
 
 development:
