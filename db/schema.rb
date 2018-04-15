@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20180415120641) do
 
   create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
-    t.string "body"
+    t.string "body_text"
     t.boolean "paid_for"
     t.string "state"
     t.datetime "created_at", null: false
