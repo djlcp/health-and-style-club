@@ -1,2 +1,5 @@
 class Masterclass < ApplicationRecord
+
+
+
 end
