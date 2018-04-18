@@ -44,6 +44,7 @@
             onAuthorize: function(data, actions) {
                 // Make a call to the REST api to execute the payment
                 return actions.payment.execute().then(function() {
+                  //////////////// I TRIED TO ADD RUBY CODE HERE////////////////////////////
                     window.alert('Payment Complete!');
                 });
             }
