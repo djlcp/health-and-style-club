@@ -44,7 +44,15 @@
             onAuthorize: function(data, actions) {
                 // Make a call to the REST api to execute the payment
                 return actions.payment.execute().then(function() {
-                  //////////////// I TRIED TO ADD RUBY CODE HERE////////////////////////////
+                  $.ajax({
+                    url: '/path_to_your_controller',
+                    type: 'PATCH',
+                    dataType: 'json',
+                    data: user: { paid_at: true },
+                    success: function(data) {
+                      // You can do something here once you have received a successful response from the server
+                    }
+                  })
                     window.alert('Payment Complete!');
                 });
             }

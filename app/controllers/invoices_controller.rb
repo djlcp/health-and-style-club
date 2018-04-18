@@ -37,13 +37,13 @@ class InvoicesController < ApplicationController
     def create
       @invoice = Invoice.new(params.require(:invoice).permit(:id, :user, :sub_total, :vat, :total))
 
-  respond_to do |format|
-      if @invoice.save
-        format.html { redirect_to invoices_path(@invoice), notice: 'Invoice added.'}
-      else
-        format.html { render :new}
+      respond_to do |format|
+        if @invoice.save
+          format.html { redirect_to invoices_path(@invoice), notice: 'Invoice added.'}
+        else
+          format.html { render :new}
+          end
         end
-      end
     end
 
     def edit
