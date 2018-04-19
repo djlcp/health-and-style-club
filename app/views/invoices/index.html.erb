@@ -1,1 +1,19 @@
+<% @invoices.each do |invoice| %>
+  <% if invoice.user == @user_id%>
 
+<!-- INDIVIDUAL INVOICES -->
+    <p><strong>Invoice Id </strong><%= invoice.id %></p>
+    <p><strong>User Id </strong><%= invoice.user %></p>
+    <p><strong>Sub-Total </strong><%= invoice.sub_total %></p>
+    <p><strong>VAT </strong><%= invoice.vat %></p>
+    <p><strong>Total </strong><%= invoice.total %></p>
+    <p><strong>Created At </strong><%= invoice.created_at %></p>
+    <%= link_to "View Invoice", invoice_path(invoice.id), controller: "Invoices", action: "show", format: 'pdf' %>
+
+<!-- BREAK BETWEEN EACH INVOICE -->
+    <% 5.times do %>
+      <br />
+    <%end%>
+
+  <% end %>
+<% end %>
