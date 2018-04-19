@@ -1,19 +1,19 @@
 class MasterclassesController < ApplicationController
 
   def index
-    @masterclasses = masterclass.all
+    @masterclasses = Masterclass.all
   end
 
   def show
-    @masterclass = masterclass.find(params[:id])
+    @masterclass = Masterclass.find(params[:id])
   end
 
   def new
-    @masterclass = masterclass.new
+    @masterclass = Masterclass.new
   end
 
   def create
-    @masterclass = masterclass.new(params.require(:post).permit(:title, :body_text))
+    @masterclass = Masterclass.new(params.require(:masterclass).permit(:title, :text))
 
     respond_to do |format|
         if @masterclass.save
@@ -32,7 +32,7 @@ class MasterclassesController < ApplicationController
       def update
         @masterclass = masterclass.find(params[:id])
         respond_to do |format|
-          if @masterclass.update(params.require(:post).permit(:title, :body_text))
+          if @masterclass.update(params.require(:post).permit(:title, :text))
             format.html { redirect_to @masterclass, notice: 'Masterclass updated.' }
           else
             format.html { render :edit }
@@ -56,7 +56,7 @@ class MasterclassesController < ApplicationController
     private
 
     def post_params
-      params.require(:post).permit(:title, :body_text)
+      params.require(:post).permit(:title, :text)
     end
 
     def set_link
@@ -66,10 +66,3 @@ class MasterclassesController < ApplicationController
 
 
     end
-
-
-
-
-
-
-end

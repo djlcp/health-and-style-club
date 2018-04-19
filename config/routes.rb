@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   devise_for :installs
   devise_for :models
   resources :posts
+  resources :masterclasses
   
 
   root to: 'home#index'
