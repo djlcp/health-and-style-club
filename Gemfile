@@ -31,6 +31,11 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+#Used for generating pdf documents
+gem 'wicked_pdf'
+#Required to use wicked_pdf
+gem 'wkhtmltopdf-binary'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

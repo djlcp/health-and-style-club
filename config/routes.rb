@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   devise_for :installs
   devise_for :models
   resources :posts
-  
+  resources :invoices
+
+
+
 
   root to: 'home#index'
 
