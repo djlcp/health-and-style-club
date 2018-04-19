@@ -10,7 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180418102430) do
+ActiveRecord::Schema.define(version: 20180418183311) do
+
+  create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "installs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
@@ -30,14 +35,12 @@ ActiveRecord::Schema.define(version: 20180418102430) do
   end
 
   create_table "invoices", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.bigint "user", null: false
-    t.decimal "sub_total", precision: 10, scale: 2, null: false
-    t.decimal "vat", precision: 10, scale: 2, null: false
-    t.decimal "total", precision: 10, scale: 2, null: false
+    t.integer "user"
+    t.decimal "sub_total", precision: 10, scale: 2
+    t.decimal "vat", precision: 10, scale: 2
+    t.decimal "total", precision: 10, scale: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "paid_for"
-    t.index ["user"], name: "user_id"
   end
 
   create_table "models", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -89,7 +92,6 @@ ActiveRecord::Schema.define(version: 20180418102430) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "subscription_id"
     t.string "first_name"
     t.string "surname"
     t.string "middle_names"
@@ -104,5 +106,4 @@ ActiveRecord::Schema.define(version: 20180418102430) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "invoices", "users", column: "user", name: "user_id"
 end
