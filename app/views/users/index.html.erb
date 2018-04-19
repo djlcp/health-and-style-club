@@ -1,9 +1,20 @@
 <h1>admin page</h1>
 
-<%= link_to 'Create a user', new_user_path %>
+<table>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= link_to user.email, users_path(user) %></td>
+      <td>
+        <%= link_to 'Add User', new_user_path %>
+      </td>
+      <td>
+        <%= link_to 'Edit', edit_user_path(user) %>
+      </td>
+      <td>
+        <%= link_to 'Delete', user_path(user), method: :delete, data: { confirm: "You sure?" } %>
+      </td>
+    </tr>
+  <% end %>
+</table>
 
-<%= link_to 'view current users',user: @users %>
-
-<%= link_to 'edit users', edit_user_path(current_user) %>
-
-<%= link_to 'delete users', destroy_user_session_path, method: :delete %>
+<%= link_to 'Back', posts_path %>
