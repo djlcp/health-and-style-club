@@ -10,27 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20180418102430) do
-
-
-  create_table "installs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer "sign_in_count", default: 0, null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string "current_sign_in_ip"
-    t.string "last_sign_in_ip"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_installs_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_installs_on_reset_password_token", unique: true
-  end
-
+ActiveRecord::Schema.define(version: 20180419174924) do
 
   create_table "invoices", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user", null: false
@@ -39,39 +19,16 @@ ActiveRecord::Schema.define(version: 20180418102430) do
     t.decimal "total", precision: 10, scale: 2, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "paid_for"
     t.index ["user"], name: "user_id"
-  end
-
-  create_table "models", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer "sign_in_count", default: 0, null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string "current_sign_in_ip"
-    t.string "last_sign_in_ip"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_models_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_models_on_reset_password_token", unique: true
   end
 
   create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
-
-    t.text "body_text", limit: 4294967295
-
+    t.string "body_text"
     t.boolean "paid_for"
     t.string "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-
-    t.string "user_id"
-
   end
 
   create_table "subscriptions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -82,7 +39,6 @@ ActiveRecord::Schema.define(version: 20180418102430) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -98,24 +54,20 @@ ActiveRecord::Schema.define(version: 20180418102430) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-
     t.integer "subscription_id"
-    t.string "first_name"
-    t.string "surname"
-    t.string "middle_names"
-    t.string "phone"
+    t.string "first_name", default: "", null: false
+    t.string "surname", default: "", null: false
+    t.string "middle_names", default: ""
+    t.string "phone", default: ""
     t.string "address_line_1"
     t.string "address_line_2"
     t.string "city"
     t.string "state"
     t.string "country"
     t.string "post_code"
-
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-
   add_foreign_key "invoices", "users", column: "user", name: "user_id"
-
 end
