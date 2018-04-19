@@ -6,10 +6,20 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <header> <%= link_to :Home, root_path %> </header>
   </head>
 
   <body>
+
+  <% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+  <% if alert %>
+    <p class="alert a;ert-danger"><%= alert %></p>
+    <% end %>
+
     <%= yield %>
-    <h1>hello</h1>
+
+
   </body>
 </html>
