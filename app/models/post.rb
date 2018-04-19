@@ -1,4 +1,6 @@
 class Post < ApplicationRecord
-  belongs_to :user, required: false
+
+   belongs_to :user
+  # belongs_to :masterclass
   has_many :comments
 end
