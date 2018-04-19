@@ -1,7 +1,9 @@
-<h1>users</h1>
-<h3>add new user</h3>
-<%= render 'form', user: @user %>
+<h1>admin page</h1>
 
-<h3>New Link</h3>
+<%= link_to 'Create a user', new_user_path %>
 
-<%= link_to 'Back', users_path %>
+<%= link_to 'view current users',user: @users %>
+
+<%= link_to 'edit users', edit_user_path(current_user) %>
+
+<%= link_to 'delete users', destroy_user_session_path, method: :delete %>
