@@ -5,3 +5,4 @@ You're and Admin
 <%else %>
 You're not an Admin
 <% end %>
+<% if current_user.admin? %> <%= link_to 'admin', users_path %> <% end %>
