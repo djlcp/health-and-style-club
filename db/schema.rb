@@ -10,16 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180419174924) do
+ActiveRecord::Schema.define(version: 20180422131700) do
 
   create_table "invoices", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.bigint "user", null: false
-    t.decimal "sub_total", precision: 10, scale: 2, null: false
-    t.decimal "vat", precision: 10, scale: 2, null: false
-    t.decimal "total", precision: 10, scale: 2, null: false
+    t.integer "user"
+    t.decimal "sub_total", precision: 10, scale: 2
+    t.decimal "vat", precision: 10, scale: 2
+    t.decimal "total", precision: 10, scale: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user"], name: "user_id"
   end
 
   create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -29,6 +28,7 @@ ActiveRecord::Schema.define(version: 20180419174924) do
     t.string "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "subscriptions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -55,10 +55,10 @@ ActiveRecord::Schema.define(version: 20180419174924) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "subscription_id"
-    t.string "first_name", default: "", null: false
-    t.string "surname", default: "", null: false
-    t.string "middle_names", default: ""
-    t.string "phone", default: ""
+    t.string "first_name"
+    t.string "surname"
+    t.string "middle_names"
+    t.string "phone"
     t.string "address_line_1"
     t.string "address_line_2"
     t.string "city"
@@ -69,5 +69,4 @@ ActiveRecord::Schema.define(version: 20180419174924) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "invoices", "users", column: "user", name: "user_id"
 end
