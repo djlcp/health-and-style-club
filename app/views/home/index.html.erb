@@ -1,2 +1,7 @@
 <h1>This is our home page</h1>
 <p><%= link_to 'Check all the posts', posts_path %></p>
+<% if current_user.admin? %>
+You're and Admin
+<%else %>
+You're not an Admin
+<% end %>
