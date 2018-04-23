@@ -60,7 +60,6 @@ ActiveRecord::Schema.define(version: 20180419113944) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
-=======
   create_table "invoices", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "user"
     t.decimal "sub_total", precision: 10, scale: 2
@@ -73,12 +72,11 @@ ActiveRecord::Schema.define(version: 20180419113944) do
 
   create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
-    t.text "body_text", limit: 4294967295
+    t.string "body_text"
     t.boolean "paid_for"
     t.string "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "user_id"
     t.integer "user2_id"
   end
 
