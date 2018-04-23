@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20180419113944) do
     t.datetime "updated_at", null: false
   end
 
-<<<<<<< HEAD
+
   create_table "masterclasses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
     t.text "text"
@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 20180419113944) do
     t.decimal "sub_total", precision: 10, scale: 2
     t.decimal "vat", precision: 10, scale: 2
     t.decimal "total", precision: 10, scale: 2
->>>>>>> ad891fc692d7d31e1e40f35975caf749ddbf6e15
+
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
