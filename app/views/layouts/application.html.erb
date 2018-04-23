@@ -3,23 +3,35 @@
   <head>
     <title>Hsclub</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <header> <%= link_to :Home, root_path %> </header>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
   </head>
 
   <body>
+    <header>
+      <div class="main-header">
+        <%= link_to "Health & Style Club", root_path, class: "main-header-title" %>
+      </div>
+      <div class="main-members-area">
+        <a href="" class="members-area-title">Members Area</a>
+      </div>
+      <nav class="main-navigation"> 
+        <%= link_to "Posts", posts_path, class: 'main-navigation-link' %>
+        <a href="" class="main-navigation-link">Navigation</a>
+        <a href="" class="main-navigation-link">Navigation</a>
+        <a href="" class="main-navigation-link">Navigation</a>
+      </nav>
+    </header>
 
   <% if notice %>
     <p class="alert alert-success"><%= notice %></p>
     <% end %>
   <% if alert %>
-    <p class="alert a;ert-danger"><%= alert %></p>
+    <p class="alert alert-danger"><%= alert %></p>
     <% end %>
 
     <%= yield %>
-
 
   </body>
 </html>
