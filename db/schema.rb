@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180422131700) do
+ActiveRecord::Schema.define(version: 20180422191642) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
@@ -45,7 +45,6 @@ ActiveRecord::Schema.define(version: 20180422131700) do
     t.string "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
   end
 
   create_table "subscriptions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -56,6 +55,7 @@ ActiveRecord::Schema.define(version: 20180422131700) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "paid_for"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -69,19 +69,20 @@ ActiveRecord::Schema.define(version: 20180422131700) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string "first_name"
-    t.string "surname"
-    t.string "middle_names"
-    t.string "phone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "subscription_id"
+    t.string "first_name", default: "", null: false
+    t.string "surname", default: "", null: false
+    t.string "middle_names", default: ""
+    t.string "phone", default: ""
     t.string "address_line_1"
     t.string "address_line_2"
     t.string "city"
     t.string "state"
     t.string "country"
     t.string "post_code"
-    t.boolean "admin", default: false
+    t.boolean "admin"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
