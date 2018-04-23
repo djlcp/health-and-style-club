@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180422163124) do
+ActiveRecord::Schema.define(version: 20180422163339) do
 
   create_table "content", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "content_type"
@@ -19,6 +19,11 @@ ActiveRecord::Schema.define(version: 20180422163124) do
     t.string "video_url"
     t.string "doc_url"
     t.integer "order"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "contents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -34,12 +39,11 @@ ActiveRecord::Schema.define(version: 20180422163124) do
 
   create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
-    t.text "body_text", limit: 4294967295
+    t.string "body_text"
     t.boolean "paid_for"
     t.string "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "user_id"
     t.integer "user2_id"
   end
 
