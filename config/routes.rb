@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :admins
-  get 'home/index'
+  get 'users/index'
 
   devise_for :users
   scope '/admin' do
@@ -9,10 +9,5 @@ Rails.application.routes.draw do
   end
   resources :posts
   resources :invoices
-
-
-
   root to: 'home#index'
-
-
 end

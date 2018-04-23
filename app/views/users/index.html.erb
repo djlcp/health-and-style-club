@@ -1,4 +1,4 @@
-<h1>admin page</h1>
+<h1>users page</h1>
 
 <table>
   <% @users.each do |user| %>
@@ -17,4 +17,6 @@
   <% end %>
 </table>
 
-<%= link_to 'Back', posts_path %>
+
+<p><%= link_to 'Back', posts_path %></p>
+<p><%= link_to 'Logout Admin', destroy_admin_session_path	, method: :delete, data: { confirm: "You sure?" } %></p>
