@@ -10,19 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180424172113) do
+ActiveRecord::Schema.define(version: 20180424201529) do
 
   create_table "content", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "content_type"
     t.string "description"
-    t.string "image_url"
-    t.string "video_url"
-    t.string "doc_url"
-    t.string "file_url", null: false
     t.integer "order"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "file_url"
+  end
+
+  create_table "contents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "invoices", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
