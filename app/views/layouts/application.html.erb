@@ -10,18 +10,7 @@
 
   <body>
     <header>
-      <div class="main-header">
-        <%= link_to "Health & Style Club", root_path, class: "main-header-title" %>
-      </div>
-      <div class="main-members-area">
-        <a href="" class="members-area-title">Members Area</a>
-      </div>
-      <nav class="main-navigation">
-        <%= link_to "Posts", posts_path, class: 'main-navigation-link' %>
-        <a href="" class="main-navigation-link">Navigation</a>
-        <a href="" class="main-navigation-link">Navigation</a>
-        <a href="" class="main-navigation-link">Navigation</a>
-      </nav>
+      <%= render "layouts/header" %>
     </header>
 
   <% if notice %>
@@ -34,5 +23,5 @@
     <%= yield %>
 
   </body>
-  <%= render "footer" %>
+  <%= render "layouts/footer" %>
 </html>
