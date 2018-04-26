@@ -10,6 +10,7 @@ class Ability
     end
     if user.role == "subscriber"
       can :read, :all
+      cannot :edit, Post
     end
   end
 end
