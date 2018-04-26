@@ -13,3 +13,97 @@
  *= require_tree .
  *= require_self
  */
+
+ /**************** General ****************/
+
+ * {
+	box-sizing: border-box;
+}
+
+/*************** Main Header ***************/
+
+.main-header {
+	display: flex;
+  justify-content: center; 
+  background-color: #EBEBEB;
+  padding: 1em 0 0 0;
+}
+
+ .main-header-title {
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  color: #8E0048;
+  font-size: 2.5em;
+  text-shadow: 0 1px 1px rgba(0,0,0, .7);
+ }
+
+ .main-members-area {
+  display: flex;
+	justify-content: center; 
+  flex-wrap: wrap;
+  background-color: #EBEBEB;
+  padding: 0.7em 0 0.7em 0;
+}
+
+ .members-area-title {
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center; 
+  width: 45%;
+  padding: 5px;
+  font-size: 0.8em;
+  letter-spacing: 1px;
+ }
+
+ .main-navigation {
+	display: flex;
+	justify-content: center; 
+  flex-wrap: wrap;
+  background-color: #EBEBEB;
+  padding: 0 0 1em 0;
+}
+
+ .main-navigation-link {
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  color: #777777;
+  font-weight: bold;
+  margin: 0 2em;
+ }
+
+ .main-navigation-link:hover {
+    color: #8E0048;
+ }
+
+/**************** Footer ****************/
+
+.footer {
+  padding: 20px;
+  background-color: #000000;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footerlogo {
+	height:50px;
+}
+
+.footer-nav {
+	display: flex;
+	align-items: center;
+}
+
+.footer-nav__link {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #707070;
+  margin-left: 30px;
+  font-size: 0.7rem;
+}
+
+.footer-nav__link:hover {
+  color: #ff0000;
+}

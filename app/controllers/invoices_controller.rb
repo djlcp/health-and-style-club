@@ -2,30 +2,23 @@ class InvoicesController < ApplicationController
 
   def index
     @invoices = Invoice.all
+    @user_id = current_user.id
   end
-
-  # def show
-  #
-  #    @invoice = Invoice.find(params[:id])
-  #
-  #    respond_to do |format|
-  #      format.pdf do
-  #        render pdf: "Invoice #{@invoice.id}",
-  #               template: "invoices/show.pdf.erb",
-  #               locals: {:invoice => @invoice}
-  #      end
-  #    end
-  #  end
 
   def show
     @invoice = Invoice.find(params[:id])
-
     respond_to do |format|
-      format.html
+      format.html {redirect_to "/invoices/#{@invoice.id}.pdf"}
       format.pdf do
-        render pdf: "show"
+        render pdf: "show",
+        :save_to_file => Rails.root.join('app','assets','invoices_pdf', "Invoice #{@invoice.id}" + ".pdf")
       end
     end
+  end
+
+  def invoice_email
+    invoice = Invoice.find(params[:id])
+    InvoicesMailer.invoice_email(invoice).deliver
   end
 
 

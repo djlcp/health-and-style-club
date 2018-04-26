@@ -13,11 +13,13 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(params.require(:post).permit(:title, :body_text))
+
+    @post = current_user.posts.new(params.require(:post).permit(:title, :body_text))
 
 respond_to do |format|
     if @post.save
-      format.html { redirect_to posts_path(@post), notice: 'Post added.'}
+      format.html { redirect_to posts_path, notice: 'Post added.'}
+
     else
       format.html { render :new}
       end
@@ -26,7 +28,6 @@ respond_to do |format|
 
   def edit
     @post = Post.find(params[:id])
-
   end
 
   def update
