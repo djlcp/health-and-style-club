@@ -13,7 +13,7 @@ class MasterclassesController < ApplicationController
   end
 
   def create
-    @masterclass = Masterclass.new(params.require(:masterclass).permit(:title, :text))
+    @masterclass = Masterclass.new(masterclass_params)
 
     respond_to do |format|
         if @masterclass.save
@@ -25,14 +25,14 @@ class MasterclassesController < ApplicationController
       end
 
       def edit
-        @masterclass = masterclass.find(params[:id])
+        @masterclass = Masterclass.find(params[:id])
 
       end
 
       def update
-        @masterclass = masterclass.find(params[:id])
+        @masterclass = Masterclass.find(params[:id])
         respond_to do |format|
-          if @masterclass.update(params.require(:post).permit(:title, :text))
+          if @masterclass.update(masterclass_params)
             format.html { redirect_to @masterclass, notice: 'Masterclass updated.' }
           else
             format.html { render :edit }
@@ -55,8 +55,14 @@ class MasterclassesController < ApplicationController
 
     private
 
-    def post_params
-      params.require(:post).permit(:title, :text)
+    def masterclass_params
+      params.require(:masterclass).permit(
+        :title,
+        :text,
+        videos_attributes: [:id, :title, :link, :_destroy],
+        events_attributes: [:id, :title, :link, :_destroy],
+        documents_attributes: [:id, :title, :link, :_destroy]
+      )
     end
 
     def set_link
