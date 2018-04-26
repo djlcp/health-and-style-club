@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
-
+	
 	root to: 'pages#home'
 	get :contact, to: 'pages#contact'
-
+  devise_for :admins
+  get 'users/index'
   devise_for :users
-  devise_for :installs
-  devise_for :models
+  scope '/admin' do
+    resources :users
+  end
   resources :posts
   resources :invoices
 end

@@ -1,0 +1,21 @@
+<h1>users page</h1>
+
+<table>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= link_to user.email, users_path(user) %></td>
+      <td><%= user.role %></td>
+      <td>
+        <%= link_to 'Edit', edit_user_path(user) %>
+      </td>
+      <td>
+        <%= link_to 'Delete', user_path(user), method: :delete, data: { confirm: "You sure?" } %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to 'Add User', new_user_path %></p>
+
+<p><%= link_to 'Back', posts_path %></p>
+<p><%= link_to 'Logout Admin', destroy_admin_session_path	, method: :delete, data: { confirm: "You sure?" } %></p>

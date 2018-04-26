@@ -10,5 +10,6 @@ This is a list of all posts
 
 <% end %>
 
-
+<% if can? :create, @post %>
 <%= link_to 'Create a new post', new_post_path %>
+<% end %>

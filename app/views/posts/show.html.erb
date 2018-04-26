@@ -1,8 +1,12 @@
 <h1><%= @post.title %></h1>
 <p><%= @post.body_text %></p>
 
-
+<% if can? :destroy, @post %>
 <%= link_to 'Delete this post', @post, method: :delete %>
+<% end %>
+
 <div>
+  <% if can? :update, @post %>
 <%= link_to 'Edit this post', edit_post_path(@post) %>
+<% end %>
 </div>

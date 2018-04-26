@@ -14,13 +14,6 @@
  *= require_self
  */
 
-
-
-
-
-
-
-
  /**************** General ****************/
 
  * {
@@ -85,6 +78,7 @@
     color: #8E0048;
  }
 
+/**************** Footer ****************/
 
 .footer {
   padding: 20px;
@@ -98,9 +92,8 @@
 }
 
 .footer-nav {
-  display: flex;
-  align-items: center;
-
+	display: flex;
+	align-items: center;
 }
 
 .footer-nav__link {
@@ -114,5 +107,3 @@
 .footer-nav__link:hover {
   color: #ff0000;
 }
-
-

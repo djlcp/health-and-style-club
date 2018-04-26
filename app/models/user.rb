@@ -5,4 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :posts
 
+  has_one :subscribtion
+
+  ROLES = %i[admin contributor subscriber]
 end
