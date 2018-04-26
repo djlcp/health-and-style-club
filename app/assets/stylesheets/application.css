@@ -60,7 +60,7 @@
 
 .main-header {
 	display: flex;
-  justify-content: center; 
+  justify-content: center;
   background-color: #EBEBEB;
   padding: 1em 0 0 0;
 }
@@ -75,7 +75,7 @@
 
  .main-members-area {
   display: flex;
-	justify-content: center; 
+	justify-content: center;
   flex-wrap: wrap;
   background-color: #EBEBEB;
   padding: 0.7em 0 0.7em 0;
@@ -87,7 +87,7 @@
   background-color: black;
   color: white;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   width: 45%;
   padding: 5px;
   font-size: 0.8em;
@@ -96,7 +96,7 @@
 
  .main-navigation {
 	display: flex;
-	justify-content: center; 
+	justify-content: center;
   flex-wrap: wrap;
   background-color: #EBEBEB;
   padding: 0 0 1em 0;

@@ -1,8 +1,16 @@
 <h1><%= @post.title %></h1>
 <p><%= @post.body_text %></p>
+<% @post.contents.each do |content| %>
+  <p>
+    <%= content.description %>
+  </p>
+<% end %>
 
 
+<% if can? :destroy, @post %>
 <%= link_to 'Delete this post', @post, method: :delete %>
+<% end %>
+
 <div>
-<%= link_to 'Edit this post', edit_post_path(@post) %>
+  <%= link_to 'Edit this post', edit_post_path(@post) %>
 </div>

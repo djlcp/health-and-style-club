@@ -1,15 +1,15 @@
 Rails.application.routes.draw do
 
-
+  devise_for :admins
+  get 'users/index'
 
   devise_for :users
-  devise_for :installs
-  devise_for :models
-  resources :posts, :invoices
-
-  resources :masterclasses, :videos
-
-
+  scope '/admin' do
+    resources :users
+  end
+  resources :posts
+  resources :invoices
   root to: 'home#index'
 
+  resources :masterclasses, :videos, :events, :documents
 end
