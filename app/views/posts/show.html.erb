@@ -6,7 +6,11 @@
   </p>
 <% end %>
 
+
+<% if can? :destroy, @post %>
 <%= link_to 'Delete this post', @post, method: :delete %>
+<% end %>
+
 <div>
   <%= link_to 'Edit this post', edit_post_path(@post) %>
 </div>
