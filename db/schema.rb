@@ -32,10 +32,14 @@ ActiveRecord::Schema.define(version: 20180424201529) do
   create_table "content", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "content_type"
     t.string "description"
+<<<<<<< HEAD
     t.string "file_url", null: false
+=======
+>>>>>>> 2c88e0ace56655537f01d4e6c7ea8ba54e76896a
     t.integer "order"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "file_url"
   end
 
   create_table "contents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
