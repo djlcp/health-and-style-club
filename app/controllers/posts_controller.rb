@@ -16,10 +16,9 @@ class PostsController < ApplicationController
 
     @post = current_user.posts.new(params.require(:post).permit(:title, :body_text))
 
-respond_to do |format|
+    respond_to do |format|
     if @post.save
       format.html { redirect_to posts_path, notice: 'Post added.'}
-
     else
       format.html { render :new}
       end
@@ -37,7 +36,6 @@ respond_to do |format|
         format.html { redirect_to @post, notice: 'Post updated.' }
       else
         format.html { render :edit }
-
       end
     end
   end
@@ -50,8 +48,7 @@ respond_to do |format|
     respond_to do |format|
       format.html { redirect_to posts_path, notice: 'Your post was deleted.' }
       format.json { head :no_content }
-
-  end
+    end
   end
 
 private
@@ -61,7 +58,7 @@ def post_params
 end
 
 def set_link
-    @post = Post.find(params[:id])
+  @post = Post.find(params[:id])
 end
 
 
