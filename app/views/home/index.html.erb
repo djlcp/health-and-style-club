@@ -5,6 +5,6 @@
    <p>Welcome <%= current_user.email %> <%= link_to 'Logout', destroy_user_session_path, method: :delete %></p>
 <% end %>
 
-<% if current_user.try(:admin?) %>
+<% if current_user.role == "admin" %>
    <p>welcome administrator <%= link_to 'login', users_path %></p>
 <% end %>

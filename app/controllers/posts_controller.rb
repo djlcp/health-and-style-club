@@ -26,7 +26,7 @@ respond_to do |format|
 
   def edit
     @post = Post.find(params[:id])
-    
+
   end
 
   def update

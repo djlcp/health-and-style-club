@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_one :subscribtion
 
+  ROLES = %i[admin contributor subscriber]
 end
