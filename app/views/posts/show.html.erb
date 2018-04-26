@@ -1,5 +1,6 @@
 <h1><%= @post.title %></h1>
 <p><%= @post.body_text %></p>
+<%= image_tag(@post.image_url.to_s) %>
 
 <% if can? :destroy, @post %>
 <%= link_to 'Delete this post', @post, method: :delete %>
