@@ -10,24 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180426183205) do
+ActiveRecord::Schema.define(version: 20180427173652) do
 
   create_table "contents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "content_type"
     t.string "description"
-    t.string "image_url"
-    t.string "video_url"
-    t.string "doc_url"
-    t.string "file_url", null: false
     t.integer "order"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "file_url"
-  end
-
-  create_table "contents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "invoices", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -56,6 +47,10 @@ ActiveRecord::Schema.define(version: 20180426183205) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.string "image"
+    t.string "avatar_file_name"
+    t.string "avatar_content_type"
+    t.integer "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   create_table "subscriptions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -79,9 +74,8 @@ ActiveRecord::Schema.define(version: 20180426183205) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "subscription_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string "first_name"
     t.string "surname"
     t.string "middle_names"
