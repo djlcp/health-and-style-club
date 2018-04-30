@@ -10,34 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20180422191642) do
-
-  create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer "sign_in_count", default: 0, null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string "current_sign_in_ip"
-    t.string "last_sign_in_ip"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_admins_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
-  end
-
-  create_table "content", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "content_type"
-    t.string "description"
-    t.string "image_url"
-    t.string "video_url"
-    t.string "doc_url"
-    t.integer "order"
-=======
 ActiveRecord::Schema.define(version: 20180427173652) do
 
   create_table "contents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -54,28 +26,14 @@ ActiveRecord::Schema.define(version: 20180427173652) do
     t.decimal "sub_total", precision: 10, scale: 2
     t.decimal "vat", precision: 10, scale: 2
     t.decimal "total", precision: 10, scale: 2
->>>>>>> develop
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-<<<<<<< HEAD
-  create_table "contents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "invoices", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "user"
-    t.decimal "sub_total", precision: 10, scale: 2
-    t.decimal "vat", precision: 10, scale: 2
-    t.decimal "total", precision: 10, scale: 2
-=======
   create_table "post_contents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "post_id"
     t.integer "content_id"
     t.integer "order"
->>>>>>> develop
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -87,16 +45,12 @@ ActiveRecord::Schema.define(version: 20180427173652) do
     t.string "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-<<<<<<< HEAD
-    t.integer "user2_id"
-=======
     t.integer "user_id"
     t.string "image"
     t.string "avatar_file_name"
     t.string "avatar_content_type"
     t.integer "avatar_file_size"
     t.datetime "avatar_updated_at"
->>>>>>> develop
   end
 
   create_table "subscriptions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -133,11 +87,7 @@ ActiveRecord::Schema.define(version: 20180427173652) do
     t.string "state"
     t.string "country"
     t.string "post_code"
-<<<<<<< HEAD
-    t.boolean "admin"
-=======
     t.integer "role"
->>>>>>> develop
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

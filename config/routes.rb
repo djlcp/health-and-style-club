@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   get 'users/index'
 
   devise_for :users
-<<<<<<< HEAD
   resources :posts
   resources :subscriptions
 
@@ -12,12 +11,10 @@ Rails.application.routes.draw do
     post :subscription_created_callback
   end
 
-=======
   scope '/admin' do
     resources :users
   end
   resources :posts
   resources :invoices
->>>>>>> develop
   root to: 'home#index'
 end
