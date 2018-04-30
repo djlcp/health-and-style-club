@@ -2,7 +2,7 @@
 <p><%= @post.body_text %></p>
 <% @post.contents.each do |content| %>
   <p>
-    <%= content.description %>
+    <%= render "layouts/post_content/#{content.content_type}.html.erb", :@content => content %>
   </p>
 <% end %>
 
