@@ -6,10 +6,11 @@ class Ability
       can :manage, :all
     end
     if user.role == "contributor"
-      can :manage, :post
+      can :manage, Post
     end
     if user.role == "subscriber"
       can :read, :all
+      cannot :edit, Post
     end
   end
 end

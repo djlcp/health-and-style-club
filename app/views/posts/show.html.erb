@@ -1,5 +1,6 @@
 <h1><%= @post.title %></h1>
 <p><%= @post.body_text %></p>
+<%= image_tag(@post.image_url.to_s) %>
 <% @post.contents.each do |content| %>
   <p>
     <%= render "layouts/post_content/#{content.content_type}.html.erb", :@content => content %>
