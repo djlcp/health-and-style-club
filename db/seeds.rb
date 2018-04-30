@@ -16,7 +16,7 @@ example_post = Post.create(title: 'An Example Post with Content', body_text: 'In
 
 text_content = Content.create(content_type: 1, description: 'This is a piece of content that we can use in posts. It is a chunky chunk of text. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.')
 video_content = Content.create(content_type: 2, description: 'Video of kerazy cats.', file_url: "https://player.vimeo.com/video/20732587")
-image_content = Content.create(content_type: 3, description: 'Yoga photo', file_url: "https://images.unsplash.com/photo-1521321179914-70906ec3032f")
+image_content = Content.create(content_type: 3, description: 'Yoga photo', file_url: "https://healthandstyleclub.com/wp-content/uploads/2017/09/10things-pic.png")
 link_content = Content.create(content_type: 4, description: 'What does dress down really mean in the corporate office?', file_url: 'https://healthandstyleclub.com/2018/03/22/dress-really-mean-corporate-office/')
 
 PostContent.create(post: example_post, content: video_content, order: 1)
