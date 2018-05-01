@@ -52,3 +52,4 @@ production:
   database: hsclub_production
   username: hsclub
   password: <%= ENV['HSCLUB_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
