@@ -1,10 +1,57 @@
-<h1>This is our home page</h1>
-<p><%= link_to 'Check all the posts', posts_path %></p>
+<html>
 
-<% if current_user %>
-   <p>Welcome <%= current_user.email %> <%= link_to 'Logout', destroy_user_session_path, method: :delete %></p>
-<% end %>
+<head>
+</head>
 
-<% if current_user.role == "admin" %>
-   <p>welcome administrator <%= link_to 'login', users_path %></p>
-<% end %>
+<body>
+
+  <h1>This is our home page</h1>
+
+
+  <div class="expert-bar">
+    <div class="expert-bar-image">
+      
+    </div>
+    <div class="expert-bar-name">
+      
+    </div>
+  </div>
+
+
+  <div class="scroll-bar">
+    <div class="scroll-bar-text">
+      <div class="expert">
+        <p>aaklsdjlaskjbdjasnd,</p>
+        <p>..........</p>
+      </div>
+      <div class="expert">
+        <p>alsdkjaskdbasjhdb,asjhdbas</p>
+        <p>..........</p>
+      </div>
+      <div class="expert">
+        <p>akjsdnlasjd</p>
+        <p>..........</p>
+      </div>
+      <div class="expert">
+        <p>aksjhdashd</p>
+        <p>..........</p>
+      </div>
+    </div>
+  </div>
+
+    
+  </div>
+
+  <p><%= link_to 'Check all the posts', posts_path %></p>
+
+  <% if current_user %>
+    <p>Welcome <%= current_user.email %> <%= link_to 'Logout', destroy_user_session_path, method: :delete %></p>
+  <% end %>
+
+  <% if current_user.role == "admin" %>
+    <p>welcome administrator <%= link_to 'login', users_path %></p>
+  <% end %>
+</body>
+
+
+</html>

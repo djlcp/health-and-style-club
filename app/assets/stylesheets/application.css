@@ -78,6 +78,27 @@
     color: #8E0048;
  }
 
+/**************** Home Page - Expert Scroll Bar ****************/
+
+.scroll-bar {
+  border: 1px solid black;
+  width: auto;
+  height: 100px;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
+.scroll-bar-text {
+  width: 105%;
+  display: flex;
+  justify-content: center;
+	flex-direction: row;
+}
+
+.expert {
+  margin: 0 10px 0 10px;
+}
+
 /**************** Footer ****************/
 
 .footer {

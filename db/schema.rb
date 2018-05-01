@@ -10,10 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20180426183949) do
-=======
-ActiveRecord::Schema.define(version: 20180424201529) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
@@ -31,30 +28,14 @@ ActiveRecord::Schema.define(version: 20180424201529) do
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
->>>>>>> e83c4812217c5b581f32970ce5d53ef8a65cc7f4
 
   create_table "contents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "content_type"
     t.string "description"
-<<<<<<< HEAD
-    t.string "image_url"
-    t.string "video_url"
-    t.string "doc_url"
-=======
-<<<<<<< HEAD
-    t.string "file_url", null: false
-=======
->>>>>>> 2c88e0ace56655537f01d4e6c7ea8ba54e76896a
->>>>>>> e83c4812217c5b581f32970ce5d53ef8a65cc7f4
     t.integer "order"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "file_url"
-  end
-
-  create_table "contents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "invoices", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
