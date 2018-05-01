@@ -53,3 +53,4 @@ production:
   database: hsclub_production
   username: hsclub
   password: <%= ENV['HSCLUB_DATABASE_PASSWORD'] %>
+  socket: /var/run/postgresql/.s.PGSQL.5432
