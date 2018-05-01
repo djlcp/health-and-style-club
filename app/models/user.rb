@@ -8,5 +8,5 @@ class User < ApplicationRecord
   has_one :subscribtion
 
   enum role: { subscriber: 1, contributor: 2, admin: 3}
-  
+
 end

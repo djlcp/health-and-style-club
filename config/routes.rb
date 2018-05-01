@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
 
-  devise_for :admins
-  get 'users/index'
-
   devise_for :users
   scope '/admin' do
     resources :users
