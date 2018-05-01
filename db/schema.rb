@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20180430133334) do
     t.string "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user2_id"
+    t.integer "user_id"
     t.string "image"
   end
 
@@ -69,9 +69,8 @@ ActiveRecord::Schema.define(version: 20180430133334) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "subscription_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string "first_name"
     t.string "surname"
     t.string "middle_names"
