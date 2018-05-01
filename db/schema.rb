@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20180430133334) do
 
+  create_table "admin", id: :integer, unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  end
+
   create_table "contents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "content_type"
     t.text "description"
@@ -44,7 +47,7 @@ ActiveRecord::Schema.define(version: 20180430133334) do
     t.string "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user2_id"
+    t.integer "user_id"
     t.string "image"
   end
 
