@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   resources :posts
   resources :invoices
   root to: 'home#index'
+
+  resources :masterclasses, :videos, :events, :documents
 end
