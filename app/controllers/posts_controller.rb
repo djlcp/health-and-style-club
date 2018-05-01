@@ -14,7 +14,7 @@ class PostsController < ApplicationController
 
   def create
 
-    @post = current_user.posts.new(params.require(:post).permit(:title, :body_text))
+    @post = current_user.posts.new(post_params)
 
     respond_to do |format|
     if @post.save
@@ -54,7 +54,7 @@ class PostsController < ApplicationController
 private
 
 def post_params
-  params.require(:post).permit(:title, :body_text)
+  params.require(:post).permit(:title, :body_text, :image)
 end
 
 def set_link
