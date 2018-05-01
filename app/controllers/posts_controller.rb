@@ -1,66 +1,47 @@
 class PostsController < ApplicationController
-
+  load_and_authorize_resource
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
   def index
     @posts = Post.all
   end
 
-  def show
-    @post = Post.find(params[:id])
-  end
+  def show; end
 
   def new
     @post = Post.new
   end
 
   def create
-
-    @post = current_user.posts.new(params.require(:post).permit(:title, :body_text))
-
-    respond_to do |format|
+    @post = current_user.posts.new(post_params)
     if @post.save
-      format.html { redirect_to posts_path, notice: 'Post added.'}
+      redirect_to posts_path, notice: 'Post added.'
     else
-      format.html { render :new}
-      end
+      render :new
     end
   end
 
-  def edit
-    @post = Post.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @post = Post.find(params[:id])
-    respond_to do |format|
-      if @post.update(params.require(:post).permit(:title, :body_text))
-        format.html { redirect_to @post, notice: 'Post updated.' }
-      else
-        format.html { render :edit }
-      end
+    if @post.update(post_params)
+      redirect_to @post, notice: 'Post updated.'
+    else
+      render :edit
     end
   end
-
-
 
   def destroy
-    @post = Post.find(params[:id])
     @post.destroy
-    respond_to do |format|
-      format.html { redirect_to posts_path, notice: 'Your post was deleted.' }
-      format.json { head :no_content }
-    end
+    redirect_to posts_path, notice: 'Your post was deleted.'
   end
 
-private
+  private
 
-def post_params
-  params.require(:post).permit(:title, :body_text)
-end
+  def post_params
+    params.require(:post).permit(:title, :body_text, :image)
+  end
 
-def set_link
-  @post = Post.find(params[:id])
-end
-
-
-
+  def set_post
+    @post = Post.find(params[:id])
+  end
 end
