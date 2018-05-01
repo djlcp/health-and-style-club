@@ -63,6 +63,7 @@
   <% if current_user.role == "admin" %>
     <p>welcome administrator <%= link_to 'login', users_path %></p>
   <% end %>
+  <%=render 'layouts/footer' %>
   <script src="banner.js"></script>
 </body>
 
