@@ -11,6 +11,8 @@
       <li><a href="" class="main-navigation-link">Navigation</a></li>
       <li><a href="" class="main-navigation-link">Navigation</a></li>
       <li><%= link_to 'Logout', destroy_user_session_path, method: :delete, class:'main-navigation-link' %></li>
-      <li></li>
+      <li><% if current_user != nil && current_user.role == "admin" %>
+         <%= link_to 'login', users_path, class:'main-navigation-link login' %></p>
+      <% end %></li>
       </ul>
     </nav>
