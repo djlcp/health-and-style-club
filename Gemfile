@@ -61,7 +61,7 @@ end
 
 
 group :development, :test do
-gem 'mysql2', '>= 0.3.18', '< 0.6.0'
+#gem 'mysql2', '>= 0.3.18', '< 0.6.0'
 end
 
 group :production do
