@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :posts
 
-  has_one :subscribtion
+  has_one :subscription
 
   enum role: { subscriber: 1, contributor: 2, admin: 3}
 
