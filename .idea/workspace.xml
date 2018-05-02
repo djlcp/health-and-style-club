@@ -2,88 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ea678c1-9d7d-47a3-8d2a-6884171c4fb0" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/assets/images/Contact.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/Yoga Stock.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/haute-chocolate-styled-stock-photography-spring-2016-blush-pink-marble-15-final.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/puppy.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/puppy1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/puppy3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/banner.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/document.coffee" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/event.coffee" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/masterclasses.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/video.coffee" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/banner.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/document.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/event.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/footer.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/header.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/masterclasses.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/video.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/document_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/event_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/masterclasses_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/video_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/helpers/document_helper.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/helpers/event_helper.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/helpers/masterclasses_helper.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/helpers/video_helper.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/document.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/event.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/masterclass.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/video.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/document/_form.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/event/_form.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/masterclasses/_document_fields.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/masterclasses/_event_fields.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/masterclasses/_form.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/masterclasses/_video_fields.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/masterclasses/edit.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/masterclasses/index.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/masterclasses/new.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/masterclasses/show.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/video/_form.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/migrate/20180415142051_create_masterclasses.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/migrate/20180417184929_create_videos.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/migrate/20180417185223_create_documents.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/migrate/20180417185429_create_events.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/migrate/20180419113944_add_foreign_key.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/migrate/20180430133334_change_content_description_and_post_text.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/controllers/document_controller_test.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/controllers/event_controller_test.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/controllers/masterclasses_controller_test.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/controllers/video_controller_test.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/fixtures/documents.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/fixtures/events.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/fixtures/masterclasses.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/fixtures/videos.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/models/document_test.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/models/event_test.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/models/masterclass_test.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/models/video_test.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Health And Style Club.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Health And Style Club.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/invoice.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/home/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/invoices/new.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/post_content/_file.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/post_content/_file.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/post_content/_video.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/post_content/_video.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20180419174924_deleting_installs_and_models_table.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/.20180419174924_deleting_installs_and_models_table.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20180422131700_add_user_id_to_posts.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/.20180422131700_add_user_id_to_posts.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20180422160930_add_content_table.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20180422163100_deleting_messed_up_order.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20180422163124_add_content_table_again.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20180422163339_create_contents.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20180426173025_change_role_data_type.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20180426173025_change_role_data_type.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20180426182737_fix_content_tables.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20180426182737_fix_content_tables.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -106,12 +27,12 @@
     <favorites_list name="Health And Style Club" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="Gemfile" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-62">
-              <caret line="22" column="39" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
+            <state relative-caret-position="181">
+              <caret line="90" column="3" lean-forward="true" selection-start-line="90" selection-start-column="3" selection-end-line="90" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -146,9 +67,10 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
     <option name="width" value="1280" />
-    <option name="height" value="800" />
+    <option name="height" value="752" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -156,6 +78,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="RailsProjectView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -163,16 +86,10 @@
               <item name="Health And Style Club" type="b2602c69:ProjectViewProjectNode" />
               <item name="Health And Style Club" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Health And Style Club" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Health And Style Club" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="RailsProjectView" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -267,7 +184,8 @@
       <workItem from="1525137764217" duration="6000" />
       <workItem from="1525189542079" duration="6904000" />
       <workItem from="1525282792399" duration="1110000" />
-      <workItem from="1525284313577" duration="976000" />
+      <workItem from="1525284313577" duration="1618000" />
+      <workItem from="1525290552852" duration="36000" />
     </task>
     <task id="LOCAL-00001" summary="Updated schema.">
       <created>1524594072366</created>
@@ -279,24 +197,24 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1208000" />
+    <option name="totallyTimeSpent" value="1886000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="752" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49931034" visible="true" weight="0.23021002" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49931034" visible="true" weight="0.23344104" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32965517" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50080776" side_tool="true" weight="0.3648855" />
       <window_info anchor="right" id="Database" order="3" weight="0.32956383" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4983845" weight="0.39694658" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49919224" weight="0.32965517" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4983845" weight="0.39694658" />
       <window_info id="Structure" order="1" sideWeight="0.5006896" side_tool="true" weight="0.26979" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49919224" weight="0.470229" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49919224" visible="true" weight="0.470229" />
       <window_info id="Favorites" order="2" sideWeight="0.5006896" side_tool="true" weight="0.26979" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -314,6 +232,13 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="930">
+          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/subscriptions/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -475,27 +400,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/invoices/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/invoices/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/invoices/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/invoices/new.html.erb" />
+    <entry file="file://$PROJECT_DIR$/app/views/invoices/new.html.erb" />
+    <entry file="file://$PROJECT_DIR$/app/views/invoices/new.html.erb" />
     <entry file="file://$USER_HOME$/.rvm/rubies/ruby-2.5.1/lib/ruby/2.5.0/rubygems.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
@@ -572,23 +479,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/invoices/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/document/_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/invoice.rb">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/invoices/new.html.erb" />
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-62">
-          <caret line="22" column="39" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
+        <state relative-caret-position="181">
+          <caret line="90" column="3" lean-forward="true" selection-start-line="90" selection-start-column="3" selection-end-line="90" selection-end-column="3" />
         </state>
       </provider>
     </entry>
