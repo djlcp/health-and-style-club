@@ -39,6 +39,9 @@ gem 'jbuilder', '~> 2.5'
 # Use Carrierwave to add images to webapp (Implemented by Raymond)
 gem 'carrierwave', '~> 1.0'
 
+# Use mini_magick to resize images to webapp (Implemented by Raymond)
+gem 'mini_magick', '~> 4.8'
+
 # Use cancancan to manage user permissions (Implemented by Raymond)
 gem 'cancancan', '~> 1.13', '>= 1.13.1'
 
@@ -87,5 +90,5 @@ end
 
 group :production do
   gem 'pg'
-  ruby '2.5.1'
+  # ruby '2.5.1'
 end

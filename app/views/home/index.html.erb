@@ -48,14 +48,9 @@
   <span class="dot" onclick="currentSlide(3)"></span>
 </div>
 
-<p><%= link_to 'Check all the posts', posts_path %></p>
 
   <% if current_user %>
-    <p>Welcome <%= current_user.email %> <%= link_to 'Logout', destroy_user_session_path, method: :delete %></p>
-  <% end %>
-
-  <% if current_user.role == "admin" %>
-    <p>welcome administrator <%= link_to 'login', users_path %></p>
+    <p>Welcome <%= current_user.email %></p>
   <% end %>
 
   <script src="banner.js"></script>
