@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
 
-  devise_for :admins
-  get 'users/index'
-
   devise_for :users
   resources :posts
   resources :subscriptions

@@ -39,7 +39,10 @@ gem 'jbuilder', '~> 2.5'
 # Use Carrierwave to add images to webapp (Implemented by Raymond)
 gem 'carrierwave', '~> 1.0'
 
-# Use Carrierwave to manage user permissions (Implemented by Raymond)
+# Use mini_magick to resize images to webapp (Implemented by Raymond)
+gem 'mini_magick', '~> 4.8'
+
+# Use cancancan to manage user permissions (Implemented by Raymond)
 gem 'cancancan', '~> 1.13', '>= 1.13.1'
 
 # Use Devise for user authentication (Implemented by Raymond)

@@ -1,8 +1,4 @@
 <html>
-
-<head>
-</head>
-
 <body>
 
   <h1>This is our home page</h1>
@@ -10,10 +6,10 @@
 
   <div class="expert-bar">
     <div class="expert-bar-image">
-      
+
     </div>
     <div class="expert-bar-name">
-      
+
     </div>
   </div>
 
@@ -47,23 +43,16 @@
 
 <!-- The dots/circles -->
 <div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span> 
-  <span class="dot" onclick="currentSlide(2)"></span> 
-  <span class="dot" onclick="currentSlide(3)"></span> 
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
 </div>
 
 
-
-  <p><%= link_to 'Check all the posts', posts_path %></p>
-
   <% if current_user %>
-    <p>Welcome <%= current_user.email %> <%= link_to 'Logout', destroy_user_session_path, method: :delete %></p>
+    <p>Welcome <%= current_user.email %></p>
   <% end %>
 
-  <% if current_user.role == "admin" %>
-    <p>welcome administrator <%= link_to 'login', users_path %></p>
-  <% end %>
-  <%=render 'layouts/footer' %>
   <script src="banner.js"></script>
 </body>
 
