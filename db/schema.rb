@@ -71,6 +71,10 @@ ActiveRecord::Schema.define(version: 20180430133334) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.string "image"
+    t.string "avatar_file_name"
+    t.string "avatar_content_type"
+    t.integer "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   create_table "subscriptions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -81,6 +85,7 @@ ActiveRecord::Schema.define(version: 20180430133334) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "paid_for"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
