@@ -9,9 +9,9 @@
   </head>
 
   <body>
-    <header>
-      <%= render "layouts/header" %>
-    </header>
+
+  <%= render "layouts/header" %>
+
 
   <% if notice %>
     <p class="alert alert-success"><%= notice %></p>
@@ -22,6 +22,7 @@
 
     <%= yield %>
 
-  </body>
+
   <%= render "layouts/footer" %>
+  </body>
 </html>
