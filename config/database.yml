@@ -7,7 +7,7 @@
 #   gem 'mysql2'
 #
 # And be sure to use new-style password hashing:
-#   http://dev.mysql.com/doc/refman/5.7/en/old-client.html
+#   https://dev.mysql.com/doc/refman/5.7/en/password-hashing.html
 #
 default: &default
   adapter: mysql2
@@ -15,8 +15,7 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
   password:
-  host: localhost
-  database: hsclub
+#  socket: /tmp/mysql.sock
 
 development:
   <<: *default
@@ -53,3 +52,4 @@ production:
   database: hsclub_production
   username: hsclub
   password: <%= ENV['HSCLUB_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>

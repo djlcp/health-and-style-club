@@ -1,0 +1,13 @@
+
+<div class="admin">
+  <% case controller_name when 'posts'%>
+    <p><%= link_to 'new post', new_post_path, class: 'button' %></p>
+  <% when 'users' %>
+    <p><%= link_to 'add user', new_user_path, class: 'button' %></p>
+  <% end %>
+
+<p><%= link_to "Back", :back, class: 'button' %></p>
+
+<p><%= link_to 'Logout Admin', destroy_user_session_path, method: :delete, data: { confirm: "You sure?" }, class: 'button' %></p>
+
+</div>

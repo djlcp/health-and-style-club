@@ -12,9 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20180430133334) do
 
-  create_table "admin", id: :integer, unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-  end
-
   create_table "contents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "content_type"
     t.text "description"
@@ -39,15 +36,6 @@ ActiveRecord::Schema.define(version: 20180430133334) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "masterclass_id"
-  end
-
-  create_table "invoices", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "user"
-    t.decimal "sub_total", precision: 10, scale: 2
-    t.decimal "vat", precision: 10, scale: 2
-    t.decimal "total", precision: 10, scale: 2
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "masterclasses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -84,6 +72,7 @@ ActiveRecord::Schema.define(version: 20180430133334) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "paid_for"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -97,9 +86,8 @@ ActiveRecord::Schema.define(version: 20180430133334) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "subscription_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string "first_name"
     t.string "surname"
     t.string "middle_names"

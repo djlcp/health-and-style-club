@@ -1,6 +1,4 @@
-Welcome back <h4><%= @user.email %></h4>
+<h4 class="show user"> Welcome back:  <%= @user.email %> </h4>
 
 
-<%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-
-<%= link_to 'Back', users_path %>
+<%= link_to 'Back', users_path, class:'button show' %>

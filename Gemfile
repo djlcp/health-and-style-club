@@ -6,6 +6,8 @@ git_source(:github) do |repo_name|
 end
 
 
+# !!!!!!!!Required Gems!!!!!!!!
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6'
 # Use mysql as the database for Active Record
@@ -18,10 +20,6 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-gem 'carrierwave', '~> 1.0'
-gem 'cancancan', '~> 1.13', '>= 1.13.1'
-# authentication
-gem 'devise', '~> 4.2'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -33,10 +31,42 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-#Used for generating pdf documents
+
+
+# !!!!!!!!Implemented Gems!!!!!!!!
+
+
+# Use Carrierwave to add images to webapp (Implemented by Raymond)
+gem 'carrierwave', '~> 1.0'
+
+# Use mini_magick to resize images to webapp (Implemented by Raymond)
+gem 'mini_magick', '~> 4.8'
+
+# Use cancancan to manage user permissions (Implemented by Raymond)
+gem 'cancancan', '~> 1.13', '>= 1.13.1'
+
+# Use Devise for user authentication (Implemented by Raymond)
+gem 'devise', '~> 4.2'
+
+#Used for generating pdf documents (Implemented by Tiago)
 gem 'wicked_pdf'
-#Required to use wicked_pdf
+
+#Required to use wicked_pdf (Implemented by Tiago)
 gem 'wkhtmltopdf-binary'
+
+# Use Cocoon to create nested forms (Implemented by Kristin)
+gem 'cocoon'
+
+# Use JQuery-Rails to use JQuery in rails (Implemented by Tiago)
+gem 'jquery-rails'
+
+
+
+
+
+
+# !!!!!!!!GROUPS!!!!!!!!
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -58,5 +88,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-gem "cocoon"
-gem 'jquery-rails'
+group :production do
+  gem 'pg'
+  # ruby '2.5.1'
+end
