@@ -19,7 +19,7 @@ class SubscriptionsController < ApplicationController
   def index
     # respond_to do |format|
       @subscriptions = Subscription.all
-      @user_id = current_user.id
+      # @user_id = current_user.id
       # format.json do
     #     render json: @subscriptions
     #   end
