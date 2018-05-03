@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :posts
   resources :subscriptions
 
-  scope '/hooks', :controller => :hooks do
+  scope '/hooks', :controller => :subscriptions do
     post :subscription_created_callback
   end
 
