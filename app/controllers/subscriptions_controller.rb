@@ -10,6 +10,8 @@ def subscription_created_callback
   #   subscription.creator_email = params[:subscription_creator_email]
   #   subscription.save!
   # end
+  #
+  render head :ok
 
   # The webhook doesn't require a response but let's make sure
   # we don't send anything
