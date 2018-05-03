@@ -89,6 +89,6 @@ group :development do
 end
 
 group :production do
-  gem 'pg'
+  # gem 'pg'
   # ruby '2.5.1'
 end
