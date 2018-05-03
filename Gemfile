@@ -39,6 +39,11 @@ gem 'wicked_pdf'
 #Required to use wicked_pdf
 gem 'wkhtmltopdf-binary'
 
+
+
+gem "letter_opener", :group => :development
+
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
