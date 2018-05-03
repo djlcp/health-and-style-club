@@ -1,13 +1,18 @@
+.subscription-wrapper {
+    margin: 2em;
+}
 .subscription-page-container {
     display: flex;
     justify-content: space-around;
-    margin: 2em;
 }
 
 .subscription-container {
     display: flex;
     justify-content: space-around;
     width: 70%;
+    background-color: #EFEFEF;
+    margin: 0em;
+    padding: 1em;
 }
 
 .subscription-button {

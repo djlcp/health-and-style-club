@@ -1,20 +1,20 @@
 class SubscriptionsController < ApplicationController
 
 
-# def subscription_created_callback
-#   # If the body contains the survey_name parameter...
-#   if params[:subscription_name].present?
-#     # Create a new Survey object based on the received parameters...
-#     subscription = Subscription.new(:name => params[:subscription_name]
-#     subscription.url = params[:subscription_url]
-#     subscription.creator_email = params[:subscription_creator_email]
-#     subscription.save!
-#   end
+def subscription_created_callback
+  # # If the body contains the survey_name parameter...
+  # if params[:subscription_name].present?
+  #   # Create a new Survey object based on the received parameters...
+  #   subscription = Subscription.new(:name => params[:subscription_name]
+  #   subscription.url = params[:subscription_url]
+  #   subscription.creator_email = params[:subscription_creator_email]
+  #   subscription.save!
+  # end
 
   # The webhook doesn't require a response but let's make sure
   # we don't send anything
-#   render :nothing => true
-# end
+  # render :nothing => true
+end
 
   def index
     # respond_to do |format|
