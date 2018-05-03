@@ -78,6 +78,18 @@
     color: #8E0048;
  }
 
+ /**************** Placeholder content ****************/
+
+ .placeholder{
+  height: 100px;
+  width: 90%;
+  padding: 20px;
+  margin: 5%;
+  background-color: #e6007e;
+  display: flex;
+  justify-content: center;
+ }
+
 /**************** Footer ****************/
 
 .footer {
@@ -88,22 +100,23 @@
 }
 
 .footerlogo {
-  height:50px;
-}
+  height:50%;
+}   
 
 .footer-nav {
 	display: flex;
 	align-items: center;
+  font-family: 'Roboto', sans-serif;
 }
 
 .footer-nav__link {
   text-transform: uppercase;
   text-decoration: none;
-  color: #707070;
+  color: #777777;
   margin-left: 30px;
   font-size: 0.7rem;
 }
 
 .footer-nav__link:hover {
-  color: #ff0000;
+  color: #8E0048;
 }

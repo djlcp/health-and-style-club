@@ -1,3 +1,10 @@
+.image-message {
+	justify-content: center; 
+  background-color: #676767;
+  opacity: 0.5;
+  padding: 1%;
+}
+
 .hero {
   background-repeat: no-repeat;
   background-size: cover;
@@ -5,12 +12,18 @@
   padding: 100px 20%;
   text-align: center;
   color: #FFF;
+  opacity: 1;
 }
 
-.hero--goals {
-	background-image: url('hero_images/goals_photo_600_400.png');
+.homepage-banner-1 {
+	background-image: url('hero_images/image1.png');
 }
 
-.hero--something {
-	background-image: url('hero_images/google_logl.png');
+.homepage-banner-2 {
+	background-image: url('hero_images/image2.jpg');
 }
+
+.homepage-banner-3 {
+  background-image: url('hero_images/image3.jpg');
+}
+
