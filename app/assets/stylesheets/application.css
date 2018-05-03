@@ -13,7 +13,9 @@
  *= require_tree .
  *= require_self
  */
-
+ @import 'form';
+ @import 'users';
+ @import 'navigation';
  /**************** General ****************/
 
  * {
@@ -24,7 +26,7 @@
 
 .main-header {
 	display: flex;
-  justify-content: center; 
+  justify-content: center;
   background-color: #EBEBEB;
   padding: 1em 0 0 0;
 }
@@ -39,7 +41,7 @@
 
  .main-members-area {
   display: flex;
-	justify-content: center; 
+	justify-content: center;
   flex-wrap: wrap;
   background-color: #EBEBEB;
   padding: 0.7em 0 0.7em 0;
@@ -51,31 +53,11 @@
   background-color: black;
   color: white;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   width: 45%;
   padding: 5px;
   font-size: 0.8em;
   letter-spacing: 1px;
- }
-
- .main-navigation {
-	display: flex;
-	justify-content: center; 
-  flex-wrap: wrap;
-  background-color: #EBEBEB;
-  padding: 0 0 1em 0;
-}
-
- .main-navigation-link {
-  font-family: 'Roboto', sans-serif;
-  text-decoration: none;
-  color: #777777;
-  font-weight: bold;
-  margin: 0 2em;
- }
-
- .main-navigation-link:hover {
-    color: #8E0048;
  }
 
 /**************** Footer ****************/
@@ -107,3 +89,6 @@
 .footer-nav__link:hover {
   color: #ff0000;
 }
+
+
+/**************** media queries ****************/

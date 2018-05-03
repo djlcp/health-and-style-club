@@ -1,6 +1,6 @@
 class ChangeRoleDataType < ActiveRecord::Migration[5.1]
   def change
-    # rename_column :users, :role, :old_role
+    rename_column :users, :role, :old_role
     add_column :users, :role, :integer
     User.all do |user|
       role_num =

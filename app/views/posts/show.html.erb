@@ -6,10 +6,13 @@
 <% end %>
 
 
-<% if can? :destroy, @post %>
-<%= link_to 'Delete this post', @post, method: :delete %>
-<% end %>
 
+<<<<<<< HEAD
 <div>
   <%= link_to 'Edit this post', edit_post_path(@post) %>
 </div>
+=======
+<% if can? :manage, @post %>
+<%= link_to 'edit post', edit_post_path, class: 'button show'  %>
+<% end %>
+>>>>>>> beac10f8765dadec71c41f1895bd5bce97efd475
