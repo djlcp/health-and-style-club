@@ -9,13 +9,20 @@
   <script src="https://js.chargebee.com/v2/chargebee.js" data-cb-site="hsclub"> </script>
 </head>
 
-<body>
+<div>
+  <div class="subscription-page-container">
+    <div class="subscription-container" style="flex-direction: column">
 <h4>A premium subscription will be a monthly fee of £15.</h4>
 <p>Test button</p>
 <a href="javascript:void(0)" data-cb-type="checkout" data-cb-plan-id="premium-subscription" >subscribe</a>
     <!-- <div id="paypal-button-container"></div> -->
     <!-- <button class="js-button">Button</button> -->
 <p>Payment button</p>
-<a href="javascript:void(0)" data-cb-type="checkout" data-cb-plan-id="premium" >subscribe</a>
-<a href="javascript:void(0)" data-cb-type="portal" >Manage account</a>
+    </div></div>
+<div class="subscription-page-container">
+<div class="subscription-container">
+<a href="javascript:void(0)" data-cb-type="checkout" data-cb-plan-id="premium" class="subscription-button" >Subscribe</a>
+<a href="javascript:void(0)" data-cb-type="portal" class="subscription-button" >Manage subscription</a>
+</div>
+</div>
 </body>
