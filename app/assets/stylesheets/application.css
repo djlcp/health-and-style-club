@@ -14,7 +14,7 @@
  *= require_self
  */
 
- /**************** General ****************/
+/**************** General ****************/
 
  * {
 	box-sizing: border-box;
@@ -24,7 +24,7 @@
 
 .main-header {
 	display: flex;
-  justify-content: center; 
+  justify-content: center;
   background-color: #EBEBEB;
   padding: 1em 0 0 0;
 }
@@ -39,7 +39,7 @@
 
  .main-members-area {
   display: flex;
-	justify-content: center; 
+	justify-content: center;
   flex-wrap: wrap;
   background-color: #EBEBEB;
   padding: 0.7em 0 0.7em 0;
@@ -51,14 +51,14 @@
   background-color: black;
   color: white;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   width: 45%;
   padding: 5px;
   font-size: 0.8em;
   letter-spacing: 1px;
  }
 
- .main-navigation {
+/* .main-navigation {
 	display: flex;
 	justify-content: center; 
   flex-wrap: wrap;
@@ -76,19 +76,8 @@
 
  .main-navigation-link:hover {
     color: #8E0048;
- }
+ }*/
 
- /**************** Placeholder content ****************/
-
- .placeholder{
-  height: 100px;
-  width: 90%;
-  padding: 20px;
-  margin: 5%;
-  background-color: #e6007e;
-  display: flex;
-  justify-content: center;
- }
 
 /**************** Footer ****************/
 

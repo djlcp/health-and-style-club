@@ -1,4 +1,4 @@
 class PostContent < ApplicationRecord
-  belongs_to: post 
-  has_many: contents
+  belongs_to :post
+  belongs_to :content
 end

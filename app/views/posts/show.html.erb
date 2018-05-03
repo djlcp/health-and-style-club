@@ -1,12 +1,14 @@
 <h1><%= @post.title %></h1>
 <p><%= @post.body_text %></p>
-
-<% if can? :destroy, @post %>
-<%= link_to 'Delete this post', @post, method: :delete %>
+<%= image_tag(@post.image_url.to_s) %>
+<% @post.contents.each do |content| %>
+  <p>
+    <%= render "layouts/post_content/#{content.content_type}.html.erb", :@content => content %>
+  </p>
 <% end %>
 
-<div>
-  <% if can? :update, @post %>
-<%= link_to 'Edit this post', edit_post_path(@post) %>
+
+
+<% if can? :manage, @post %>
+<%= link_to 'edit post', edit_post_path, class: 'button show'  %>
 <% end %>
-</div>
