@@ -60,13 +60,14 @@ gem 'cocoon'
 # Use JQuery-Rails to use JQuery in rails (Implemented by Tiago)
 gem 'jquery-rails'
 
+# Use LetterOpener to view mailing actions in development (Implemented by Tiago)
+gem 'letter_opener', :group => :development
 
 
 
 
 
 # !!!!!!!!GROUPS!!!!!!!!
-
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -89,6 +90,6 @@ group :development do
 end
 
 group :production do
-  gem 'pg'
+  # gem 'pg'
   # ruby '2.5.1'
 end
