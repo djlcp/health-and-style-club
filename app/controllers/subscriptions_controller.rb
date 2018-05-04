@@ -3,16 +3,21 @@ class SubscriptionsController < ApplicationController
 
 def subscription_created_callback
   # # If the body contains the survey_name parameter...
-  if params[:id].present?
-    # Create a new Survey object based on the received parameters...
-    @subscription = Subscription.new(:id => params[:plan_description])
-    # subscription.url = params[:subscription_url]
-    # subscription.creator_email = params[:subscription_creator_email]
-    @subscription.save!
-  end
+  # if params[:id].present?
+  #   # Create a new Survey object based on the received parameters...
+  #   @subscription = Subscription.new(:id => params[:plan_description])
+  #   # subscription.url = params[:subscription_url]
+  #   # subscription.creator_email = params[:subscription_creator_email]
+  #   @subscription.save!
+  # end
   #
   #
   # render head :ok
+        respond_to do |format|
+          # format.html { redirect_to subscriptions_path, notice: 'Your subscription was deleted.' }
+          format.json { head :no_content }
+
+      end
 
   # The webhook doesn't require a response but let's make sure
   # we don't send anything
