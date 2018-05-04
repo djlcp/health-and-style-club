@@ -13,15 +13,11 @@ def subscription_created_callback
   #
   #
   # render head :ok
-        respond_to do |format|
-          # format.html { redirect_to subscriptions_path, notice: 'Your subscription was deleted.' }
-          format.json { head :no_content }
-
-      end
+  render json: {}, status: 200
 
   # The webhook doesn't require a response but let's make sure
   # we don't send anything
-  render :nothing => true
+  # render :nothing => true
 end
 
   def index
