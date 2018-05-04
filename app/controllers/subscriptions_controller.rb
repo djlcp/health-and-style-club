@@ -6,8 +6,8 @@ def subscription_created_callback
   if params[:status].present?
     # Create a new Survey object based on the received parameters...
     subscription = Subscription.new(:status => params[:paid_for]
-    subscription.url = params[:subscription_url]
-    subscription.creator_email = params[:subscription_creator_email]
+    # subscription.url = params[:subscription_url]
+    # subscription.creator_email = params[:subscription_creator_email]
     subscription.save!
   end
   #
