@@ -3,9 +3,9 @@ class SubscriptionsController < ApplicationController
 
 def subscription_created_callback
   # # If the body contains the survey_name parameter...
-  if params[:status].present?
+  if params[:id].present?
     # Create a new Survey object based on the received parameters...
-    @subscription = Subscription.new(:status => params[:paid_for])
+    @subscription = Subscription.new(:id => params[:plan_description])
     # subscription.url = params[:subscription_url]
     # subscription.creator_email = params[:subscription_creator_email]
     @subscription.save!
