@@ -2,11 +2,13 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :posts
-  resources :subscriptions
 
   scope '/subscriptions', :controller => :subscriptions do
     post :subscription_created_callback
   end
+
+  resources :subscriptions
+
 
   scope '/admin' do
     resources :users
