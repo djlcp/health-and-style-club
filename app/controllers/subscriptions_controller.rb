@@ -9,6 +9,7 @@ def subscription_created_callback
     # subscription.url = params[:subscription_url]
     # subscription.creator_email = params[:subscription_creator_email]
     # @subscription.save
+  else
   end
   #
   #
