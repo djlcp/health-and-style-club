@@ -8,7 +8,7 @@ def subscription_created_callback
     @subscription = Subscription.new(:status => params[:paid_for]
     # subscription.url = params[:subscription_url]
     # subscription.creator_email = params[:subscription_creator_email]
-    @subscription.save
+    # @subscription.save
   end
   #
   #
