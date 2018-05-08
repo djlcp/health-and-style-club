@@ -28,6 +28,10 @@
   color: #8E0048;
 }
 
+.expert-description {
+  padding: 0 10px 0 0;
+}
+
 /* Hide the images by default */
 .mySlides {
     display: none;
