@@ -1,5 +1,5 @@
 class SubscriptionsController < ApplicationController
-
+skip_before_action :verify_authenticity_token
  def subscription_created_callback
   # If the body contains the survey_name parameter...
   if params[:id].present?
@@ -8,7 +8,7 @@ class SubscriptionsController < ApplicationController
     # subscription.url = params[:subscription_url]
     # subscription.creator_email = params[:subscription_creator_email]
     # subscription.save!
-    # render :nothing => true 
+    # render :nothing => true
   end
   # The webhook doesn't require a response but let's make sure
   # we don't send anything
