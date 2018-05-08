@@ -8,7 +8,7 @@ class SubscriptionsController < ApplicationController
     # subscription.url = params[:subscription_url]
     # subscription.creator_email = params[:subscription_creator_email]
     # subscription.save!
-    # render :nothing => true
+    # render :nothing => true 
   end
   # The webhook doesn't require a response but let's make sure
   # we don't send anything
