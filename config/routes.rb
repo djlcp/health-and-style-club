@@ -1,16 +1,11 @@
 Rails.application.routes.draw do
-# <<<<<<< HEAD
-	
-# 	root to: 'pages#home'
-# 	get :contact, to: 'pages#contact'
-#   devise_for :admins
-#   get 'users/index'
-# =======
 
-# >>>>>>> develop
+  mount Ckeditor::Engine => '/ckeditor'
+
   devise_for :users
   resources :posts
   resources :subscriptions
+
 
   scope '/hooks', :controller => :hooks do
     post :subscription_created_callback
