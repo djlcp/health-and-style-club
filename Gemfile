@@ -34,7 +34,11 @@ gem 'jbuilder', '~> 2.5'
 
 
 # !!!!!!!!Implemented Gems!!!!!!!!
+gem "administrate-field-ckeditor", "~> 0.0.9"
 
+gem "administrate"
+
+gem 'administrate-field-carrierwave', '~> 0.3.2'
 
 # Use Carrierwave to add images to webapp (Implemented by Raymond)
 gem 'carrierwave', '~> 1.0'

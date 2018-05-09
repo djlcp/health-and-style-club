@@ -1,4 +1,4 @@
-<% if cannot? :manage, @post %>
+
 <% @posts.each do |post| %>
 
   <div class="link row clearfix">
@@ -9,9 +9,3 @@
 
 
   <% end %>
-<% end %>
-
-
-<% if can? :manage, @post %>
-<%= render 'layouts/postadmin', post: @post %>
-<% end %>
