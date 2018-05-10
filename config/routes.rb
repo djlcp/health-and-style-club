@@ -4,10 +4,12 @@ Rails.application.routes.draw do
   resources :posts
 
   scope '/subscriptions', :controller => :subscriptions do
-    post :subscription_created_callback
+    post :webhook_callback
   end
 
-  resources :subscriptions
+  resources :subscriptions do
+    get :new_sub, on: :collection
+  end
 
 
   scope '/admin' do

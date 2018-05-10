@@ -11,8 +11,8 @@
       <li><%= link_to "Subscriptions", subscriptions_path, class: 'main-navigation-link' %></a></li>
       <li><a href="" class="main-navigation-link">Navigation</a></li>
       <li><%= link_to 'Logout', destroy_user_session_path, method: :delete, class:'main-navigation-link' %></li>
-      <li><% if current_user != nil && current_user.role == "admin" %>
+      <!-- <li><#% if current_user != nil && current_user.role == "admin" %> -->
          <%= link_to 'login', users_path, class:'main-navigation-link login' %></p>
-      <% end %></li>
+      <!-- <#% end %></li> -->
       </ul>
     </nav>
