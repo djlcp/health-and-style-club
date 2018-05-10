@@ -1,6 +1,5 @@
 class SubscriptionsController < ApplicationController
-
-  skip_before_action :verify_authenticity_token
+  # skip_before_action :verify_authenticity_token
  def webhook_callback
   # If the body contains the survey_name parameter...
   subscription_id = params['content']['subscription']['id']
@@ -14,8 +13,8 @@ class SubscriptionsController < ApplicationController
 
  def new_sub
    # @subscription = Subscription.new(params.require(:chargebee_id).permit(:chargebee_id))
-   # @subscription.permited?
-   @subscription = Subscription.new(:chargebee_id => params['chargebee_id'], :user_id => current_user.id, :paid_for => false)
+   # @subscription.permited?s
+   @subscription = Subscription.new(chargebee_id: params['chargebee_id'], user_id: 1)
    @subscription.save!
    @subscription.errors
    redirect_to subscriptions_path
@@ -87,7 +86,7 @@ class SubscriptionsController < ApplicationController
   private
 
   def subscription_params
-    params.require(:subscription).permit(:id, :paid_for, :subscription_id)
+    params.require(:subscription).permit(:id, :paid_for, :subscription_id, :chargebee_id)
   end
 
   def set_link
