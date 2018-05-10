@@ -1,13 +1,15 @@
 class SubscriptionsController < ApplicationController
-  # skip_before_action :verify_authenticity_token
+  skip_before_action :verify_authenticity_token
  def webhook_callback
-  # If the body contains the survey_name parameter...
+  # If the body contains the survey_name parameter... Basic QWRtaW46aHNjbHVi
   subscription_id = params['content']['subscription']['id']
   subscription = Subscription.find_by(chargebee_id: subscription_id)
-  if subscription
-    subscription.update(paid_for: true)
+  auth = request.headers["Authorization"]
+  if auth == "Basic QWRtaW46aHNjbHVi"
+    if subscription
+      subscription.update(paid_for: true)
+    end
   end
-
   render json: {}, status: 200
  end
 
