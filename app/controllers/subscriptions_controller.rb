@@ -5,7 +5,7 @@ class SubscriptionsController < ApplicationController
   puts params
   puts request.format
   puts request.content_type
-  respond_to |format| do
+  respond_to do |format|
     format.json do
       puts 'JSON'
       render status: 200
