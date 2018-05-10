@@ -1,5 +1,4 @@
 
-
 <%= form_for @post do |form| %>
 
 
@@ -8,12 +7,12 @@
     <%= form.text_field :title %>
   </div>
 
+<%= form.text_area :body_text, id: 'editor' %>
 
-
-  <div class="form-group">
+  <!-- <div class="form-group">
     <%= form.cktext_area :body_text %>
+  </div> -->
 
-</div>
 
   <div class="form-group filechoose">
     <%= form.label :image %><br>
