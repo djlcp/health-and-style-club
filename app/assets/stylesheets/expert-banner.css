@@ -97,3 +97,18 @@
   to {opacity: 1}
 }
 
+/* Media Queries */
+
+@media only screen and (max-width: 500px){
+  .expert-banner-post {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .expert-banner-image {
+    height: 150px;
+  }
+
+}
