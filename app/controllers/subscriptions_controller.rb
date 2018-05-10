@@ -2,17 +2,14 @@ class SubscriptionsController < ApplicationController
   skip_before_action :verify_authenticity_token
  def webhook_callback
   # If the body contains the survey_name parameter...
-  puts params
-  puts request.format
-  puts request.content_type
   respond_to do |format|
     format.json do
       puts 'JSON'
-      render status: 200
+      render json: {}, status: 200
     end
     format.html do
       puts 'HTML'
-      render {key: 'just work!'}.as_json
+      render json: {}, status: 200
     end
   end
 
