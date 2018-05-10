@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   mount Ckeditor::Engine => '/ckeditor'
 
   devise_for :users
@@ -16,7 +17,8 @@ Rails.application.routes.draw do
   end
   resources :posts
   resources :invoices
-  root to: 'home#index'
+
+  root to: 'pages#home'
 
   resources :masterclasses, :videos, :events, :documents
 end
