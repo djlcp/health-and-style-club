@@ -15,5 +15,8 @@
 <!--</form>-->
 
 <% @subscriptions.each do |s| %>
-<%= s %>
+<%= s.id %>
+<%= s.chargebee_id %>
+<%= s.created_at %>
+</br>
 <% end %>
