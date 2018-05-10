@@ -63,6 +63,8 @@ gem 'jquery-rails'
 # Use LetterOpener to view mailing actions in development (Implemented by Tiago)
 gem 'letter_opener', :group => :development
 
+#
+gem 'ckeditor', github: 'galetahub/ckeditor'
 
 
 

@@ -11,7 +11,7 @@ class SubscriptionsController < ApplicationController
  def new_sub
    # @subscription = Subscription.new(params.require(:chargebee_id).permit(:chargebee_id))
    # @subscription.permited?
-   @subscription = Subscription.new(:id => 1, :chargebee_id => params['chargebee_id'])
+   @subscription = Subscription.new(:chargebee_id => params['chargebee_id'], :user_id => current_user.id)
    @subscription.save!
    @subscription.errors
    redirect_to subscriptions_path
