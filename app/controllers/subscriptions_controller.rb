@@ -12,7 +12,7 @@ class SubscriptionsController < ApplicationController
     end
     format.html do
       puts 'HTML'
-      render head :ok
+      render {key: 'just work!'}.as_json
     end
   end
 
