@@ -1,16 +1,17 @@
 class SubscriptionsController < ApplicationController
-
+  skip_before_action :verify_authenticity_token
  def webhook_callback
   # If the body contains the survey_name parameter...
-  if params[:id].present?
+  if params[:object].present?
     # Create a new Survey object based on the received parameters...
+    render :nothing => true
   end
   render :nothing => true
  end
 
  def new_sub
    # @subscription = Subscription.new(params.require(:chargebee_id).permit(:chargebee_id))
-   # @subscription.permited?
+   # @subscription.permited?s
    @subscription = Subscription.new(:chargebee_id => params['chargebee_id'], :user_id => 1)
    @subscription.save!
    @subscription.errors
