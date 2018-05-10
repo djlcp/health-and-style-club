@@ -1,0 +1,14 @@
+<%= render "layouts/adminstyleheader" %>
+
+<table>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= link_to user.email, users_path(user), class:'tableitmes' %></td>
+      <td class='tableitmes'><%= user.role %></td>
+      <td><%= link_to 'Edit', edit_user_path(user), class:'tablelinks' %></td>
+      <td><%= link_to 'Delete', user_path(user), method: :delete, data: { confirm: "You sure?" },class:'tablelinks' %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= render "layouts/adminstylefooter" %>
