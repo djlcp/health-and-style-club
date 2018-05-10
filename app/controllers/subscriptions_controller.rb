@@ -4,11 +4,18 @@ class SubscriptionsController < ApplicationController
   # If the body contains the survey_name parameter...
   puts params
   puts request.format
-  if params['object'].present?
-    # Create a new Survey object based on the received parameters...
-    render status: 200
+  puts request.content_type
+  respond_to |format| do
+    format.json do
+      puts 'JSON'
+      render status: 200
+    end
+    format.html do
+      puts 'HTML'
+      render head :ok
+    end
   end
-  render status: 200
+
  end
 
  def new_sub
