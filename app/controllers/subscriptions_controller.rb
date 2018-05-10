@@ -2,11 +2,13 @@ class SubscriptionsController < ApplicationController
   skip_before_action :verify_authenticity_token
  def webhook_callback
   # If the body contains the survey_name parameter...
+  puts params
+  puts request.format
   if params['object'].present?
     # Create a new Survey object based on the received parameters...
     render status: 200
   end
-  render :nothing => true
+  render status: 200
  end
 
  def new_sub
