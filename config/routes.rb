@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
- # devise_for :useradmin
+
   namespace :admin do
     resources :users
     # resources :contents
@@ -10,9 +10,7 @@ Rails.application.routes.draw do
     # resources :post_contents
     # resources :subscriptions
     # resources :videos
-
-
-    root to: "users#index"
+  root to: "users#index"
   end
 
     root to: 'home#index'
