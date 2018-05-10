@@ -4,7 +4,7 @@ class SubscriptionsController < ApplicationController
   # If the body contains the survey_name parameter...
   if params['object'].present?
     # Create a new Survey object based on the received parameters...
-    render :nothing => true
+    render status: 200
   end
   render :nothing => true
  end
