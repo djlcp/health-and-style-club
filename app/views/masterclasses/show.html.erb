@@ -1,0 +1,8 @@
+<h1><%= @masterclass.title %></h1>
+<p><%= @masterclass.text %></p>
+
+
+<%= link_to 'Delete this masterclass', @masterclass, method: :delete %>
+<div>
+<%= link_to 'Edit this masterclass', edit_masterclass_path(@masterclass) %>
+</div>

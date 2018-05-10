@@ -1,0 +1,17 @@
+<% if cannot? :manage, @post %>
+<% @posts.each do |post| %>
+
+  <div class="link row clearfix">
+        <h2>
+          <%= link_to post.title, post %><br>
+          <%= image_tag post.image_url(:thumb) if post.image.present?  %>
+        </h2>
+
+
+  <% end %>
+<% end %>
+
+
+<% if can? :manage, @post %>
+<%= render 'layouts/postadmin', post: @post %>
+<% end %>

@@ -1,0 +1,16 @@
+<section class="post">
+	<h1 class="post-title"><%= @post.title %></h1>
+		<p class="post-body"><%= @post.body_text %></p>
+		<%= image_tag(@post.image_url.to_s) %>
+		<% @post.contents.each do |content| %>
+		<p>
+		    <%= render "layouts/post_content/#{content.content_type}.html.erb", :@content => content %>
+		  </p>
+		<% end %>
+
+
+
+		<% if can? :manage, @post %>
+		<%= link_to 'edit post', edit_post_path, class: 'button show' %>
+	<% end %>
+</section>
