@@ -34,10 +34,13 @@ gem 'jbuilder', '~> 2.5'
 
 
 # !!!!!!!!Implemented Gems!!!!!!!!
+# Use administrate-field-ckeditor to edit text in admin panel
 gem "administrate-field-ckeditor", "~> 0.0.9"
 
+# use administrate for backend admin panel
 gem "administrate"
 
+# use administrate-field-carrierwave for uploading images in the admin panel
 gem 'administrate-field-carrierwave', '~> 0.3.2'
 
 # Use Carrierwave to add images to webapp (Implemented by Raymond)

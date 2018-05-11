@@ -70,6 +70,6 @@ class PostDashboard < Administrate::BaseDashboard
   # across all pages of the admin dashboard.
   #
   # def display_resource(post)
-  #   "Post ##{post.id}"
+  #  "Users ##{user.id}"
   # end
 end

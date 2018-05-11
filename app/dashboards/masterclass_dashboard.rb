@@ -12,7 +12,7 @@ class MasterclassDashboard < Administrate::BaseDashboard
     events: Field::HasMany,
     documents: Field::HasMany,
     id: Field::Number,
-    title: Field::String,
+    title: Field::Ckeditor,
     text: Field::Text,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
