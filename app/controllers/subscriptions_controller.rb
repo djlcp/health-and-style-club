@@ -1,5 +1,5 @@
 class SubscriptionsController < ApplicationController
-
+  before_action :authenticate_user!
 
 # def subscription_created_callback
 #   # If the body contains the survey_name parameter...
