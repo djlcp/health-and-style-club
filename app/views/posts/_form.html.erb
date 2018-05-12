@@ -8,10 +8,12 @@
     <%= form.text_field :title %>
   </div>
 
+  <textarea name="content" id="ck_editor">
+  <%= form.cktext_area :body_text %>
+  </textarea>
 
 
   <div class="form-group">
-    <%= form.cktext_area :body_text %>
 
 </div>
 
