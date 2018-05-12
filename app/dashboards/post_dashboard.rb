@@ -29,8 +29,9 @@ class PostDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :user,
+    :title,
     :comments,
-    :post_contents,
+    # :post_contents,
     :contents,
   ].freeze
 
@@ -38,10 +39,9 @@ class PostDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :user,
-    :comments,
-    :post_contents,
-    :contents,
-    :id,
+    # :post_contents,
+    # :contents,
+    # :id,
     :title,
     :body_text,
     :paid_for,
@@ -49,6 +49,7 @@ class PostDashboard < Administrate::BaseDashboard
     :created_at,
     :updated_at,
     :image,
+    :comments,
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -69,7 +70,8 @@ class PostDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how posts are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(post)
-  #  "Users ##{user.id}"
-  # end
+  def display_resource(post)
+  # Post.title
+  # User.find(post.user_id).email
+  end
 end

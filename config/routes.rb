@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   root to: "users#index"
   end
 
-    root to: 'home#index'
+    root to: 'pages#home'
 
   mount Ckeditor::Engine => '/ckeditor'
 
