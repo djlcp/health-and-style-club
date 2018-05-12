@@ -1,7 +1,16 @@
-<h1><%= @post.title %></h1>
-<p><%= raw @post.body_text %></p>
-<%= image_tag(@post.image_url.to_s) %>
 
+<section class="post">
+
+Add in option here for Hero image
+
+	<h1 class="post-title"><%= @post.title %></h1>
+		<p class="post-body"><%= sanitize @post.body_text %></p>
+		<% @post.contents.each do |content| %>
+		<p>
+		    <%= render "layouts/post_content/#{content.content_type}.html.erb", :@content => content %>
+		  </p>
+		<% end %>
+>>>>>>> ckeditorlb
 
 
 
