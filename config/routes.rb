@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
+  resources :photos
   mount Ckeditor::Engine => '/ckeditor'
 
   devise_for :users
   resources :posts
   resources :subscriptions
+  resources :photos, only: [:create]
 
 
   scope '/hooks', :controller => :hooks do
