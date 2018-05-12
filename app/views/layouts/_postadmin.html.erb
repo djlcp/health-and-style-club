@@ -1,0 +1,13 @@
+<%= render "layouts/adminstyleheader" %>
+
+  <% @posts.each do |post| %>
+
+    <div class="link row clearfix">
+          <h2>
+            <%= link_to post.title, post %><br>
+          </h2>
+
+
+  <% end %>
+
+<%= render "layouts/adminstylefooter" %>

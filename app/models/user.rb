@@ -1,12 +1,19 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable,
+  devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :posts
   belongs_to :useradmin
   has_one :subscription
 
   enum role: { subscriber: 1, contributor: 2, admin: 3}
+
+  after_create :set_role
+
+  def set_role
+    return if self.role
+    self.update_column(:role, 1)
+  end
 
 end

@@ -17,4 +17,5 @@
 //= require cocoon
 //= require turbolinks
 //= require ckeditor/init
+//= require trix
 //= require_tree .
