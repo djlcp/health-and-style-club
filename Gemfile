@@ -61,7 +61,7 @@ gem 'letter_opener', :group => :development
 #
 gem 'ckeditor', github: 'galetahub/ckeditor'
 
-
+gem 'fog-aws'
 
 
 # !!!!!!!!GROUPS!!!!!!!!
