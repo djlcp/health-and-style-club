@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
 
-  mount Ckeditor::Engine => '/ckeditor'
 
+  resources :photos 
   devise_for :users
   resources :posts
   resources :subscriptions
+  resources :photos, only: [:create]
 
+  resources :attachments
 
   scope '/hooks', :controller => :hooks do
     post :subscription_created_callback

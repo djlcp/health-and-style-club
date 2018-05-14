@@ -1,5 +1,11 @@
 {
-  "name": "hsclub",
-  "private": true,
-  "dependencies": {}
+  "scripts": {
+    "start": "gulp watch",
+    "build": "gulp build"
+  },
+  "devDependencies": {
+    "gulp": "3.9.1",
+    "gulp-cli": "1.2.1",
+    "gulp-concat": "2.6.0"
+  }
 }

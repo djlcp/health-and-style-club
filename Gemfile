@@ -60,8 +60,15 @@ gem 'letter_opener', :group => :development
 
 #
 gem 'ckeditor', github: 'galetahub/ckeditor'
+gem 'trix'
+gem 'shrine'
+
 
 gem 'fog-aws'
+=======
+# gem 'npm-pipeline-rails'
+
+
 
 
 # !!!!!!!!GROUPS!!!!!!!!

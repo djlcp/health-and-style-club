@@ -42,3 +42,7 @@ bower.json
 
 # Ignore Byebug command history file.
 .byebug_history
+
+/node_modules
+/vendor/assets/stylesheets/gulp
+/vendor/assets/javascripts/gulp
