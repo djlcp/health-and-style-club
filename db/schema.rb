@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180505121259) do
+ActiveRecord::Schema.define(version: 20180512142350) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
@@ -66,6 +66,12 @@ ActiveRecord::Schema.define(version: 20180505121259) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "photos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text "image_data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "post_contents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "post_id"
     t.integer "content_id"
@@ -116,6 +122,9 @@ ActiveRecord::Schema.define(version: 20180505121259) do
     t.string "state"
     t.string "country"
     t.string "post_code"
+    t.string "chargebee_id"
+    t.datetime "event_last_modified_at"
+    t.text "chargebee_data"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

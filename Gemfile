@@ -63,9 +63,12 @@ gem 'jquery-rails'
 # Use LetterOpener to view mailing actions in development (Implemented by Tiago)
 gem 'letter_opener', :group => :development
 
-#
+# Use CKEditor to design post conttents easier (Implemented by Liam)
 gem 'ckeditor', github: 'galetahub/ckeditor'
 
+
+
+# gem 'npm-pipeline-rails'
 
 
 
