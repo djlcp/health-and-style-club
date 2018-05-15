@@ -63,10 +63,9 @@ gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'trix'
 gem 'shrine'
 
-
 gem 'fog-aws'
-=======
-# gem 'npm-pipeline-rails'
+
+
 
 
 
