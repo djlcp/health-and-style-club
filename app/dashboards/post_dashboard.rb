@@ -19,7 +19,8 @@ class PostDashboard < Administrate::BaseDashboard
     state: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    image: Field::Carrierwave.with_options(image: :standard)
+    # image: Field::Shrine
+    # image: Field::Carrierwave.with_options(image: :standard)
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -31,7 +32,7 @@ class PostDashboard < Administrate::BaseDashboard
     :user,
     :title,
     :comments,
-    # :post_contents,
+    :post_contents,
     :contents,
   ].freeze
 
@@ -39,7 +40,7 @@ class PostDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :user,
-    # :post_contents,
+    :post_contents,
     # :contents,
     # :id,
     :title,
@@ -48,7 +49,7 @@ class PostDashboard < Administrate::BaseDashboard
     :state,
     :created_at,
     :updated_at,
-    :image,
+    # :image,
     :comments,
   ].freeze
 
@@ -58,20 +59,20 @@ class PostDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :user,
     # :comments,
-    # :post_contents,
-    # :contents,
+    :post_contents,
+    :contents,
     :title,
     :body_text,
     # :paid_for,
     # :state,
-    :image,
+    # :image,
   ].freeze
 
   # Overwrite this method to customize how posts are displayed
   # across all pages of the admin dashboard.
   #
-  def display_resource(post)
+  # def display_resource(post)
   # Post.title
   # User.find(post.user_id).email
-  end
+  # end
 end

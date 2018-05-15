@@ -12,8 +12,8 @@ class MasterclassDashboard < Administrate::BaseDashboard
     events: Field::HasMany,
     documents: Field::HasMany,
     id: Field::Number,
-    title: Field::Ckeditor,
-    text: Field::Text,
+    title: Field::Text,
+    text: Field::Ckeditor,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze

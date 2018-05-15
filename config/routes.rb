@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     # resources :events
     resources :masterclasses
     resources :posts
-    # resources :post_contents
+    # resources :posts_contents
     # resources :subscriptions
     # resources :videos
   root to: "users#index"
@@ -20,7 +20,9 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :photos 
+  resources :posts_contents
+  resources :contents
+  resources :photos
   resources :posts
   resources :subscriptions
   resources :masterclasses, :videos, :events, :documents
