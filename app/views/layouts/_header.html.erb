@@ -13,9 +13,6 @@
       <% if current_user == nil%>
          <li><%= link_to 'sign up', new_user_registration_path, class:'main-navigation-link' %></li>
          <li><%= link_to 'login', new_user_session_path, class:'main-navigation-link login' %></li>
-         <!-- <li><% if current_user != nil && current_user.role == "admin" %>
-            <%= link_to 'login admin', posts_path, class:'main-navigation-link login' %></p>
-         <% end %></li> -->
       <% else %>
         <li><%= link_to 'Logout', destroy_user_session_path, method: :delete, class:'main-navigation-link' %></li>
       <% end %>
