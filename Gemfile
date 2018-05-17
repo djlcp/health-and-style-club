@@ -30,6 +30,19 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+# !!!!!!!!Implemented Gems!!!!!!!!
+# gem 'administrate-field-shrine', '~> 0.0.1'
+
+# gem 'administrate-field-trix'
+
+# Use administrate-field-ckeditor to edit text in admin panel
+gem "administrate-field-ckeditor", "~> 0.0.9"
+#
+# # use administrate for backend admin panel
+gem "administrate"
+#
+# # use administrate-field-carrierwave for uploading images in the admin panel
+gem 'administrate-field-carrierwave', '~> 0.3.2'
 # Use Carrierwave to add images to webapp (Implemented by Raymond)
 gem 'carrierwave', '~> 1.0'
 
