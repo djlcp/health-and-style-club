@@ -1,14 +1,24 @@
+
 <% if cannot? :manage, @post %>
-<% @posts.each do |post| %>
+	<div class="all-posts-wrapper">
+	<% @posts.each do |post| %>
 
-  <div class="link row clearfix">
-        <h2>
-          <%= link_to post.title, post %><br>
-          <%= image_tag post.image_url(:thumb) if post.image.present?  %>
-        </h2>
+		
+			<div class="post-thumb">
+			  <div class="link-row-clearfix">
+			        <div class="post-image-thumb">
+			        	<%= image_tag post.image_url(:thumb) if post.image.present?  %>		
+			        </div>
 
+			        <div class="post-title-thumb">
+			          <%= link_to post.title, post %>  	
+			        </div><br>
+			  </div>
+			</div>
 
-  <% end %>
+	<% end %>
+</div>
+
 <% end %>
 
 

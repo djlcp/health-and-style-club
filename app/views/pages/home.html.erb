@@ -1,7 +1,9 @@
 
 <section class="hero homepage-banner-<%= rand(1..3) %>">
 	<div class ="image-message">
-		<h1 class="hero-title">Welcome message<br> </h1>
+		  <% if current_user %>
+        <h1 class="hero-title">Welcome <%= current_user.email %><br> </h1>
+      <% end %>
 		<p class="hero-description">Lorem ipsum dolor sit amet, consectetur. 
 		<br>Consectetur, doloribus ut obcaecati odio accusantium. Voluptatem.
 		<br>Consectetur, doloribus ut obcaecati odio accusantium. Voluptatem.</p>
@@ -45,6 +47,3 @@
   <span class="dot js-dot" data-number="3"></span>
 </div>
 
-  <% if current_user %>
-    <p>Welcome <%= current_user.email %></p>
-  <% end %>
