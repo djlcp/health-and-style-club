@@ -76,13 +76,7 @@ gem 'letter_opener', :group => :development
 
 #
 gem 'ckeditor', github: 'galetahub/ckeditor'
-gem 'trix'
 gem 'shrine'
-
-# gem 'npm-pipeline-rails'
-
-
-
 # !!!!!!!!GROUPS!!!!!!!!
 
 # Use Capistrano for deployment

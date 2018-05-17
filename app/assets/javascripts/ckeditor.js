@@ -5,6 +5,10 @@ CKEDITOR.editorConfig = function (config) {
     ["Bold",  "Italic",  "Underline",  "Strike",  "-",  "Subscript",  "Superscript"],
   ];
   config.toolbar = "mini";
+  // config.extraPlugins = 'videodetector';
+
+
+
 
   // ... rest of the original config.js  ...
 }
