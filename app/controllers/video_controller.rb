@@ -1,4 +1,5 @@
 class VideoController < ApplicationController
+  before_action :authenticate_user!
   def create
     @video = video.new(params.require(:video).permit(:title, :link))
 

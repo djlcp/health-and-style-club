@@ -1,4 +1,5 @@
 
+
 <% if cannot? :manage, @post %>
 	<div class="all-posts-wrapper">
 	<% @posts.each do |post| %>
@@ -19,9 +20,13 @@
 	<% end %>
 </div>
 
-<% end %>
+<!-- <<<<<<< HEAD
+<#% end %>
 
 
-<% if can? :manage, @post %>
-<%= render 'layouts/postadmin', post: @post %>
-<% end %>
+<#% if can? :manage, @post %>
+<#%= render 'layouts/postadmin', post: @post %>
+<#% end %>
+======= -->
+  <% end %>
+

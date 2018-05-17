@@ -19,9 +19,10 @@
 		  </p>
 		<% end %>
 
+<!-- 
+Add in option here for Hero image
 
+	<h1 class="post-title"><%= @post.title %></h1>
+		<p class="post-body"><%= sanitize @post.body_text %></p> -->
 
-		<% if can? :manage, @post %>
-		<%= link_to 'edit post', edit_post_path, class: 'button show' %>
-	<% end %>
 </section>

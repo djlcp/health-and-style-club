@@ -7,4 +7,6 @@ mount_uploader :image, Picture
   has_many :comments
   has_many :post_contents
   has_many :contents, through: :post_contents
+
+
 end

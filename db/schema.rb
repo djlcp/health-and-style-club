@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180505121259) do
+ActiveRecord::Schema.define(version: 20180512142350) do
 
   create_table "admin", id: :integer, unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
   end
@@ -25,6 +25,14 @@ ActiveRecord::Schema.define(version: 20180505121259) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["type"], name: "index_ckeditor_assets_on_type"
+  end
+
+  create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "post_id"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_comments_on_post_id"
   end
 
   create_table "contents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -56,6 +64,12 @@ ActiveRecord::Schema.define(version: 20180505121259) do
   create_table "masterclasses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
     t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "photos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text "image_data"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -128,4 +142,5 @@ ActiveRecord::Schema.define(version: 20180505121259) do
     t.integer "masterclass_id"
   end
 
+  add_foreign_key "comments", "posts"
 end

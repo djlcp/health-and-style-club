@@ -34,7 +34,18 @@ gem 'jbuilder', '~> 2.5'
 
 
 # !!!!!!!!Implemented Gems!!!!!!!!
+# gem 'administrate-field-shrine', '~> 0.0.1'
 
+# gem 'administrate-field-trix'
+
+# Use administrate-field-ckeditor to edit text in admin panel
+gem "administrate-field-ckeditor", "~> 0.0.9"
+#
+# # use administrate for backend admin panel
+gem "administrate"
+#
+# # use administrate-field-carrierwave for uploading images in the admin panel
+gem 'administrate-field-carrierwave', '~> 0.3.2'
 
 # Use Carrierwave to add images to webapp (Implemented by Raymond)
 gem 'carrierwave', '~> 1.0'
@@ -48,10 +59,10 @@ gem 'cancancan', '~> 1.13', '>= 1.13.1'
 # Use Devise for user authentication (Implemented by Raymond)
 gem 'devise', '~> 4.2'
 
-#Used for generating pdf documents (Implemented by Tiago)
+# Used for generating pdf documents (Implemented by Tiago)
 gem 'wicked_pdf'
 
-#Required to use wicked_pdf (Implemented by Tiago)
+# Required to use wicked_pdf (Implemented by Tiago)
 gem 'wkhtmltopdf-binary'
 
 # Use Cocoon to create nested forms (Implemented by Kristin)
@@ -63,9 +74,18 @@ gem 'jquery-rails'
 # Use LetterOpener to view mailing actions in development (Implemented by Tiago)
 gem 'letter_opener', :group => :development
 
-#
+# Use CKEditor to design post conttents easier (Implemented by Liam)
 gem 'ckeditor', github: 'galetahub/ckeditor'
 
+# Use DelayedJob to send massive actions into the background of the app (Implemented by Tiago)
+gem 'delayed_job_active_record'
+
+# Use Whenever to provide a clear syntax for writing and deploying cron jobs (Implemented by Tiago)
+gem 'whenever'
+
+
+
+# gem 'npm-pipeline-rails'
 
 
 
@@ -92,6 +112,6 @@ group :development do
 end
 
 group :production do
-  # gem 'pg'
-  # ruby '2.5.1'
+  gem 'pg'
+  ruby '2.5.1'
 end
