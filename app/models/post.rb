@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
 
+mount_uploader :image, Picture
 
   belongs_to :user
   # belongs_to :masterclass
