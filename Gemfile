@@ -48,10 +48,10 @@ gem 'cancancan', '~> 1.13', '>= 1.13.1'
 # Use Devise for user authentication (Implemented by Raymond)
 gem 'devise', '~> 4.2'
 
-#Used for generating pdf documents (Implemented by Tiago)
+# Used for generating pdf documents (Implemented by Tiago)
 gem 'wicked_pdf'
 
-#Required to use wicked_pdf (Implemented by Tiago)
+# Required to use wicked_pdf (Implemented by Tiago)
 gem 'wkhtmltopdf-binary'
 
 # Use Cocoon to create nested forms (Implemented by Kristin)
@@ -65,6 +65,12 @@ gem 'letter_opener', :group => :development
 
 # Use CKEditor to design post conttents easier (Implemented by Liam)
 gem 'ckeditor', github: 'galetahub/ckeditor'
+
+# Use DelayedJob to send massive actions into the background of the app (Implemented by Tiago)
+gem 'delayed_job_active_record'
+
+# Use Whenever to provide a clear syntax for writing and deploying cron jobs
+gem 'whenever'
 
 
 
