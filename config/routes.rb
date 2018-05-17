@@ -2,15 +2,24 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
+
+  #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  #!!!!!!!!!GEM REQUIREMENTS!!!!!!!!!!!!
+  #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+  mount Ckeditor::Engine => '/ckeditor'
+
+
   #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   #!!!!!!!!!!!!!!GENERAL!!!!!!!!!!!!!!!!
   #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
   resources :photos
   resources :photos, only: [:create]
-
   resources :posts
-
+  resources :contents
+  resources :comments
+  resources :posts_contents
   resources :attachments
 
 
@@ -27,9 +36,18 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  scope '/admin' do
+  namespace :admin do
     resources :users
+    # resources :contents
+    # resources :documents
+    # resources :events
+    resources :masterclasses
+    resources :posts
+    # resources :posts_contents
+    # resources :subscriptions
+    # resources :videos
   end
+
 
 
   #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -43,5 +61,6 @@ Rails.application.routes.draw do
   resources :subscriptions do
     get :new_sub, on: :collection
   end
+
 
 end

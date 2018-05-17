@@ -34,7 +34,18 @@ gem 'jbuilder', '~> 2.5'
 
 
 # !!!!!!!!Implemented Gems!!!!!!!!
+# gem 'administrate-field-shrine', '~> 0.0.1'
 
+# gem 'administrate-field-trix'
+
+# Use administrate-field-ckeditor to edit text in admin panel
+gem "administrate-field-ckeditor", "~> 0.0.9"
+#
+# # use administrate for backend admin panel
+gem "administrate"
+#
+# # use administrate-field-carrierwave for uploading images in the admin panel
+gem 'administrate-field-carrierwave', '~> 0.3.2'
 
 # Use Carrierwave to add images to webapp (Implemented by Raymond)
 gem 'carrierwave', '~> 1.0'
@@ -69,7 +80,7 @@ gem 'ckeditor', github: 'galetahub/ckeditor'
 # Use DelayedJob to send massive actions into the background of the app (Implemented by Tiago)
 gem 'delayed_job_active_record'
 
-# Use Whenever to provide a clear syntax for writing and deploying cron jobs
+# Use Whenever to provide a clear syntax for writing and deploying cron jobs (Implemented by Tiago)
 gem 'whenever'
 
 
