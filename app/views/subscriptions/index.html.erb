@@ -1,42 +1,82 @@
+<style>
+  .subs{
+    text-align: center;
+    padding-bottom: 0px;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+
+  .subsa {
+    text-align: center;
+    padding-bottom: 10px;
+    text-decoration: none;
+  }
+</style>
+
+
 <div class="subscription-wrapper">
   <div class="subscription-page-container">
-    <div class="subscription-container" style="flex-direction: column">
-      <style>
-        .subs{
-          text-align: center;
-          padding-bottom: 5px;
-          text-decoration: none;
-        }
-        .paid{
-          color: green;
-        }
-
-        .unpaid {
-          color: red;
-        }
-      </style>
-      <h1 class="subs" style="padding-bottom: 20px;">Subscriptions </h1>
-      <h2 class="subs">Why should you subscribe?</h2>
-      <p class="subs">Reason 1</p>
-      <p class="subs">Reason 1</p>
-      <p class="subs">Reason 1</p>
-    </div>
-  </div>
-  <div class="subscription-page-container">
     <div class="subscription-container">
-      <a href="javascript:void(0)" data-cb-type="checkout" data-cb-plan-id="premium" class="subscription-button">Subscribe</a>
-      <a href="javascript:void(0)" data-cb-type="portal" class="subscription-button">Manage subscription</a>
+
+      <% if current_user.subscription %>
+        <% sub = current_user.subscription %>
+        <% if current_user.subscription.paid_for  %>
+
+<!--          !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+<!--          !!!!!!!!ACTIVE SUBSCRIPTION!!!!!!!!!!-->
+<!--          !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+
+          <div class="subscription-container" style="flex-direction: column">
+
+            <h1 class="subs" style="padding-bottom: 20px; width: 100%">Your subscription is active </h1>
+            <h2 class="subs">Subscription Id</h2>
+            <p class="subsa"><%= sub.id %></p>
+            <h2 class="subs">User ID</h2>
+            <p class="subsa"><%= sub.user_id %></p>
+            <h2 class="subs">Chargebee ID</h2>
+            <p class="subsa"><%= sub.chargebee_id %></p>
+            <a href="javascript:void(0)" data-cb-type="portal" class="subscription-button" style="width: 100%">Manage subscription</a>
+          </div>
+        <% else %>
+
+
+
+
+
+<!--          !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+<!--          !!!!!!!INACTIVE SUBSCRIPTION!!!!!!!!!-->
+<!--          !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+
+
+          <div class="subscription-container" style="flex-direction: column">
+
+            <h1 class="subs" style="padding-bottom: 20px; width: 100%">Your subscription is inactive </h1>
+            <h2 class="subs">Subscription Id</h2>
+            <p class="subsa"><%= sub.id %></p>
+            <h2 class="subs">User ID</h2>
+            <p class="subsa"><%= sub.user_id %></p>
+            <h2 class="subs">Chargebee ID</h2>
+            <p class="subsa"><%= sub.chargebee_id %></p>
+            <a href="javascript:void(0)" data-cb-type="checkout" data-cb-plan-id="premium" class="subscription-button" style="width: 100%">Subscribe</a>
+          </div>
+        <% end %>
+      <% else %>
+
+
+
+<!--          !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+<!--          !!!!!!!!!!NO SUBSCRIPTION!!!!!!!!!!!!-->
+<!--          !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+        <div class="subscription-container" style="flex-direction: column">
+          <h1 class="subs" style="padding-bottom: 20px;">Subscriptions </h1>
+          <h2 class="subs">Why should you subscribe?</h2>
+          <p class="subs">Reason 1</p>
+          <p class="subs">Reason 1</p>
+          <p class="subs">Reason 1</p>
+          <a href="javascript:void(0)" data-cb-type="checkout" data-cb-plan-id="premium" class="subscription-button" style="width: 100%">Subscribe</a>
+        </div>
+      <% end %>
+
     </div>
   </div>
-  <% @subscriptions.each do |s| %>
-    <h3>Subscription ID <small class="paid"><%= s.id %></small></h3>
-    <h3>Chargebee ID <small class="paid"><%= s.chargebee_id %></small></h3>
-    <h3>User ID <small class="paid"><%= s.user_id %></small></h3>
-    <h3>Created at <small class="paid"><%= s.created_at %></small></h3>
-    <% if s.paid_for? %>
-      <h3 class="paid">PAID FOR</h3>
-    <% else %>
-      <h3 class="unpaid">NOT PAID FOR</h3>
-    <% end %>
-  <% end %>
 </div>
