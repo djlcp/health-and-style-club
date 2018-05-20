@@ -1,0 +1,22 @@
+.items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  padding: 10px;
+}
+
+.admin {
+  padding: 10px;
+}
+
+.username {
+  padding: 10px;
+}
+
+.logout {
+  color: red;
+  text-decoration: none;
+  padding: 10px;
+}

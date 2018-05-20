@@ -4,5 +4,20 @@ Add in option here for Hero image
 
 	<h1 class="post-title"><%= @post.title %></h1>
 		<p class="post-body"><%= sanitize @post.body_text %></p>
+    <p><%= image_tag @post.image_was if @post.image.present?  %></p>
+
+
+		<% @comments.each do |comment| %>
+		  <div>
+		    <strong><%= comment.user_id %></strong>
+		    <br>
+				<p><%= comment.title %></p>
+		    <p><%= comment.body %></p>
+		    <!-- <p><%= link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } %></p> -->
+		  </div>
+		<% end %>
+		<%= render partial: 'comments/form', locals: { comment: @comment } %>
+
+
 
 </section>

@@ -34,9 +34,6 @@ gem 'jbuilder', '~> 2.5'
 
 
 # !!!!!!!!Implemented Gems!!!!!!!!
-# gem 'administrate-field-shrine', '~> 0.0.1'
-
-# gem 'administrate-field-trix'
 
 # Use administrate-field-ckeditor to edit text in admin panel
 gem "administrate-field-ckeditor", "~> 0.0.9"
@@ -78,9 +75,6 @@ gem 'letter_opener', :group => :development
 gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'trix'
 gem 'shrine'
-
-# gem 'npm-pipeline-rails'
-
 
 
 # !!!!!!!!GROUPS!!!!!!!!

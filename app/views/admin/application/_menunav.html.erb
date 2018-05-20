@@ -1,0 +1,5 @@
+<div class="items">
+  <h3 class="admin">admin</h3>
+  <h3 class="username"><%= current_user.email %></h3>
+  <h3><%= link_to 'Logout', destroy_user_session_path, method: :delete, class:'logout' %></h3>
+</div>
