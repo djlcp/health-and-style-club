@@ -8,6 +8,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
+  config.secret_key = '53b45876a052b6c585932090e18ef444b13699a01b27c053a66ceaf0dc2bf4511d62be40c2cdf6320c6775eb63dde2220d3b10ffd8a23123737db1a4d003e142'
   # config.secret_key = '25773883a86b8934a9b327080efc346bf92dddcec385fa2787443889b8acd23297ac34272aa214e71412122388feff00538d58d910b17ec9fe8e383091222711'
   
   # ==> Controller configuration
