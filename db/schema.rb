@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180726203208) do
+ActiveRecord::Schema.define(version: 20180726203205) do
 
   create_table "ckeditor_assets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "data_file_name", null: false
@@ -26,10 +26,20 @@ ActiveRecord::Schema.define(version: 20180726203208) do
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "post_id"
+    t.integer "user_id"
+    t.text "title"
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_comments_on_post_id"
+  end
+
+  create_table "contents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "content_type"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "file_url"
   end
 
   create_table "documents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -78,11 +88,15 @@ ActiveRecord::Schema.define(version: 20180726203208) do
     t.string "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
     t.string "image"
   end
 
   create_table "subscriptions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.datetime "expiry_date"
+    t.string "plan_name"
+    t.text "plan_description"
+    t.decimal "plan_price", precision: 4, scale: 2
+    t.date "expiry_date"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -93,6 +107,7 @@ ActiveRecord::Schema.define(version: 20180726203208) do
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.integer "role"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -101,9 +116,8 @@ ActiveRecord::Schema.define(version: 20180726203208) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "subscription"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string "first_name"
     t.string "surname"
     t.string "middle_names"
@@ -114,7 +128,8 @@ ActiveRecord::Schema.define(version: 20180726203208) do
     t.string "state"
     t.string "country"
     t.string "post_code"
-    t.integer "role"
+    t.string "bio"
+    t.string "bioavatar"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
