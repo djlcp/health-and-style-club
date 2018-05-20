@@ -43,9 +43,11 @@ Rails.application.routes.draw do
     # resources :events
     resources :masterclasses
     resources :posts
+    resources :comments
     # resources :posts_contents
-    # resources :subscriptions
+    resources :subscriptions
     # resources :videos
+    root to: "users#index"
   end
 
 

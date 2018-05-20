@@ -1,7 +1,9 @@
 class SubscriptionsController < ApplicationController
+
   skip_before_action :verify_authenticity_token
+
+
  def webhook_callback
-  # If the body contains the survey_name parameter...
   subscription_id = params['content']['subscription']['id']
   status = params['content']['subscription']['status']
   subscription = Subscription.find_by(chargebee_id: subscription_id)
@@ -17,6 +19,8 @@ class SubscriptionsController < ApplicationController
   end
   render json: {}, status: 200
  end
+
+
 
  def new_sub
    # @subscription = Subscription.new(params.require(:chargebee_id).permit(:chargebee_id))

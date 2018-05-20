@@ -10,9 +10,6 @@ class SubscriptionDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     user: Field::BelongsTo,
     id: Field::Number,
-    plan_name: Field::String,
-    plan_description: Field::Text,
-    plan_price: Field::String.with_options(searchable: false),
     expiry_date: Field::DateTime,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -27,8 +24,6 @@ class SubscriptionDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :user,
     :id,
-    :plan_name,
-    :plan_description,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -36,9 +31,6 @@ class SubscriptionDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = [
     :user,
     :id,
-    :plan_name,
-    :plan_description,
-    :plan_price,
     :expiry_date,
     :created_at,
     :updated_at,
@@ -50,9 +42,6 @@ class SubscriptionDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :user,
-    :plan_name,
-    :plan_description,
-    :plan_price,
     :expiry_date,
     :paid_for,
   ].freeze
