@@ -2,7 +2,6 @@ class SubscriptionsController < ApplicationController
 
   skip_before_action :verify_authenticity_token
 
-
  def webhook_callback
   subscription_id = params['content']['subscription']['id']
   status = params['content']['subscription']['status']
