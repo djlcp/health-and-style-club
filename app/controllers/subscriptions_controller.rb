@@ -22,12 +22,15 @@ class SubscriptionsController < ApplicationController
 
 
  def new_sub
-   # @subscription = Subscription.new(params.require(:chargebee_id).permit(:chargebee_id))
-   # @subscription.permited?s
-   @subscription = Subscription.new(chargebee_id: params['chargebee_id'], user_id: 1)
-   @subscription.save!
-   @subscription.errors
-   redirect_to subscriptions_path
+   if current_user.subscription
+     redirect_to subscriptions_path, notice: 'You already own a subscription. Please renew your current one.'
+   else
+     @subscription = Subscription.new(chargebee_id: params['chargebee_id'])
+     @subscription.user = current_user
+     @subscription.save!
+     @subscription.errors
+     redirect_to subscriptions_path, notice: 'Your subscription was submited. It will be approved within 5 minutes.'
+   end
  end
 
   def index
@@ -55,15 +58,19 @@ class SubscriptionsController < ApplicationController
     end
 
     def create
-      @subscription = Subscription.new(params.require(:subscription).permit(:id, :user, :sub_total, :vat, :total, :chargebee_id))
-
-      respond_to do |format|
-        if @subscription.save
-          format.html { redirect_to subscriptions_path(@subscription), notice: 'Subscription added.'}
-        else
-          format.html { render :new}
+      if current_user.subscription
+        redirect_to subscriptions_path, notice: 'You already own a subscription. Please renew your current one.'
+      else
+        @subscription = Subscription.new(params.require(:subscription).permit(:id, :user, :expiry_date, :chargebee_id))
+        respond_to do |format|
+          if @subscription.save
+            format.html { redirect_to subscriptions_path, notice: "Subscription for user #{@subscription.user.email} was submited."}
+          else
+            format.html { render :new}
           end
         end
+      end
+
     end
 
     def edit
@@ -96,7 +103,7 @@ class SubscriptionsController < ApplicationController
   private
 
   def subscription_params
-    params.require(:subscription).permit(:id, :paid_for, :subscription_id, :chargebee_id)
+    params.require(:subscription).permit(:id, :paid_for, :subscription_id, :chargebee_id, :expiry_date)
   end
 
   def set_link

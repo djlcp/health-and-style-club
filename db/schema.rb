@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180726203206) do
+ActiveRecord::Schema.define(version: 20180726203207) do
 
   create_table "ckeditor_assets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "data_file_name", null: false
@@ -106,7 +106,7 @@ ActiveRecord::Schema.define(version: 20180726203206) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "subscription_id"
+    t.integer "subscription"
     t.string "first_name"
     t.string "surname"
     t.string "middle_names"
