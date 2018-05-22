@@ -1,25 +1,68 @@
 Rails.application.routes.draw do
 
-
-  resources :photos 
-  devise_for :users
-  resources :posts
-  resources :subscriptions
-  resources :photos, only: [:create]
-
-  resources :attachments
-
-  scope '/hooks', :controller => :hooks do
-    post :subscription_created_callback
-  end
-
-  scope '/admin' do
-    resources :users
-  end
-  resources :posts
-  resources :invoices
-
   root to: 'pages#home'
 
+
+  #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  #!!!!!!!!!GEM REQUIREMENTS!!!!!!!!!!!!
+  #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+  mount Ckeditor::Engine => '/ckeditor'
+
+
+  #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  #!!!!!!!!!!!!!!GENERAL!!!!!!!!!!!!!!!!
+  #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+  resources :photos
+  resources :photos, only: [:create]
+  resources :posts
+  resources :contents
+  resources :comments
+  resources :posts_contents
+  resources :attachments
+
+
+  #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  #!!!!!!!!!!!!MASTERCLASSES!!!!!!!!!!!!
+  #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
   resources :masterclasses, :videos, :events, :documents
+
+
+  #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  #!!!!!!!!!!!USER MANAGEMENT!!!!!!!!!!!
+  #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+  devise_for :users
+
+  namespace :admin do
+    resources :users
+    # resources :contents
+    # resources :documents
+    # resources :events
+    resources :masterclasses
+    resources :posts
+    resources :comments
+    # resources :posts_contents
+    resources :subscriptions
+    # resources :videos
+    root to: "users#index"
+  end
+
+
+
+  #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  #!!!!!!!!!!!!!!!BILLING!!!!!!!!!!!!!!!
+  #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+  scope '/subscriptions', :controller => :subscriptions do
+    post :webhook_callback
+  end
+
+  resources :subscriptions do
+    get :new_sub, on: :collection
+  end
+
+
 end
