@@ -1,16 +1,28 @@
-<section class="post">
-	<h1 class="post-title"><%= @post.title %></h1>
-		<p class="post-body"><%= @post.body_text %></p>
+<section class="post-main">
+		
+		<div class="post-image-main">
 		<%= image_tag(@post.image_url.to_s) %>
+		</div>
+
+		<div class="post-title-main">
+			<%= @post.title %>		
+		</div>
+		<br>
+
+		<p class="post-body-main"><%= @post.body_text %></p>
+		
+
+
 		<% @post.contents.each do |content| %>
 		<p>
 		    <%= render "layouts/post_content/#{content.content_type}.html.erb", :@content => content %>
 		  </p>
 		<% end %>
 
+<!-- 
+Add in option here for Hero image
 
+	<h1 class="post-title"><%= @post.title %></h1>
+		<p class="post-body"><%= sanitize @post.body_text %></p> -->
 
-		<% if can? :manage, @post %>
-		<%= link_to 'edit post', edit_post_path, class: 'button show' %>
-	<% end %>
 </section>

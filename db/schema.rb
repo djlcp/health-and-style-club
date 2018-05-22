@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20180510182523) do
+=======
+ActiveRecord::Schema.define(version: 20180726203205) do
+>>>>>>> develop
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -28,6 +32,14 @@ ActiveRecord::Schema.define(version: 20180510182523) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["type"], name: "index_ckeditor_assets_on_type"
+  end
+
+  create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "post_id"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_comments_on_post_id"
   end
 
   create_table "contents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -63,6 +75,12 @@ ActiveRecord::Schema.define(version: 20180510182523) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "photos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text "image_data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "post_contents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "post_id"
     t.integer "content_id"
@@ -92,6 +110,7 @@ ActiveRecord::Schema.define(version: 20180510182523) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "paid_for"
+    t.string "chargebee_id"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -132,4 +151,5 @@ ActiveRecord::Schema.define(version: 20180510182523) do
     t.integer "masterclass_id"
   end
 
+  add_foreign_key "comments", "posts"
 end
