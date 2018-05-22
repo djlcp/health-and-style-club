@@ -86,8 +86,8 @@ ActiveRecord::Schema.define(version: 20180726203208) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "paid_for"
     t.string "chargebee_id"
+    t.boolean "paid_for", default: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
