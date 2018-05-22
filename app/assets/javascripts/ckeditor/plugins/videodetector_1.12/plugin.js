@@ -22,7 +22,7 @@ CKEDITOR.plugins.add( 'videodetector', {
         editor.ui.addButton( 'VideoDetector', {
             label: 'Insert a Youtube, Vimeo or Dailymotion video',
             command: 'videodetector',
-            icon: CKEDITOR.plugins.getPath('videodetector') + '/icons/icon_black.png'
+            icon: CKEDITOR.plugins.getPath('videodetector_1.12') + '/icons/icon_black.png'
         });
 
         CKEDITOR.dialog.add('videoDialog', this.path + 'dialogs/videoDialog.js');
