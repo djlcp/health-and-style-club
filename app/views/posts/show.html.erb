@@ -5,6 +5,15 @@ Add in option here for Hero image
 	<h1 class="post-title"><%= @post.title %></h1>
 		<p class="post-body"><%= sanitize @post.body_text %></p>
 
-Add in author and bio
+<!-- this allows the frame to be rendered, but messes with the p tags, so need to work out how to get that working-->
+		<!-- <%= sanitize @post.body_text, tags: %w( iframe ), attributes: %w(src source width height )%> -->
+
+About the author
+
+<%= render 'author' %>
+
+
+
+
 
 </section>

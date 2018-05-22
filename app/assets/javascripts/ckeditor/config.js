@@ -6,8 +6,7 @@ CKEDITOR.editorConfig = function (config) {
   // ];
   // config.toolbar = "mini";
   config.extraPlugins = 'videodetector';
-  config.allowedContent = true;
-  // config.extraPlugins = 'videodetector';
+  // config.removePlugins = 'iframe';
 
 
   config.toolbarGroups = [

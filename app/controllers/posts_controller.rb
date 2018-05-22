@@ -6,7 +6,9 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
-  def show; end
+  def show
+    @user = User.first
+  end
 
   def new
     @post = Post.new
