@@ -1,5 +1,41 @@
 Rails.application.routes.draw do
 
+  root to: 'pages#home'
+
+
+  #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  #!!!!!!!!!GEM REQUIREMENTS!!!!!!!!!!!!
+  #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+  mount Ckeditor::Engine => '/ckeditor'
+
+
+  #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  #!!!!!!!!!!!!!!GENERAL!!!!!!!!!!!!!!!!
+  #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+  resources :photos
+  resources :photos, only: [:create]
+  resources :posts
+  resources :contents
+  resources :comments
+  resources :posts_contents
+  resources :attachments
+
+
+  #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  #!!!!!!!!!!!!MASTERCLASSES!!!!!!!!!!!!
+  #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+  resources :masterclasses, :videos, :events, :documents
+
+
+  #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  #!!!!!!!!!!!USER MANAGEMENT!!!!!!!!!!!
+  #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+  devise_for :users
+
   namespace :admin do
     resources :users
     # resources :contents
@@ -7,32 +43,26 @@ Rails.application.routes.draw do
     # resources :events
     resources :masterclasses
     resources :posts
+    resources :comments
     # resources :posts_contents
-    # resources :subscriptions
+    resources :subscriptions
     # resources :videos
-  root to: "users#index"
+    root to: "users#index"
   end
 
-    root to: 'pages#home'
-
-  mount Ckeditor::Engine => '/ckeditor'
 
 
-  devise_for :users
+  #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  #!!!!!!!!!!!!!!!BILLING!!!!!!!!!!!!!!!
+  #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-  resources :posts_contents
-  resources :contents
-  resources :photos
-  resources :posts
-  resources :subscriptions
-  resources :masterclasses, :videos, :events, :documents
-  resources :invoices
-  resources :comments
-  resources :photos, only: [:create]
-  resources :attachments
-
-  scope '/hooks', :controller => :hooks do
-    post :subscription_created_callback
+  scope '/subscriptions', :controller => :subscriptions do
+    post :webhook_callback
   end
+
+  resources :subscriptions do
+    get :new_sub, on: :collection
+  end
+
 
 end
