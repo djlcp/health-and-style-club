@@ -1,9 +1,29 @@
-<section class="post">
+<section class="post-main">
+		
+		<div class="post-image-main">
+		<%= image_tag(@post.image_url.to_s) %>
+		</div>
 
+		<div class="post-title-main">
+			<%= @post.title %>		
+		</div>
+		<br>
+
+		<p class="post-body-main"><%= @post.body_text %></p>
+		
+
+
+		<% @post.contents.each do |content| %>
+		<p>
+		    <%= render "layouts/post_content/#{content.content_type}.html.erb", :@content => content %>
+		  </p>
+		<% end %>
+
+<!-- 
 Add in option here for Hero image
 
 	<h1 class="post-title"><%= @post.title %></h1>
-		<p class="post-body"><%= sanitize @post.body_text %></p>
+		<p class="post-body"><%= sanitize @post.body_text %></p> -->
 
 <!-- this allows the frame to be rendered, but messes with the p tags, so need to work out how to get that working-->
 		<!-- <%= sanitize @post.body_text, tags: %w( iframe ), attributes: %w(src source width height )%> -->
