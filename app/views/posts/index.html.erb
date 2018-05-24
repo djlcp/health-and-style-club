@@ -1,16 +1,5 @@
-This is a list of all posts
-
-<% @posts.each do |post| %>
-	<p><%= link_to post.title, post %></p>
-<% end %>
-
-
-This code below is not rendering the list. We need to sort this, but commenting out for now
-to work on the author bits -->
-
-
 <div class="all-posts-wrapper">
-<!-- <#% if cannot? :manage, @post %#> -->
+
 
 
 <div class="post-thumb">
@@ -24,5 +13,13 @@ to work on the author bits -->
 				</div>
 		</div>
 			 <% end %>
-		 	<#% end %#>
+
 	</div>
+</div>
+
+<!-- <div><#%= if can :edit %> -->
+	<%= link_to 'New post', new_post_path %>
+<!-- <#% end %> -->
+</div>
+
+	<!-- put create post link in here to only allow authorized users -->
