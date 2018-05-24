@@ -14,7 +14,8 @@ class Ability
       cannot :edit, Post
     end
     if user
-      can :read, Post
+      cannot :read, Subscription
+      cannot :read, Post
     end
   end
 end

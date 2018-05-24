@@ -1,29 +1,40 @@
 class SubscriptionsController < ApplicationController
-  before_action :authenticate_user!
+  load_and_authorize_resource
+  # skip_before_action :verify_authenticity_token
 
-# def subscription_created_callback
-#   # If the body contains the survey_name parameter...
-#   if params[:subscription_name].present?
-#     # Create a new Survey object based on the received parameters...
-#     subscription = Subscription.new(:name => params[:subscription_name]
-#     subscription.url = params[:subscription_url]
-#     subscription.creator_email = params[:subscription_creator_email]
-#     subscription.save!
-#   end
+ def webhook_callback
+  subscription_id = params['content']['subscription']['id']
+  status = params['content']['subscription']['status']
+  subscription = Subscription.find_by(chargebee_id: subscription_id)
+  auth = request.headers["Authorization"]
+  if auth == "Basic QWRtaW46aHNjbHVi"
+    if subscription
+      if status == "active"
+        subscription.update(paid_for: true)
+      else
+        subscription.update(paid_for: false)
+      end
+    end
+  end
+  render json: {}, status: 200
+ end
 
-  # The webhook doesn't require a response but let's make sure
-  # we don't send anything
-#   render :nothing => true
-# end
+
+
+ def new_sub
+   if current_user.subscription
+     redirect_to subscriptions_path, notice: 'You already own a subscription. Please renew your current one.'
+   else
+     @subscription = Subscription.new(chargebee_id: params['chargebee_id'])
+     @subscription.user = current_user
+     @subscription.save!
+     @subscription.errors
+     redirect_to subscriptions_path, notice: 'Your subscription was submited. It will be approved within 5 minutes.'
+   end
+ end
 
   def index
-    # respond_to do |format|
-      @subscriptions = Subscription.all
-      # @user_id = current_user.id
-      # format.json do
-    #     render json: @subscriptions
-    #   end
-    # end
+    @subscriptions = Subscription.all
   end
 
   def show
@@ -47,27 +58,30 @@ class SubscriptionsController < ApplicationController
     end
 
     def create
-      @subscription = Subscription.new(params.require(:subscription).permit(:id, :user, :sub_total, :vat, :total))
-
-      respond_to do |format|
-        if @subscription.save
-          format.html { redirect_to subscriptions_path(@subscription), notice: 'Subscription added.'}
-        else
-          format.html { render :new}
+      if current_user.subscription
+        redirect_to subscriptions_path, notice: 'You already own a subscription. Please renew your current one.'
+      else
+        @subscription = Subscription.new(params.require(:subscription).permit(:id, :user, :expiry_date, :chargebee_id))
+        respond_to do |format|
+          if @subscription.save
+            format.html { redirect_to subscriptions_path, notice: "Subscription for user #{@subscription.user.email} was submited."}
+          else
+            format.html { render :new}
           end
         end
+      end
+
     end
 
     def edit
       @subscription = Subscription.find(params[:id])
-
     end
 
     def update
-      puts 'hello'
+
       @subscription = Subscription.find(params[:id])
       respond_to do |format|
-        if @subscription.update(params.require(:subscription).permit(:id, :paid_for))
+        if @subscription.update(params.require(:subscription).permit(:id, :paid_for, :chargebee_id))
           format.html { redirect_to @subscription, notice: 'Subscription updated.' }
         else
           format.html { render :edit }
@@ -83,14 +97,13 @@ class SubscriptionsController < ApplicationController
       respond_to do |format|
         format.html { redirect_to subscriptions_path, notice: 'Your subscription was deleted.' }
         format.json { head :no_content }
-
     end
     end
 
   private
 
   def subscription_params
-    params.require(:subscription).permit(:id, :user, :sub_total, :vat, :total)
+    params.require(:subscription).permit(:id, :paid_for, :subscription_id, :chargebee_id, :expiry_date)
   end
 
   def set_link

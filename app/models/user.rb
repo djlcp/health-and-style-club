@@ -4,7 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :posts
-  belongs_to :useradmin
   has_one :subscription
 
   enum role: { subscriber: 1, contributor: 2, admin: 3}

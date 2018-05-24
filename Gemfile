@@ -31,18 +31,24 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 # !!!!!!!!Implemented Gems!!!!!!!!
-# gem 'administrate-field-shrine', '~> 0.0.1'
+# gem 'administrate-field-shrine', '~> 0.0.1' (Implemented by Raymond)
 
-# gem 'administrate-field-trix'
+# gem 'administrate-field-trix' (Implemented by Raymond)
 
-# Use administrate-field-ckeditor to edit text in admin panel
+# Use administrate-field-ckeditor to edit text in admin panel (Implemented by Raymond)
 gem "administrate-field-ckeditor", "~> 0.0.9"
 #
-# # use administrate for backend admin panel
+# Use administrate for backend admin panel (Implemented by Raymond)
 gem "administrate"
 #
+
 # # use administrate-field-carrierwave for uploading images in the admin panel
 # gem 'administrate-field-carrierwave', '~> 0.3.2'
+
+# # use administrate-field-carrierwave for uploading images in the admin panel (Implemented by Raymond)
+gem 'administrate-field-carrierwave', '~> 0.3.2'
+
+
 # Use Carrierwave to add images to webapp (Implemented by Raymond)
 gem 'carrierwave', '~> 1.0'
 
@@ -57,11 +63,15 @@ gem 'cancancan', '~> 1.13', '>= 1.13.1'
 # Use Devise for user authentication (Implemented by Raymond)
 gem 'devise', '~> 4.2'
 
+
 gem 'vimeo'
+
+
+# Used for generating pdf documents (Implemented by Tiago)
 
 gem 'wicked_pdf'
 
-#Required to use wicked_pdf (Implemented by Tiago)
+# Required to use wicked_pdf (Implemented by Tiago)
 gem 'wkhtmltopdf-binary'
 
 # Use Cocoon to create nested forms (Implemented by Kristin)
@@ -73,10 +83,16 @@ gem 'jquery-rails'
 # Use LetterOpener to view mailing actions in development (Implemented by Tiago)
 gem 'letter_opener', :group => :development
 
-#
+# Use CKEditor to design post conttents easier (Implemented by Liam)
 gem 'ckeditor', github: 'galetahub/ckeditor'
-gem 'trix'
-gem 'shrine'
+
+# Use DelayedJob to send massive actions into the background of the app (Implemented by Tiago)
+gem 'delayed_job_active_record'
+
+# Use Whenever to provide a clear syntax for writing and deploying cron jobs (Implemented by Tiago)
+gem 'whenever', require: false
+
+
 
 
 

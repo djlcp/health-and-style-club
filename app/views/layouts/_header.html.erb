@@ -1,20 +1,22 @@
+<div>
 <div class="main-header">
   <%= link_to "Health & Style Club", root_path, class: "main-header-title" %>
 
 </div>
 <div class="main-members-area">
-  <a href="" class="members-area-title">Members Area</a>
+  <%= link_to "Members Page", member_path, class: 'members-area-title' %>
   </div>
     <nav class="main-navigation">
       <ul class="navigation">
       <li><%= link_to "Posts", posts_path, class: 'main-navigation-link' %></li>
-      <li><%= link_to "Subscriptions", subscriptions_path, class: 'main-navigation-link' %></a></li>
       <li><a href="" class="main-navigation-link">Navigation</a></li>
-      <% if current_user == nil%>
+      <% if ! @signed_in%>
          <li><%= link_to 'sign up', new_user_registration_path, class:'main-navigation-link' %></li>
          <li><%= link_to 'login', new_user_session_path, class:'main-navigation-link login' %></li>
       <% else %>
+          <li><%= link_to "Subscriptions", subscriptions_path, class: 'main-navigation-link' %></a></li>
         <li><%= link_to 'Logout', destroy_user_session_path, method: :delete, class:'main-navigation-link' %></li>
       <% end %>
       </ul>
     </nav>
+</div>
