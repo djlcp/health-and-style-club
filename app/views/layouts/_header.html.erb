@@ -13,7 +13,6 @@
       <% if ! @signed_in%>
          <li><%= link_to 'sign up', new_user_registration_path, class:'main-navigation-link' %></li>
          <li><%= link_to 'login', new_user_session_path, class:'main-navigation-link login' %></li>
-         <li><%= link_to 'member', member_path, class:'main-navigation-link' %></li>
       <% else %>
           <li><%= link_to "Subscriptions", subscriptions_path, class: 'main-navigation-link' %></a></li>
         <li><%= link_to 'Logout', destroy_user_session_path, method: :delete, class:'main-navigation-link' %></li>
