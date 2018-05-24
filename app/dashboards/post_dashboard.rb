@@ -39,6 +39,7 @@ class PostDashboard < Administrate::BaseDashboard
     :title,
     #:comments,
     :category,
+    @category.name,
     # :post_contents,
     # :contents,
   ].freeze

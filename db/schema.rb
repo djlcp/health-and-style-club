@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180726203205) do
+ActiveRecord::Schema.define(version: 20180726203208) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -98,15 +98,12 @@ ActiveRecord::Schema.define(version: 20180726203205) do
   end
 
   create_table "subscriptions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "plan_name"
-    t.text "plan_description"
-    t.decimal "plan_price", precision: 4, scale: 2
-    t.date "expiry_date"
+    t.datetime "expiry_date"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "paid_for"
     t.string "chargebee_id"
+    t.boolean "paid_for", default: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -122,7 +119,7 @@ ActiveRecord::Schema.define(version: 20180726203205) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "subscription_id"
+    t.integer "subscription"
     t.string "first_name"
     t.string "surname"
     t.string "middle_names"
