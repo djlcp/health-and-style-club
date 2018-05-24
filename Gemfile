@@ -34,17 +34,17 @@ gem 'jbuilder', '~> 2.5'
 
 
 # !!!!!!!!Implemented Gems!!!!!!!!
-# gem 'administrate-field-shrine', '~> 0.0.1'
+# gem 'administrate-field-shrine', '~> 0.0.1' (Implemented by Raymond)
 
-# gem 'administrate-field-trix'
+# gem 'administrate-field-trix' (Implemented by Raymond)
 
-# Use administrate-field-ckeditor to edit text in admin panel
+# Use administrate-field-ckeditor to edit text in admin panel (Implemented by Raymond)
 gem "administrate-field-ckeditor", "~> 0.0.9"
 #
-# # use administrate for backend admin panel
+# Use administrate for backend admin panel (Implemented by Raymond)
 gem "administrate"
 #
-# # use administrate-field-carrierwave for uploading images in the admin panel
+# # use administrate-field-carrierwave for uploading images in the admin panel (Implemented by Raymond)
 gem 'administrate-field-carrierwave', '~> 0.3.2'
 
 # Use Carrierwave to add images to webapp (Implemented by Raymond)
@@ -81,7 +81,7 @@ gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'delayed_job_active_record'
 
 # Use Whenever to provide a clear syntax for writing and deploying cron jobs (Implemented by Tiago)
-gem 'whenever'
+gem 'whenever', require: false
 
 
 

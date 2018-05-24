@@ -2,7 +2,6 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
-
   #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   #!!!!!!!!!GEM REQUIREMENTS!!!!!!!!!!!!
   #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -22,6 +21,9 @@ Rails.application.routes.draw do
   resources :posts_contents
   resources :attachments
 
+# !!!!!!!!!!!!!MEMBERS PAGE!!!!!!!!!!!!!
+
+  get '/member' => 'pages#member'
 
   #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   #!!!!!!!!!!!!MASTERCLASSES!!!!!!!!!!!!
@@ -43,9 +45,11 @@ Rails.application.routes.draw do
     # resources :events
     resources :masterclasses
     resources :posts
+    resources :comments
     # resources :posts_contents
-    # resources :subscriptions
+    resources :subscriptions
     # resources :videos
+    root to: "users#index"
   end
 
 
