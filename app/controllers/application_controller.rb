@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
       @signed_in = true
 
       if current_user.subscription
-        @sub = true
+        @subscribed = true
         @subscription = current_user.subscription
 
         if current_user.subscription.paid_for
@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
           @paid = false
         end
       else
-        @sub = false
+        @subscribed = false
       end
 
 
