@@ -59,9 +59,6 @@ GEM
       momentjs-rails (~> 2.8)
       sass-rails (~> 5.0)
       selectize-rails (~> 0.6)
-    administrate-field-carrierwave (0.3.2)
-      administrate (< 1.0.0)
-      rails (>= 4.2, < 6)
     administrate-field-ckeditor (0.0.9)
       administrate (>= 0.3, < 1.0)
       ckeditor (~> 4.1)
@@ -294,7 +291,6 @@ PLATFORMS
 
 DEPENDENCIES
   administrate
-  administrate-field-carrierwave (~> 0.3.2)
   administrate-field-ckeditor (~> 0.0.9)
   byebug
   cancancan (~> 1.13, >= 1.13.1)

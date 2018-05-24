@@ -1,6 +1,5 @@
 <h1><%= @masterclass.title %></h1>
 
-
 <p><%= @masterclass.text %></p>
 
 <% @masterclass.videos.order(sequence: :asc).each do |video| %>
@@ -21,8 +20,10 @@
 
 <% @masterclass.documents.order(sequence: :asc).each do |document| %>
 
-  <div class="">
-    <%= document.link %>
+  <div>
+    <%= link_to document.link.url, target: '_blank' do %>
+      <%= image_tag(document.link.cover.url, class: "masterclass-preview") %>
+    <% end %>
   </div>
 <% end %>
 
@@ -31,3 +32,9 @@
 <div>
 <%= link_to 'Edit this masterclass', edit_masterclass_path(@masterclass) %>
 </div>
+
+<style media="screen">
+  .masterclass-preview {
+    height: 360px;
+  }
+</style>

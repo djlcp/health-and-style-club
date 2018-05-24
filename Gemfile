@@ -42,9 +42,11 @@ gem "administrate-field-ckeditor", "~> 0.0.9"
 gem "administrate"
 #
 # # use administrate-field-carrierwave for uploading images in the admin panel
-gem 'administrate-field-carrierwave', '~> 0.3.2'
+# gem 'administrate-field-carrierwave', '~> 0.3.2'
 # Use Carrierwave to add images to webapp (Implemented by Raymond)
 gem 'carrierwave', '~> 1.0'
+
+gem 'fog-aws'
 
 # Use mini_magick to resize images to webapp (Implemented by Raymond)
 gem 'mini_magick', '~> 4.8'
@@ -75,8 +77,6 @@ gem 'letter_opener', :group => :development
 gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'trix'
 gem 'shrine'
-
-gem 'fog-aws'
 
 
 
