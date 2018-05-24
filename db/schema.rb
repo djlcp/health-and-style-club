@@ -12,9 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20180726203205) do
 
-  create_table "admin", id: :integer, unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-  end
-
   create_table "ckeditor_assets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "data_file_name", null: false
     t.string "data_content_type"
@@ -38,9 +35,9 @@ ActiveRecord::Schema.define(version: 20180726203205) do
   create_table "contents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "content_type"
     t.text "description"
+    t.string "file_url", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "file_url"
   end
 
   create_table "documents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -101,8 +98,8 @@ ActiveRecord::Schema.define(version: 20180726203205) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "paid_for"
     t.string "chargebee_id"
-    t.boolean "paid_for", default: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

@@ -5,6 +5,6 @@ class PagesController < ApplicationController
   def contact
   end
 
-  def member
+  def members
   end
 end

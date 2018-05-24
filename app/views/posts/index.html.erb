@@ -1,32 +1,28 @@
+This is a list of all posts
+
+<% @posts.each do |post| %>
+	<p><%= link_to post.title, post %></p>
+<% end %>
 
 
-<% if cannot? :manage, @post %>
-	<div class="all-posts-wrapper">
+This code below is not rendering the list. We need to sort this, but commenting out for now
+to work on the author bits -->
+
+
+<div class="all-posts-wrapper">
+<!-- <#% if cannot? :manage, @post %#> -->
+
+
+<div class="post-thumb">
 	<% @posts.each do |post| %>
-
-		
-			<div class="post-thumb">
-			  <div class="link-row-clearfix">
-			        <div class="post-image-thumb">
-			        	<%= image_tag post.image_url(:thumb) if post.image.present?  %>		
-			        </div>
-
-			        <div class="post-title-thumb">
-			          <%= link_to post.title, post %>  	
-			        </div><br>
+		<div class="link-row-clearfix">
+			  <div class="post-image-thumb">
+						<%= image_tag post.image_url(:thumb) if post.image.present? %>
 			  </div>
-			</div>
-
-	<% end %>
-</div>
-
-<!-- <<<<<<< HEAD
-<#% end %>
-
-
-<#% if can? :manage, @post %>
-<#%= render 'layouts/postadmin', post: @post %>
-<#% end %>
-======= -->
-  <% end %>
-
+				<div class="post-title-thumb">
+						<%= link_to post.title, post %>
+				</div>
+		</div>
+			 <% end %>
+		 	<#% end %#>
+	</div>

@@ -23,7 +23,8 @@ Rails.application.routes.draw do
 
 # !!!!!!!!!!!!!MEMBERS PAGE!!!!!!!!!!!!!
 
-  get '/member' => 'pages#member'
+  get 'members' => 'pages#members'
+
 
   #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   #!!!!!!!!!!!!MASTERCLASSES!!!!!!!!!!!!
