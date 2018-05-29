@@ -13,7 +13,7 @@
   word-wrap: break-word;
 }
 
-.post-thumb{
+.post-thumb {
   display: flex;
   flex-grow: 1;
   border: 1px solid #CCC;
@@ -25,10 +25,14 @@
 
 .post-image-thumb {
   width: 100%;
-  padding-top: 60%;
-  display: flex;
-  flex-grow: 1;
-  background-color: #9a9a9a;
+  height: 200px;
+  background-color: #ff0000;
+}
+
+post-image-bar {
+    width: 100%;
+  height: 200px;
+  background-color: #111111;
 }
 
 .post-title-thumb {
@@ -42,11 +46,12 @@
 	font-size: 0.75rem;
 }
 
-.link-row-clearfix{
+.link-row-clearfix {
   width: 100%;
+
 }
 
-.post-main{
+.post-main {
   display: flex;
   flex-wrap: wrap;
   width: 60%;
