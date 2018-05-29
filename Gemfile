@@ -95,15 +95,6 @@ gem 'delayed_job_active_record'
 gem 'whenever', require: false
 
 
-
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> develop
-
-
 # !!!!!!!!GROUPS!!!!!!!!
 
 # Use Capistrano for deployment
