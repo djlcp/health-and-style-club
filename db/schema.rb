@@ -109,11 +109,7 @@ ActiveRecord::Schema.define(version: 20180726203208) do
   end
 
   create_table "subscriptions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-<<<<<<< HEAD
-    t.datetime "expiry_date"
-=======
     t.date "expiry_date"
->>>>>>> develop
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
