@@ -58,10 +58,10 @@ Rails.application.routes.draw do
   #!!!!!!!!!!!!!!!BILLING!!!!!!!!!!!!!!!
   #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-  scope '/subscriptions', :controller => :subscriptions do
-    post :webhook_callback
-  end
-
+  # scope '/subscriptions', :controller => :subscriptions do
+  #   post :webhook_callback
+  # end
+  #
   resources :subscriptions do
     get :new_sub, on: :collection
   end
