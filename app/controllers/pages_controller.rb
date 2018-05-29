@@ -7,4 +7,7 @@ class PagesController < ApplicationController
 
   def member
   end
+
+  def faq
+  end
 end

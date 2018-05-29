@@ -25,6 +25,11 @@ Rails.application.routes.draw do
 
   get '/member' => 'pages#member'
 
+# !!!!!!!!!!!!!FAQ PAGE!!!!!!!!!!!!!
+
+  get '/faq' => 'pages#faq'
+
+
   #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   #!!!!!!!!!!!!MASTERCLASSES!!!!!!!!!!!!
   #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
