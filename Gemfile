@@ -35,6 +35,8 @@ gem 'jbuilder', '~> 2.5'
 
 # !!!!!!!!Implemented Gems!!!!!!!!
 
+gem 'toastr-rails'
+
 # Use administrate-field-ckeditor to edit text in admin panel (Implemented by Raymond)
 gem "administrate-field-ckeditor", "~> 0.0.9"
 #

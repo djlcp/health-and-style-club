@@ -37,10 +37,10 @@ class UserDashboard < Administrate::BaseDashboard
     country: Field::String,
     post_code: Field::String,
     bio: Field::Ckeditor,
-    bioavatar: Field::String
-    # bioavatar: Field::Carrierwave.with_options(
-    #   image: :standard,
-    # )
+    # bioavatar: Field::String
+    bioavatar: Field::Carrierwave.with_options(
+      image: :standard,
+    )
   }.freeze
 
   # COLLECTION_ATTRIBUTES

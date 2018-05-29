@@ -19,7 +19,6 @@ class PostDashboard < Administrate::BaseDashboard
     state: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    # image: Field::Shrine
     image: Field::Carrierwave.with_options(
       image: :standard,
       # image_on_index: true,

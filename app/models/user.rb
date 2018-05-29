@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_one :subscription
   has_many :comments
 
+  mount_uploader :bioavatar, Picture
+
   enum role: { subscriber: 1, contributor: 2, admin: 3}
 
   after_create :set_role
