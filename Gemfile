@@ -76,6 +76,9 @@ gem 'letter_opener', :group => :development
 # Use CKEditor to design post conttents easier (Implemented by Liam)
 gem 'ckeditor', github: 'galetahub/ckeditor'
 
+gem 'shrine'
+
+
 # Use DelayedJob to send massive actions into the background of the app (Implemented by Tiago)
 gem 'delayed_job_active_record'
 
@@ -85,10 +88,11 @@ gem 'whenever', require: false
 
 
 
+
 # !!!!!!!!GROUPS!!!!!!!!
 
 # Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+# gem 'cconfigapistrano-rails', group: :development
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

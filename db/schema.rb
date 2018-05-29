@@ -37,9 +37,9 @@ ActiveRecord::Schema.define(version: 20180726203208) do
   create_table "contents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "content_type"
     t.text "description"
+    t.string "file_url", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "file_url"
   end
 
   create_table "documents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
