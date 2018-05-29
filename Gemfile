@@ -31,9 +31,8 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 # !!!!!!!!Implemented Gems!!!!!!!!
-# gem 'administrate-field-shrine', '~> 0.0.1' (Implemented by Raymond)
 
-# gem 'administrate-field-trix' (Implemented by Raymond)
+gem 'toastr-rails'
 
 # Use administrate-field-ckeditor to edit text in admin panel (Implemented by Raymond)
 gem "administrate-field-ckeditor", "~> 0.0.9"
@@ -86,6 +85,9 @@ gem 'letter_opener', :group => :development
 # Use CKEditor to design post conttents easier (Implemented by Liam)
 gem 'ckeditor', github: 'galetahub/ckeditor'
 
+gem 'shrine'
+
+
 # Use DelayedJob to send massive actions into the background of the app (Implemented by Tiago)
 gem 'delayed_job_active_record'
 
@@ -94,15 +96,18 @@ gem 'whenever', require: false
 
 
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> develop
 
 
 # !!!!!!!!GROUPS!!!!!!!!
 
 # Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+# gem 'cconfigapistrano-rails', group: :development
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

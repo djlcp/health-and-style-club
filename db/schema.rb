@@ -12,6 +12,11 @@
 
 ActiveRecord::Schema.define(version: 20180726203208) do
 
+
+  create_table "admin", id: :integer, unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  end
+
+
   create_table "ckeditor_assets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "data_file_name", null: false
     t.string "data_content_type"
@@ -104,7 +109,11 @@ ActiveRecord::Schema.define(version: 20180726203208) do
   end
 
   create_table "subscriptions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+<<<<<<< HEAD
     t.datetime "expiry_date"
+=======
+    t.date "expiry_date"
+>>>>>>> develop
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -137,6 +146,8 @@ ActiveRecord::Schema.define(version: 20180726203208) do
     t.string "country"
     t.string "post_code"
     t.integer "role"
+    t.string "bio"
+    t.string "bioavatar"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

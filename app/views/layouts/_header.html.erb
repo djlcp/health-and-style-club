@@ -4,18 +4,20 @@
 
 </div>
 <div class="main-members-area">
-  <%= link_to "Members Page", member_path, class: 'members-area-title' %>
+  <%= link_to "Members Page", members_path, class: 'members-area-title' %>
   </div>
     <nav class="main-navigation">
       <ul class="navigation">
+
       <li><%= link_to "Posts", posts_path, class: 'main-navigation-link' %></li>
+      <li><%= link_to 'FAQ', faq_path, class:'main-navigation-link' %></li>
       <li><a href="" class="main-navigation-link">Navigation</a></li>
       <% if ! @signed_in%>
          <li><%= link_to 'sign up', new_user_registration_path, class:'main-navigation-link' %></li>
          <li><%= link_to 'login', new_user_session_path, class:'main-navigation-link login' %></li>
       <% else %>
-          <li><%= link_to "Subscriptions", subscriptions_path, class: 'main-navigation-link' %></a></li>
-        <li><%= link_to 'Logout', destroy_user_session_path, method: :delete, class:'main-navigation-link' %></li>
+         <li><%= link_to "Subscriptions", subscriptions_path, class: 'main-navigation-link' %></a></li>
+         <li><%= link_to 'Logout', destroy_user_session_path, method: :delete, class:'main-navigation-link' %></li>
       <% end %>
       </ul>
     </nav>
