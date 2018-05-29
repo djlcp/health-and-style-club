@@ -74,6 +74,10 @@ gem 'jquery-rails'
 # Use LetterOpener to view mailing actions in development (Implemented by Tiago)
 gem 'letter_opener', :group => :development
 
+# Use mail_form to message contact form
+gem 'mail_form', '~> 1.5', '>= 1.5.1'
+
+
 # Use CKEditor to design post conttents easier (Implemented by Liam)
 gem 'ckeditor', github: 'galetahub/ckeditor'
 
