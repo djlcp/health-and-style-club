@@ -87,6 +87,7 @@ gem 'ckeditor', github: 'galetahub/ckeditor'
 
 gem 'shrine'
 
+gem "font-awesome-rails"
 
 # Use DelayedJob to send massive actions into the background of the app (Implemented by Tiago)
 gem 'delayed_job_active_record'
