@@ -6,13 +6,17 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
-  def show; end
+  def show;
+    @comments = @post.comments.all
+    @comment = @post.comments.build
+  end
 
   def new
     @post = Post.new
   end
 
   def create
+    @user = User.find(@post.user_id)
     @post = current_user.posts.new(post_params)
     if @post.save
       redirect_to posts_path, notice: 'Post added.'

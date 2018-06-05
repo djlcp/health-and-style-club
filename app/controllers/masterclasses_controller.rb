@@ -26,7 +26,6 @@ class MasterclassesController < ApplicationController
 
       def edit
         @masterclass = Masterclass.find(params[:id])
-
       end
 
       def update

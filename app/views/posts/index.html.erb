@@ -1,32 +1,25 @@
+<div class="all-posts-wrapper">
 
 
-<% if cannot? :manage, @post %>
-	<div class="all-posts-wrapper">
+
+<div class="post-thumb">
 	<% @posts.each do |post| %>
-
-		
-			<div class="post-thumb">
-			  <div class="link-row-clearfix">
-			        <div class="post-image-thumb">
-			        	<%= image_tag post.image_url(:thumb) if post.image.present?  %>		
-			        </div>
-
-			        <div class="post-title-thumb">
-			          <%= link_to post.title, post %>  	
-			        </div><br>
+		<div class="link-row-clearfix">
+			  <div class="post-image-thumb">
+						<%= image_tag post.image_url(:thumb) if post.image.present? %>
 			  </div>
-			</div>
+				<div class="post-title-thumb">
+						<%= link_to post.title, post %>
+				</div>
+		</div>
+			 <% end %>
 
-	<% end %>
+	</div>
 </div>
 
-<!-- <<<<<<< HEAD
-<#% end %>
+<!-- <div><#%= if can :edit %> -->
+	<%= link_to 'New post', new_post_path %>
+<!-- <#% end %> -->
+</div>
 
-
-<#% if can? :manage, @post %>
-<#%= render 'layouts/postadmin', post: @post %>
-<#% end %>
-======= -->
-  <% end %>
-
+	<!-- put create post link in here to only allow authorized users -->

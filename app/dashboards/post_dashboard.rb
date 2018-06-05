@@ -20,7 +20,6 @@ class PostDashboard < Administrate::BaseDashboard
     state: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    # image: Field::Shrine
     image: Field::Carrierwave.with_options(
       image: :standard,
       # image_on_index: true,
@@ -80,8 +79,7 @@ class PostDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how posts are displayed
   # across all pages of the admin dashboard.
   #
-  def display_resource(post)
-    #User.find(post.user_id).email
-    post.title
+def display_resource(post)
+ post.title
   end
 end
