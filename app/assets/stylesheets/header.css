@@ -3,13 +3,13 @@
 .main-header {
 	display: flex;
   justify-content: center;
-  background-color: #EBEBEB;
+  /* background-color: #EBEBEB; */
   padding: 1em 0 0 0;
 }
 
  .main-header-title {
   font-family: 'Playfair Display', serif;
-  text-decoration: none;
+  text-decoration: none !important;
   color: #8E0048;
   font-size: 2.5em;
   text-shadow: 0 1px 1px rgba(0,0,0, .7);
@@ -34,4 +34,8 @@
   padding: 5px;
   font-size: 0.8em;
   letter-spacing: 1px;
+ }
+
+ .nav-bar-icon {
+   font-size: 150%;
  }
