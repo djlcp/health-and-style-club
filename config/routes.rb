@@ -30,6 +30,11 @@ Rails.application.routes.draw do
 
   get '/faq' => 'pages#faq'
 
+  # !!!!!!!!!!!!!About PAGE!!!!!!!!!!!!!
+
+    get '/about' => 'pages#about'
+
+
 
   #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   #!!!!!!!!!!!!MASTERCLASSES!!!!!!!!!!!!
