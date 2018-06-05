@@ -1116,3 +1116,31 @@ Running via Spring preloader in process 85888
 Running via Spring preloader in process 86373
 Running via Spring preloader in process 86867
 Running via Spring preloader in process 87415
+bundler: failed to load command: bin/rails (bin/rails)
+Bundler::GemNotFound: Could not find excon-0.62.0 in any of the sources
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler/spec_set.rb:88:in `block in materialize'
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler/spec_set.rb:82:in `map!'
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler/spec_set.rb:82:in `materialize'
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler/definition.rb:170:in `specs'
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler/definition.rb:237:in `specs_for'
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler/definition.rb:226:in `requested_specs'
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler/runtime.rb:108:in `block in definition_method'
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler/runtime.rb:20:in `setup'
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler.rb:107:in `setup'
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler/setup.rb:20:in `<top (required)>'
+  /Users/Work/.rvm/rubies/ruby-2.5.1/lib/ruby/2.5.0/rubygems/core_ext/kernel_require.rb:59:in `require'
+  /Users/Work/.rvm/rubies/ruby-2.5.1/lib/ruby/2.5.0/rubygems/core_ext/kernel_require.rb:59:in `require'
+bundler: failed to load command: bin/rails (bin/rails)
+Bundler::GemNotFound: Could not find excon-0.62.0 in any of the sources
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler/spec_set.rb:88:in `block in materialize'
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler/spec_set.rb:82:in `map!'
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler/spec_set.rb:82:in `materialize'
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler/definition.rb:170:in `specs'
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler/definition.rb:237:in `specs_for'
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler/definition.rb:226:in `requested_specs'
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler/runtime.rb:108:in `block in definition_method'
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler/runtime.rb:20:in `setup'
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler.rb:107:in `setup'
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler/setup.rb:20:in `<top (required)>'
+  /Users/Work/.rvm/rubies/ruby-2.5.1/lib/ruby/2.5.0/rubygems/core_ext/kernel_require.rb:59:in `require'
+  /Users/Work/.rvm/rubies/ruby-2.5.1/lib/ruby/2.5.0/rubygems/core_ext/kernel_require.rb:59:in `require'
