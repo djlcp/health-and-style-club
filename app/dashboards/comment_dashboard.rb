@@ -10,7 +10,9 @@ class CommentDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     post: Field::BelongsTo,
     id: Field::Number,
-    body: Field::Text,
+    user: Field::BelongsTo,
+    title: Field::String,
+    body: Field::Ckeditor,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -23,6 +25,8 @@ class CommentDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :post,
     :id,
+    :user,
+    :title,
     :body,
     :created_at,
   ].freeze
@@ -32,6 +36,8 @@ class CommentDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = [
     :post,
     :id,
+    :user,
+    :title,
     :body,
     :created_at,
     :updated_at,
@@ -41,6 +47,8 @@ class CommentDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
+    :user,
+    :title,
     :post,
     :body,
   ].freeze
@@ -49,6 +57,6 @@ class CommentDashboard < Administrate::BaseDashboard
   # across all pages of the admin dashboard.
   #
   # def display_resource(comment)
-  #   "Comment ##{comment.id}"
+  #   User.find(user.user_id).email
   # end
 end

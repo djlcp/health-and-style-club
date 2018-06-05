@@ -8,6 +8,7 @@ class UserDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
+    comments: Field::HasMany,
     posts: Field::HasMany,
     subscription: Field::HasOne,
     id: Field::Number,
@@ -35,6 +36,11 @@ class UserDashboard < Administrate::BaseDashboard
     state: Field::String,
     country: Field::String,
     post_code: Field::String,
+    bio: Field::Ckeditor,
+    # bioavatar: Field::String
+    bioavatar: Field::Carrierwave.with_options(
+      image: :standard,
+    )
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -59,6 +65,7 @@ class UserDashboard < Administrate::BaseDashboard
     :email,
     :encrypted_password,
     :role,
+    :bio,
     :subscription,
     # :reset_password_token,
     # :reset_password_sent_at,
@@ -108,6 +115,8 @@ class UserDashboard < Administrate::BaseDashboard
     :state,
     :country,
     :post_code,
+    :bio,
+    :bioavatar,
     :subscription,
   ].freeze
 

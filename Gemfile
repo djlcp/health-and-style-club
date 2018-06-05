@@ -30,13 +30,9 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
-
-
 # !!!!!!!!Implemented Gems!!!!!!!!
-# gem 'administrate-field-shrine', '~> 0.0.1' (Implemented by Raymond)
 
-# gem 'administrate-field-trix' (Implemented by Raymond)
+gem 'toastr-rails'
 
 # Use administrate-field-ckeditor to edit text in admin panel (Implemented by Raymond)
 gem "administrate-field-ckeditor", "~> 0.0.9"
@@ -44,11 +40,18 @@ gem "administrate-field-ckeditor", "~> 0.0.9"
 # Use administrate for backend admin panel (Implemented by Raymond)
 gem "administrate"
 #
+
+# # use administrate-field-carrierwave for uploading images in the admin panel
+# gem 'administrate-field-carrierwave', '~> 0.3.2'
+
 # # use administrate-field-carrierwave for uploading images in the admin panel (Implemented by Raymond)
 gem 'administrate-field-carrierwave', '~> 0.3.2'
 
+
 # Use Carrierwave to add images to webapp (Implemented by Raymond)
 gem 'carrierwave', '~> 1.0'
+
+gem 'fog-aws'
 
 # Use mini_magick to resize images to webapp (Implemented by Raymond)
 gem 'mini_magick', '~> 4.8'
@@ -59,7 +62,12 @@ gem 'cancancan', '~> 1.13', '>= 1.13.1'
 # Use Devise for user authentication (Implemented by Raymond)
 gem 'devise', '~> 4.2'
 
+
+gem 'vimeo'
+
+
 # Used for generating pdf documents (Implemented by Tiago)
+
 gem 'wicked_pdf'
 
 # Required to use wicked_pdf (Implemented by Tiago)
@@ -77,6 +85,10 @@ gem 'letter_opener', :group => :development
 # Use CKEditor to design post conttents easier (Implemented by Liam)
 gem 'ckeditor', github: 'galetahub/ckeditor'
 
+gem 'shrine'
+
+gem "font-awesome-rails"
+
 # Use DelayedJob to send massive actions into the background of the app (Implemented by Tiago)
 gem 'delayed_job_active_record'
 
@@ -84,15 +96,10 @@ gem 'delayed_job_active_record'
 gem 'whenever', require: false
 
 
-
-# gem 'npm-pipeline-rails'
-
-
-
 # !!!!!!!!GROUPS!!!!!!!!
 
 # Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+# gem 'cconfigapistrano-rails', group: :development
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

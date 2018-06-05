@@ -5,6 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :posts
   has_one :subscription
+  has_many :comments
+
+  mount_uploader :bioavatar, Picture
 
   enum role: { subscriber: 1, contributor: 2, admin: 3}
 
