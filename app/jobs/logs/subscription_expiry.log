@@ -17605,3 +17605,75 @@ Running via Spring preloader in process 62878
 Running via Spring preloader in process 63398
 Running via Spring preloader in process 63912
 Running via Spring preloader in process 64474
+bundler: failed to load command: bin/rails (bin/rails)
+Bundler::GemNotFound: Could not find font-awesome-rails-4.7.0.4 in any of the sources
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler/spec_set.rb:88:in `block in materialize'
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler/spec_set.rb:82:in `map!'
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler/spec_set.rb:82:in `materialize'
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler/definition.rb:170:in `specs'
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler/definition.rb:237:in `specs_for'
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler/definition.rb:226:in `requested_specs'
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler/runtime.rb:108:in `block in definition_method'
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler/runtime.rb:20:in `setup'
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler.rb:107:in `setup'
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler/setup.rb:20:in `<top (required)>'
+  /Users/Work/.rvm/rubies/ruby-2.5.1/lib/ruby/2.5.0/rubygems/core_ext/kernel_require.rb:59:in `require'
+  /Users/Work/.rvm/rubies/ruby-2.5.1/lib/ruby/2.5.0/rubygems/core_ext/kernel_require.rb:59:in `require'
+bundler: failed to load command: bin/rails (bin/rails)
+Bundler::GemNotFound: Could not find font-awesome-rails-4.7.0.4 in any of the sources
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler/spec_set.rb:88:in `block in materialize'
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler/spec_set.rb:82:in `map!'
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler/spec_set.rb:82:in `materialize'
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler/definition.rb:170:in `specs'
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler/definition.rb:237:in `specs_for'
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler/definition.rb:226:in `requested_specs'
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler/runtime.rb:108:in `block in definition_method'
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler/runtime.rb:20:in `setup'
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler.rb:107:in `setup'
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler/setup.rb:20:in `<top (required)>'
+  /Users/Work/.rvm/rubies/ruby-2.5.1/lib/ruby/2.5.0/rubygems/core_ext/kernel_require.rb:59:in `require'
+  /Users/Work/.rvm/rubies/ruby-2.5.1/lib/ruby/2.5.0/rubygems/core_ext/kernel_require.rb:59:in `require'
+bundler: failed to load command: bin/rails (bin/rails)
+Bundler::GemNotFound: Could not find font-awesome-rails-4.7.0.4 in any of the sources
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler/spec_set.rb:88:in `block in materialize'
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler/spec_set.rb:82:in `map!'
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler/spec_set.rb:82:in `materialize'
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler/definition.rb:170:in `specs'
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler/definition.rb:237:in `specs_for'
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler/definition.rb:226:in `requested_specs'
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler/runtime.rb:108:in `block in definition_method'
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler/runtime.rb:20:in `setup'
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler.rb:107:in `setup'
+  /Users/Work/.rvm/gems/ruby-2.5.1/gems/bundler-1.16.1/lib/bundler/setup.rb:20:in `<top (required)>'
+  /Users/Work/.rvm/rubies/ruby-2.5.1/lib/ruby/2.5.0/rubygems/core_ext/kernel_require.rb:59:in `require'
+  /Users/Work/.rvm/rubies/ruby-2.5.1/lib/ruby/2.5.0/rubygems/core_ext/kernel_require.rb:59:in `require'
+Running via Spring preloader in process 66527
+Running via Spring preloader in process 67011
+Running via Spring preloader in process 67494
+Running via Spring preloader in process 67915
+Running via Spring preloader in process 68399
+Running via Spring preloader in process 68904
+Running via Spring preloader in process 69387
+Running via Spring preloader in process 69874
+Running via Spring preloader in process 70357
+Running via Spring preloader in process 70840
+Running via Spring preloader in process 71323
+Running via Spring preloader in process 71806
+Running via Spring preloader in process 72289
+Running via Spring preloader in process 72772
+Running via Spring preloader in process 73257
+Running via Spring preloader in process 73677
+Running via Spring preloader in process 74164
+Running via Spring preloader in process 74649
+Running via Spring preloader in process 75132
+Running via Spring preloader in process 75617
+Running via Spring preloader in process 76100
+Running via Spring preloader in process 76583
+Running via Spring preloader in process 77073
+Running via Spring preloader in process 77558
+Running via Spring preloader in process 78045
+Running via Spring preloader in process 78531
+Running via Spring preloader in process 79016
+Running via Spring preloader in process 79433
+Running via Spring preloader in process 79922
+Running via Spring preloader in process 80410

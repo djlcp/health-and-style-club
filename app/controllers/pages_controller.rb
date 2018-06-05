@@ -6,6 +6,7 @@ class PagesController < ApplicationController
   end
 
   def members
+    @users = User.all
   end
 
   def faq
