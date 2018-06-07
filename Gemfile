@@ -1,4 +1,3 @@
-ruby '2.5.0'
 
 source 'https://rubygems.org'
 
@@ -27,6 +26,7 @@ gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
@@ -122,6 +122,6 @@ group :development do
 end
 
 group :production do
-  # gem 'pg'
-  # ruby '2.5.1'
+   # gem 'pg'
+   # ruby '2.5.0'
 end
