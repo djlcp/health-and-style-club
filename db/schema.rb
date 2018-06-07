@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180726203208) do
+ActiveRecord::Schema.define(version: 20180726203209) do
 
   create_table "ckeditor_assets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "data_file_name", null: false
@@ -150,6 +150,7 @@ ActiveRecord::Schema.define(version: 20180726203208) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "masterclass_id"
+    t.boolean "welcome_video", default: false
   end
 
   add_foreign_key "comments", "posts"
