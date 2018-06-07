@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   resources :comments
   resources :posts_contents
   resources :attachments
+  resources :contacts, only: [:new, :create]
 
 # !!!!!!!!!!!!!MEMBERS PAGE!!!!!!!!!!!!!
 

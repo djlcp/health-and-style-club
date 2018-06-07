@@ -1,10 +1,16 @@
 
+<<<<<<< HEAD
 <div class="d-flex justify-content-between border-bottom border-dark">
   <div class="row pl-3 nav-bar-icon">
     <i class="fa fa-facebook-square p-3"></i>
     <i class="fa fa-pinterest-square p-3"></i>
     <i class="fa fa-youtube-square p-3"></i>
     <i class="fa fa-twitter-square p-3"></i>
+=======
+</div>
+<div class="main-members-area">
+  <%= link_to "Members Page", members_path, class: 'members-area-title' %>
+>>>>>>> contactformlb
   </div>
 
   <div class="row p-3">
@@ -13,8 +19,14 @@
          <%= link_to 'sign up', new_user_registration_path, class:'top-navigation-link' %>
          <%= link_to 'login', new_user_session_path, class:'top-navigation-link' %>
       <% else %>
+<<<<<<< HEAD
          <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:'top-navigation-link' %>
          <%= link_to "Become a Member", subscriptions_path, class: 'top-navigation-link' %></a>
+=======
+          <li><%= link_to "Subscriptions", subscriptions_path, class: 'main-navigation-link' %></a></li>
+          <li><%= link_to "Contact", new_contact_path, class: 'main-navigation-link' %></a></li>
+        <li><%= link_to 'Logout', destroy_user_session_path, method: :delete, class:'main-navigation-link' %></li>
+>>>>>>> contactformlb
       <% end %>
   </div>
 </div>

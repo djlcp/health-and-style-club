@@ -5,8 +5,9 @@
 </div>
 
 <!-- Hero image -->
-		<div class="post-image-main">
+	<div class="post-image-main">
 		<%= image_tag(@post.image_url.to_s) %>
+<<<<<<< HEAD
 		</div>
 		
 		<div class="post-title-main">
@@ -14,14 +15,28 @@
 		</div>
 
 		<br>
+=======
+	</div>
 
-		<p class="post-body-main"><%= @post.body_text %></p>
+	<div class="post-title-main">
+		<%= @post.title %>
+	</div>
+>>>>>>> contactformlb
 
+	<div>
+		<%= sanitize @post.body_text, tags: %w(p ul li iframe) %>
+	</div>
+
+<<<<<<< HEAD
 		<% @post.contents.each do |content| %>
+=======
+
+	<% @post.contents.each do |content| %>
+>>>>>>> contactformlb
 		<p>
-		    <%= render "layouts/post_content/#{content.content_type}.html.erb", :@content => content %>
-		  </p>
-		<% end %>
+	    <%= render "layouts/post_content/#{content.content_type}.html.erb", :@content => content %>
+	  </p>
+	<% end %>
 
 		<%= render partial: 'comments/form', locals: { comment: @comment } %>
 
@@ -38,4 +53,8 @@ About the author
 
 <%= render 'author' %>
 
+<<<<<<< HEAD
 </section>
+=======
+</section>
+>>>>>>> contactformlb

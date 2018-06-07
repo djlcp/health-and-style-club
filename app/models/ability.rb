@@ -14,10 +14,18 @@ class Ability
       cannot :edit, Post
     end
     if user
+<<<<<<< HEAD
          can :read, Post
        else
          cannot :read, Subscription
          can :read, Post
      end
+=======
+     can :read, Post
+   else
+     cannot :read, Subscription
+     can :read, Post
+   end
+    end
+>>>>>>> contactformlb
   end
-end
