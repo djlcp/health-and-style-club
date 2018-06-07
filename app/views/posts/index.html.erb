@@ -18,7 +18,8 @@
 </div>
 
 <!-- <div><#%= if can :edit %> -->
-	<%= link_to 'New post', new_post_path, { no_turbolink: true } %>
+<div data-no-turbolink>
+	<%= link_to 'New post', new_post_path, data: { "no_turbolink" => true } %>
 <!-- <#% end %> -->
 </div>
 
