@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180726203211) do
+ActiveRecord::Schema.define(version: 20180726203212) do
 
   create_table "ckeditor_assets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "data_file_name", null: false
@@ -113,6 +113,11 @@ ActiveRecord::Schema.define(version: 20180726203211) do
     t.string "bioavatar"
     t.string "biobackground"
     t.boolean "search_consent"
+    t.string "facebook"
+    t.string "pinterest"
+    t.string "youtube"
+    t.string "twitter"
+    t.string "website"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -27,10 +27,39 @@
     text-decoration: none !important;
 }
 
-/*
- *= require gulp/app
- */
+
+.main-heading {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 3em;
+}
+
+.secondary-heading {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: 2em;
+}
+
+.section-heading {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: 1.5em;
+}
+
+.paragraph {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9em;
+}
+
+.center {
+    text-align: center;
+}
+
 
 .vip_background {
     background-color: #FFFBFF;
 }
+
+/*
+ *= require gulp/app
+ */
