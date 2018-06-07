@@ -1,18 +1,21 @@
 <section class="post-main">
 
+<div class="post-category">
+<%= @post.category.name %>
+</div>
+
 <!-- Hero image -->
 		<div class="post-image-main">
 		<%= image_tag(@post.image_url.to_s) %>
 		</div>
-
+		
 		<div class="post-title-main">
 			<%= @post.title %>
 		</div>
+
 		<br>
 
 		<p class="post-body-main"><%= @post.body_text %></p>
-
-
 
 		<% @post.contents.each do |content| %>
 		<p>
@@ -34,9 +37,5 @@ Add in option here for Hero image
 About the author
 
 <%= render 'author' %>
-
-
-
-
 
 </section>

@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class PostDashboard < Administrate::BaseDashboard
+class CategoryDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -8,24 +8,11 @@ class PostDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    user: Field::BelongsTo,
-    comments: Field::HasMany,
-    post_contents: Field::HasMany,
-    category: Field::BelongsTo,
-    contents: Field::HasMany,
+    posts: Field::HasMany,
     id: Field::Number,
-    title: Field::String,
-    body_text: Field::Ckeditor,
-    paid_for: Field::Boolean,
-    state: Field::String,
+    name: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    image: Field::Carrierwave.with_options(
-      image: :standard,
-      # image_on_index: true,
-      # remove: false,
-      # remote_url: false
-    )
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -34,52 +21,34 @@ class PostDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :user,
-    :title,
-    #:comments,
-    :category,
-    # :post_contents,
-    # :contents,
+    :posts,
+    :id,
+    :name,
+    :created_at,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    :user,
-    # :post_contents,
-    # :contents,
-    # :id,
-    :title,
-    :category,
-    :body_text,
-    :paid_for,
-    :state,
+    :posts,
+    :id,
+    :name,
     :created_at,
     :updated_at,
-    :image,
-    :comments,
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :user,
-    # :comments,
-    # :post_contents,
-    # :contents,
-    :title,
-    :body_text,
-    :category,
-    # :paid_for,
-    # :state,
-    :image,
+    :posts,
+    :name,
   ].freeze
 
-  # Overwrite this method to customize how posts are displayed
+  # Overwrite this method to customize how categories are displayed
   # across all pages of the admin dashboard.
   #
-def display_resource(post)
- post.title
-  end
+  # def display_resource(category)
+  #   "Category ##{category.id}"
+  # end
 end
