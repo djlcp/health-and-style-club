@@ -4,8 +4,9 @@
     <i class="fa fa-facebook-square p-3"></i>
     <i class="fa fa-pinterest-square p-3"></i>
     <i class="fa fa-youtube-square p-3"></i>
-    <i class="fa fa-twitter-square p-3"></i>
+    <i class="fa fa-twitter-square p-3 hover"></i>
   </div>
+
 
   <div class="row p-3">
         <%= link_to 'FAQ', faq_path, class:'main-navigation-link' %>
@@ -17,7 +18,7 @@
           </button>
           <div class="dropdown-menu" aria-labelledby="AccountMenu">
             <%= link_to "Edit Account", edit_user_registration_path, class:"dropdown-item" %>
-            <%= link_to "Edit Account", edit_user_registration_path, class:"dropdown-item" %>
+            <%= link_to "Edit Password", edit_user_registration_path, class:"dropdown-item" %>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Separated link</a>
           </div>
