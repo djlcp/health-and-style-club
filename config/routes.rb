@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   resources :comments
   resources :posts_contents
   resources :attachments
+  resources :contacts, only: [:new, :create]
 
 # !!!!!!!!!!!!!MEMBERS PAGE!!!!!!!!!!!!!
 
@@ -29,11 +30,6 @@ Rails.application.routes.draw do
 # !!!!!!!!!!!!!FAQ PAGE!!!!!!!!!!!!!
 
   get '/faq' => 'pages#faq'
-
-  # !!!!!!!!!!!!!About PAGE!!!!!!!!!!!!!
-
-    get '/about' => 'pages#about'
-
 
 
   #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

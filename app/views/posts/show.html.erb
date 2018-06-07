@@ -5,23 +5,38 @@
 </div>
 
 <!-- Hero image -->
-		<div class="post-image-main">
+	<div class="post-image-main">
 		<%= image_tag(@post.image_url.to_s) %>
+
 		</div>
-		
+
 		<div class="post-title-main">
 			<%= @post.title %>
 		</div>
 
 		<br>
 
-		<p class="post-body-main"><%= @post.body_text %></p>
+	</div>
+
+	<div class="post-title-main">
+		<%= @post.title %>
+	</div>
+
+
+	<div>
+		<%= sanitize @post.body_text, tags: %w(p ul li iframe) %>
+	</div>
+
 
 		<% @post.contents.each do |content| %>
+
+
+	<% @post.contents.each do |content| %>
+
 		<p>
-		    <%= render "layouts/post_content/#{content.content_type}.html.erb", :@content => content %>
-		  </p>
-		<% end %>
+	    <%= render "layouts/post_content/#{content.content_type}.html.erb", :@content => content %>
+	  </p>
+	<% end %>
 
 		<%= render partial: 'comments/form', locals: { comment: @comment } %>
 

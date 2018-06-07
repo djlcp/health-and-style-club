@@ -10,10 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180726203209) do
-
-  create_table "admin", id: :integer, unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-  end
+ActiveRecord::Schema.define(version: 20180726203208) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -44,9 +41,9 @@ ActiveRecord::Schema.define(version: 20180726203209) do
   create_table "contents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "content_type"
     t.text "description"
+    t.string "file_url", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "file_url"
   end
 
   create_table "documents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -101,7 +98,7 @@ ActiveRecord::Schema.define(version: 20180726203209) do
   end
 
   create_table "subscriptions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.date "expiry_date"
+    t.datetime "expiry_date"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -122,7 +119,7 @@ ActiveRecord::Schema.define(version: 20180726203209) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "subscription_id"
+    t.integer "subscription"
     t.string "first_name"
     t.string "surname"
     t.string "middle_names"
@@ -147,7 +144,6 @@ ActiveRecord::Schema.define(version: 20180726203209) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "masterclass_id"
-    t.boolean "welcome_video", default: false
   end
 
   add_foreign_key "comments", "posts"

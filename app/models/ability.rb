@@ -14,10 +14,18 @@ class Ability
       cannot :edit, Post
     end
     if user
+
          can :read, Post
        else
          cannot :read, Subscription
          can :read, Post
      end
-  end
-end
+
+     can :read, Post
+   else
+     cannot :read, Subscription
+     can :read, Post
+   end
+    end
+
+  
