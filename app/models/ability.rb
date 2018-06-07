@@ -25,4 +25,3 @@ class Ability
      can :read, Post
    end
  end
-end
