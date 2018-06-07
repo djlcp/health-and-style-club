@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
   load_and_authorize_resource
   attr_accessor :user
-  before_filter :user
+  before_action :user
 
   def index
     @users = User.all
@@ -41,6 +41,17 @@ class UsersController < ApplicationController
       render :action => 'edit'
     end
   end
+  def update_password
+    @user = current_user.id
+    if @user.update(user_params)
+      # Sign in the user by passing validation in case their password changed
+      bypass_sign_in(@user)
+      redirect_to root_path
+    else
+      render "edit"
+    end
+  end
+
 
   def destroy
     @user = User.find(params[:id])
@@ -50,6 +61,6 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:user).permit(:email, :password, :password_confirmation, :role, :bioavatar, :biobackground)
+      params.require(:user).permit(:id, :email, :password, :password_confirmation, :role, :bioavatar, :biobackground, :first_name, :surname, :phone, :search_consent)
     end
 end

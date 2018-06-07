@@ -13,6 +13,14 @@
          <%= link_to 'sign up', new_user_registration_path, class:'main-navigation-link' %>
          <%= link_to 'login', new_user_session_path, class:'main-navigation-link' %>
       <% else %>
+          <button class="btn p-0" id="AccountMenu" data-toggle="dropdown"><i class="fa fa-user-circle p-0 m-0"></i>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="AccountMenu">
+            <%= link_to "Edit Account", edit_user_registration_path, class:"dropdown-item" %>
+            <%= link_to "Edit Account", edit_user_registration_path, class:"dropdown-item" %>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+          </div>
          <%= link_to "Subscriptions", subscriptions_path, class: 'main-navigation-link' %></a>
          <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:'main-navigation-link' %>
       <% end %>
@@ -29,4 +37,3 @@
     <a href="" class="main-navigation-link">Navigation</a>
     <a href="" class="main-navigation-link">Navigation</a>
 </div>
-
