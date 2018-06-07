@@ -7,7 +7,6 @@
 <!-- Hero image -->
 	<div class="post-image-main">
 		<%= image_tag(@post.image_url.to_s) %>
-
 		</div>
 
 		<div class="post-title-main">
@@ -15,6 +14,8 @@
 		</div>
 
 		<br>
+=======
+	</div>
 
 	</div>
 
@@ -27,12 +28,18 @@
 		<%= sanitize @post.body_text, tags: %w(p ul li iframe) %>
 	</div>
 
+>>>>>>> 3c7b70b4947c8f37ff9eeac7c4d84e5da11fce5d
 
-		<% @post.contents.each do |content| %>
+	<div>
+		<%= sanitize @post.body_text, tags: %w(p ul li iframe) %>
+	</div>
+
+	
 
 
 	<% @post.contents.each do |content| %>
 
+>>>>>>> 3c7b70b4947c8f37ff9eeac7c4d84e5da11fce5d
 		<p>
 	    <%= render "layouts/post_content/#{content.content_type}.html.erb", :@content => content %>
 	  </p>
@@ -53,4 +60,12 @@ About the author
 
 <%= render 'author' %>
 
+<<<<<<< HEAD
 </section>
+=======
+<<<<<<< HEAD
+</section>
+=======
+</section>
+>>>>>>> contactformlb
+>>>>>>> 3c7b70b4947c8f37ff9eeac7c4d84e5da11fce5d
