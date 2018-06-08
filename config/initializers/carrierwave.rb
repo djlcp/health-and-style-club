@@ -2,8 +2,8 @@ CarrierWave.configure do |config|
   config.fog_provider = 'fog/aws'
   config.fog_credentials = {
     provider: 'AWS',
-    aws_access_key_id: 'AKIAJPHLLT6BAE3XEJJA',
-    aws_secret_access_key: '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',
+    aws_access_key_id: ',
+    aws_secret_access_key: '
     region: 'eu-west-2'
   }
   config.fog_directory = 'healthstyleclub'
