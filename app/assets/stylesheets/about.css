@@ -5,11 +5,16 @@
 }
 
 
-.main-image {
+.bigimage {
   background-image: url('About_Page_Cover.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
   width: 100%;
+
 }
+
+@media only screen and (max-width: 640px) {
+
+  }
