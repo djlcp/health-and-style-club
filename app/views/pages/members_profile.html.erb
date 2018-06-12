@@ -1,0 +1,31 @@
+<div class="card mb-3 card-imgage">
+  <%= image_tag @user.biobackground.cover_image_big, class: "card-img-top" %>
+  <%= image_tag @user.bioavatar.avatar, class: "profile-picture rounded-circle border border-danger" %>
+<!--  <img class="card-img-top" src="..." alt="Card image cap">-->
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+  </div>
+</div>
+
+
+
+<style>
+  .card-imgage {
+    /*opacity: 0.5;*/
+    position: relative;
+  }
+  .profile-picture{
+    height:75%;
+    background-color: #fff;
+    position: absolute;
+    top: 0%;
+    /*left: 30%;*/
+    /*right: 30%;*/
+  }
+</style>
+
+
+      <%#= image_tag @user.bioavatar.avatar, class: "" %>
+      <%#= image_tag @user.biobackground.cover_image_big, class:""%>

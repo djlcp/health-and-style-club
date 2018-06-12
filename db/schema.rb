@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180726203208) do
+ActiveRecord::Schema.define(version: 20180726203212) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -36,14 +36,6 @@ ActiveRecord::Schema.define(version: 20180726203208) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_comments_on_post_id"
-  end
-
-  create_table "contents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "content_type"
-    t.text "description"
-    t.string "file_url", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "documents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -92,7 +84,6 @@ ActiveRecord::Schema.define(version: 20180726203208) do
     t.string "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
     t.string "image"
     t.integer "category"
   end
@@ -102,8 +93,8 @@ ActiveRecord::Schema.define(version: 20180726203208) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "paid_for"
     t.string "chargebee_id"
+    t.boolean "paid_for", default: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -122,17 +113,18 @@ ActiveRecord::Schema.define(version: 20180726203208) do
     t.integer "subscription"
     t.string "first_name"
     t.string "surname"
-    t.string "middle_names"
     t.string "phone"
-    t.string "address_line_1"
-    t.string "address_line_2"
-    t.string "city"
-    t.string "state"
     t.string "country"
-    t.string "post_code"
     t.integer "role"
     t.string "bio"
     t.string "bioavatar"
+    t.string "biobackground"
+    t.boolean "search_consent"
+    t.string "facebook"
+    t.string "pinterest"
+    t.string "youtube"
+    t.string "twitter"
+    t.string "website"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

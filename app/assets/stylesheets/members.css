@@ -1,0 +1,124 @@
+.social-icons-profile {
+    color: #dc3545;
+    margin: 8px;
+    position:relative;
+    z-index: 99999;
+}
+
+.social-icons-profile:hover {
+    color: #000;
+    position: relative;
+    z-index: 99999;
+}
+* {
+    -webkit-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+    font-family: 'Playfair Display', serif;
+}
+
+*:hover{
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+.profile-card {
+    height: 300px;
+    margin: 20px;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+    overflow-x: hidden;
+}
+
+.profile-background-container {
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    z-index: -100;
+}
+
+.profile-background {
+    width:100%;
+    display: block;
+    filter: blur(2px);
+}
+
+
+.profile-avatar{
+    width:40%;
+    background-color: #fff;
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    right: 30%;
+}
+
+.profile-content {
+    /*margin-top: 25%;*/
+    position: relative;
+    z-index: 1;
+}
+
+.profile-name {
+    text-align: center;
+    color: #000000;
+}
+
+.profile-role {
+    text-align: center;
+}
+
+.profile-blocks {
+    background-color: #fbcfcc;
+    height: 100%;
+    position: relative;
+    z-index: -4;
+}
+
+.profile-blocks:hover {
+    background-color: #ffe2e0;
+}
+
+.profile-blocks::before {
+    -webkit-transition: all 1s ease-out;
+    transition: all 1s ease-out;
+    background-color: #fbcfcc;
+    border-top: #dc3545 solid 1px;
+    height: 100%;
+    content: '';
+    width: 120%;
+    height: 90%;
+    left: -30px;
+    top: -15px;
+    position: absolute;
+    z-index: -999;
+    transform: rotate(5deg);
+    overflow: hidden;
+}
+
+.profile-blocks:hover::before {
+    background-color: #ffe2e0;
+}
+
+.profile-social {
+    width: 100%;
+}
+.no-style {
+    text-decoration: none;
+}
+
+
+
+@media only screen and (max-width: 575px) and (min-width: 430px) {
+    .profile-avatar{
+        width:30%;
+        background-color: #fff;
+        position: absolute;
+        top: 10%;
+        left: 35%;
+        right: 35%;
+    }
+    .profile-blocks::before {
+        transform: rotate(3deg)
+    }
+}
