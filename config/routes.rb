@@ -24,9 +24,10 @@ Rails.application.routes.draw do
 # !!!!!!!!!!!!!MEMBERS PAGE!!!!!!!!!!!!!
 
   get 'members' => 'pages#members'
+  get '/members/:id', to: 'pages#members_profile'
 
 
-# !!!!!!!!!!!!!FAQ PAGE!!!!!!!!!!!!!
+  # !!!!!!!!!!!!!FAQ PAGE!!!!!!!!!!!!!
 
   get '/faq' => 'pages#faq'
 
@@ -44,11 +45,6 @@ Rails.application.routes.draw do
 
   devise_for :users
   get 'users/password_update' => 'users#password_update'
-  resource :user, only: [:edit] do
-    collection do
-      patch 'update_password'
-    end
-  end
   namespace :admin do
     resources :users
     # resources :contents
