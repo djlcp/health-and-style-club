@@ -1,0 +1,59 @@
+<h1 class="main-heading center">Members</h1>
+
+
+<div class="row d-flex justify-content-around col-12 m-auto">
+  <% @users.each do |u| %>
+    <% if u.bioavatar?
+        image = u.bioavatar.avatar
+      else
+        image = "contact.png"
+      end
+       if u.biobackground?
+         background = u.biobackground.background
+       else
+         background = "haute-chocolate-styled-stock-photography-spring-2016-blush-pink-marble-15-final.jpg"
+       end
+      if u.role == "admin"
+        role_color = "#FF3E33"
+        elsif u.role == "contributor"
+        role_color = "#74008C"
+        else
+        role_color = "#188C00"
+      end
+    %>
+    <% if u.search_consent %>
+    <div class="card col-xs-12 col-sm-8 col-md-5 col-lg-4 col-xl-3 profile-card">
+      <div class="profile-background-container border border-danger">
+        <%= image_tag background, class:'profile-background' %>
+      </div>
+      <%= image_tag image, class:"rounded-circle profile-avatar border border-danger"%>
+      <%= link_to "#{members_path}/#{u.id}", class:'no-style' do %>
+      <div class="profile-blocks">
+        <div class="profile-content">
+          <h5 class="profile-name"><%= u.first_name %> <%= u.surname %></h5>
+          <h6 class="profile-role" style="color:<%= role_color %>"><%= u.role.capitalize %></h6>
+          <div class="profile-social d-flex justify-content-center">
+            <% if u.facebook || u.youtube || u.youtube || u.twitter || u.website %>
+            <% if u.facebook%>
+              <%= link_to "https://www.facebook.com/#{u.facebook}" do %><i class="fa fa-facebook-square fa-2x social-icons-profile"></i> <% end %>
+              <%end%><% if u.pinterest%>
+                <%= link_to "https://www.pinterest.com/#{u.pinterest}" do %><i class="fa fa-pinterest-square fa-2x social-icons-profile"></i> <% end %>
+              <%end%><% if u.youtube%>
+                <%= link_to "https://www.youtube.com/#{u.youtube}" do %><i class="fa fa-youtube-square fa-2x social-icons-profile"></i> <% end %>
+              <%end%><% if u.twitter%>
+                <%= link_to "https://www.twitter.com/#{u.twitter}" do %><i class="fa fa-twitter-square fa-2x social-icons-profile"></i> <% end %>
+              <%end%><% if u.website%>
+                <%= link_to "https://#{u.website}" do %><i class="fa fa-globe fa-2x social-icons-profile"></i> <% end %>
+            <% end %>
+              <% else %>
+              <a class="fa fas-globe fa-2x social-icons-profile"></a>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+      <% end %>
+  <% end %>
+</div>
+

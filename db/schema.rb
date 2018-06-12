@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180726203208) do
+ActiveRecord::Schema.define(version: 20180726203212) do
 
   create_table "admin", id: :integer, unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
   end
@@ -125,17 +125,18 @@ ActiveRecord::Schema.define(version: 20180726203208) do
     t.integer "subscription_id"
     t.string "first_name"
     t.string "surname"
-    t.string "middle_names"
     t.string "phone"
-    t.string "address_line_1"
-    t.string "address_line_2"
-    t.string "city"
-    t.string "state"
     t.string "country"
-    t.string "post_code"
     t.integer "role"
     t.string "bio"
     t.string "bioavatar"
+    t.string "biobackground"
+    t.boolean "search_consent"
+    t.string "facebook"
+    t.string "pinterest"
+    t.string "youtube"
+    t.string "twitter"
+    t.string "website"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

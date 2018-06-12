@@ -19,34 +19,47 @@
 
 /**************** General ****************/
 
-
- * {
-	box-sizing: border-box;
+* {
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+    font-family: 'Playfair Display', serif;
+    box-sizing: border-box;
+    text-decoration: none !important;
 }
 
 
-
-.hidden {
-  display: none;
+.main-heading {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 3em;
 }
 
-/*************** Main Header ***************/
-
-
-.hidden {
-  display: none;
+.secondary-heading {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: 2em;
 }
 
-/*************** Main Header ***************/
+.section-heading {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: 1.5em;
+}
+
+.paragraph {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9em;
+}
+
+.center {
+    text-align: center;
+}
 
 
-/*************** Main Header ***************/
+.vip_background {
+    background-color: #FFFBFF;
+}
 
-
-/**************** Footer ****************/
-
-
-/**************** media queries ****************/
 /*
  *= require gulp/app
  */
