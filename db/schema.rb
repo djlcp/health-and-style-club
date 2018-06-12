@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20180726203209) do
-=======
-ActiveRecord::Schema.define(version: 20180726203208) do
->>>>>>> develop
+ActiveRecord::Schema.define(version: 20180726203220) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -45,9 +41,9 @@ ActiveRecord::Schema.define(version: 20180726203208) do
   create_table "contents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "content_type"
     t.text "description"
-    t.string "file_url", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "file_url"
   end
 
   create_table "documents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -139,17 +135,17 @@ ActiveRecord::Schema.define(version: 20180726203208) do
     t.integer "subscription"
     t.string "first_name"
     t.string "surname"
-    t.string "middle_names"
     t.string "phone"
-    t.string "address_line_1"
-    t.string "address_line_2"
-    t.string "city"
-    t.string "state"
     t.string "country"
-    t.string "post_code"
     t.integer "role"
     t.string "bio"
     t.string "bioavatar"
+    t.boolean "search_consent"
+    t.string "facebook"
+    t.string "pinterest"
+    t.string "youtube"
+    t.string "twitter"
+    t.string "website"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -161,6 +157,7 @@ ActiveRecord::Schema.define(version: 20180726203208) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "masterclass_id"
+    t.boolean "welcome_video", default: false
   end
 
   add_foreign_key "comments", "posts"
