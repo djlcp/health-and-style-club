@@ -1,7 +1,7 @@
 <section class="post-main">
 
 <!-- <div class="post-category">
-<%= @post.category.name %>
+<#%= @post.category.name %>
 </div> -->
 
 <!-- Hero image -->
@@ -14,58 +14,27 @@
 		</div>
 
 		<br>
-=======
+
+
+	<div class="post-body-main">
+		<%= sanitize @post.body_text, tags: %w(p ul li ul iframe) %>
 	</div>
-
-	</div>
-
-	<div class="post-title-main">
-		<%= @post.title %>
-	</div>
-
-
-	<div>
-		<%= sanitize @post.body_text, tags: %w(p ul li iframe) %>
-	</div>
-
->>>>>>> 3c7b70b4947c8f37ff9eeac7c4d84e5da11fce5d
-
-	<div>
-		<%= sanitize @post.body_text, tags: %w(p ul li iframe) %>
-	</div>
-
-
-
 
 	<% @post.contents.each do |content| %>
 
->>>>>>> 3c7b70b4947c8f37ff9eeac7c4d84e5da11fce5d
 		<p>
 	    <%= render "layouts/post_content/#{content.content_type}.html.erb", :@content => content %>
 	  </p>
 	<% end %>
 
-		<%= render partial: 'comments/form', locals: { comment: @comment } %>
-
-<!--
-Add in option here for Hero image
-
-	<h1 class="post-title"><%= @post.title %></h1>
-		<p class="post-body"><%= sanitize @post.body_text %></p> -->
-
-<!-- this allows the frame to be rendered, but messes with the p tags, so need to work out how to get that working-->
-		<!-- <%= sanitize @post.body_text, tags: %w( iframe ), attributes: %w(src source width height )%> -->
-
 About the author
 
 <%= render 'author' %>
 
-<<<<<<< HEAD
+<!--The below generates n error, so commenting out
+
+	<#%= render partial: 'comments/form', locals: { comment: @comment } %>
+
+-->
+
 </section>
-=======
-<<<<<<< HEAD
-</section>
-=======
-</section>
->>>>>>> contactformlb
->>>>>>> 3c7b70b4947c8f37ff9eeac7c4d84e5da11fce5d
