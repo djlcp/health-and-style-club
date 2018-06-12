@@ -18,13 +18,14 @@
    font-size: 150%;
  }
 
- .main-navigation-container {
+.main-navigation-image {
+  /* width: 50px; */
+  font-size: 200%;
+}
+
+.main-navigation-container {
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
 	text-align: center;
-}
-
-.main-navigation-image {
-  width: 50px;
 }
