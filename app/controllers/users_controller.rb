@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class UsersController < Devise::RegistrationsController
   before_action :authenticate_user!
   load_and_authorize_resource
   attr_accessor :user
@@ -34,24 +34,18 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
 
-    if @user.update_attributes(user_params)
-      sign_in(@user, :bypass => true) if @user == current_user
-      redirect_to @user, :flash => { :success => 'User was successfully updated.' }
-    else
-      render :action => 'edit'
-    end
-  end
-  def update_password
-    @user = current_user.id
-    if @user.update(user_params)
-      # Sign in the user by passing validation in case their password changed
-      bypass_sign_in(@user)
-      redirect_to root_path
-    else
-      render "edit"
-    end
-  end
+    if @user.valid_password?(params[:password])
 
+      if @user.update_attributes(user_params)
+
+        sign_in(@user, :bypass => true) if @user == current_user
+        redirect_to @user, :flash => { :success => 'User was successfully updated.' }
+      end
+    end
+
+
+    render :action => 'edit', :anchor => '123456'
+  end
 
   def destroy
     @user = User.find(params[:id])
