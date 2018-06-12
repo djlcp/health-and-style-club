@@ -1,7 +1,6 @@
 
 <%= form_for @post do |form| %>
 
-
   <div class="form-group">
     <%= form.label :title %><br>
     <%= form.text_field :title %>
@@ -9,7 +8,7 @@
 
 
 <div class="form-group" data-no-turbolink>
-  <%= form.cktext_area :body_text, id: "ckeditor",  cols: 40, ckeditor: { toolbar: 'mini' } %>
+  <%= form.cktext_area :body_text, id: "ckeditor",  cols: 100, ckeditor: { toolbar: 'mini' } %>
 </div>
 
 
