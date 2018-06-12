@@ -1,12 +1,12 @@
 
-<section class="hero homepage-banner-<%= rand(1..3) %>">
+<section class="hero homepage-banner-<%= rand(1..3) %>" "carousel">
 	<div class ="image-message">
 		  <% if current_user %>
-        <h1 class="hero-title">Welcome <%= current_user.email %><br> </h1>
+        <h3 class="hero-title">Welcome <%= current_user.email %><br> </h3>
       <% end %>
-		<p class="hero-description">Lorem ipsum dolor sit amet, consectetur. 
+		<h6 class="hero-description">Lorem ipsum dolor sit amet, consectetur. 
 		<br>Consectetur, doloribus ut obcaecati odio accusantium. Voluptatem.
-		<br>Consectetur, doloribus ut obcaecati odio accusantium. Voluptatem.</p>
+		<br>Consectetur, doloribus ut obcaecati odio accusantium. Voluptatem.</h6>
 	</div>
 </section>
 
@@ -47,13 +47,16 @@
     <a class="prev js-prev" data-number="-1">&#10094;</a>
     <a class="next js-next" data-number="1">&#10095;</a>
   </div>
+      <!-- The dots/circles -->
+    <div style="text-align:center">
+      <span class="dot js-dot" data-number="1"></span>
+      <span class="dot js-dot" data-number="2"></span>
+      <span class="dot js-dot" data-number="3"></span>
+    </div>
 </div>
-<br>
 
-<!-- The dots/circles -->
-<div style="text-align:center">
-  <span class="dot js-dot" data-number="1"></span>
-  <span class="dot js-dot" data-number="2"></span>
-  <span class="dot js-dot" data-number="3"></span>
-</div>
+
+
+
+
 

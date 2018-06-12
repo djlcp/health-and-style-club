@@ -2,83 +2,36 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.all-posts-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  background: #DDD;
-  padding: 1%;
-  margin: 20px 20%;
-  width: 60%;
-  word-wrap: break-word;
+.container {
+  background-color: #acbccc;
+    padding: 1em;
+  margin: 1em;
 }
 
 .post-thumb {
-  display: flex;
-  flex-grow: 1;
   border: 1px solid #CCC;
   background: #fff;
-  padding: 5px;
-  margin: 5px;
-  width: 20%;
+  padding: 2px;
+  margin: 2px;
+  min-width: 100%;
+  background-color: #cdecba;
 }
 
-.post-image-thumb {
-  width: 100%;
-  height: 200px;
-  background-color: #ff0000;
+.post-thumb-img {
+  width: 260px;
+  height: 260px;
+  object-fit: scale-down;
 }
 
-post-image-bar {
-    width: 100%;
-  height: 200px;
-  background-color: #111111;
+
+.post-thumb-content {
+  width: 200px;
+  background-color: #aa4aa4
 }
 
-.post-title-thumb {
-  font-family: 'Roboto', sans-serif;
-	font-size: 1rem;
-  padding: 5%;
+
+img-fluid {
+min-width: 100%;
+height: auto;
 }
 
-.post-body-thumb {
-  font-family: 'Roboto', sans-serif;
-	font-size: 0.75rem;
-}
-
-.link-row-clearfix {
-  width: 100%;
-
-}
-
-.post-main {
-  display: flex;
-  flex-wrap: wrap;
-  width: 60%;
-  margin: 20px 20%;
-  text-align: left;
-}
-
-.post-image-main {
-  width: 100%;
-  padding-top: 40%;
-  display: flex;
-  background-color: #9a9a9a;
-}
-
-.post-title-main {
-  font-family: 'Roboto', sans-serif;
-  font-size: 2rem;
-  text-align: left;
-  padding: 1%;
-}
-
-.post-body-main {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  font-family: 'Roboto', sans-serif;
-  font-size: 1rem;
-  text-align: justify;
-  padding: 1%;
-}

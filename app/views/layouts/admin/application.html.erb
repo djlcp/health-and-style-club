@@ -26,8 +26,8 @@ By default, it renders:
 </head>
 <body>
   <%= render "icons" %>
-  <div class="pagebody">
-   <%= render 'top-panel' -%>
+  <div class="wrapper">
+    <%= render "menunav" %>
     <div class="app-container">
       <%= render "navigation" -%>
 
@@ -35,6 +35,7 @@ By default, it renders:
         <%= render "flashes" -%>
         <%= yield %>
       </main>
+      </div>
     </div>
   </div>
 

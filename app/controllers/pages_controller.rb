@@ -4,4 +4,10 @@ class PagesController < ApplicationController
 
   def contact
   end
+
+  def members
+  end
+
+  def faq
+  end
 end

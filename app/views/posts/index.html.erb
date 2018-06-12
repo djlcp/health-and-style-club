@@ -1,40 +1,23 @@
-<div class="all-posts-wrapper">
-  <% @posts.each do |post| %>
-	<div class="post-thumb">
-	 <div class="link-row-clearfix">
-        
-          <div class="post-image-thumb">
-            <%= image_tag post.image_url(:thumb) if post.image.present? %>		
-      	  </div>
-
-          <div class="post-image-bar">
+<div class="container">
+  <div class="row justify-content-start">
+    <% @posts.each do |post| %>
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">  
+      <div class="post-thumb">
+            <div class="post-thumb-img">
+                <%= image_tag post.image_url if post.image.present? %>
+            </div>
             
-          </div>
-
-      	  <br> 
-
-
-
-          <div class="post-title-thumb">
-            <%= link_to post.title, post %>
-          </div>
-      
-      <br>
-
+            <div class="post-thumb-content">
+                <%= link_to post.title, post %>
+            </div>
+      </div>
     </div>
+    <% end %>
   </div>
-
-  <% end %>
 </div>
 
 
 
 
 
-<!-- <<<<<<< HEAD
-<#% end %>
 
-
-<#% if can? :manage, @post %>
-<#%= render 'layouts/postadmin', post: @post %>
-<#% end %>

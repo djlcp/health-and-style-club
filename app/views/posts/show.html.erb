@@ -1,16 +1,19 @@
 <section class="post-main">
+
+<!-- Hero image -->
 		
-		<div class="post-image-main">
+						<section class="post-hero">
+
+							<div class="post-image-main">
 		<%= image_tag(@post.image_url.to_s) %>
 		</div>
+					
+					<h1 class="post-title-main"><%= @post.title %></h1>
+     				<p class="post-body-main"><%= @post.body_text %></p>
+				
+				</section>
 
-		<div class="post-title-main">
-			<%= @post.title %>		
-		</div>
-		<br>
 
-		<p class="post-body-main"><%= @post.body_text %></p>
-		
 
 
 		<% @post.contents.each do |content| %>
@@ -18,11 +21,25 @@
 		    <%= render "layouts/post_content/#{content.content_type}.html.erb", :@content => content %>
 		  </p>
 		<% end %>
- 
+
+		<%= render partial: 'comments/form', locals: { comment: @comment } %>
+
+<!--
 Add in option here for Hero image
 
 	<h1 class="post-title"><%= @post.title %></h1>
 		<p class="post-body"><%= sanitize @post.body_text %></p>
+
+<!-- this allows the frame to be rendered, but messes with the p tags, so need to work out how to get that working-->
+		<!-- <%= sanitize @post.body_text, tags: %w( iframe ), attributes: %w(src source width height )%> -->
+
+About the author
+
+<%= render 'author' %>
+
+
+
+
 
 </section>
 

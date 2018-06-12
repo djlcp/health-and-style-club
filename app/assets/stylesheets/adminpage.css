@@ -1,0 +1,14 @@
+.items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  padding: 20px;
+}
+
+.logout {
+  color: red;
+  text-decoration: none;
+  padding: 10px;
+}

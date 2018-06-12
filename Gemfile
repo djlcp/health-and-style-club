@@ -34,17 +34,16 @@ gem 'jbuilder', '~> 2.5'
 
 
 # !!!!!!!!Implemented Gems!!!!!!!!
-# gem 'administrate-field-shrine', '~> 0.0.1'
 
-# gem 'administrate-field-trix'
+gem 'toastr-rails'
 
-# Use administrate-field-ckeditor to edit text in admin panel
+# Use administrate-field-ckeditor to edit text in admin panel (Implemented by Raymond)
 gem "administrate-field-ckeditor", "~> 0.0.9"
 #
-# # use administrate for backend admin panel
+# Use administrate for backend admin panel (Implemented by Raymond)
 gem "administrate"
 #
-# # use administrate-field-carrierwave for uploading images in the admin panel
+# # use administrate-field-carrierwave for uploading images in the admin panel (Implemented by Raymond)
 gem 'administrate-field-carrierwave', '~> 0.3.2'
 
 # Use Carrierwave to add images to webapp (Implemented by Raymond)
@@ -77,22 +76,23 @@ gem 'letter_opener', :group => :development
 # Use CKEditor to design post conttents easier (Implemented by Liam)
 gem 'ckeditor', github: 'galetahub/ckeditor'
 
+gem 'shrine'
+
+
 # Use DelayedJob to send massive actions into the background of the app (Implemented by Tiago)
 gem 'delayed_job_active_record'
 
 # Use Whenever to provide a clear syntax for writing and deploying cron jobs (Implemented by Tiago)
-gem 'whenever'
+gem 'whenever', require: false
 
 
-
-# gem 'npm-pipeline-rails'
 
 
 
 # !!!!!!!!GROUPS!!!!!!!!
 
 # Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+# gem 'cconfigapistrano-rails', group: :development
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

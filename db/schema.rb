@@ -10,10 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180512142350) do
-
-  create_table "admin", id: :integer, unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-  end
+ActiveRecord::Schema.define(version: 20180726203208) do
 
   create_table "ckeditor_assets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "data_file_name", null: false
@@ -94,14 +91,12 @@ ActiveRecord::Schema.define(version: 20180512142350) do
   end
 
   create_table "subscriptions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "plan_name"
-    t.text "plan_description"
-    t.decimal "plan_price", precision: 4, scale: 2
     t.date "expiry_date"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "paid_for"
+    t.string "chargebee_id"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -128,6 +123,8 @@ ActiveRecord::Schema.define(version: 20180512142350) do
     t.string "state"
     t.string "country"
     t.string "post_code"
+    t.string "bio"
+    t.string "bioavatar"
     t.integer "role"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
