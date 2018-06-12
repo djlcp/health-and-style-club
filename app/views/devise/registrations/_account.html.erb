@@ -1,0 +1,96 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <header class="card-header">
+        <h4 class="card-title mt-2 text-center">Update your profile</h4>
+      </header>
+      <div class="card">
+
+        <div>
+        <%= image_tag @cover, class: 'rounded', style: 'width: 100%; margin: 0; padding: 0;' %>
+        <%= image_tag @image, class:"rounded-circle profile-avatar border border-danger" %>
+        </div>
+        <div class="card-body">
+
+
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+            <%= devise_error_messages! %>
+
+            <h4 class="text-center">Personal Info</h4></br>
+            <div class="form-row">
+              <div class="col form-group">
+                <%= f.label :first_name %><br/>
+                <%= f.text_field :first_name, autofocus: true, class:"form-control", required: true %>
+              </div>
+
+              <div class="col form-group">
+                <%= f.label :surname %><br/>
+                <%= f.text_field :surname, class:"form-control", required: true %>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :email %><br />
+              <%= f.email_field :email, autocomplete: "email", class:"form-control", required: true %>
+            </div>
+
+            <div class="form-row">
+              <div class="col form-group">
+                <%= f.label :phone %><br/>
+                <%= f.email_field :phone, autocomplete: "phone", class: "form-control" %>
+              </div>
+
+              <div class="col form-group">
+                <%= f.label :country %><br/>
+                <select name="country" id="country" class="form-control">
+                  <%= render "countries" %>
+                </select>
+              </div>
+            </div>
+
+            </br></br>
+            <h4 class="text-center">Public Profile</h4></br>
+
+            <div class="form-row m-0">
+              <div class="col-lg-6 col-xs-12 form-group">
+                <%= f.label :bioavatar, 'Profile Picture', class: 'custom-file-label' %><br/>
+                <%= f.file_field :bioavatar, class: "custom-file-input" %>
+              </div>
+
+              <div class="col-lg-6 col-xs-12 form-group">
+                <%= f.label :biobackground, 'Background Picture', class: 'custom-file-label' %><br/>
+                <%= f.file_field :biobackground, class: "custom-file-input" %>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <%= f.check_box :search_consent, style:'width: 15px'%>
+              <small class="text-muted"><%= f.label :search_consent, 'Allow other users to see your profile' %></small>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :current_password %><br/>
+              <%= f.password_field :current_password, autocomplete: "off", class:"form-control", required: false %>
+            </div>
+
+            <div class="actions">
+              <%= f.submit "Update", class:"btn btn-primary btn-block" %>
+            </div>
+
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .profile-avatar {
+    width: 10%;
+    background-color: #fff;
+    position: absolute;
+    top: 1%;
+    left: 45%;
+    right: 45%;
+  }
+</style>

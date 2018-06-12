@@ -9,5 +9,3 @@ CarrierWave.configure do |config|
   config.fog_directory = 'healthstyleclub'
   config.fog_public = false
 end
-
-# require 'carrierwave/processing/MiniMagick'

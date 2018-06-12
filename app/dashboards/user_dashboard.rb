@@ -40,7 +40,10 @@ class UserDashboard < Administrate::BaseDashboard
     # bioavatar: Field::String
     bioavatar: Field::Carrierwave.with_options(
       image: :standard,
-    )
+    ),
+    biobackground: Field::Carrierwave.with_options(
+      image: :standard,
+      )
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -117,6 +120,7 @@ class UserDashboard < Administrate::BaseDashboard
     :post_code,
     :bio,
     :bioavatar,
+    :biobackground,
     :subscription,
   ].freeze
 
