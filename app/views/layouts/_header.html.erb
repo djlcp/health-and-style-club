@@ -1,9 +1,17 @@
 <div class="d-flex justify-content-between border-bottom border-dark">
   <div class="row pl-3 nav-bar-icon">
-    <i class="fa fa-facebook-square p-3"></i>
-    <i class="fa fa-pinterest-square p-3"></i>
-    <i class="fa fa-youtube-square p-3"></i>
-    <i class="fa fa-twitter-square p-3 hover"></i>
+    <%= link_to "https://www.facebook.com/healthandstyleclub" do %>
+      <i class="fa fa-facebook-square p-3"></i>
+    <% end %>
+    <%= link_to "https://www.pinterest.com/healthandstyleclub" do %>
+      <i class="fa fa-pinterest-square p-3"></i>
+    <% end %>
+    <%= link_to "https://www.youtube.com/channel/UCsZkZBLgd34toEDLrCHSfxw" do %>
+      <i class="fa fa-youtube-square p-3"></i>
+    <% end %>
+    <%= link_to "https://twitter.com/healthstyleclub" do %>
+      <i class="fa fa-twitter-square p-3 hover"></i>
+    <% end %>
   </div>
 
   <div class="row p-3">
@@ -34,7 +42,9 @@
 <div class="d-flex justify-content-between p-3 m-2 col-12 row navigation">
     <div class="main-navigation-container">
       <div class="main-navigation-image">
-        <i class="fa fa-file"></i>
+        <%= link_to posts_path do %>
+          <i class="fa fa-file"></i>
+        <% end %>
       </div>
       <div class="mt-2">
         <%= link_to "Posts", posts_path, class: 'main-navigation-link' %>
@@ -42,7 +52,9 @@
     </div>
     <div class="main-navigation-container">
       <div class="main-navigation-image">
-        <i class="fa fa-user-circle"></i>
+        <%= link_to members_path do %>
+          <i class="fa fa-user-circle"></i>
+        <% end %>
       </div>
       <div class="mt-2">
         <%= link_to "Members Page", members_path, class: 'main-navigation-link' %>
