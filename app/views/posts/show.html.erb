@@ -1,8 +1,8 @@
 <section class="post-main">
 
-<div class="post-category">
+<!-- <div class="post-category">
 <%= @post.category.name %>
-</div>
+</div> -->
 
 <!-- Hero image -->
 	<div class="post-image-main">
@@ -34,7 +34,7 @@
 		<%= sanitize @post.body_text, tags: %w(p ul li iframe) %>
 	</div>
 
-	
+
 
 
 	<% @post.contents.each do |content| %>
