@@ -1,20 +1,23 @@
 /*************** About Page ***************/
-.wrapper {
+.wrapper
+{
   width: 100%;
-  height: 350px;
 }
 
-
-.bigimage {
-  background-image: url('About_Page_Cover.png');
+.bigimage
+{
+  background-image: url('about-image.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100%;
+  height: 350px;
   width: 100%;
-
 }
 
-@media only screen and (max-width: 640px) {
-
+@media only screen and (max-width: 480px) {
+  .bigimage
+  {
+      height: 200px;
+      background-size: contain;
   }
+}
