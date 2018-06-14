@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   resources :attachments
   resources :contacts, only: [:new, :create]
 
-# !!!!!!!!!!!!!MEMBERS PAGE!!!!!!!!!!!!!
+# !!!!!!!!!!!!! MEMBERS PAGE !!!!!!!!!!!!!
 
   get 'members' => 'pages#members'
   get '/members/:id', to: 'pages#members_profile'
