@@ -60,10 +60,11 @@
     background-color: #FFFBFF;
 }
 
-.form {
+.form-group {
   width: 60%;
   margin: 20px 20%;
   text-align: left;
+
 }
 
 .hidden {
