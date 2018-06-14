@@ -1,5 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'from@example.com'
+  default from: 'Health & Style Club'
   # layout 'mailer'
 
   def send_signup_email(user)
