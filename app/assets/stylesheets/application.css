@@ -66,6 +66,10 @@
   text-align: left;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 /*
  *= require gulp/app
  */
