@@ -60,6 +60,12 @@
     background-color: #FFFBFF;
 }
 
+.form {
+  width: 60%;
+  margin: 20px 20%;
+  text-align: left;
+}
+
 /*
  *= require gulp/app
  */
