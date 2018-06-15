@@ -101,6 +101,7 @@ gem 'delayed_job_active_record'
 # Use Whenever to provide a clear syntax for writing and deploying cron jobs (Implemented by Tiago)
 gem 'whenever', require: false
 
+gem 'gibbon', '~> 3.2.0' 
 
 # !!!!!!!!GROUPS!!!!!!!!
 
