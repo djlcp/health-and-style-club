@@ -18,21 +18,40 @@
  padding: 0 0 1em 0;
 }
 
-.top-navigation-link, .bottom-navigation-link {
+.top-navigation-link {
   font-family: 'Roboto', sans-serif;
   text-decoration: none;
-  color: #777777;
+  color: white;
   font-weight: bold;
   margin: 0 2em;
+}
+
+.top-navigation-link:hover {
+  color: white;
+}
+
+.bottom-navigation-link {
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.bottom-navigation-link:hover {
+  color: black;
 }
 
 .main-navigation-link {
  font-family: 'Roboto', sans-serif;
  text-decoration: none;
- color: #777777;
+ color: black;
  font-weight: bold;
  margin: 0 2em;
  text-transform: uppercase;
+}
+
+.main-navigation-link:hover {
+  color: black;
 }
 
 /**************** media queries ****************/
