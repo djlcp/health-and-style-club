@@ -15,11 +15,11 @@
   </div>
 
   <div class="row p-2">
-        <%= link_to 'FAQ', faq_path, class:'top-navigation-link' %>
-        <% if ! @signed_in%>
-         <%= link_to 'sign up', new_user_registration_path, class:'top-navigation-link' %>
-         <%= link_to 'login', new_user_session_path, class:'top-navigation-link' %>
-      <% else %>
+    <%= link_to 'FAQ', faq_path, class:'top-navigation-link' %>
+    <% if ! @signed_in%>
+      <%= link_to 'sign up', new_user_registration_path, class:'top-navigation-link' %>
+      <%= link_to 'login', new_user_session_path, class:'top-navigation-link' %>
+    <% else %>
       <div class="dropdown mr-5">
         <a class="p-0" id="AccountMenu" data-toggle="dropdown"><i class="fa fa-user-circle p-0 m-0 top-nav-icon"></i>
         </a>
@@ -28,13 +28,14 @@
           <%= link_to "Edit Account", "#{edit_user_registration_path}#account_change", class: "dropdown-item" %>
           <%= link_to "Edit Password", "#{edit_user_registration_path}#password_change", class: "dropdown-item" %>
           <%= link_to "Manage Subscription", subscriptions_path, class: 'dropdown-item' %></a>
-          <div class="dropdown-divider"></div>
-          <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:'dropdown-item' %>
+        <div class="dropdown-divider"></div>
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:'dropdown-item' %>
         </div>
       </div>
-      <% end %>
+    <% end %>
   </div>
 </div>
+
 <div class="main-header">
   <%= link_to "Health & Style Club", root_path, class: "main-header-title" %>
 </div>
@@ -80,7 +81,9 @@
     </div>
     <div class="main-navigation-container">
       <div class="main-navigation-image">
-        <i class="fa fa-envelope"></i>
+        <%= link_to new_contact_path do %>
+          <i class="fa fa-envelope"></i>
+        <% end %>
       </div>
       <div class="mt-2">
         <%= link_to "Contact", new_contact_path, class: 'main-navigation-link' %>
