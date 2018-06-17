@@ -1,10 +1,30 @@
-/**************** Footer ****************/
 
 .footerlogo {
   font-family: 'Playfair Display', serif;
   text-decoration: none;
-  color: #8E0048;
+  color: black;
   font-size: 1.5em;
   align-self: center;
   text-shadow: 0 1px 1px rgba(0,0,0, .7);
+}
+
+.footerlogo:hover {
+  color: black;
+}
+
+.footer {
+  background-color: #d0d0d1;
+}
+
+//////////// Footer Navigation Links ///////////////
+
+.bottom-navigation-link {
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.bottom-navigation-link:hover {
+  color: black;
 }
