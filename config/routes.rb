@@ -57,6 +57,7 @@ Rails.application.routes.draw do
     resources :comments
     # resources :posts_contents
     resources :subscriptions
+    resources :categories
     # resources :videos
     root to: "users#index"
   end

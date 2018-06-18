@@ -15,10 +15,6 @@ module Admin
     #   Category.find_by!(slug: param)
     # end
 
-    def name
-      Category.find(params[:id]).name
-    end
-
     # See https://administrate-prototype.herokuapp.com/customizing_controller_actions
     # for more information
   end
