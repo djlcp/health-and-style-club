@@ -4,9 +4,9 @@
 <p><%= @masterclass.text %></p>
 
 
-+<% @masterclass.videos.welcome_video.order(sequence: :asc).each do |video| %>
+<% @masterclass.videos.welcome_video.order(sequence: :asc).each do |video| %>
 
-
+<% end %>
 
 <% @masterclass.events.order(sequence: :asc).each do |event| %>
 
