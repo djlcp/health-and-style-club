@@ -1,0 +1,58 @@
+$spacing-directions: 'all', 'horizontal', 'vertical', 'top', 'right', 'bottom', 'left';
+$spacing-units: '', 'rem', 'em';
+$spacing-default: 5px;
+
+@function spacing($value, $unit) {
+  @if $unit == 'rem' {
+    @return #{$value}rem !important;
+  } @else if $unit == 'em' {
+    @return #{$value}em !important;
+  } @else {
+    @return #{$value * $spacing-default} !important;
+  }
+}
+
+
+.pad {
+  @each $direction in $spacing-directions {
+    @each $unit in $spacing-units {
+      @for $size from 0 through 12 {
+        &-#{str-slice($direction, 0, 1)}-#{$size}#{$unit} {
+          @if $direction == 'all' {
+            padding: spacing($size, $unit);
+          } @else if $direction == 'horizontal' {
+            padding-left: spacing($size, $unit);
+            padding-right: spacing($size, $unit)
+          } @else if $direction == 'vertical' {
+            padding-top: spacing($size, $unit);
+            padding-bottom: spacing($size, $unit);
+          } @else{
+            padding-#{$direction}: spacing($size, $unit);
+          }
+        }
+      }
+    }
+  }
+}
+
+.mar {
+  @each $direction in $spacing-directions {
+    @each $unit in $spacing-units {
+      @for $size from 0 through 12 {
+        &-#{str-slice($direction, 0, 1)}-#{$size}#{$unit} {
+          @if $direction == 'all' {
+            margin: spacing($size, $unit);
+          } @else if $direction == 'horizontal' {
+            margin-left: spacing($size, $unit);
+            margin-right: spacing($size, $unit);
+          } @else if $direction == 'vertical' {
+            margin-top: spacing($size, $unit);
+            margin-bottom: spacing($size, $unit);
+          } @else {
+            margin-#{$direction}: spacing($size, $unit);
+          }
+        }
+      }
+    }
+  }
+}

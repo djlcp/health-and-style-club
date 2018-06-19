@@ -1,4 +1,4 @@
-class PdfUploader < CarrierWave::Uploader::Base
+class PreviewUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
    include CarrierWave::MiniMagick
@@ -23,26 +23,6 @@ class PdfUploader < CarrierWave::Uploader::Base
   # end
   #
 
-  version :cover do
-    process :convert_cover => :png
-    process :set_content_type
-  end
-
-  def convert_cover(format)
-    manipulate! do |img| # this is ::MiniMagick::Image instance
-      img.format(format.to_s.downcase, 0)
-      img
-    end
-  end
-
-  def set_content_type(*args)
-    self.file.instance_variable_set(:@content_type, "image/png")
-  end
-
-  def full_filename (for_file = model.source.file)
-    super.chomp(File.extname(super)) + '.png'
-  end
-
   # def set_content_type_jpg(*args)
   #   self.file.instance_variable_set(:@content_type, "image/jpg")
   # end
@@ -53,7 +33,7 @@ class PdfUploader < CarrierWave::Uploader::Base
 
   # Add a white list of extensions which are allowed to be uploaded.
   def extension_white_list
-    %w(jpg jpeg gif png doc docx pdf)
+    %w(jpg jpeg gif png)
   end
 
   # Override the directory where uploaded files will be stored.
