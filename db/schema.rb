@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20180726203222) do
 
+  create_table "admin", id: :integer, unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  end
+
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -73,19 +76,6 @@ ActiveRecord::Schema.define(version: 20180726203222) do
     t.integer "user_id"
   end
 
-  create_table "models", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer "sign_in_count", default: 0, null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string "current_sign_in_ip"
-    t.string "last_sign_in_ip"
-  end
-
   create_table "photos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text "image_data"
     t.datetime "created_at", null: false
@@ -107,13 +97,13 @@ ActiveRecord::Schema.define(version: 20180726203222) do
     t.string "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user2_id"
+    t.integer "user_id"
     t.string "image"
     t.integer "category"
   end
 
   create_table "subscriptions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.datetime "expiry_date"
+    t.date "expiry_date"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -134,7 +124,7 @@ ActiveRecord::Schema.define(version: 20180726203222) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "subscription"
+    t.integer "subscription_id"
     t.string "first_name"
     t.string "surname"
     t.string "phone"
@@ -142,6 +132,7 @@ ActiveRecord::Schema.define(version: 20180726203222) do
     t.integer "role"
     t.string "bio"
     t.string "bioavatar"
+    t.string "biobackground"
     t.boolean "search_consent"
     t.string "facebook"
     t.string "pinterest"
