@@ -1,21 +1,45 @@
 <div class="container container-fluid">
-  <p>This is a list of all masterclasses</p>
+  <div class="row">
+    <div class="col-sm-12 col-md-9" style="background: blue">
+      Current masterclass
+    </div>
+    <div class="col-md-3 hide-sm-block" style="background: red">
+      Current contributor
+    </div>
+  </div>
 
-  <% @masterclasses.each do |masterclass| %>
+  <div class="row">
 
-    <div class="link">
-      <h2>
-        <%= link_to masterclass do %>
-          <% if masterclass.preview.present? %>
-            <%= image_tag masterclass.preview.url %>
-          <% else %>
-            <%= masterclass.title %>
-          <% end %>
+    <div class="col-sm-12 col-md-9">
+
+      <div class="row">
+
+        <% @masterclasses.each do |masterclass| %>
+
+          <div class="col-sm-12 col-md-4 pad-v-4">
+            <div class="masterclass-preview">
+              <%= link_to masterclass do %>
+                <% if masterclass.preview.present? %>
+                  <%= image_tag masterclass.preview.url, class: 'masterclass-preview__image' %>
+                <% else %>
+                  <%= masterclass.title %>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+
         <% end %>
-      </h2>
+
+      </div>
+
+      <%= link_to 'Create a new masterclass', new_masterclass_path %>
+
     </div>
 
-  <% end %>
+    <div class="col hide-sm-block" style="background: purple">
+        Events and things
+    </div>
 
-  <%= link_to 'Create a new masterclass', new_masterclass_path %>
+  </div>
+
 </div>
