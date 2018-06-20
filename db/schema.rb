@@ -43,9 +43,9 @@ ActiveRecord::Schema.define(version: 20180726203222) do
   create_table "contents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "content_type"
     t.text "description"
+    t.string "file_url", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "file_url"
   end
 
   create_table "documents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -102,7 +102,8 @@ ActiveRecord::Schema.define(version: 20180726203222) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.string "image"
-    t.integer "category"
+    t.integer "category_id"
+    t.string "post_description"
   end
 
   create_table "subscriptions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -126,8 +127,9 @@ ActiveRecord::Schema.define(version: 20180726203222) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "subscription"
     t.string "first_name"
     t.string "surname"
     t.string "middle_names"

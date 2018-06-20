@@ -27,10 +27,16 @@ class PostsController < ApplicationController
   def edit; end
 
   def update
+    # @post.assign_attributes(post_params)
+    # @post.valid?
+    # @post.errors.full_messages
+    # @post.inspect
+    # byebug
+
     if @post.update(post_params)
       redirect_to @post, notice: 'Post updated.'
     else
-      render :edit
+      #render :edit
     end
   end
 
@@ -42,7 +48,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body_text, :image)
+    params.require(:post).permit(:title, :body_text, :image, :post, :post_description)
   end
 
   def set_post
