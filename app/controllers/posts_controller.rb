@@ -16,7 +16,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    @user = User.find(@post.user_id)
     @post = current_user.posts.new(post_params)
     if @post.save
       redirect_to posts_path, notice: 'Post added.'

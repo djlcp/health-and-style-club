@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   resources :posts_contents
   resources :attachments
   resources :contacts, only: [:new, :create]
+  resources :categories
 
 # !!!!!!!!!!!!!MEMBERS PAGE!!!!!!!!!!!!!
 
@@ -31,7 +32,7 @@ Rails.application.routes.draw do
   # !!!!!!!!!!!!!FAQ PAGE!!!!!!!!!!!!!
 
   get '/faq' => 'pages#faq'
-  
+
   get '/about' => 'pages#about'
 
   #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

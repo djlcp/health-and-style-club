@@ -87,7 +87,6 @@ gem 'letter_opener', :group => :development
 # Use mail_form to message contact form
 gem 'mail_form', '~> 1.5', '>= 1.5.1'
 
-
 # Use CKEditor to design post conttents easier (Implemented by Liam)
 gem 'ckeditor', github: 'galetahub/ckeditor'
 
@@ -101,7 +100,7 @@ gem 'delayed_job_active_record'
 # Use Whenever to provide a clear syntax for writing and deploying cron jobs (Implemented by Tiago)
 gem 'whenever', require: false
 
-gem 'gibbon', '~> 3.2.0' 
+gem 'gibbon', '~> 3.2.0'
 
 # !!!!!!!!GROUPS!!!!!!!!
 
