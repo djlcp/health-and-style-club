@@ -11,6 +11,7 @@ class PostDashboard < Administrate::BaseDashboard
     user: Field::BelongsTo,
     comments: Field::HasMany,
     post_contents: Field::HasMany,
+    category: Field::BelongsTo,
     contents: Field::HasMany,
     id: Field::Number,
     title: Field::String,
@@ -35,7 +36,8 @@ class PostDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :user,
     :title,
-    :comments,
+    #:comments,
+    :category,
     # :post_contents,
     # :contents,
   ].freeze
@@ -48,6 +50,7 @@ class PostDashboard < Administrate::BaseDashboard
     # :contents,
     # :id,
     :title,
+    :category,
     :body_text,
     :paid_for,
     :state,
@@ -67,6 +70,7 @@ class PostDashboard < Administrate::BaseDashboard
     # :contents,
     :title,
     :body_text,
+    :category,
     # :paid_for,
     # :state,
     :image,

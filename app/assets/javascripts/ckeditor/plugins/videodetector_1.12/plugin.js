@@ -16,7 +16,7 @@ CKEDITOR.plugins.add( 'videodetector', {
     init: function( editor ) {
 
         var pluginDirectory = this.path;
-        editor.addContentsCss(pluginDirectory + '/videodetector.css');
+        //editor.addContentsCss('/app/assets/javascripts/ckeditor/videodetector_1.12/videodetector.css');
 
         editor.addCommand('videodetector', new CKEDITOR.dialogCommand('videoDialog'));
         editor.ui.addButton( 'VideoDetector', {

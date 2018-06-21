@@ -1,14 +1,13 @@
-This is a list of all masterclasses
-
+<p>This is a list of all masterclasses</p>
 
 <% @masterclasses.each do |masterclass| %>
 
-<div class="link row clearfix">
-      <h2>
-        <%= link_to masterclass.title, masterclass %><br>
-      </h2>
+  <div class="link">
+    <h2>
+      <%= link_to masterclass.title, masterclass %><br>
+    </h2>
+  </div>
 
 <% end %>
-
 
 <%= link_to 'Create a new masterclass', new_masterclass_path %>

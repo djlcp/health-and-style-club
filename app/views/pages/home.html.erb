@@ -1,14 +1,14 @@
-
 <section class="hero homepage-banner-<%= rand(1..3) %>">
 	<div class ="image-message">
 		  <% if current_user %>
-        <h1 class="hero-title">Welcome <%= current_user.email %><br> </h1>
+        <h1 class="hero-title secondary-heading">Welcome <%= current_user.first_name %><br> </h1>
       <% end %>
-		<p class="hero-description">Lorem ipsum dolor sit amet, consectetur. 
-		<br>Consectetur, doloribus ut obcaecati odio accusantium. Voluptatem.
-		<br>Consectetur, doloribus ut obcaecati odio accusantium. Voluptatem.</p>
 	</div>
 </section>
+
+<div class="d-flex justify-content-center m-5">
+  <h3>...Blank space to fill with something...</h3>
+</div>
 
 <div class="expert-banner-background-color">
   <div class="expert-banner-container">
@@ -17,8 +17,8 @@
       <div class="expert-banner-post">
         <%= image_tag('man1.jpg', class: "expert-banner-image")%>
         <div>
-          <h2 class="expert-name">Expert Name</h2>
-          <p class="expert-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In at dapibus turpis. Etiam vel justo urna.</p>
+          <h2 class="expert-name secondary-heading">Expert Name</h2>
+          <p class="expert-description paragraph">Icing tiramisu gummies icing jujubes muffin sugar plum bonbon. Brownie marshmallow carrot cake pudding.</p>
         </div>
       </div>
     </div>
@@ -27,8 +27,8 @@
       <div class="expert-banner-post">
         <%= image_tag('woman1.jpg', class: "expert-banner-image")%>
         <div>
-         <h2 class="expert-name">Expert Name</h2>
-          <p class="expert-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In at dapibus turpis. Etiam vel justo urna.</p>
+         <h2 class="expert-name secondary-heading">Expert Name</h2>
+          <p class="expert-description paragraph">Icing tiramisu gummies icing jujubes muffin sugar plum bonbon. Brownie marshmallow carrot cake pudding.</p>
         </div>
       </div>
     </div>
@@ -37,8 +37,8 @@
       <div class="expert-banner-post">
         <%= image_tag('man2.jpg', class: "expert-banner-image")%>
         <div>
-          <h2 class="expert-name">Expert Name</h2>
-          <p class="expert-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In at dapibus turpis. Etiam vel justo urna.</p>
+          <h2 class="expert-name secondary-heading">Expert Name</h2>
+          <p class="expert-description paragraph">Icing tiramisu gummies icing jujubes muffin sugar plum bonbon. Brownie marshmallow carrot cake pudding.</p>
         </div>
       </div>
     </div>
@@ -47,13 +47,18 @@
     <a class="prev js-prev" data-number="-1">&#10094;</a>
     <a class="next js-next" data-number="1">&#10095;</a>
   </div>
-</div>
-<br>
 
-<!-- The dots/circles -->
-<div style="text-align:center">
-  <span class="dot js-dot" data-number="1"></span>
-  <span class="dot js-dot" data-number="2"></span>
-  <span class="dot js-dot" data-number="3"></span>
+  <!-- The dots/circles -->
+  <div class="" style="text-align:center">
+    <span class="dot js-dot" data-number="1"></span>
+    <span class="dot js-dot" data-number="2"></span>
+    <span class="dot js-dot" data-number="3"></span>
+  </div>
 </div>
+
+<div class="d-flex justify-content-center m-5">
+  <h3>...Blank space to fill with something...</h3>
+</div>
+
+
 

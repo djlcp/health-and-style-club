@@ -1,41 +1,125 @@
-/*************** Main Header ***************/
 
 .main-header {
 	display: flex;
   justify-content: center;
-  /* background-color: #EBEBEB; */
   padding: 1em 0 0 0;
 }
 
  .main-header-title {
   font-family: 'Playfair Display', serif;
-  text-decoration: none !important;
-  color: #8E0048;
+  text-decoration: none;
+  color: black;
   font-size: 2.5em;
   text-shadow: 0 1px 1px rgba(0,0,0, .7);
  }
 
- .main-members-area {
-  display: flex;
-	justify-content: center; 
-  flex-wrap: wrap;
-  background-color: #EBEBEB;
-  padding: 0.7em 0 0.7em 0;
-}
-
- .members-area-title {
-  text-decoration: none;
-  text-transform: uppercase;
-  background-color: black;
-  color: white;
-  display: flex;
-  justify-content: center; 
-  width: 45%;
-  padding: 5px;
-  font-size: 0.8em;
-  letter-spacing: 1px;
+ .main-header-title:hover {
+   color: black;
  }
 
  .nav-bar-icon {
    font-size: 150%;
  }
+
+.main-navigation-image {
+  font-size: 200%;
+  text-shadow: 0 1px 1px rgba(0,0,0, .5);
+}
+
+.main-navigation-container {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+}
+
+.fa {
+  color: 	#fbcfcc;
+}
+
+.fa:hover {
+  color: #d15a8c;
+}
+
+.top-nav-icon {
+  color: white;
+}
+
+.top-nav-icon:hover {
+  color: white;
+}
+
+.top-nav-bar {
+  background-color: #d15a8c;
+}
+
+//////////// Header Navigation Links /////////////
+
+.top-navigation-link {
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  margin: 0 2em;
+}
+
+.top-navigation-link:hover {
+  color: white;
+}
+
+.navigation {
+  list-style: none;
+  margin: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  justify-content: flex-end;
+}
+
+.main-navigation {
+ display: flex;
+ flex-direction: row;
+ justify-content: space-around;
+ background-color: #EBEBEB;
+ padding: 0 0 1em 0;
+}
+
+.main-navigation-link {
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  margin: 0 2em;
+  text-transform: uppercase;
+ }
+ 
+ .main-navigation-link:hover {
+   color: black;
+ }
+ 
+ /**************** media queries ****************/
+
+@media all and (max-width: 800px) {
+  .navigation {
+    justify-content: space-around;
+  }
+}
+@media all and (max-width: 655px) {
+  .navigation {
+    -webkit-flex-flow: column wrap;
+    flex-flow: column wrap;
+    padding: 0;
+  }
+
+  .navigation a {
+    text-align: center;
+    padding: 10px;
+  }
+
+  .navigation li:last-of-type a {
+    border-bottom: none;
+  }
+}
