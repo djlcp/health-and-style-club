@@ -28,11 +28,23 @@ Rails.application.routes.draw do
   get '/members/:id', to: 'pages#members_profile'
 
 
-  # !!!!!!!!!!!!!FAQ PAGE!!!!!!!!!!!!!
+  # !!!!!!!!!!!!!STATIC PAGES!!!!!!!!!!!!!
 
   get '/faq' => 'pages#faq'
-  
+
   get '/about' => 'pages#about'
+
+  get '/privacy-policy' => 'pages#privacy_policy'
+
+  get '/termsandconditions' => 'pages#t_c_page'
+
+  get '/abouthealthandfitness' => 'pages#static_fitness'
+
+  get '/aboutpersonalstyling' => 'pages#static_style'
+
+  get '/aboutpersonaldevelopment' => 'pages#static_personal-dev'
+
+  get '/aboutmasterclasses' => 'pages#static_masterclass'
 
   #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   #!!!!!!!!!!!!MASTERCLASSES!!!!!!!!!!!!
