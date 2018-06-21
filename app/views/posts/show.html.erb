@@ -15,6 +15,10 @@
 
 		<br>
 
+		<div class="post-body-main">
+			<%= @post.post_description %>
+		</div>
+		<br>
 
 	<div class="post-body-main">
 		<%= sanitize @post.body_text, tags: %w(p ul li ul iframe) %>
@@ -38,3 +42,5 @@ About the author
 -->
 
 </section>
+
+<%= link_to 'Edit post', edit_post_path %>
