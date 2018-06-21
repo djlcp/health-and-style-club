@@ -35,7 +35,7 @@ $spacing-default: 5px;
   }
 }
 
-.mar {
+.a {
   @each $direction in $spacing-directions {
     @each $unit in $spacing-units {
       @for $size from 0 through 12 {
