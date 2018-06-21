@@ -1,17 +1,22 @@
 <section class="post-main">
 
+
 <!-- <div class="post-category">
 <#%= @post.category.name %>
 </div> -->
+
+
+
 
 <!-- Hero image -->
 	<div class="post-image-main">
 		<%= image_tag(@post.image_url.to_s) %>
 		</div>
 
-		<div class="post-title-main">
-			<%= @post.title %>
+							<div class="post-image-main">
+		<%= image_tag(@post.image_url.to_s) %>
 		</div>
+
 
 		<br>
 
@@ -40,6 +45,7 @@ About the author
 	<#%= render partial: 'comments/form', locals: { comment: @comment } %>
 
 -->
+
 
 </section>
 

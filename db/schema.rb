@@ -41,9 +41,9 @@ ActiveRecord::Schema.define(version: 20180726203222) do
   create_table "contents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "content_type"
     t.text "description"
-    t.string "file_url", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "file_url"
   end
 
   create_table "documents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -101,7 +101,7 @@ ActiveRecord::Schema.define(version: 20180726203222) do
   end
 
   create_table "subscriptions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.datetime "expiry_date"
+    t.date "expiry_date"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -122,14 +122,14 @@ ActiveRecord::Schema.define(version: 20180726203222) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "subscription"
+    t.integer "subscription_id"
     t.string "first_name"
     t.string "surname"
     t.string "phone"
     t.string "country"
-    t.integer "role"
     t.string "bio"
     t.string "bioavatar"
+    t.integer "role"
     t.string "biobackground"
     t.boolean "search_consent"
     t.string "facebook"
@@ -148,7 +148,6 @@ ActiveRecord::Schema.define(version: 20180726203222) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "masterclass_id"
-    t.boolean "welcome_video", default: false
   end
 
   add_foreign_key "comments", "posts"
