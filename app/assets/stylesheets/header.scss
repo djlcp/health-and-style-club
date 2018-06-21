@@ -73,7 +73,7 @@ $spacing: 15px;
   text-decoration: none;
   color: white;
   font-weight: bold;
-  margin: 0 2em;
+  margin: 0 $spacing * 2;
 }
 
 .top-navigation-link:hover {
@@ -103,7 +103,7 @@ $spacing: 15px;
  flex-direction: row;
  justify-content: space-around;
  background-color: #EBEBEB;
- padding: 0 0 1em 0;
+ padding: 0 0 $spacing 0;
 }
 
 .main-navigation-link {
@@ -111,7 +111,7 @@ $spacing: 15px;
   text-decoration: none;
   color: black;
   font-weight: bold;
-  margin: 0 2em;
+  margin: 0 $spacing * 2;
   text-transform: uppercase;
  }
  
@@ -130,7 +130,7 @@ $spacing: 15px;
 @media all and (max-width: 655px) {
   .navigation a {
     text-align: center;
-    padding: 10px;
+    padding: $spacing;
   }
 
   .navigation li:last-of-type a {
