@@ -36,11 +36,22 @@
   </div>
 </div>
 
-<div class="main-header">
-  <%= link_to "Health & Style Club", root_path, class: "main-header-title" %>
+<div class="main-header-wrap">
+  <div class="main-header">
+    <%= link_to "Health & Style Club", root_path, class: "main-header-title" %>
+  </div>
+  <div class="mobile-nav">
+    <ul class="mobile-nav__menu">
+      <span class="mobile-nav__close"><i class="fa fa-2x fa-times" aria-hidden="true"></i></span>
+      <li class="mobile-nav__item"><%= link_to "Home", root_path %></li>
+      <li class="mobile-nav__item"><%= link_to "Posts", posts_path %></li>
+      <li class="mobile-nav__item"><%= link_to "Members Page", members_path %></li>
+      <li class="mobile-nav__item"><%= link_to "Contact", new_contact_path %></li>
+    </div>
+  </div>
 </div>
 
-<div class="d-flex justify-content-center p-3 col-12 row navigation">
+<div class="justify-content-center p-3 col-12 row navigation">
     <div class="main-navigation-container">
       <div class="main-navigation-image">
         <%= link_to root_path do %>
