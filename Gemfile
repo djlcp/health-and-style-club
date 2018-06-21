@@ -1,3 +1,4 @@
+
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
@@ -25,14 +26,12 @@ gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
-
-
 # !!!!!!!!Implemented Gems!!!!!!!!
 
 gem 'toastr-rails'
@@ -43,11 +42,18 @@ gem "administrate-field-ckeditor", "~> 0.0.9"
 # Use administrate for backend admin panel (Implemented by Raymond)
 gem "administrate"
 #
+
+# # use administrate-field-carrierwave for uploading images in the admin panel
+# gem 'administrate-field-carrierwave', '~> 0.3.2'
+
 # # use administrate-field-carrierwave for uploading images in the admin panel (Implemented by Raymond)
 gem 'administrate-field-carrierwave', '~> 0.3.2'
 
+
 # Use Carrierwave to add images to webapp (Implemented by Raymond)
 gem 'carrierwave', '~> 1.0'
+
+gem 'fog-aws'
 
 # Use mini_magick to resize images to webapp (Implemented by Raymond)
 gem 'mini_magick', '~> 4.8'
@@ -58,7 +64,12 @@ gem 'cancancan', '~> 1.13', '>= 1.13.1'
 # Use Devise for user authentication (Implemented by Raymond)
 gem 'devise', '~> 4.2'
 
+
+gem 'vimeo'
+
+
 # Used for generating pdf documents (Implemented by Tiago)
+
 gem 'wicked_pdf'
 
 # Required to use wicked_pdf (Implemented by Tiago)
@@ -73,20 +84,22 @@ gem 'jquery-rails'
 # Use LetterOpener to view mailing actions in development (Implemented by Tiago)
 gem 'letter_opener', :group => :development
 
+# Use mail_form to message contact form
+gem 'mail_form', '~> 1.5', '>= 1.5.1'
+
+
 # Use CKEditor to design post conttents easier (Implemented by Liam)
 gem 'ckeditor', github: 'galetahub/ckeditor'
 
 gem 'shrine'
 
+gem "font-awesome-rails"
 
 # Use DelayedJob to send massive actions into the background of the app (Implemented by Tiago)
 gem 'delayed_job_active_record'
 
 # Use Whenever to provide a clear syntax for writing and deploying cron jobs (Implemented by Tiago)
 gem 'whenever', require: false
-
-
-
 
 
 # !!!!!!!!GROUPS!!!!!!!!
@@ -112,6 +125,6 @@ group :development do
 end
 
 group :production do
-  # gem 'pg'
-  # ruby '2.5.1'
+   # gem 'pg'
+   # ruby '2.5.0'
 end

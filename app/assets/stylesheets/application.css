@@ -13,23 +13,53 @@
  *= require toastr
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
 
 
 /**************** General ****************/
 
-
- * {
-	box-sizing: border-box;
+* {
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+    font-family: 'Playfair Display', serif;
+    box-sizing: border-box;
+    text-decoration: none !important;
 }
 
-/*************** Main Header ***************/
+
+.main-heading {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 3em;
+}
+
+.secondary-heading {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: 2em;
+}
+
+.section-heading {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: 1.5em;
+}
+
+.paragraph {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9em;
+}
+
+.center {
+    text-align: center;
+}
 
 
-/**************** Footer ****************/
+.vip_background {
+    background-color: #FFFBFF;
+}
 
-
-/**************** media queries ****************/
 /*
  *= require gulp/app
  */

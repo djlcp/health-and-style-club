@@ -1,23 +1,26 @@
-<div class="container">
-  <div class="row justify-content-start">
-    <% @posts.each do |post| %>
-    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">  
-      <div class="post-thumb">
-            <div class="post-thumb-img">
-                <%= image_tag post.image_url if post.image.present? %>
-            </div>
-            
-            <div class="post-thumb-content">
-                <%= link_to post.title, post %>
-            </div>
+<h1 class="main-heading center">Posts</h1>
+
+
+<div class="row d-flex justify-content-around col-12 m-auto">
+  <% @posts.each do |post| %>
+
+    <div class="card col-xs-12 col-sm-8 col-md-5 col-lg-4 col-xl-3 profile-card">
+      <div class="profile-background-container border border-danger d-flex align-items-center">
+        <%= image_tag post.image_url, class:"post-background" if post.image.present? %>
       </div>
+
+      <div class="profile-blocks">
+          <div class="post-content">
+            <h5 class="post-name"><%= link_to post.title, post %></h5>
+
+            <h6 class="post-body"><%= link_to sanitize post.body_text, post %></h6>
+
+          </div>
+        </div>
+      
+      
     </div>
-    <% end %>
-  </div>
+      <% end %>
+ 
 </div>
-
-
-
-
-
 

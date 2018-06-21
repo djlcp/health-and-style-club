@@ -1,0 +1,31 @@
+/*************** Main Header ***************/
+
+.main-header {
+	display: flex;
+  justify-content: center;
+  padding: 1em 0 0 0;
+}
+
+ .main-header-title {
+  font-family: 'Playfair Display', serif;
+  text-decoration: none;
+  color: #8E0048;
+  font-size: 2.5em;
+  text-shadow: 0 1px 1px rgba(0,0,0, .7);
+ }
+
+ .nav-bar-icon {
+   font-size: 150%;
+ }
+
+.main-navigation-image {
+  /* width: 50px; */
+  font-size: 200%;
+}
+
+.main-navigation-container {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+}

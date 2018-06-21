@@ -20,10 +20,18 @@ Rails.application.routes.draw do
   resources :comments
   resources :posts_contents
   resources :attachments
+  resources :contacts, only: [:new, :create]
 
 # !!!!!!!!!!!!!MEMBERS PAGE!!!!!!!!!!!!!
 
-  get '/member' => 'pages#member'
+  get 'members' => 'pages#members'
+  get '/members/:id', to: 'pages#members_profile'
+
+
+  # !!!!!!!!!!!!!FAQ PAGE!!!!!!!!!!!!!
+
+  get '/faq' => 'pages#faq'
+
 
   #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   #!!!!!!!!!!!!MASTERCLASSES!!!!!!!!!!!!
@@ -37,7 +45,7 @@ Rails.application.routes.draw do
   #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
   devise_for :users
-
+  get 'users/password_update' => 'users#password_update'
   namespace :admin do
     resources :users
     # resources :contents

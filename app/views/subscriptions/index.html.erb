@@ -25,11 +25,11 @@
           <div class="subscription-container" style="flex-direction: column">
             <h1 class="subs" style="padding-bottom: 20px; width: 100%">Your subscription is active </h1>
             <h2 class="subs">Subscription Id</h2>
-            <p class="subsa"><%= @subscription.id %></p>
+            <p class="subsa"><%= @subscription_id.id %></p>
             <h2 class="subs">User ID</h2>
-            <p class="subsa"><%= @subscription.user_id %></p>
+            <p class="subsa"><%= @subscription_id.user_id %></p>
             <h2 class="subs">Chargebee ID</h2>
-            <p class="subsa"><%= @subscription.chargebee_id %></p>
+            <p class="subsa"><%= @subscription_id.chargebee_id %></p>
             <a href="javascript:void(0)" data-cb-type="portal" class="subscription-button" style="width: 100%">Manage subscription</a>
           </div>
         <% end %>
@@ -42,11 +42,11 @@
           <div class="subscription-container" style="flex-direction: column">
             <h1 class="subs" style="padding-bottom: 20px; width: 100%">Your subscription is inactive </h1>
             <h2 class="subs">Subscription Id</h2>
-            <p class="subsa"><%= @subscription.id %></p>
+            <p class="subsa"><%= @subscription_id.id %></p>
             <h2 class="subs">User ID</h2>
-            <p class="subsa"><%= @subscription.user_id %></p>
+            <p class="subsa"><%= @subscription_id.user_id %></p>
             <h2 class="subs">Chargebee ID</h2>
-            <p class="subsa"><%= @subscription.chargebee_id %></p>
+            <p class="subsa"><%= @subscription_id.chargebee_id %></p>
             <a href="javascript:void(0)" data-cb-type="checkout" data-cb-plan-id="premium" class="subscription-button" style="width: 100%">Subscribe</a>
           </div>
         <% end %>
@@ -57,7 +57,7 @@
 <!--          !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
 <!--          !!!!!!!!!!NO SUBSCRIPTION!!!!!!!!!!!!-->
 <!--          !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
-      <% if ! @subribed %>
+      <% if ! @subscription %>
         <div class="subscription-container" style="flex-direction: column">
           <h1 class="subs" style="padding-bottom: 20px;">Subscriptions </h1>
           <h2 class="subs">Why should you subscribe?</h2>
