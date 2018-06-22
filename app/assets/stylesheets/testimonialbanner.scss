@@ -6,11 +6,11 @@
   position: relative;
   margin: auto;
   padding: 25px 0 25px 0;
-  background-color: #fbcfcc;
+  background-color: #4F4A44;
 }
 
 .testimonial-banner-background-color {
-  background-color: #fbcfcc;
+  background-color: #4F4A44;
 }
 
 .testimonial-banner-post {
@@ -27,7 +27,7 @@
 }
 
 .testimonial-name {
-  color: black;
+  color: white;
   text-align: center;
 }
 
@@ -35,6 +35,7 @@
   padding: 0 10px 0 0;
   font-style: italic;
   text-align: center;
+  color: white;
 }
 
 /* Hide the images by default */
@@ -93,12 +94,11 @@
 }
 
 @-webkit-keyframes fade {
-  from {opacity: .4} 
+  from {opacity: .4}
   to {opacity: 1}
 }
 
 @keyframes fade {
-  from {opacity: .4} 
+  from {opacity: .4}
   to {opacity: 1}
 }
-
