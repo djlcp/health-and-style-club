@@ -1,8 +1,21 @@
+$spacing: 15px;
+
+.main-header-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: $spacing;
+}
+
+@media all and (max-width: 655px) {
+  .main-header-wrap {
+    justify-content: space-between;
+  }
+}
 
 .main-header {
 	display: flex;
   justify-content: center;
-  padding: 1em 0 0 0;
 }
 
  .main-header-title {
@@ -60,7 +73,7 @@
   text-decoration: none;
   color: white;
   font-weight: bold;
-  margin: 0 2em;
+  margin: 0 $spacing * 2;
 }
 
 .top-navigation-link:hover {
@@ -79,12 +92,18 @@
   justify-content: flex-end;
 }
 
+@media all and (max-width: 655px) {
+  .navigation {
+    display: none;
+  }
+}
+
 .main-navigation {
  display: flex;
  flex-direction: row;
  justify-content: space-around;
  background-color: #EBEBEB;
- padding: 0 0 1em 0;
+ padding: 0 0 $spacing 0;
 }
 
 .main-navigation-link {
@@ -92,7 +111,7 @@
   text-decoration: none;
   color: black;
   font-weight: bold;
-  margin: 0 2em;
+  margin: 0 $spacing * 2;
   text-transform: uppercase;
  }
  
@@ -107,16 +126,11 @@
     justify-content: space-around;
   }
 }
-@media all and (max-width: 655px) {
-  .navigation {
-    -webkit-flex-flow: column wrap;
-    flex-flow: column wrap;
-    padding: 0;
-  }
 
+@media all and (max-width: 655px) {
   .navigation a {
     text-align: center;
-    padding: 10px;
+    padding: $spacing;
   }
 
   .navigation li:last-of-type a {

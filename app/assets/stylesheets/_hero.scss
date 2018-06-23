@@ -1,8 +1,10 @@
+$spacing: 15px;
+
 .image-message {
-	justify-content: center; 
+	justify-content: center;
   background-color: #d158ac;
   opacity: 0.75;
-  padding: 20px;
+  padding: $spacing;
 }
 
 .hero {
@@ -26,4 +28,3 @@
 .homepage-banner-3 {
   background-image: url('hero_images/image3.jpg');
 }
-

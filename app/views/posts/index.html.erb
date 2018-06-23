@@ -1,18 +1,25 @@
-<div class="all-posts-wrapper">
+<h1 class="main-heading center">Posts</h1>
 
 
+<div class="row d-flex justify-content-around col-12 m-auto">
+  <% @posts.each do |post| %>
 
-<div class="post-thumb">
-	<% @posts.each do |post| %>
-		<div class="link-row-clearfix">
-			  <div class="post-image-thumb">
-						<%= image_tag post.image_url(:thumb) if post.image.present? %>
-			  </div>
-				<div class="post-title-thumb">
-						<%= link_to post.title, post %>
-				</div>
-		</div>
-			 <% end %>
+    <div class="card col-xs-12 col-sm-8 col-md-5 col-lg-4 col-xl-3 profile-card">
+      <div class="profile-background-container border border-danger d-flex align-items-center">
+        <%= image_tag post.image_url, class:"post-background" if post.image.present? %>
+      </div>
 
-	</div>
+      <div class="profile-blocks">
+          <div class="post-content">
+            <h5 class="post-name"><%= link_to post.title, post %></h5>
+
+            <h6 class="post-body"><%= link_to sanitize post.body_text, post %></h6>
+
+          </div>
+        </div>
+
+
+    </div>
+      <% end %>
+
 </div>
