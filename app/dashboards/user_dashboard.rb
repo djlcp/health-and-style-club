@@ -57,7 +57,7 @@ class UserDashboard < Administrate::BaseDashboard
     # :id,
     :email,
     :role,
-    :encrypted_password
+    # :encrypted_password
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
