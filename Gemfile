@@ -38,13 +38,9 @@ gem 'toastr-rails'
 
 # Use administrate-field-ckeditor to edit text in admin panel (Implemented by Raymond)
 gem "administrate-field-ckeditor", "~> 0.0.9"
-#
+
 # Use administrate for backend admin panel (Implemented by Raymond)
 gem "administrate"
-#
-
-# # use administrate-field-carrierwave for uploading images in the admin panel
-# gem 'administrate-field-carrierwave', '~> 0.3.2'
 
 # # use administrate-field-carrierwave for uploading images in the admin panel (Implemented by Raymond)
 gem 'administrate-field-carrierwave', '~> 0.3.2'

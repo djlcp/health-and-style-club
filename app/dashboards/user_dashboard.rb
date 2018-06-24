@@ -36,7 +36,7 @@ class UserDashboard < Administrate::BaseDashboard
     state: Field::String,
     country: Field::String,
     post_code: Field::String,
-    bio: Field::Ckeditor,
+    bio: Field::Text,
     # bioavatar: Field::String
     bioavatar: Field::Carrierwave.with_options(
       image: :standard,

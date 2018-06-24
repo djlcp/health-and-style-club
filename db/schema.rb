@@ -103,10 +103,11 @@ ActiveRecord::Schema.define(version: 20180726203222) do
     t.integer "user_id"
     t.string "image"
     t.integer "category_id"
+    t.string "post_description"
   end
 
   create_table "subscriptions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.date "expiry_date"
+    t.datetime "expiry_date"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -126,9 +127,8 @@ ActiveRecord::Schema.define(version: 20180726203222) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "subscription_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string "first_name"
     t.string "surname"
     t.string "middle_names"

@@ -17,9 +17,11 @@
 
           </div>
         </div>
+  </div>
 
-
-    </div>
+    <% if can? :create, @post %>
+    <%= link_to "new", new_post_path %>
+    <% end %>
       <% end %>
 
 </div>
