@@ -45,6 +45,7 @@ Rails.application.routes.draw do
   #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
   devise_for :users
+  resource :user
   get 'users/password_update' => 'users#password_update'
   namespace :admin do
     resources :users

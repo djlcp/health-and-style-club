@@ -13,7 +13,7 @@
         <div class="card-body">
 
 
-          <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+          <%= form_for(@user, url: user_path, html: { method: :put }) do |f| %>
             <%= devise_error_messages! %>
           <div class="w-75" style="margin:auto">
             <h4 class="text-center">Personal Info</h4></br>
@@ -78,7 +78,7 @@
                       <small>https://</small>
                     </div>
                   </div>
-                  <%= f.url_field :website, class: "form-control", required: false %>
+                  <%= f.text_field :website, class: "form-control", required: false %>
                 </div>
               </div>
               <div class="col-12 col-lg-6 d-none d-sm-block">
@@ -89,7 +89,7 @@
                       <small>www.facebook.com/</small>
                     </div>
                   </div>
-                  <%= f.url_field :facebook, class: "form-control", required: false %>
+                  <%= f.text_field :facebook, class: "form-control", required: false %>
                 </div>
               </div>
               <div class="col-12 col-lg-6 d-none d-sm-block">
@@ -100,7 +100,7 @@
                       <small>www.pinteres.com/</small>
                     </div>
                   </div>
-                  <%= f.url_field :pinterest, class: "form-control", required: false %>
+                  <%= f.text_field :pinterest, class: "form-control", required: false %>
                 </div>
               </div>
               <div class="col-12 col-lg-6 d-none d-sm-block">
@@ -111,7 +111,7 @@
                       <small>www.youtube.com/</small>
                     </div>
                   </div>
-                  <%= f.url_field :youtube, class: "form-control", required: false %>
+                  <%= f.text_field :youtube, class: "form-control", required: false %>
                 </div>
               </div>
               <div class="col-12 col-lg-6 d-none d-sm-block">
@@ -122,7 +122,7 @@
                       <small>www.twitter.com/</small>
                     </div>
                   </div>
-                  <%= f.url_field :twitter, class: "form-control", required: false %>
+                  <%= f.text_field :twitter, class: "form-control", required: false %>
                 </div>
               </div>
 
@@ -131,11 +131,6 @@
             <div class="">
               <%= f.check_box :search_consent, style:'width: 15px'%>
               <small class="text-muted"><%= f.label :search_consent, 'Allow other users to see your profile' %></small>
-            </div>
-
-            <div class="">
-              <%= f.label :current_password %><br/>
-              <%= f.password_field :current_password, autocomplete: "off", class:"form-control", required: false %>
             </div>
 
             <div class="actions">
