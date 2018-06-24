@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   get 'members' => 'pages#members'
   get '/members/:id', to: 'pages#members_profile'
 
-
+  get '/member_home' => 'pages#member_home'
   # !!!!!!!!!!!!!STATIC PAGES!!!!!!!!!!!!!
 
   get '/faq' => 'pages#faq'
