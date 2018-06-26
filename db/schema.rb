@@ -12,9 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20180726203222) do
 
-  create_table "admin", id: :integer, unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-  end
-
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -72,11 +69,8 @@ ActiveRecord::Schema.define(version: 20180726203222) do
     t.text "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-<<<<<<< HEAD
-=======
     t.string "preview"
     t.integer "user_id"
->>>>>>> 8fd019439bba1f36746d702417330641e543516e
   end
 
   create_table "photos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -103,15 +97,16 @@ ActiveRecord::Schema.define(version: 20180726203222) do
     t.integer "user_id"
     t.string "image"
     t.integer "category_id"
+    t.string "post_description"
   end
 
   create_table "subscriptions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.date "expiry_date"
+    t.datetime "expiry_date"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "paid_for"
     t.string "chargebee_id"
+    t.boolean "paid_for", default: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -127,11 +122,7 @@ ActiveRecord::Schema.define(version: 20180726203222) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-<<<<<<< HEAD
     t.integer "subscription"
-=======
-    t.integer "subscription_id"
->>>>>>> 8fd019439bba1f36746d702417330641e543516e
     t.string "first_name"
     t.string "surname"
     t.string "phone"
@@ -157,7 +148,6 @@ ActiveRecord::Schema.define(version: 20180726203222) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "masterclass_id"
-    t.boolean "welcome_video", default: false
   end
 
   add_foreign_key "comments", "posts"
