@@ -1,0 +1,23 @@
+/*************** About Page ***************/
+.wrapper
+{
+  width: 100%;
+}
+
+.bigimage
+{
+  background-image: url('our-story.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 350px;
+  width: 100%;
+}
+
+@media only screen and (max-width: 480px) {
+  .bigimage
+  {
+      height: 200px;
+      background-size: contain;
+  }
+}

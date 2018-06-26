@@ -60,6 +60,17 @@
     background-color: #FFFBFF;
 }
 
+.form-group {
+  width: 60%;
+  margin: 20px 20%;
+  text-align: left;
+
+}
+
+.hidden {
+  visibility: hidden;
+}
+
 /*
  *= require gulp/app
  */
