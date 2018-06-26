@@ -64,40 +64,44 @@
     </div>
     <div class="main-navigation-container">
       <div class="main-navigation-image">
-        <%= link_to posts_path do %>
-          <i class="fa fa-sticky-note"></i>
+        <%= link_to abouthealthandfitness_path do %>
+          <i class="fa fa-heart"></i>
         <% end %>
       </div>
       <div class="mt-2">
-        <%= link_to "Posts", posts_path, class: 'main-navigation-link' %>
+        <%= link_to "Fitness & Nutrition", abouthealthandfitness_path, class: 'main-navigation-link' %>
       </div>
     </div>
     <div class="main-navigation-container">
       <div class="main-navigation-image">
-        <%= link_to members_path do %>
-          <i class="fa fa-user-circle"></i>
+        <%= link_to aboutpersonalstyling_path do %>
+          <i class="fa fa-shopping-bag"></i>
         <% end %>
       </div>
       <div class="mt-2">
-        <%= link_to "Members Page", members_path, class: 'main-navigation-link' %>
+        <%= link_to "Personal Styling", aboutpersonalstyling_path, class: 'main-navigation-link' %>
       </div>
     </div>
+
     <div class="main-navigation-container">
       <div class="main-navigation-image">
-        <i class="fa fa-file"></i>
+          <%= link_to aboutpersonaldevelopment_path do %>
+        <i class="fa fa-heart"></i>
+          <% end %>
       </div>
       <div class="mt-2">
-        <a href="" class="main-navigation-link mt-2">Navigation</a>
+        <%= link_to "Personal Development", aboutpersonaldevelopment_path, class: 'main-navigation-link' %>
       </div>
     </div>
+
     <div class="main-navigation-container">
       <div class="main-navigation-image">
-        <%= link_to new_contact_path do %>
-          <i class="fa fa-envelope"></i>
+        <%= link_to aboutmasterclasses_path do %>
+          <i class="fa fa-book"></i>
         <% end %>
       </div>
       <div class="mt-2">
-        <%= link_to "Contact", new_contact_path, class: 'main-navigation-link' %>
+        <%= link_to "Masterclasses", aboutmasterclasses_path, class: 'main-navigation-link' %>
       </div>
     </div>
 </div>
