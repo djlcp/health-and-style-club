@@ -40,6 +40,12 @@ class PostsController < ApplicationController
     redirect_to posts_path, notice: 'Your post was deleted.'
   end
 
+  def filter_category
+    @category = Category.find(params[:id])
+    @posts = @category.posts
+    render :index
+  end
+
   private
 
   def post_params
