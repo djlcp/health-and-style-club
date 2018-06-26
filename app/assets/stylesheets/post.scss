@@ -72,12 +72,13 @@ $spacing: 15px;
 
 .post-body-main {
   width: 100%;
-  display: flex;
+  // display: flex;
   flex-wrap: wrap;
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
   text-align: justify;
   padding: 1%;
+
 }
 
 
@@ -155,7 +156,7 @@ $spacing: 15px;
     background-color: #fff;
     height: 100%;
     position: relative;
-    
+
     /* z-index: -4; */
 }
 
