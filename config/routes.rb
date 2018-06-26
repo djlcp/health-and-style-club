@@ -71,6 +71,7 @@ Rails.application.routes.draw do
     # resources :posts_contents
     resources :subscriptions
     resources :categories
+    resources :serversettings
     # resources :videos
     root to: "users#index"
   end
