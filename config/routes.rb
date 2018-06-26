@@ -46,6 +46,8 @@ Rails.application.routes.draw do
 
   get '/aboutmasterclasses' => 'pages#static_masterclass'
 
+  get '/become_contributor' => 'pages#become_contributor'
+
   #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   #!!!!!!!!!!!!MASTERCLASSES!!!!!!!!!!!!
   #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
