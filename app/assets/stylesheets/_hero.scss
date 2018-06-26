@@ -1,8 +1,10 @@
+$spacing: 15px;
+
 .image-message {
 	justify-content: center;
-  //background-color: #d158ac;
+  background-color: #d158ac;
   opacity: 0.75;
-  padding: 20px;
+  padding: $spacing;
 }
 
 .hero {

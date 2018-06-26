@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20180726203222) do
 
+  create_table "admin", id: :integer, unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  end
+
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -97,7 +100,6 @@ ActiveRecord::Schema.define(version: 20180726203222) do
     t.integer "user_id"
     t.string "image"
     t.integer "category_id"
-    t.string "post_description"
   end
 
   create_table "subscriptions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -127,9 +129,9 @@ ActiveRecord::Schema.define(version: 20180726203222) do
     t.string "surname"
     t.string "phone"
     t.string "country"
+    t.integer "role"
     t.string "bio"
     t.string "bioavatar"
-    t.integer "role"
     t.string "biobackground"
     t.boolean "search_consent"
     t.string "facebook"
@@ -148,6 +150,7 @@ ActiveRecord::Schema.define(version: 20180726203222) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "masterclass_id"
+    t.boolean "welcome_video", default: false
   end
 
   add_foreign_key "comments", "posts"
