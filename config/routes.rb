@@ -28,13 +28,11 @@ Rails.application.routes.draw do
   get '/members/:id', to: 'pages#members_profile'
 
   get '/member_home' => 'pages#member_home'
+  
   # !!!!!!!!!!!!!STATIC PAGES!!!!!!!!!!!!!
 
   get '/faq' => 'pages#faq'
 
-  # !!!!!!!!!!!!! SHOW POSTS BY CATEGORY !!!!!!!!!!!!!
-
-  get '/category/:id', to: 'posts#filter_category'
   get '/about' => 'pages#about'
 
   get '/privacy-policy' => 'pages#privacy_policy'
@@ -50,6 +48,10 @@ Rails.application.routes.draw do
   get '/aboutmasterclasses' => 'pages#static_masterclass'
 
   get '/become_contributor' => 'pages#become_contributor'
+
+  # !!!!!!!!!!!!! SHOW POSTS BY CATEGORY !!!!!!!!!!!!!
+
+  get '/category/:id', to: 'posts#filter_category'
 
   #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   #!!!!!!!!!!!!MASTERCLASSES!!!!!!!!!!!!

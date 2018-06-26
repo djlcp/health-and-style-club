@@ -80,6 +80,6 @@ class PostDashboard < Administrate::BaseDashboard
   # across all pages of the admin dashboard.
   #
 def display_resource(post)
- post.title
+  post.title
   end
 end
