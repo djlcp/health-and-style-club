@@ -4,9 +4,10 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @posts = @posts.category(params[:category]) if params[:category].present?
   end
 
-  def show;
+  def show
     @comments = @post.comments.all
     @comment = @post.comments.build
   end
@@ -16,7 +17,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    # @user = User.find(params[:user_id])
     @post = current_user.posts.new(post_params)
     if @post.save
       redirect_to posts_path, notice: 'Post added.'

@@ -15,7 +15,7 @@ class PostDashboard < Administrate::BaseDashboard
     contents: Field::HasMany,
     id: Field::Number,
     title: Field::String,
-    body_text: Field::Ckeditor,
+    body_text: Field::Text,
     paid_for: Field::Boolean,
     state: Field::String,
     created_at: Field::DateTime,
@@ -80,6 +80,6 @@ class PostDashboard < Administrate::BaseDashboard
   # across all pages of the admin dashboard.
   #
 def display_resource(post)
- post.title
+  post.title
   end
 end

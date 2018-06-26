@@ -8,7 +8,7 @@
 		        <%= link_to "Health & Style Club", root_path, class: "footerlogo" %>
           </div>
           <div class="mt-3">
-            <p>Bear claw pudding cake. Tiramisu cake cotton candy toffee cheesecake cupcake. Toffee dragée gummies. Dessert chupa chups jelly. </p>
+            <p>Health & Style Club is a memebership site for women featuring expert contributors from around the world whos bring their own unique training, experience, and views together. Within the member's club you will find workout videos, recipes, meal plans, online personal styling courses, personal development courses, videos, and printables. Each month there is a masterclass on a new topic develivered by an expert in their field.  </p>
           </div>
       </div>
 
@@ -17,16 +17,16 @@
       <div class="col-md-6 mb-md-0 d-flex justify-content-center pt-4">
         <ul class="list-unstyled">
           <li class="mb-2">
-            <a href="" class="bottom-navigation-link">Navigation</a>
+            <%= link_to "Privacy Policy", privacy_policy_path, class: 'main-navigation-link' %>
           </li>
           <li class="mb-2">
-            <a href="" class="bottom-navigation-link">Navigation</a>
+          <%= link_to "Terms & Conditions", termsandconditions_path, class: 'main-navigation-link' %>
           </li>
           <li class="mb-2">
-            <a href="" class="bottom-navigation-link">Navigation</a>
+            <%= link_to "Become a Contributor", become_contributor_path, class: 'main-navigation-link' %>
           </li>
           <li>
-            <a href="" class="bottom-navigation-link">Navigation</a>
+            <%= link_to "Become a Member", new_subscription_path, class: 'main-navigation-link' %>
           </li>
         </ul>
       </div>

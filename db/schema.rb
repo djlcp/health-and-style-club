@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180726203223) do
+ActiveRecord::Schema.define(version: 20180726203224) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(version: 20180726203223) do
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "post_id"
+    t.integer "user_id"
+    t.text "title"
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -41,9 +43,9 @@ ActiveRecord::Schema.define(version: 20180726203223) do
   create_table "contents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "content_type"
     t.text "description"
-    t.string "file_url", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "file_url"
   end
 
   create_table "documents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -71,6 +73,10 @@ ActiveRecord::Schema.define(version: 20180726203223) do
     t.datetime "updated_at", null: false
     t.string "preview"
     t.integer "user_id"
+  end
+
+  create_table "messages", id: :integer, unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text "email"
   end
 
   create_table "photos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -101,18 +107,26 @@ ActiveRecord::Schema.define(version: 20180726203223) do
     t.integer "likes"
   end
 
+  create_table "serversettings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.boolean "active"
+    t.integer "reactivation_date"
+    t.string "task_name"
+    t.index ["active"], name: "index_serversettings_on_active"
+  end
+
   create_table "subscriptions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "expiry_date"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "paid_for"
     t.string "chargebee_id"
+    t.boolean "paid_for", default: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.integer "role"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -126,12 +140,17 @@ ActiveRecord::Schema.define(version: 20180726203223) do
     t.integer "subscription"
     t.string "first_name"
     t.string "surname"
+    t.string "middle_names"
     t.string "phone"
+    t.string "address_line_1"
+    t.string "address_line_2"
+    t.string "city"
+    t.string "state"
     t.string "country"
-    t.integer "role"
+    t.string "post_code"
     t.string "bio"
     t.string "bioavatar"
-    t.string "biobackground"
+    t.boolean "mailchimp"
     t.boolean "search_consent"
     t.string "facebook"
     t.string "pinterest"
@@ -149,7 +168,6 @@ ActiveRecord::Schema.define(version: 20180726203223) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "masterclass_id"
-    t.boolean "welcome_video", default: false
   end
 
   create_table "votes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

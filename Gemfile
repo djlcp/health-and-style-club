@@ -38,13 +38,9 @@ gem 'toastr-rails'
 
 # Use administrate-field-ckeditor to edit text in admin panel (Implemented by Raymond)
 gem "administrate-field-ckeditor", "~> 0.0.9"
-#
+
 # Use administrate for backend admin panel (Implemented by Raymond)
 gem "administrate"
-#
-
-# # use administrate-field-carrierwave for uploading images in the admin panel
-# gem 'administrate-field-carrierwave', '~> 0.3.2'
 
 # # use administrate-field-carrierwave for uploading images in the admin panel (Implemented by Raymond)
 gem 'administrate-field-carrierwave', '~> 0.3.2'
@@ -87,7 +83,6 @@ gem 'letter_opener', :group => :development
 # Use mail_form to message contact form
 gem 'mail_form', '~> 1.5', '>= 1.5.1'
 
-
 # Use CKEditor to design post conttents easier (Implemented by Liam)
 gem 'ckeditor', github: 'galetahub/ckeditor'
 
@@ -101,8 +96,12 @@ gem 'delayed_job_active_record'
 # Use Whenever to provide a clear syntax for writing and deploying cron jobs (Implemented by Tiago)
 gem 'whenever', require: false
 
+
 # Use for post likes
 gem 'acts_as_votable', '~> 0.10.0'
+
+
+gem 'gibbon', '~> 3.2.0'
 
 
 # !!!!!!!!GROUPS!!!!!!!!
