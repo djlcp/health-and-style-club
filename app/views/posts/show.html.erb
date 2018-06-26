@@ -1,25 +1,15 @@
 <section class="post-main">
 
-
 <!-- <div class="post-category">
 <#%= @post.category.name %>
 </div> -->
 
-
-
-
 <!-- Hero image -->
-	<div class="post-image-main">
-		<%= image_tag(@post.image_url.to_s) %>
-		</div>
+	<div class="post-image-main profile-background-container border border-danger d-flex align-items-center"">
+		<%= image_tag(@post.image_url.to_s, class:"post-background") %>
+	</div>		
 
-							<div class="post-image-main">
-		<%= image_tag(@post.image_url.to_s) %>
-		</div>
-
-
-		<br>
-
+	<h5 class="post-name"><%= @post.title %></h5>
 
 	<div class="post-body-main">
 		<%= sanitize @post.body_text, tags: %w(p ul li ul iframe) %>
