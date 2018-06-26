@@ -1,57 +1,32 @@
-<section class="hero homepage-banner-<%= rand(1..3) %>">
-	<div class ="image-message">
-		  <% if current_user %>
-        <h1 class="hero-title">Welcome <%= current_user.email %><br> </h1>
-      <% end %>
-		<p class="hero-description">Lorem ipsum dolor sit amet, consectetur. 
-		<br>Consectetur, doloribus ut obcaecati odio accusantium. Voluptatem.
-		<br>Consectetur, doloribus ut obcaecati odio accusantium. Voluptatem.</p>
-	</div>
-</section>
+<%= render "layouts/herohomepagebanner" %>
 
-<div class="expert-banner-background-color">
-  <div class="expert-banner-container">
 
-    <div class="mySlides expert-banner-fade">
-      <div class="expert-banner-post">
-        <%= image_tag('man1.jpg', class: "expert-banner-image")%>
-        <div>
-          <h2 class="expert-name">Expert Name</h2>
-          <p class="expert-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In at dapibus turpis. Etiam vel justo urna.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="mySlides expert-banner-fade">
-      <div class="expert-banner-post">
-        <%= image_tag('woman1.jpg', class: "expert-banner-image")%>
-        <div>
-         <h2 class="expert-name">Expert Name</h2>
-          <p class="expert-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In at dapibus turpis. Etiam vel justo urna.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="mySlides expert-banner-fade">
-      <div class="expert-banner-post">
-        <%= image_tag('man2.jpg', class: "expert-banner-image")%>
-        <div>
-          <h2 class="expert-name">Expert Name</h2>
-          <p class="expert-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In at dapibus turpis. Etiam vel justo urna.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Next and previous buttons -->
-    <a class="prev js-prev" data-number="-1">&#10094;</a>
-    <a class="next js-next" data-number="1">&#10095;</a>
-  </div>
+<div class="d-flex justify-content-center m-5">
+  <h3>What is Health & Style Club?</h3>
 </div>
-<br>
 
-<!-- The dots/circles -->
-<div style="text-align:center">
-  <span class="dot js-dot" data-number="1"></span>
-  <span class="dot js-dot" data-number="2"></span>
-  <span class="dot js-dot" data-number="3"></span>
+<%= render "layouts/expertbanner" %>
+
+<div class= "row">
+	<div class=" col-xs-12 col-md-6 m-0 p-0" style= "background-color: #ECECEC; height: 400px" >
+		<%= render "pages/public_home/masterclass"  %>
+	</div>
+	<div class=" col-xs-12 col-md-6 m-0 p-0" style= "background-color: #ECECEC; height: 400px" >
+		<%= render "pages/public_home/masterclass"  %>
+	</div>
+</div>
+
+
+<%= render "layouts/testimonialbanner" %>
+=======
+<div class="row">
+		<div class=" col-xs-12 col-md-9 m-0 p-0" style= "background-color: blue; height: 400px" >
+		<%= render "pages/public_home/posts" %>
+		</div>
+		<div class="col-md-3  m-0 p-0" style= "background-color: green; height: 400px">
+			<%= render "pages/public_home/previous_masterclasses" %>
+</div>
+
+<div class="d-flex justify-content-center m-5">
+  <h3>...Blank space to fill with something...</h3>
 </div>

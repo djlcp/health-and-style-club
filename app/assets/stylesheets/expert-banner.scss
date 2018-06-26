@@ -1,3 +1,5 @@
+$spacing: 15px;
+
 * {box-sizing:border-box}
 
 /* Slideshow container */
@@ -5,10 +7,12 @@
   max-width: 1000px;
   position: relative;
   margin: auto;
+  padding: 25px 0 25px 0;
+  background-color: #C4C4C4;
 }
 
 .expert-banner-background-color {
-  background-color: #EBEBEB;
+  background-color: #C4C4C4;
 }
 
 .expert-banner-post {
@@ -19,13 +23,13 @@
 }
 
 .expert-banner-image {
-  height: 200px;
+  height: 120px;
   border-radius: 50%;
   padding: 0 20px;
 }
 
 .expert-name {
-  color: #8E0048;
+  color: black;
 }
 
 .expert-description {
@@ -69,14 +73,14 @@
   height: 15px;
   width: 15px;
   margin: 0 2px;
-  background-color: #bbb;
+  background-color: white;
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
 }
 
 .active, .dot:hover {
-  background-color: #717171;
+  background-color: #C0C0C0;
 }
 
 /* Fading animation */
@@ -88,12 +92,11 @@
 }
 
 @-webkit-keyframes fade {
-  from {opacity: .4} 
+  from {opacity: .4}
   to {opacity: 1}
 }
 
 @keyframes fade {
-  from {opacity: .4} 
+  from {opacity: .4}
   to {opacity: 1}
 }
-

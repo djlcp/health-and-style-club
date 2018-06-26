@@ -1,20 +1,33 @@
 <section class="post-main">
 
+
 <!-- <div class="post-category">
 <#%= @post.category.name %>
 </div> -->
+
+
+
 
 <!-- Hero image -->
 	<div class="post-image-main">
 		<%= image_tag(@post.image_url.to_s) %>
 		</div>
 
-		<div class="post-title-main">
-			<%= @post.title %>
+							<div class="post-image-main">
+		<%= image_tag(@post.image_url.to_s) %>
 		</div>
+
 
 		<br>
 
+		<div class="post-body-title">
+			<%= @post.title %>
+		</div>
+
+		<div class="post-body-main">
+			<%= @post.post_description %>
+		</div>
+		<br>
 
 	<div class="post-body-main">
 		<%= sanitize @post.body_text, tags: %w(p ul li ul iframe) %>
@@ -37,4 +50,7 @@ About the author
 
 -->
 
+
 </section>
+
+<%= link_to 'Edit post', edit_post_path %>
