@@ -1,7 +1,7 @@
 <h1>Fitness & Nutrition</h1>
 
 <div>
-image>
+<%= image_tag('Yoga Stock.jpg', class: "static_head")%>
 </div>
 
 <h2>Workout Videos created by certified Personal Trainers</h2>
@@ -22,17 +22,29 @@ training, experience, and expertise. We work with trainers from all over
 the world and are regularly adding new videos to keep it fresh and exciting.
 There is usually no equipment required and the workouts can be
 <br>
-Some of the styles include:
-<ul>
-<li>Full Body</li>
-<li>HIIT</li>
-<li>Strength Training</li>
-<li>Pilates</li>
-<li>Yoga</li>
-<li>And more to come...</li>
-</ul>
+
+<div class="card bg-light mb-3" style="max-width: 18rem;">
+  <div class="card-header">Workout Anywhere</div>
+  <div class="card-body">
+    <h5 class="card-title">Some of the styles include:</h5>
+    <p class="card-text">
+      <ul>
+      <li>Full Body</li>
+      <li>HIIT</li>
+      <li>Strength Training</li>
+      <li>Pilates</li>
+      <li>Yoga</li>
+      <li>And more to come...</li>
+      </ul>
+  </p>
+  </div>
+</div>
+
+<div>
+<%= image_tag('yogagirl.jpeg', class: "static_image")%>
 
 <h2>Recipes and Meal Plans</h2>
+<%= image_tag('nutrition.jpeg', class: "static_image")%>
 <br>
 <p>
 Our recipes and meal plans have been created by recipe creators, health coaches, and
@@ -41,4 +53,15 @@ Jackie Vega, Registered Dietician, Personal Trainer, and Recipes Creator for <it
 <br>
 Browse our selection of Breakfast, Lunch, Dinner, and  Snack Recipes, print off our Meal Planner
 and plan your weekly menus and shopping list. There are also specialised meal plans developed
-by Health Coaches. We will be adding new recipes weekly.  
+by Health Coaches. We will be adding new recipes weekly.
+</p>
+</div>
+
+<div class="card">
+  <h5 class="card-header">Featured</h5>
+  <div class="card-body">
+    <h5 class="card-title">Special title treatment</h5>
+    <p class="card-text">Join today for only £15 per month.</p>
+  	<%= link_to "Subscribe Now", subscriptions_path, class: "btn btn-primary btn-sm"%>
+  </div>
+</div>
