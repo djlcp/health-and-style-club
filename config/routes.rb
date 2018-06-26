@@ -49,10 +49,6 @@ Rails.application.routes.draw do
 
   get '/become_contributor' => 'pages#become_contributor'
 
-  # !!!!!!!!!!!!! SHOW POSTS BY CATEGORY !!!!!!!!!!!!!
-
-  get '/category/:id', to: 'posts#filter_category'
-
   #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   #!!!!!!!!!!!!MASTERCLASSES!!!!!!!!!!!!
   #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

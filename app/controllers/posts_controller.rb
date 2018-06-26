@@ -4,9 +4,10 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @posts = @posts.category(params[:category]) if params[:category].present?
   end
 
-  def show;
+  def show
     @comments = @post.comments.all
     @comment = @post.comments.build
   end
@@ -44,12 +45,6 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     redirect_to posts_path, notice: 'Your post was deleted.'
-  end
-
-  def filter_category
-    @category = Category.find(params[:id])
-    @posts = @category.posts
-    render :index
   end
 
   private
