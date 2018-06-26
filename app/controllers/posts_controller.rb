@@ -4,9 +4,10 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @posts = @posts.category(params[:category]) if params[:category].present?
   end
 
-  def show;
+  def show
     @comments = @post.comments.all
     @comment = @post.comments.build
   end

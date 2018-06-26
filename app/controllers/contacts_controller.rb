@@ -13,6 +13,12 @@ class ContactsController < ApplicationController
   #     flash.now[:error] = 'Cannot send message.'
   #     render :new
   # end
+
+  # if @contact.save
+  #   redirect_to contacts_create_path, notice: 'Message sent'
+  # else
+  #   render :new
+  # end
   end
 
   private

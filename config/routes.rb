@@ -23,12 +23,13 @@ Rails.application.routes.draw do
   resources :contacts, only: [:new, :create]
   resources :categories
 
-# !!!!!!!!!!!!!MEMBERS PAGE!!!!!!!!!!!!!
+# !!!!!!!!!!!!! MEMBERS PAGE !!!!!!!!!!!!!
 
   get 'members' => 'pages#members'
   get '/members/:id', to: 'pages#members_profile'
 
-
+  get '/member_home' => 'pages#member_home'
+  
   # !!!!!!!!!!!!!STATIC PAGES!!!!!!!!!!!!!
 
   get '/faq' => 'pages#faq'
@@ -46,6 +47,8 @@ Rails.application.routes.draw do
   get '/aboutpersonaldevelopment' => 'pages#static_personal-dev'
 
   get '/aboutmasterclasses' => 'pages#static_masterclass'
+
+  get '/become_contributor' => 'pages#become_contributor'
 
   #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   #!!!!!!!!!!!!MASTERCLASSES!!!!!!!!!!!!

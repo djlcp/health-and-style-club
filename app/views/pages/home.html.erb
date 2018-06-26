@@ -1,9 +1,7 @@
 <%= render "layouts/herohomepagebanner" %>
 
 
-<div class="d-flex justify-content-center m-5">
-  <h3>What is Health & Style Club?</h3>
-</div>
+<%= render "layouts/what_is" %>
 
 <div class="d-flex justify-content-center m-5">
   <% if ! @signed_in%>
@@ -12,27 +10,30 @@
 </div>
 
 <%= render "layouts/expertbanner" %>
+</div>
 
-<div class= "row">
-	<div class=" col-xs-12 col-md-6 m-0 p-0" style= "background-color: #ECECEC; height: 400px" >
-		<%= render "pages/public_home/masterclass"  %>
+<div class="row">
+	<div class= "col-xs-12 col-md-6 m-0 p-0" style= "background-color: #FBFBFB; height: 400px" >
+		<%= render "layouts/current_masterclass" %>
 	</div>
-	<div class=" col-xs-12 col-md-6 m-0 p-0" style= "background-color: #ECECEC; height: 400px" >
-		<%= render "pages/public_home/masterclass"  %>
+
+	<div class= "col-xs-12 col-md-6 m-0 p-0" style= "background-color: #FBFBFB; height: 400px" >
+		<%= render "layouts/current_expert" %>
 	</div>
 </div>
 
 
-<%= render "layouts/testimonialbanner" %>
-=======
 <div class="row">
 		<div class=" col-xs-12 col-md-9 m-0 p-0" style= "background-color: blue; height: 400px" >
-		<%= render "pages/public_home/posts" %>
+		<%= render "layouts/posts" %>
 		</div>
 		<div class="col-md-3  m-0 p-0" style= "background-color: green; height: 400px">
-			<%= render "pages/public_home/previous_masterclasses" %>
+			<%= render "layouts/previous_masterclasses" %>
 </div>
 
 <div class="d-flex justify-content-center m-5">
   <h3>...Blank space to fill with something...</h3>
 </div>
+
+
+<%= render "layouts/testimonialbanner" %>

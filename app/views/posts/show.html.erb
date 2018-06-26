@@ -1,24 +1,14 @@
 <section class="post-main">
 
-
 <!-- <div class="post-category">
 <#%= @post.category.name %>
 </div> -->
 
-
-
-
 <!-- Hero image -->
-	<div class="post-image-main">
-		<%= image_tag(@post.image_url.to_s) %>
-		</div>
+	<div class="post-image-main profile-background-container border border-danger d-flex align-items-center"">
+		<%= image_tag(@post.image_url.to_s, class:"post-background") %>
+	</div>		
 
-							<div class="post-image-main">
-		<%= image_tag(@post.image_url.to_s) %>
-		</div>
-
-
-		<br>
 
 		<div class="post-body-title">
 			<%= @post.title %>
@@ -32,6 +22,24 @@
 	<div class="post-body-main">
 		<%= sanitize @post.body_text, tags: %w(p ul li ul iframe) %>
 	</div>
+
+	<div>
+		<div class="btn-group">
+			<!-- Add likes stuff in here -->
+      <!-- <div class="btn-group">
+            <a class="btn btn-default btn-sm" href="<#%= link.url %>">Visit Link</a>
+            <#%= link_to like_link_path(link), method: :put, class: "btn btn-default btn-sm" do %>
+              <span class="glyphicon glyphicon-chevron-up"></span>
+              Upvote
+              <#%= link.get_upvotes.size %>
+            <#% end %>
+            <#%= link_to dislike_link_path(link), method: :put, class: "btn btn-default btn-sm" do %>
+              <span class="glyphicon glyphicon-chevron-down"></span>
+              Downvote
+              <#%= link.get_downvotes.size %>
+            <#% end %>
+          </div> -->
+    </div>
 
 	<% @post.contents.each do |content| %>
 

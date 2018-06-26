@@ -104,6 +104,7 @@ ActiveRecord::Schema.define(version: 20180726203224) do
     t.string "image"
     t.integer "category_id"
     t.string "post_description"
+    t.integer "likes"
   end
 
   create_table "serversettings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -118,8 +119,8 @@ ActiveRecord::Schema.define(version: 20180726203224) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "paid_for"
     t.string "chargebee_id"
+    t.boolean "paid_for", default: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -134,8 +135,9 @@ ActiveRecord::Schema.define(version: 20180726203224) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "subscription"
     t.string "first_name"
     t.string "surname"
     t.string "middle_names"
@@ -166,7 +168,6 @@ ActiveRecord::Schema.define(version: 20180726203224) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "masterclass_id"
-    t.boolean "welcome_video", default: false
   end
 
   add_foreign_key "comments", "posts"
