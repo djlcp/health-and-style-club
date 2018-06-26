@@ -1,0 +1,24 @@
+$spacing: 15px;
+
+.wrapper
+{
+  width: 100%;
+}
+
+.static_head
+{
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+  width: 100%;
+}
+
+@media only screen and (max-width: 480px) {
+  .bigimage
+  {
+      height: 200px;
+      background-size: contain;
+  }
+}

@@ -1,3 +1,5 @@
+$spacing: 15px;
+
 * {box-sizing:border-box}
 
 /* Slideshow container */
@@ -6,11 +8,11 @@
   position: relative;
   margin: auto;
   padding: 25px 0 25px 0;
-  background-color: #fbcfcc;
+  background-color: #C4C4C4;
 }
 
 .expert-banner-background-color {
-  background-color: #fbcfcc;
+  background-color: #C4C4C4;
 }
 
 .expert-banner-post {
@@ -90,12 +92,11 @@
 }
 
 @-webkit-keyframes fade {
-  from {opacity: .4} 
+  from {opacity: .4}
   to {opacity: 1}
 }
 
 @keyframes fade {
-  from {opacity: .4} 
+  from {opacity: .4}
   to {opacity: 1}
 }
-

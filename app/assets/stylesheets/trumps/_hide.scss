@@ -1,0 +1,29 @@
+$breakpoint-sizes: (
+  mc: 320px,
+  tn: 540px,
+  sm: 768px,
+  md: 1008px,
+  lg: 1366px,
+  gt: 1550px,
+  hg: 1920px
+);
+
+// Hides an element at a specific screen size
+@each $size in map-keys($breakpoint-sizes) {
+  .hide-#{$size}-inline {
+    display: none;
+    @media (min-width: map-get($breakpoint-sizes, $size)) {
+      display: inline;
+    }
+  }
+}
+
+// Hides an element at a specific screen size
+@each $size in map-keys($breakpoint-sizes) {
+  .hide-#{$size}-block {
+    display: none;
+    @media (min-width: map-get($breakpoint-sizes, $size)) {
+      display: block;
+    }
+  }
+}

@@ -56,9 +56,10 @@ class MasterclassesController < ApplicationController
 
     def masterclass_params
       params.require(:masterclass).permit(
+        :preview,
         :title,
         :text,
-        videos_attributes: [:id, :title, :link, :_destroy],
+        videos_attributes: [:id, :title, :link,:welcome_video, :sequence, :_destroy],
         events_attributes: [:id, :title, :link, :_destroy],
         documents_attributes: [:id, :title, :link, :_destroy]
       )

@@ -9,5 +9,19 @@
     <%= f.text_field :link %>
   </div>
 
+  <div class="form-group">
+      <%= f.label :sequence %>
+      <%= f.number_field :sequence %>
+    </div>
+
+    <div class="pretty p-default">
+      <%= f.check_box :welcome_video %>
+      <div class="state p-primary">
+          <label>Is this the welcome video?</label>
+      </div>
+    </div>
+
+    <br>
+
   <%= link_to_remove_association "Remove video", f %>
 </div>
