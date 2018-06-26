@@ -71,6 +71,18 @@
   visibility: hidden;
 }
 
+.btn-primary {
+    background-color: #fbcfcc;
+    color: #000000;
+}
+.btn-primary:hover {
+    background-color: #d15a8c;
+    color: #000;
+}
+.btn {
+    border: 0;
+}
+
 /*
  *= require gulp/app
  */
