@@ -1,3 +1,27 @@
+.wrapper
+{
+  width: 100%;
+}
+
+.faqimage
+{
+  background-image: url('faq-cover.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 350px;
+  width: 100%;
+}
+
+@media only screen and (max-width: 480px) {
+  .bigimage
+  {
+      height: 200px;
+      background-size: contain;
+  }
+}
+
+
 .faq-header {
   text-decoration: none !important;
 }
