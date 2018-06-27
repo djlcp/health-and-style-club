@@ -3,7 +3,12 @@
 
 <%= render "layouts/what_is" %>
 
-<div>
+<div class="d-flex justify-content-center m-5">
+  <% if ! @signed_in%>
+<%= link_to '<button class="popupbtn" type="button">sign up</button>'.html_safe, new_user_registration_path, id:"popbtn", style: "display:none;"%>
+  <% end %>
+</div>
+
 <%= render "layouts/expertbanner" %>
 </div>
 
