@@ -15,7 +15,12 @@ Rails.application.routes.draw do
 
   resources :photos
   resources :photos, only: [:create]
-  resources :posts
+  resources :posts do
+    member do
+      put "like", to: "posts#upvote"
+      put "dislike", to: "links#downvote"
+    end
+  end
   resources :contents
   resources :comments
   resources :posts_contents
@@ -29,7 +34,7 @@ Rails.application.routes.draw do
   get '/members/:id', to: 'pages#members_profile'
 
   get '/member_home' => 'pages#member_home'
-  
+
   # !!!!!!!!!!!!!STATIC PAGES!!!!!!!!!!!!!
 
   get '/faq' => 'pages#faq'
@@ -70,6 +75,7 @@ Rails.application.routes.draw do
     # resources :events
     resources :masterclasses
     resources :posts
+
     resources :comments
     # resources :posts_contents
     resources :subscriptions

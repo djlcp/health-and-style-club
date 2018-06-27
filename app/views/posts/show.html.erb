@@ -5,9 +5,9 @@
 </div> -->
 
 <!-- Hero image -->
-	<div class="post-image-main profile-background-container border border-danger d-flex align-items-center"">
+	<div class="post-image-main profile-background-container border border-danger d-flex align-items-center">
 		<%= image_tag(@post.image_url.to_s, class:"post-background") %>
-	</div>		
+	</div>
 
 
 		<div class="post-title-main">
@@ -19,7 +19,7 @@
 		</div>
 		<br>
 
-	<div class="post-body-main">
+	<div class="post-body-main iframe">
 		<%= sanitize @post.body_text, tags: %w(p ul li ul iframe) %>
 	</div>
 
@@ -29,6 +29,14 @@
 	    <%= render "layouts/post_content/#{content.content_type}.html.erb", :@content => content %>
 	  </p>
 	<% end %>
+
+	<div class="btn-group">
+		<%= link_to like_post_path(@post), method: :put, class: "btn btn-default btn-sm" do %>
+		<span class="glyphicon glyphicon-chevron-up"></span>
+		Upvote
+		<%= @post.get_upvotes.size %>
+	<% end %>
+					</div>
 
 About the author
 
