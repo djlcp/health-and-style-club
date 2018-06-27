@@ -25,6 +25,13 @@ class PostsController < ApplicationController
     end
   end
 
+  def upvote
+    @post = Post.find(params[:id])
+    @post.upvote_by current_user
+    redirect_back(fallback_location: root_path)
+  end
+
+
   def edit; end
 
   def update
@@ -49,7 +56,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body_text, :image, :post, :post_description)
+    params.require(:post).permit(:title, :body_text, :image, :post, :post_description, :likes)
   end
 
   def set_post

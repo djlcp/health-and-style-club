@@ -1,57 +1,43 @@
 <section class="post-main">
 
-<!-- <div class="post-category">
-<#%= @post.category.name %>
-</div> -->
+	<div class="admin-controls">
+	<% if current_user.try(:admin?) %>
+	<button type="button" class="btn btn-success"><%= link_to 'Edit post', edit_post_path %></button>
+	<button type="button" class="btn btn-danger">	<%= link_to 'Delete post', post_path, method: :delete, :data => {:confirm => 'Are you sure?'} %></button>
 
-<!-- Hero image -->
-	<div class="post-image-main profile-background-container border border-danger d-flex align-items-center"">
+	<% end %>
+
+	<% if current_user.try(:contributor?) %>
+		<button type="button" class="btn btn-success"><%= link_to 'Edit post', edit_post_path %></button>
+	<% end %>
+	</div>
+<br></br>
+	<div class="post-image-main profile-background-container border d-flex align-items-center">
 		<%= image_tag(@post.image_url.to_s, class:"post-background") %>
-	</div>		
+	</div>
 
-
-		<div class="post-body-title">
-			<%= @post.title %>
-		</div>
-
-		<div class="post-body-main">
+<br>
+		<h1><%= @post.title %></h1>
+<br>
+		<h4>
 			<%= @post.post_description %>
-		</div>
+		</h4>
 		<br>
 
-	<div class="post-body-main">
+	<div class="post-body-main iframe video">
 		<%= sanitize @post.body_text, tags: %w(p ul li ul iframe) %>
 	</div>
 
 	<div>
-		<div class="btn-group">
-			<!-- Add likes stuff in here -->
-      <!-- <div class="btn-group">
-            <a class="btn btn-default btn-sm" href="<#%= link.url %>">Visit Link</a>
-            <#%= link_to like_link_path(link), method: :put, class: "btn btn-default btn-sm" do %>
-              <span class="glyphicon glyphicon-chevron-up"></span>
-              Upvote
-              <#%= link.get_upvotes.size %>
-            <#% end %>
-            <#%= link_to dislike_link_path(link), method: :put, class: "btn btn-default btn-sm" do %>
-              <span class="glyphicon glyphicon-chevron-down"></span>
-              Downvote
-              <#%= link.get_downvotes.size %>
-            <#% end %>
-          </div> -->
-    </div>
-
-	<% @post.contents.each do |content| %>
-
-		<p>
-	    <%= render "layouts/post_content/#{content.content_type}.html.erb", :@content => content %>
-	  </p>
+		<%= link_to like_post_path(@post), method: :put, class: "btn btn-primary btn-lg" do %>
+				Like <%= @post.get_upvotes.size %>
 	<% end %>
+					</div>
 
-About the author
-
+<br>
+<div>
 <%= render 'author' %>
-
+</div>
 <!--The below generates n error, so commenting out
 
 	<#%= render partial: 'comments/form', locals: { comment: @comment } %>
@@ -60,5 +46,3 @@ About the author
 
 
 </section>
-
-<%= link_to 'Edit post', edit_post_path %>
