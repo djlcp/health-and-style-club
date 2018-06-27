@@ -1,13 +1,6 @@
 $spacing: 15px;
 
-.wrapper
-{
-  width: 100%;
-}
-
-.static_head
-{
-
+.static_head {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -16,15 +9,13 @@ $spacing: 15px;
 }
 
 @media only screen and (max-width: 480px) {
-  .bigimage
-  {
-      height: 200px;
-      background-size: contain;
+  .bigimage {
+    height: 200px;
+    background-size: contain;
   }
 }
 
-.static_image
-{
+.static_image{
   height: 400px;
-  width: 60%;
+  width: auto;
 }
