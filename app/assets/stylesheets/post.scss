@@ -162,10 +162,22 @@ $spacing: 15px;
     text-align: center;
 }
 
+a {
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+}
+
+a:hover {
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+}
+
+
 .post-blocks {
     background-color: #fff;
     height: 100%;
     position: relative;
+    color: black;
 
     /* z-index: -4; */
 }
@@ -218,17 +230,11 @@ $spacing: 15px;
     }
 }
 
-a {
-  color: #fff;
-  font-family: 'Roboto', sans-serif;
-}
-
-a:hover {
-  color: #fff;
-  font-family: 'Roboto', sans-serif;
-}
 
 .admin-controls {
-  float: right; 
+  float: right;
+}
 
+.like-button {
+  color: red;
 }
