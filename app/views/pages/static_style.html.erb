@@ -1,8 +1,9 @@
 
-<h1>Personal Styling Courses</h1>
+<h1>Online Personal Styling Courses</h1>
 <br>
+<div class= "container wrapper">
+<%= image_tag('alt_style_pic.png', class: "static_head")%>
 
-<%= image_tag('static_style.png', class: "static_head")%>
 <br>
 <br>
 <br>
@@ -28,3 +29,12 @@ And Isn’t a Drastic Transformation Process Each Morning </li>
 <li> Style Basics: How to Create a Capsule Wardrobe </li>
 <li> And more...</li>
 </ul>
+
+<div class="card">
+  <h5 class="card-header">Featured</h5>
+  <div class="card-body">
+    <h5 class="card-title">Special title treatment</h5>
+    <p class="card-text">Join today for only £15 per month.</p>
+  	<%= link_to "Subscribe Now", subscriptions_path, class: "btn btn-primary btn-sm"%>
+  </div>
+</div>
