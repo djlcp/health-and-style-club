@@ -1,4 +1,5 @@
 $spacing: 15px;
+$text-color: #AAA;
 
 .main-header-wrap {
   display: flex;
@@ -19,10 +20,10 @@ $spacing: 15px;
 }
 
  .main-header-title {
-  font-family: 'Playfair Display', serif;
   text-decoration: none;
+  font-family: 'Playfair Display', serif;
   color: black;
-  font-size: 2.5em;
+  font-size: 4.2rem;
   text-shadow: 0 1px 1px rgba(0,0,0, .7);
  }
 
@@ -55,23 +56,22 @@ $spacing: 15px;
 }
 
 .top-nav-icon {
-  color: white;
+  color: $text-color;
 }
 
 .top-nav-icon:hover {
-  color: white;
+  color: $text-color;
 }
 
 .top-nav-bar {
-  background-color: #d15a8c;
+  border-bottom: 3px solid #d15a8c;
 }
 
 //////////// Header Navigation Links /////////////
 
 .top-navigation-link {
-  font-family: 'Roboto', sans-serif;
+  color: $text-color;
   text-decoration: none;
-  color: white;
   font-weight: bold;
   margin: 0 $spacing * 2;
 }
@@ -114,11 +114,11 @@ $spacing: 15px;
   margin: 0 $spacing * 2;
   text-transform: uppercase;
  }
- 
+
  .main-navigation-link:hover {
    color: black;
  }
- 
+
  /**************** media queries ****************/
 
 @media all and (max-width: 800px) {
