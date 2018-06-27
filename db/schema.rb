@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180726203224) do
+ActiveRecord::Schema.define(version: 20180726203225) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -32,8 +32,6 @@ ActiveRecord::Schema.define(version: 20180726203224) do
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "post_id"
-    t.integer "user_id"
-    t.text "title"
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -75,8 +73,17 @@ ActiveRecord::Schema.define(version: 20180726203224) do
     t.integer "user_id"
   end
 
-  create_table "messages", id: :integer, unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text "email"
+  create_table "models", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
   end
 
   create_table "photos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -100,7 +107,7 @@ ActiveRecord::Schema.define(version: 20180726203224) do
     t.string "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
+    t.integer "user2_id"
     t.string "image"
     t.integer "category_id"
     t.string "post_description"
@@ -119,14 +126,13 @@ ActiveRecord::Schema.define(version: 20180726203224) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "paid_for"
     t.string "chargebee_id"
-    t.boolean "paid_for", default: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.integer "role"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -140,17 +146,11 @@ ActiveRecord::Schema.define(version: 20180726203224) do
     t.integer "subscription"
     t.string "first_name"
     t.string "surname"
-    t.string "middle_names"
     t.string "phone"
-    t.string "address_line_1"
-    t.string "address_line_2"
-    t.string "city"
-    t.string "state"
     t.string "country"
-    t.string "post_code"
+    t.integer "role"
     t.string "bio"
     t.string "bioavatar"
-    t.boolean "mailchimp"
     t.boolean "search_consent"
     t.string "facebook"
     t.string "pinterest"
@@ -168,6 +168,7 @@ ActiveRecord::Schema.define(version: 20180726203224) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "masterclass_id"
+    t.boolean "welcome_video", default: false
   end
 
   add_foreign_key "comments", "posts"
