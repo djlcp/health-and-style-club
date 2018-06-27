@@ -10,16 +10,16 @@
 	</div>
 
 
-		<div class="post-title-main">
+		<h1>
 			<%= @post.title %>
-		</div>
-
-		<div class="post-body-main">
+		</h1>
+<br>
+		<h3>
 			<%= @post.post_description %>
-		</div>
+		</h3>
 		<br>
 
-	<div class="post-body-main iframe">
+	<div class="post-body-main iframe video">
 		<%= sanitize @post.body_text, tags: %w(p ul li ul iframe) %>
 	</div>
 
