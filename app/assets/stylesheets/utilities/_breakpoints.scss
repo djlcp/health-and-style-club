@@ -1,0 +1,22 @@
+// Define our breakpoints
+$small: 500px;
+$medium: 790px;
+$medium-large: 960px;
+$large: 1200px;
+
+@mixin breakpoint($point) {
+
+  // Default layout is 1 col with top nav
+  @if $point == small {
+    @media (min-width: $small) { @content; }
+  }
+  @else if $point == medium { // Breaks into 1 col with side-nav
+    @media (min-width: $medium) { @content; }
+  }
+  @else if $point == medium-large { // Breaks into 2 col with side-nav
+    @media (min-width: $medium-large) { @content; }
+  }
+  @else if $point == large {
+    @media (min-width: $large) { @content; }
+  }
+}
