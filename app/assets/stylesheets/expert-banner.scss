@@ -1,4 +1,4 @@
-$spacing: 15px;
+@import 'utilities/variables';
 
 * {box-sizing:border-box}
 
@@ -7,7 +7,6 @@ $spacing: 15px;
   max-width: 1000px;
   position: relative;
   margin: auto;
-  padding: 25px 0 25px 0;
   background-color: #ECECEC;
 }
 
@@ -19,17 +18,18 @@ $spacing: 15px;
 	display: flex;
 	align-items: center;
   margin-top: 10px;
-  padding: 10px 40px 10px 40px;
+  padding: 0 20px;
 }
 
 .expert-banner-image {
   height: 120px;
+  max-width: 160px;
   border-radius: 50%;
   padding: 0 20px;
 }
 
 .expert-name {
-  color: black;
+  color: $dark-grey;
 }
 
 .expert-description {
@@ -38,7 +38,7 @@ $spacing: 15px;
 
 /* Hide the images by default */
 .mySlides {
-    display: none;
+  display: none;
 }
 
 /* Next & previous buttons */
@@ -52,8 +52,12 @@ $spacing: 15px;
   color: #8E0048;
   font-weight: bold;
   font-size: 18px;
-  transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
+}
+
+.prev:hover, .next:hover {
+  background: transparent;
+  transform: scale(1.2);
 }
 
 /* Position the "next button" to the right */
@@ -62,16 +66,11 @@ $spacing: 15px;
   border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: white;
-}
-
 /* The dots/bullets/indicators */
 .dot {
   cursor: pointer;
-  height: 15px;
-  width: 15px;
+  height: 10px;
+  width: 10px;
   margin: 0 2px;
   background-color: white;
   border-radius: 50%;
@@ -86,9 +85,9 @@ $spacing: 15px;
 /* Fading animation */
 .expert-banner-fade {
   -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
+  -webkit-animation-duration: 0.5s;
   animation-name: fade;
-  animation-duration: 1.5s;
+  animation-duration: 0.5s;
 }
 
 @-webkit-keyframes fade {

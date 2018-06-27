@@ -1,0 +1,12 @@
+@import '../utilities/variables';
+
+.btn-pink {
+  background-color: $dark-pink;
+  color: #fff;
+  //text-transform: uppercase;
+}
+
+.btn-pink:hover {
+  color: #fff;
+  background-color: darken($dark-pink, 20%)
+}

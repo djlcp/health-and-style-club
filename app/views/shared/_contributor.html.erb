@@ -1,0 +1,9 @@
+<div class="d-flex flex-column text-center">
+  <div class="mb-3">
+    <%= image_tag gravatar_url(contributor.email, 100), style: 'border-radius: 50%' %>
+  </div>
+  <h4 class="mb-2"><%= contributor.full_name %></h4>
+  <p>
+    <%= contributor.bio %>
+  </p>
+</div>
