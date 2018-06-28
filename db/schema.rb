@@ -38,14 +38,6 @@ ActiveRecord::Schema.define(version: 20180726203227) do
     t.index ["post_id"], name: "index_comments_on_post_id"
   end
 
-  create_table "contents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "content_type"
-    t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "file_url"
-  end
-
   create_table "documents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
     t.integer "sequence"
@@ -79,14 +71,6 @@ ActiveRecord::Schema.define(version: 20180726203227) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "post_contents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "post_id"
-    t.integer "content_id"
-    t.integer "order"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
     t.text "body_text"
@@ -103,7 +87,7 @@ ActiveRecord::Schema.define(version: 20180726203227) do
 
   create_table "serversettings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.boolean "active"
-    t.date "reactivation_date"
+    t.integer "reactivation_date"
     t.string "task_name"
     t.index ["active"], name: "index_serversettings_on_active"
   end
