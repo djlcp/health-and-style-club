@@ -5,13 +5,6 @@
 # end
 
 
-set :output, "app/jobs/logs/server_settings.log"
-
-every 1.minute do
-  runner "app/jobs/server_settings.rb"
-end
-
-
 
 
 
