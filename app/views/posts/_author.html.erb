@@ -3,7 +3,7 @@
 
     <div class="mySlides expert-banner-fade">
       <div class="expert-banner-post">
-       <%= image_tag(@post.user.bioavatar, class: "expert-banner-image")%> <!--This will be the bioavatar rather than this beautiful man -->
+       <%= image_tag(@post.user && @post.user.bioavatar, class: "expert-banner-image")%> <!--This will be the bioavatar rather than this beautiful man -->
         <div>
           <h2 class="expert-name secondary-heading">Blog post by <%= @post.user.first_name %> <%= @post.user.surname%></h2>
           <p class="expert-description paragraph"><%= @post.user.bio%></p>
