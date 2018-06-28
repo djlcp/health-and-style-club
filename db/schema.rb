@@ -73,19 +73,6 @@ ActiveRecord::Schema.define(version: 20180726203226) do
     t.integer "user_id"
   end
 
-  create_table "models", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer "sign_in_count", default: 0, null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string "current_sign_in_ip"
-    t.string "last_sign_in_ip"
-  end
-
   create_table "photos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text "image_data"
     t.datetime "created_at", null: false
@@ -126,8 +113,8 @@ ActiveRecord::Schema.define(version: 20180726203226) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "paid_for"
     t.string "chargebee_id"
+    t.boolean "paid_for", default: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -151,6 +138,7 @@ ActiveRecord::Schema.define(version: 20180726203226) do
     t.integer "role"
     t.string "bio"
     t.string "bioavatar"
+    t.string "biobackground"
     t.boolean "search_consent"
     t.string "facebook"
     t.string "pinterest"
@@ -168,7 +156,6 @@ ActiveRecord::Schema.define(version: 20180726203226) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "masterclass_id"
-    t.boolean "welcome_video", default: false
   end
 
   create_table "votes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
