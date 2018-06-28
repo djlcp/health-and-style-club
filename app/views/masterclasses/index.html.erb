@@ -20,7 +20,7 @@
             <div class="masterclass-preview">
               <%= link_to masterclass do %>
                 <% if masterclass.preview.present? %>
-                  <%= image_tag masterclass.preview.url, class: 'masterclass-preview__image' %>
+                  <%= image_tag masterclass.preview.url, class: 'masterclass-preview-image' %>
                 <% else %>
                   <%= masterclass.title %>
                 <% end %>

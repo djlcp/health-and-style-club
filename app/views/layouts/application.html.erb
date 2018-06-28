@@ -18,6 +18,10 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+
+    <%# Slick (for carousels) JS and CSS %>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   </head>
   <% if @subscribed
      @background_color = "vip_background"
@@ -26,17 +30,17 @@
     <%= render "layouts/header" %>
 
     <% if notice %>
-      <p class="alert alert-success"><%= notice %></p>
+      <p class="alert alert-success" style="margin:0"><%= notice %></p>
       <% end %>
     <% if alert %>
-      <p class="alert alert-danger"><%= alert %></p>
+      <p class="alert alert-danger" style="margin:0"><%= alert %></p>
       <% end %>
 
-    <div class="mb-4">
+    <div>
       <%= yield %>
     </div>
 
     <%= render "layouts/footer" %>
-    
+
   </body>
 </html>

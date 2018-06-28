@@ -1,8 +1,24 @@
-<h1>New Masterclass Form</h1>
+<div class="content-section">
+  <div class="content-wrap">
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-md-8">
+        <div class="card mb-2">
 
-<p>Add text and links to create a new masterclass</p>
+          <header class="card-header">
+            <h4 class="card-title mt-2">New Masterclass</h4>
+          </header>
 
-<%= render 'form' %>
+          <div class="card-body">
 
-<%= link_to 'Show', @masterclass %>
-<%= link_to 'Back', masterclasses_path %>
+            <%= render 'form' %>
+
+          </div>
+
+        </div>
+        <%= link_to 'Show', @masterclass %>
+        <%= link_to 'Back', masterclasses_path %>
+      </div>
+    </div>
+  </div>
+</div>
+
