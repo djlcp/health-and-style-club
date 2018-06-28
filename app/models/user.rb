@@ -30,7 +30,7 @@ class User < ApplicationRecord
       self.facebook = facebook.split('www.facebook.com')[1]
     end
     if youtube&.match(/www.youtube.com/)
-      self.youtube = youutube.split('www.youtube.com')[1]
+      self.youtube = youtube.split('www.youtube.com')[1]
     end
     if pinterest&.match(/www.pinterest.com/)
       self.pinterest = pinterest.split('www.pinterest.com')[1]

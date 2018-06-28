@@ -41,6 +41,9 @@ class UsersController < ApplicationController
       :search_consent,
       :facebook,
       :twitter,
+      :website,
+      :youtube,
+      :pinterest,
     )
   end
 end
