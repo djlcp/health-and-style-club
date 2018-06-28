@@ -10,8 +10,8 @@ class ServersettingDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     active: Field::Boolean,
-    reactivation_date: Field::Number,
-    task_name: Field::String,
+    reactivation_date: Field::DateTime,
+    task_name: Field::Select.with_options(collection: [:SignUp]),
   }.freeze
 
   # COLLECTION_ATTRIBUTES

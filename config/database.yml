@@ -50,6 +50,6 @@ test:
 production:
   <<: *default
   database: hsclub_production
-  username: hsclub
+  username: root
   password: <%= ENV['HSCLUB_DATABASE_PASSWORD'] %>
   url: <%= ENV['DATABASE_URL'] %>
