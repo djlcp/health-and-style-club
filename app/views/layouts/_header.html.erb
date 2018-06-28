@@ -17,8 +17,8 @@
   <div class="row p-2">
     <%= link_to 'FAQ', faq_path, class:'top-navigation-link' %>
     <% if ! @signed_in%>
-      <%= link_to 'sign up', new_user_registration_path, class:'top-navigation-link' %>
-      <%= link_to 'login', new_user_session_path, class:'top-navigation-link' %>
+      <%= link_to 'Sign Up', new_user_registration_path, class:'top-navigation-link' %>
+      <%= link_to 'Log In', new_user_session_path, class:'top-navigation-link' %>
     <% else %>
       <div class="dropdown mr-5">
         <a class="p-0" id="AccountMenu" data-toggle="dropdown"><i class="fa fa-user-circle p-0 m-0 top-nav-icon"></i>

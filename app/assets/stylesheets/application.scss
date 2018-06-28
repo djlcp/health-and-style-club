@@ -45,6 +45,12 @@
     font-size: 1.5em;
 }
 
+.section-heading-small {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: 1.1em;
+}
+
 .paragraph {
     font-family: 'Playfair Display', serif;
     font-size: 0.9em;
@@ -78,6 +84,17 @@
     background-color: #ffe2e3;
     color: #000;
 }
+
+.btn-primary:active {
+    background-color: #ffe2e3;
+    color: #000;
+}
+
+.btn-primary:enabled {
+    background-color: #ffe2e3;
+    color: #000;
+}
+
 .btn {
     border: 0;
 }
@@ -91,6 +108,7 @@
     color:#000;
     background-color: #fbcfcc;
 }
+
 
 
 /*
