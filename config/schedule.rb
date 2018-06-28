@@ -5,6 +5,11 @@
 # end
 
 
+# set :output, "app/jobs/logs/server_settings_job.log"
+#
+# every 5.minute do
+#   runner "app/jobs/server_settings_job.rb"
+# end
 
 
 

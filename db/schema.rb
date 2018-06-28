@@ -75,10 +75,6 @@ ActiveRecord::Schema.define(version: 20180726203226) do
     t.integer "user_id"
   end
 
-<<<<<<< HEAD
-  create_table "messages", id: :integer, unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text "email"
-=======
   create_table "models", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -90,7 +86,6 @@ ActiveRecord::Schema.define(version: 20180726203226) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
->>>>>>> develop
   end
 
   create_table "photos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -170,10 +165,6 @@ ActiveRecord::Schema.define(version: 20180726203226) do
     t.string "post_code"
     t.string "bio"
     t.string "bioavatar"
-<<<<<<< HEAD
-    t.boolean "mailchimp"
-=======
->>>>>>> develop
     t.boolean "search_consent"
     t.string "facebook"
     t.string "pinterest"
