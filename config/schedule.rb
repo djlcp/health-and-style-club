@@ -1,8 +1,11 @@
-set :output, "app/jobs/logs/subscription_expiry.log"
+# set :output, "app/jobs/logs/subscription_expiry.log"
+#
+# every 1.minute do
+#   runner "app/jobs/subscription_expiry.rb"
+# end
 
-every 1.minute do
-  runner "app/jobs/subscription_expiry.rb"
-end
+
+
 
 
 

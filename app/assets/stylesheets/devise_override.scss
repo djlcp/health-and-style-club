@@ -1,0 +1,42 @@
+@import "utilities/variables";
+
+
+#error_explanation{
+  position: relative;
+  padding: .75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  text-align: center;
+}
+
+#error_explanation h2 {
+  font-size: 20px;
+}
+
+#error_explanation ul li {
+  list-style-type: none;
+}
+
+.field_with_error {
+  position: relative;
+  border: 2px solid transparent;
+  border-radius: .25rem;
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+.field_with_error_label {
+  color: #bf3343;
+}
+
+.top-padding {
+  padding-top: $spacing;
+}
+
+.padding-top-bottom {
+  padding: $spacing 0 $spacing 0;
+}

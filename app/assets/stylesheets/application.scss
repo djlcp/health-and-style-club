@@ -18,13 +18,14 @@
 
 /**************** General ****************/
 
+
 .center {
     text-align: center;
 }
 
 
 .vip_background {
-    background-color: #FFFBFF;
+    background-color: #ffe8fc;
 }
 
 .form-group {
@@ -51,6 +52,18 @@
   width: 100%;
   height: 100%;
 }
+
+
+.btn-outline-primary {
+    color:#000;
+}
+
+.btn-outline-primary:hover {
+    color:#000;
+    background-color: #fbcfcc;
+}
+
+
 
 /*
  *= require gulp/app

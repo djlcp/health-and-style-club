@@ -1,28 +1,82 @@
-<div class="card mb-3 card-imgage">
-  <%= image_tag @user.biobackground.cover_image_big, class: "card-img-top" %>
-  <%= image_tag @user.bioavatar.avatar, class: "profile-picture rounded-circle border border-danger" %>
-<!--  <img class="card-img-top" src="..." alt="Card image cap">-->
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+<div class="container padding-top-bottom">
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <header class="card-header">
+        <h4 class="card-title mt-2 text-center">User Profile</h4>
+      </header>
+      <div class="card">
+        <div class="">
+          <%= image_tag @user.biobackground.cover_image_big, class: 'rounded', style: 'width: 100%; margin: 0; padding: 0;' %>
+          <%= image_tag @user.bioavatar.avatar, class:"rounded-circle profile-avatar border border-danger" %>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title text-center"><%= @user.full_name %></h5>
+          <div class="row">
+            <div class="col-md-8 col-xs-12">
+              <h5 class="card-title text-center"><small>Summary</small></h5>
+              <p class="card-text"><%= @user.bio %></p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+
+            <div class="col-md-4 col-xs-12">
+              <h5 class="card-title text-center"><small>Social Media</small></h5>
+              <% if @user.facebook || @user.youtube || @user.youtube || @user.twitter || @user.website %>
+                <div class="justify-content-around">
+                <% if @user.facebook%>
+                  <%= link_to "https://www.facebook.com/#{@user.facebook}" do %><i class="fa fa-facebook-square fa-2x social-icons-profile"></i> <% end %>
+                  <%end%><% if @user.pinterest%>
+                  <%= link_to "https://www.pinterest.com/#{@user.pinterest}" do %><i class="fa fa-pinterest-square fa-2x social-icons-profile"></i> <% end %>
+                  <%end%><% if @user.youtube%>
+                  <%= link_to "https://www.youtube.com/#{@user.youtube}" do %><i class="fa fa-youtube-square fa-2x social-icons-profile"></i> <% end %>
+                  <%end%><% if @user.twitter%>
+                  <%= link_to "https://www.twitter.com/#{@user.twitter}" do %><i class="fa fa-twitter-square fa-2x social-icons-profile"></i> <% end %>
+                  <%end%><% if @user.website%>
+                  <%= link_to "https://#{@user.website}" do %><i class="fa fa-globe fa-2x social-icons-profile"></i> <% end %>
+                <% end %>
+              <% else %>
+                </div>
+                <a class="fa fas-globe fa-2x social-icons-profile"></a>
+              <% end %>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
 
 
+
+
+
+
+
+
+
+<!--<div class="card mb-3 card-imgage">-->
+  <%#= image_tag @user.biobackground.cover_image_big, class: "card-img-top" %>
+  <%#= image_tag @user.bioavatar.avatar, class: "profile-picture rounded-circle border border-danger justify-content-center" %>
+<!--  <img class="card-img-top" src="..." alt="Card image cap">-->
+<!--  <div class="card-body">-->
+<!--    <h5 class="card-title">Card title</h5>-->
+<!--    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
+<!--    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+
 <style>
-  .card-imgage {
-    /*opacity: 0.5;*/
-    position: relative;
-  }
-  .profile-picture{
-    height:75%;
+
+  .profile-avatar{
+    width:30%;
     background-color: #fff;
     position: absolute;
-    top: 0%;
-    /*left: 30%;*/
-    /*right: 30%;*/
+    top: 5%;
+    left: 35%;
+    right: 35%;
   }
 </style>
 

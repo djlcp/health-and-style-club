@@ -1,6 +1,12 @@
 <h1 class="main-heading center">Posts</h1>
 
+<ul>
+<% @categories.each do |category| %>
 
+  <li><a href="posts?category=<%= category.id %>"><%= category.name %></a></li>
+  
+<% end %>
+</ul>
 <div class="row d-flex justify-content-around col-12 m-auto" style="background-color:#ececec;">
   <% @posts.each do |post| %>
 
