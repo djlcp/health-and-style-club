@@ -35,6 +35,8 @@ class ApplicationController < ActionController::Base
 
     end
   end
+
+
     def index
       @users = User.all
     end

@@ -30,14 +30,9 @@ class UserDashboard < Administrate::BaseDashboard
     surname: Field::String,
     middle_names: Field::String,
     phone: Field::String,
-    address_line_1: Field::String,
-    address_line_2: Field::String,
-    city: Field::String,
-    state: Field::String,
     country: Field::String,
     post_code: Field::String,
     bio: Field::Text,
-    # bioavatar: Field::String
     bioavatar: Field::Carrierwave.with_options(
       image: :standard,
     ),
@@ -84,12 +79,7 @@ class UserDashboard < Administrate::BaseDashboard
     :surname,
     # :middle_names,
     :phone,
-    :address_line_1,
-    :address_line_2,
-    :city,
-    :state,
     :country,
-    :post_code,
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -112,12 +102,7 @@ class UserDashboard < Administrate::BaseDashboard
     :surname,
     # :middle_names,
     :phone,
-    :address_line_1,
-    :address_line_2,
-    :city,
-    :state,
     :country,
-    :post_code,
     :bio,
     :bioavatar,
     :biobackground,

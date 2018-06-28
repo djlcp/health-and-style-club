@@ -1,10 +1,10 @@
 class ServerettingsController < ApplicationController
   def index
-
+    @serversettings = Serversetting.all
   end
 
   def show
-
+    @serversettings = Serversetting.find(:id)
   end
 
   def new
