@@ -59,6 +59,7 @@ class MasterclassesController < ApplicationController
         :preview,
         :title,
         :text,
+        :user_id,
         videos_attributes: [:id, :title, :link,:welcome_video, :sequence, :_destroy],
         events_attributes: [:id, :title, :link, :_destroy],
         documents_attributes: [:id, :title, :link, :_destroy]

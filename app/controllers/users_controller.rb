@@ -21,6 +21,7 @@ class UsersController < ApplicationController
   end
 
   private
+<<<<<<< HEAD
 
   def set_user
     @user = current_user
@@ -44,4 +45,9 @@ class UsersController < ApplicationController
 
     )
   end
+=======
+    def user_params
+      params.require(:user).permit(:id, :email, :password, :password_confirmation, :role, :bioavatar, :biobackground, :first_name, :surname, :phone, :search_consent, :subscription)
+    end
+>>>>>>> b5d4827b963afefc47ad00bfd408a018713d5559
 end

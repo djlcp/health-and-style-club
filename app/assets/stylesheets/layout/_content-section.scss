@@ -1,0 +1,21 @@
+@import '../utilities/variables';
+@import '../utilities/breakpoints';
+
+.content-section {
+  padding: $spacing * 2;
+  @include breakpoint(medium) {
+    padding: $spacing * 3;
+  }
+}
+
+.content-section--dark-grey {
+  background-color: $dark-grey;
+}
+
+.content-section--light-pink {
+  background-color: $light-pink;
+}
+
+.content-section--light-grey {
+  background-color: $light-grey;
+}

@@ -1,0 +1,58 @@
+<div class="content-section content-section--dark-grey">
+  <div class="content-wrap">
+    <h2 class="text-center text-spaced text-light-pink">What is Health & Style Club?</h2>
+
+    <div class="d-flex justify-content-center row">
+      <div class="col-12">
+        <h4 class="text-center text-white mb-4">A taste of the topics covered in the members club:</h4>
+
+        <div class="row">
+
+          <div class="col-md-4">
+
+            <ul class="list-group list-group-no-background list-group-pink-border list-group-pink-border">
+              <li class="list-group-item pl-0">Fitness & Nurtrition</li>
+              <li class="list-group-item pl-0">Yoga</li>
+              <li class="list-group-item pl-0">Pilates</li>
+              <li class="list-group-item pl-0">Meditation</li>
+              <li class="list-group-item pl-0">Essential Oils</li>
+            </ul>
+          </div>
+
+          <div class="col-md-4">
+            <ul class="list-group list-group-no-background list-group-pink-border list-group-pink-border">
+              <li class="list-group-item pl-0">Defining your Personal Style</li>
+              <li class="list-group-item pl-0">Creating a Capsule Wardrobe</li>
+              <li class="list-group-item pl-0">Skin Care & Makeup Tutorials</li>
+              <li class="list-group-item pl-0">Self Care for Busy Women</li>
+              <li class="list-group-item pl-0">Law of Attraction</li>
+            </ul>
+          </div>
+
+          <div class="col-md-4">
+            <ul class="list-group list-group-flush list-group-no-background list-group-pink-border list-group-pink-border">
+              <li class="list-group-item pl-0">Emotional Freedom Technique (Tapping)</li>
+              <li class="list-group-item pl-0">Life & Success Coaching</li>
+              <li class="list-group-item pl-0">Money Mindset Coaching</li>
+              <li class="list-group-item pl-0">Recognising Signs of Depression & Anxiety</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <% if !user_signed_in? %>
+        <%= link_to new_user_registration_path, class: 'btn btn-lg btn-pink mt-5' do %>
+          Sign Up Now
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<!--<div class="row">-->
+<!--  <div class=" col-xs-12 col-md-9 m-0 p-0" style= "background-color: white; " >-->
+    <%#= link_to "Subscribe Now", subscriptions_path, class: "btn btn-primary btn-sm"%>
+<!--  </div>-->
+<!--</div>-->

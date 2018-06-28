@@ -1,4 +1,9 @@
-<h1> The Monthly Masterclass</h1>
+<!-- <h1> The Monthly Masterclass</h1> -->
+<div class= "container wrapper">
+<div>
+<%= image_tag('masterclass_static.png', class: "static_head")%>
+</div>
+
 <br>
 <p>
 Each month there will be an exciting new masterclass released on a
@@ -9,9 +14,7 @@ The masterclasses are comprised of a welcome video introducing that month's cont
 All of the previous masterclasses will be stored in the masterclass library to
 view whenever you like.
 <br>
-Our very first masterclass is all about Yoga. There are six short yoga routines
-of varying difficulty, and a workbook all about how you can incorporate
-yoga into your daily routine no matter how busy your lifestyle.
+
 <br>
 Some topics which will be covered in upcoming masterclasses are:
 <ul>
@@ -22,3 +25,13 @@ Some topics which will be covered in upcoming masterclasses are:
 <li>Kicking Sugar</li>
 <li>And much more...</li>
 </ul>
+
+<div class="card">
+  <h5 class="card-header">Featured</h5>
+  <div class="card-body">
+    <h5 class="card-title">Special title treatment</h5>
+    <p class="card-text">Join today for only £15 per month.</p>
+  	<%= link_to "Subscribe Now", subscriptions_path, class: "btn btn-primary btn-sm"%>
+  </div>
+</div>
+</div>
