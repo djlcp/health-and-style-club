@@ -1,39 +1,31 @@
-<%= render "layouts/herohomepagebanner" %>
+<%= render "hero_home_page_banner" %>
+
+<%= render "what_is" %>
+
+<%= render "expert_banner" %>
+
+<div class="content-section">
+  <div class="content-wrap">
+    <div class="row">
+      <div class= "col-xs-12 col-md-8">
+        <%= render "shared/current_masterclass", masterclass: Masterclass.last %>
+      </div>
+
+      <div class= "col-xs-12 col-md-4">
+        <%= render "shared/contributor", contributor: User.contributor.first %>
+      </div>
+    </div>
 
 
-<%= render "layouts/what_is" %>
-
-<div class="d-flex justify-content-center m-5">
-  <% if ! @signed_in%>
-<%= link_to '<button class="popupbtn" type="button">sign up</button>'.html_safe, new_user_registration_path, id:"popbtn", style: "display:none;"%>
-  <% end %>
+    <div class="row">
+      <div class=" col-xs-12 col-md-9">
+        <%= render "layouts/posts" %>
+      </div>
+      <div class="col-md-3">
+        <%= render "layouts/previous_masterclasses" %>
+      </div>
+    </div>
+  </div>
 </div>
 
-<%= render "layouts/expertbanner" %>
-</div>
-
-<div class="row">
-	<div class= "col-xs-12 col-md-6 m-0 p-0" style= "background-color: #FBFBFB; height: 400px" >
-		<%= render "layouts/current_masterclass" %>
-	</div>
-
-	<div class= "col-xs-12 col-md-6 m-0 p-0" style= "background-color: #FBFBFB; height: 400px" >
-		<%= render "layouts/current_expert" %>
-	</div>
-</div>
-
-
-<div class="row">
-		<div class=" col-xs-12 col-md-9 m-0 p-0" style= "background-color: blue; height: 400px" >
-		<%= render "layouts/posts" %>
-		</div>
-		<div class="col-md-3  m-0 p-0" style= "background-color: green; height: 400px">
-			<%= render "layouts/previous_masterclasses" %>
-</div>
-
-<div class="d-flex justify-content-center m-5">
-  <h3>...Blank space to fill with something...</h3>
-</div>
-
-
-<%= render "layouts/testimonialbanner" %>
+<%= render "testimonial_banner" %>
