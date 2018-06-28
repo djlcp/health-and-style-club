@@ -1,5 +1,11 @@
-.masterclass-preview {
+@import '../utilities/breakpoints';
+@import '../utilities/variables';
 
+.masterclass-preview {
+  border-right: none;
+  @include breakpoint(medium) {
+    border-right: 1px solid gainsboro;
+  }
 }
 
 .masterclass-preview-image {
