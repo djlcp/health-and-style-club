@@ -1,19 +1,18 @@
-body,
-p,
 h1,
 h2,
-h3,
+h3
 h4,
 h5 {
   font-family: 'Playfair Display', serif;
 }
 
 * {
-    -webkit-transition: all 1s ease;
-    transition: all 1s ease;
-    font-family: 'Roboto', sans-serif;
-    box-sizing: border-box;
-    text-decoration: none !important;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  text-decoration: none !important;
+  color: #555;
 }
 
 .main-heading {

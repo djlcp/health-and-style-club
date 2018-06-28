@@ -14,20 +14,25 @@ CKEDITOR.editorConfig = function (config) {
       { name: 'basicstyles', groups: [ 'basicstyles' ] },
       { name: 'editing',     groups: [ 'spellchecker' ] },
   		{ name: 'links' },
+      { name: 'others' },
 
   		// '/',
 
   		{ name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align' ] },
   		{ name: 'styles' },
   		{ name: 'colors' },
+      { name: 'VideoDetector'},
+      
+
       // { name: 'tools' },
-  		// { name: 'others' },
+
       // { name: 'insert' },
   		// { name: 'about' }
       // { name: 'document',	   groups: [ 'mode', 'document', 'doctools' ] },
       // { name: 'forms' },
       // { name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
   	];
+
 
 
   	config.skin = 'moono-lisa';

@@ -1,0 +1,15 @@
+@import '../utilities/variables';
+
+.list-group-no-background {
+  li {
+    background: transparent !important;
+  }
+}
+
+.list-group-pink-border {
+  li {
+    border: none;
+    border-bottom: 1px solid $light-pink !important;
+    color: white;
+  }
+}

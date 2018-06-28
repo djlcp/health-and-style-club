@@ -1,25 +1,44 @@
-<h2>Change your password</h2>
+<%= devise_error_messages! %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <div class="card">
+        <header class="card-header">
+          <%= link_to "Create Account", new_user_registration_path, class: 'btn btn-outline-primary mt-1' %>
+          <%= link_to "Log In", new_user_session_path, class: 'btn btn-outline-primary mt-1' %>
+          <%= link_to "Reset Password", new_user_password_path, class: 'float-right btn btn-outline-primary mt-1' %>
+        </header>
+        <div class="card-body">
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-  <%= f.hidden_field :reset_password_token %>
 
-  <div class="field">
-    <%= f.label :password, "New password" %><br />
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
-    <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "off" %>
+          <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+            <div class="w-75" style="margin:auto">
+              <h4 class="text-center m-2">Reset Password</h4>
+              <% digiest = Devise.token_generator.digest(self, :reset_password_token, params['reset_password_token'])
+                @user = User.find_by_reset_password_token(digiest) %>
+              <%= f.hidden_field :reset_password_token %>
+
+              <p class="text-center">Hello <strong><%= @user.first_name + " " + @user.surname %></strong>, you are reseting the password of the email <strong><%= @user.email %></strong>.</p>
+
+              <div class="form-row">
+                <div class="col-xs-12 col-md-6">
+                  <%= f.label :password, "New password" %>
+                  <%= f.password_field :password, autofocus: true, class:"form-control"%>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                  <%= f.label :password_confirmation, "Confirm new password" %><br />
+                  <%= f.password_field :password_confirmation, class:"form-control"%>
+                </div>
+              </div>
+
+              <div class="actions">
+                <%= f.submit "Change my password", class: "btn btn-primary btn-block" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <div class="border-top card-footer text-center"><%= render "devise/shared/links" %></div>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Change my password" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

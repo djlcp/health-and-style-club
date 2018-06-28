@@ -96,7 +96,13 @@ gem 'delayed_job_active_record'
 # Use Whenever to provide a clear syntax for writing and deploying cron jobs (Implemented by Tiago)
 gem 'whenever', require: false
 
+
+# Use for post likes
+gem 'acts_as_votable', '~> 0.10.0'
+
+
 gem 'gibbon', '~> 3.2.0'
+
 
 # !!!!!!!!GROUPS!!!!!!!!
 
@@ -122,5 +128,5 @@ end
 
 group :production do
    # gem 'pg'
-   # ruby '2.5.0'
+   # ruby '2.5.1'
 end

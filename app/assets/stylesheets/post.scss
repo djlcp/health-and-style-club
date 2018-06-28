@@ -1,7 +1,7 @@
 $spacing: 15px;
 
 // Place all the styles related to the Post controller here.
-// They will automatically be included in application.css.
+// They will automatically be included in application.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .all-posts-wrapper {
@@ -47,17 +47,6 @@ $spacing: 15px;
   width: 100%;
 }
 
-.post-main{
-  // display: flex;
-  // flex-wrap: wrap;
-  width: 60%;
-  margin: 20px 20%;
-  text-align: left;
-  font-family: 'Roboto', sans-serif;
-  font-size: 2rem;
-  padding: 1%;
-}
-
 .post-image-main {
   width: 100%;
   display: flex;
@@ -66,17 +55,41 @@ $spacing: 15px;
   background-color: #531531;
 }
 
-.post-body-main {
+.post-main{
+  // display: flex;
+  // flex-wrap: wrap;
+  width: 70%;
+  margin: 20px 20%;
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  padding: 1%;
+}
+
+
+
+.post-body-main iframe {
   width: 100%;
+  height: 450px;
+  border: none;
   // display: flex;
   flex-wrap: wrap;
   font-family: 'Roboto', sans-serif;
-  font-size: 1rem;
+  font-size: 0.5rem;
   text-align: justify;
   padding: 1%;
 
+
+
 }
 
+// .post-body-main iframe {
+//   position: absolute;
+//       top: 0;
+//       left: 0;
+//       width: 100%;
+//       height: 100%;
+//     }
 
 .social-icons-profile {
     color: #dc3545;
@@ -115,6 +128,7 @@ $spacing: 15px;
     overflow: hidden;
     position: relative;
     z-index: -100;
+    max-width: 100%;
 }
 
 .profile-background {
@@ -148,10 +162,22 @@ $spacing: 15px;
     text-align: center;
 }
 
+a {
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+}
+
+a:hover {
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+}
+
+
 .post-blocks {
     background-color: #fff;
     height: 100%;
     position: relative;
+    color: black;
 
     /* z-index: -4; */
 }
@@ -202,4 +228,13 @@ $spacing: 15px;
     .profile-blocks::before {
         /* transform: rotate(3deg) */
     }
+}
+
+
+.admin-controls {
+  float: right;
+}
+
+.like-button {
+  color: red;
 }

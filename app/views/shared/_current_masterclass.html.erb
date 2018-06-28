@@ -1,0 +1,22 @@
+<h3 class="mb-3">Our Latest Masterclass</h3>
+<div class="masterclass-preview">
+  <div class="row">
+    <div class="col-md-6">
+      <%= if masterclass
+            image_tag masterclass.preview_url, class: 'masterclass-preview-image'
+          end%>
+    </div>
+    <div class="col-md-1-2">
+      <h4>
+        <%= if masterclass
+          masterclass.title
+        end%>
+      </h4>
+      <p>
+        <%= if masterclass
+            masterclass.text
+        end%>
+      </p>
+    </div>
+  </div>
+</div>

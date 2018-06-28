@@ -1,0 +1,15 @@
+@import '../utilities/breakpoints';
+
+.form-group {
+  width: 100% !important;
+  margin: 20px 0 !important;
+  @include breakpoint(medium) {
+    width: 60% !important;
+    margin: 20px 20% !important;
+  }
+}
+
+select {
+  display: block;
+  width: 100%;
+}

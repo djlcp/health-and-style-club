@@ -17,8 +17,8 @@
   <div class="row p-2">
     <%= link_to 'FAQ', faq_path, class:'top-navigation-link' %>
     <% if ! @signed_in%>
-      <%= link_to 'sign up', new_user_registration_path, class:'top-navigation-link' %>
-      <%= link_to 'login', new_user_session_path, class:'top-navigation-link' %>
+      <%= link_to 'Sign Up', new_user_registration_path, class:'top-navigation-link' %>
+      <%= link_to 'Log In', new_user_session_path, class:'top-navigation-link' %>
     <% else %>
       <div class="dropdown mr-5">
         <a class="p-0" id="AccountMenu" data-toggle="dropdown"><i class="fa fa-user-circle p-0 m-0 top-nav-icon"></i>
@@ -36,72 +36,34 @@
   </div>
 </div>
 
-<div class="main-header-wrap">
-  <div class="main-header">
-    <%= link_to "Health & Style Club", root_path, class: "main-header-title" %>
+<header class="external-header">
+
+  <div class="external-header__inner">
+
+    <%= link_to root_path, class: "main-header-title" do %>
+      <h1 class="external-header__logo">Health & Style Club</h1>
+    <% end %>
+
+    <nav class="external-header__desktop-nav">
+      <ul class="external-header__desktop-nav-list">
+        <li class="external-header__desktop-nav-item"><%= link_to "Fitness & Nutrition", abouthealthandfitness_path %></li>
+        <li class="external-header__desktop-nav-item"><%= link_to "Personal Styling", aboutpersonalstyling_path %></li>
+        <li class="external-header__desktop-nav-item"><%= link_to "Personal Development", aboutpersonaldevelopment_path %></li>
+        <li class="external-header__desktop-nav-item"><%= link_to "Masterclasses", aboutmasterclasses_path %></li>
+      </ul>
+    </nav>
+
+    <div class="external-header__mobile-nav">
+      <ul class="mobile-nav__menu">
+        <span class="mobile-nav__close"><i class="fa fa-2x fa-times mobile-nav-icon" aria-hidden="true"></i></span>
+        <li class="mobile-nav__item"><%= link_to "Home", root_path %></li>
+        <li class="mobile-nav__item"><%= link_to "Posts", posts_path %></li>
+        <li class="mobile-nav__item"><%= link_to "Members Page", members_path %></li>
+        <li class="mobile-nav__item"><%= link_to "Contact", new_contact_path %></li>
+      </ul>
+    </div>
   </div>
-  <div class="mobile-nav">
-    <ul class="mobile-nav__menu">
-      <span class="mobile-nav__close"><i class="fa fa-2x fa-times mobile-nav-icon" aria-hidden="true"></i></span>
-      <li class="mobile-nav__item"><%= link_to "Home", root_path %></li>
-      <li class="mobile-nav__item"><%= link_to "Posts", posts_path %></li>
-      <li class="mobile-nav__item"><%= link_to "Members Page", members_path %></li>
-      <li class="mobile-nav__item"><%= link_to "Contact", new_contact_path %></li>
-    </div>
+
   </div>
-</div>
 
-<div class="justify-content-center p-3 col-12 row navigation">
-    <div class="main-navigation-container">
-      <div class="main-navigation-image">
-        <%= link_to root_path do %>
-          <i class="fa fa-home"></i>
-        <% end %>
-      </div>
-      <div class="mt-2">
-        <%= link_to "Home", root_path, class: 'main-navigation-link' %>
-      </div>
-    </div>
-    <div class="main-navigation-container">
-      <div class="main-navigation-image">
-        <%= link_to abouthealthandfitness_path do %>
-          <i class="fa fa-heart"></i>
-        <% end %>
-      </div>
-      <div class="mt-2">
-        <%= link_to "Fitness & Nutrition", abouthealthandfitness_path, class: 'main-navigation-link' %>
-      </div>
-    </div>
-    <div class="main-navigation-container">
-      <div class="main-navigation-image">
-        <%= link_to aboutpersonalstyling_path do %>
-          <i class="fa fa-shopping-bag"></i>
-        <% end %>
-      </div>
-      <div class="mt-2">
-        <%= link_to "Personal Styling", aboutpersonalstyling_path, class: 'main-navigation-link' %>
-      </div>
-    </div>
-
-    <div class="main-navigation-container">
-      <div class="main-navigation-image">
-          <%= link_to aboutpersonaldevelopment_path do %>
-        <i class="fa fa-heart"></i>
-          <% end %>
-      </div>
-      <div class="mt-2">
-        <%= link_to "Personal Development", aboutpersonaldevelopment_path, class: 'main-navigation-link' %>
-      </div>
-    </div>
-
-    <div class="main-navigation-container">
-      <div class="main-navigation-image">
-        <%= link_to aboutmasterclasses_path do %>
-          <i class="fa fa-book"></i>
-        <% end %>
-      </div>
-      <div class="mt-2">
-        <%= link_to "Masterclasses", aboutmasterclasses_path, class: 'main-navigation-link' %>
-      </div>
-    </div>
-</div>
+</header>
