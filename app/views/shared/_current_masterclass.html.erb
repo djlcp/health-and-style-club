@@ -2,14 +2,20 @@
 <div class="masterclass-preview">
   <div class="row">
     <div class="col-md-6">
-      <%= image_tag masterclass.preview_url, class: 'masterclass-preview-image' %>
+      <%= if masterclass
+            image_tag masterclass.preview_url, class: 'masterclass-preview-image'
+          end%>
     </div>
     <div class="col-md-1-2">
       <h4>
-        <%= masterclass.title %>
+        <%= if masterclass
+          masterclass.title
+        end%>
       </h4>
       <p>
-        <%= masterclass.text %>
+        <%= if masterclass
+            masterclass.text
+        end%>
       </p>
     </div>
   </div>

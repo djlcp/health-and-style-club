@@ -17,7 +17,19 @@ module Hsclub
         ENV[key.to_s] = value
       end if File.exists?(env_file)
     end
-
+    config.action_view.field_error_proc = Proc.new { |html_tag, instance|
+      if html_tag =~ /<(input|textarea|select)/
+        html_field = Nokogiri::HTML::DocumentFragment.parse(html_tag)
+        html_field.children.add_class 'field_with_error'
+        html_field.to_s.html_safe
+      elsif html_tag =~ /<(label)/
+        html_field = Nokogiri::HTML::DocumentFragment.parse(html_tag)
+        html_field.children.add_class 'field_with_error_label'
+        html_field.to_s.html_safe
+      else
+        html_tag
+      end
+    }
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
