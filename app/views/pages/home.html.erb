@@ -7,14 +7,17 @@
 <div class="content-section">
   <div class="content-wrap">
     <div class="row">
-      <div class= "col-xs-12 col-md-8">
-        <%= render "shared/current_masterclass", masterclass: Masterclass.last %>
+      <% if Masterclass.last.present? %>
+        <div class= "col-xs-12 col-md-8">
+          <%= render "shared/current_masterclass", masterclass: Masterclass.last %>
+        </div>
+      <% end %>
+      <% if User.contributor.first.present? %>
+        <div class= "col-xs-12 col-md-4">
+          <%= render "shared/contributor", contributor: User.contributor.first %>
+        </div>
+      <% end %>
       </div>
-
-      <div class= "col-xs-12 col-md-4">
-        <%= render "shared/contributor", contributor: User.contributor.first %>
-      </div>
-    </div>
 
 
     <div class="row">
