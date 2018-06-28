@@ -18,13 +18,14 @@
 
 /**************** General ****************/
 
+
 .center {
     text-align: center;
 }
 
 
 .vip_background {
-    background-color: #FFFBFF;
+    background-color: #ffe8fc;
 }
 
 .form-group {
@@ -38,18 +39,6 @@
   visibility: hidden;
 }
 
-<<<<<<< HEAD
-.btn-primary {
-    background-color: #fbcfcc;
-    color: #000000;
-}
-.btn-primary:hover {
-    background-color: #d15a8c;
-    color: #000;
-}
-.btn {
-    border: 0;
-=======
 .videodetector {
   position: relative;
   width: 100%;
@@ -62,8 +51,19 @@
   left: 0;
   width: 100%;
   height: 100%;
->>>>>>> b5d4827b963afefc47ad00bfd408a018713d5559
 }
+
+
+.btn-outline-primary {
+    color:#000;
+}
+
+.btn-outline-primary:hover {
+    color:#000;
+    background-color: #fbcfcc;
+}
+
+
 
 /*
  *= require gulp/app
