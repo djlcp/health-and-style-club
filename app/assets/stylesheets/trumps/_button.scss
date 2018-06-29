@@ -3,10 +3,19 @@
 .btn-pink {
   background-color: $dark-pink;
   color: #fff;
-  //text-transform: uppercase;
 }
 
 .btn-pink:hover {
   color: #fff;
   background-color: darken($dark-pink, 20%)
+}
+
+.btn-pink-outline {
+  border-color: $dark-pink;
+  color: $dark-pink;
+}
+
+.btn-pink-outline:hover {
+  color: white;
+  background-color: $dark-pink
 }

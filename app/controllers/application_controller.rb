@@ -11,14 +11,11 @@ class ApplicationController < ActionController::Base
   # @sub            Subscription exists?
   #
   def variables
-
     if user_signed_in?
       @signed_in = true
-
       if current_user.subscription
         @subscription = true
         @subscription_id = current_user.subscription
-
         if current_user.subscription.paid_for
           @paid = true
         else
@@ -27,23 +24,14 @@ class ApplicationController < ActionController::Base
       else
         @subscription = false
       end
-
-
     else
-
       @signed_in = false
-
     end
   end
 
-
-    def index
-      @users = User.all
-    end
-
-
-
-
+  def index
+    @users = User.all
+  end
 
   def show
     @user = User.find(params[:id])
@@ -51,6 +39,9 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  def after_sign_in_path_for(resource)
+    members_root_path
+  end
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :password, :password_confirmation, :role, :bioavatar, :biobackground, :first_name, :surname, :phone, :search_consent])

@@ -1,0 +1,62 @@
+@import '../utilities/breakpoints';
+@import '../utilities/variables';
+@import '../utilities/bem_mixins';
+
+@include bem-block(numbered-list) {
+
+  @include bem-element(item) {
+    margin-bottom: $spacing;
+    align-items: center;
+  }
+
+  @include bem-element(item, $pseudo-class: last-of-type) {
+    margin-bottom: 0;
+  }
+
+  @include bem-element(number-wrap) {
+    text-align: left;
+    margin-bottom: $spacing;
+    @include breakpoint(medium) {
+      text-align: right;
+      margin-bottom: 0;
+    }
+  }
+
+  @include bem-element(number) {
+    margin-right: 25px;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: $dark-pink;
+  }
+
+  @include bem-element(number, $pseudo-class: after) {
+    content: '.';
+    color: $dark-grey;
+  }
+
+  @include bem-element(title) {
+    color: $dark-pink;
+    font-size: 1.9rem;
+    font-weight: 600;
+    margin: 0;
+    margin-bottom: 5px;
+  }
+
+  @include bem-element(title, $modifier: alt) {
+    color: $dark-pink;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 0;
+    margin-bottom: 5px;
+    padding: 10px 0;
+  }
+
+  @include bem-element(info) {
+    margin: 0 0 10px;
+    font-size: 1.3rem;
+  }
+
+  @include bem-element(info, $pseudo-class: last-of-type) {
+    margin: 0;
+  }
+}

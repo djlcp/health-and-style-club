@@ -18,13 +18,13 @@
 
           <div class="col-sm-12 col-md-4 pad-v-4">
             <div class="masterclass-preview">
-              <%= link_to masterclass do %>
+              <%#= link_to masterclass do %>
                 <% if masterclass.preview.present? %>
                   <%= image_tag masterclass.preview.url, class: 'masterclass-preview-image' %>
                 <% else %>
                   <%= masterclass.title %>
                 <% end %>
-              <% end %>
+              <%# end %>
             </div>
           </div>
 
@@ -32,7 +32,7 @@
 
       </div>
 
-      <%= link_to 'Create a new masterclass', new_masterclass_path %>
+      <%#= link_to 'Create a new masterclass', new_masterclass_path %>
 
     </div>
 

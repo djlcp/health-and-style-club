@@ -1,0 +1,10 @@
+@import '../utilities/variables';
+
+#AccountMenu {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#AccountMenu:hover {
+  color: $dark-pink;
+}

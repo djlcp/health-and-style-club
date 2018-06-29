@@ -1,0 +1,28 @@
+//.static_head {
+//  background-position: center;
+//  background-repeat: no-repeat;
+//  background-size: cover;
+//
+//}
+//
+//@media only screen and (max-width: 480px) {
+//  .bigimage {
+//    height: 200px;
+//    background-size: contain;
+//  }
+//}
+//
+
+@import '../utilities/breakpoints';
+@import '../utilities/variables';
+
+.external-hero {
+  width: 100%;
+  height: 200px;
+  @include breakpoint(small) {
+    height: 300px;
+  }
+  @include breakpoint(medium) {
+    height: 400px;
+  }
+}
