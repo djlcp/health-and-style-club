@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
+    @categories = Category.all
     @posts = Post.all
     @posts = @posts.category(params[:category]) if params[:category].present?
   end

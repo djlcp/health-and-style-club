@@ -55,6 +55,19 @@ Rails.application.routes.draw do
 
   get '/become_contributor' => 'pages#become_contributor'
 
+# !!!!!!!!!!!!!MEMBER CLUB PAGES!!!!!!!!!!!!!
+
+get '/workoutvideos' => 'pages#workout_videos'
+
+get '/personalstyling' => 'pages#personal_style'
+
+get '/personaldevelopment' => 'pages#personal_development'
+
+get '/recipes' => 'pages#recipes'
+
+get '/memberorientation' => 'pages#member_orientation'
+  
+
   #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   #!!!!!!!!!!!!MASTERCLASSES!!!!!!!!!!!!
   #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

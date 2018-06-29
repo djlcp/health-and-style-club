@@ -8,24 +8,35 @@
   <div class="content-wrap">
     <div class="row">
       <% if Masterclass.last.present? %>
-        <div class= "col-xs-12 col-md-8">
+        <div class= "col-xs-12 col-md-8 py-4">
           <%= render "shared/current_masterclass", masterclass: Masterclass.last %>
         </div>
       <% end %>
       <% if User.contributor.first.present? %>
-        <div class= "col-xs-12 col-md-4">
+        <div class= "col-xs-12 col-md-4 py-4">
           <%= render "shared/contributor", contributor: User.contributor.first %>
         </div>
       <% end %>
-      </div>
-
+    </div>
 
     <div class="row">
-      <div class=" col-xs-12 col-md-9">
-        <%= render "layouts/posts" %>
+      <div class="col-xs-12 col-md-8">
+        <div style="border-top: 1px solid gainsboro; margin-right: 30px">
+          <div class="row justify-content-center">
+            <% Post.all.each do |post| %>
+              <div class="card col-xs-12 col-sm-5 profile-card mb-5 bg-white rounded">
+                <%= render "shared/post", post: post %>
+              </div>
+            <% end %>
+          </div>
+        </div>
       </div>
-      <div class="col-md-3">
-        <%= render "layouts/previous_masterclasses" %>
+      <div class="col-xs-12 col-md-4">
+        <div class="d-flex flex-column">
+          <% Masterclass.limit(2).offset(1).each do |masterclass| %>
+            <%= render "shared/masterclass_preview", masterclass: masterclass %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

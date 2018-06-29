@@ -1,0 +1,22 @@
+@import '../utilities/breakpoints';
+@import '../utilities/variables';
+
+.masterclass-small-preview {
+  border-top: 1px solid gainsboro;
+  padding: $spacing * 2 0;
+  position: relative;
+}
+
+.masterclass-small-preview-info {
+  padding: $spacing;
+  background: $dark-pink;
+  border-radius: 0 0 10px 10px;
+  text-align: center;
+}
+
+.masterclass-small-preview-image {
+  width: 100%;
+  min-height: 280px;
+  border: 1px solid gainsboro;
+  border-radius: 10px 10px 0 0;
+}

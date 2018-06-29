@@ -1,12 +1,10 @@
 <h3 class="mb-3">Our Latest Masterclass</h3>
 <div class="masterclass-preview">
   <div class="row">
-    <div class="col-md-6">
-      <%= if masterclass
-            image_tag masterclass.preview_url, class: 'masterclass-preview-image'
-          end%>
+    <div class="col-md-6 order-sm-2 order-md-1">
+      <%= image_tag masterclass.preview_url, class: 'masterclass-preview-image' %>
     </div>
-    <div class="col-md-1-2">
+    <div class="col-md-1-2 order-sm-1 order-md-2">
       <h4>
         <%= if masterclass
           masterclass.title
