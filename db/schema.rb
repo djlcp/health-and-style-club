@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180726203226) do
+ActiveRecord::Schema.define(version: 20180726203227) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -36,14 +36,6 @@ ActiveRecord::Schema.define(version: 20180726203226) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_comments_on_post_id"
-  end
-
-  create_table "contents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "content_type"
-    t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "file_url"
   end
 
   create_table "documents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -73,29 +65,8 @@ ActiveRecord::Schema.define(version: 20180726203226) do
     t.integer "user_id"
   end
 
-  create_table "models", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer "sign_in_count", default: 0, null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string "current_sign_in_ip"
-    t.string "last_sign_in_ip"
-  end
-
   create_table "photos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text "image_data"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "post_contents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "post_id"
-    t.integer "content_id"
-    t.integer "order"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -111,14 +82,6 @@ ActiveRecord::Schema.define(version: 20180726203226) do
     t.string "image"
     t.integer "category_id"
     t.string "post_description"
-    t.integer "likes"
-  end
-
-  create_table "serversettings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.boolean "active"
-    t.integer "reactivation_date"
-    t.string "task_name"
-    t.index ["active"], name: "index_serversettings_on_active"
   end
 
   create_table "subscriptions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -151,6 +114,7 @@ ActiveRecord::Schema.define(version: 20180726203226) do
     t.integer "role"
     t.string "bio"
     t.string "bioavatar"
+    t.string "biobackground"
     t.boolean "search_consent"
     t.string "facebook"
     t.string "pinterest"

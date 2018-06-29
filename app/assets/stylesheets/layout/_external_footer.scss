@@ -1,0 +1,30 @@
+@import '../utilities/variables';
+
+.external-footer {
+  background-color: $dark-grey;
+  padding: $spacing * 2;
+}
+
+.external-footer-logo {
+  font-family: 'Playfair Display', serif;
+  color: $light-pink;
+  font-size: 1.2em;
+  letter-spacing: 1.2px;
+}
+
+.external-footer-social-icon {
+  color: white;
+  font-size: 1.6rem !important;
+}
+
+.external-footer-social-icon:hover {
+  color: $light-pink
+}
+
+.external-footer-link {
+  color: white;
+}
+
+.external-footer-link:hover {
+  color: $light-pink
+}
