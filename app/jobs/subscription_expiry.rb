@@ -16,5 +16,4 @@ subscriptions.each do |s|
 
   end
 
-
 end
