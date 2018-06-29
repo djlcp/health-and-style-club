@@ -9,3 +9,13 @@ Please specify a valid ruby command or the path of a script to run.
 Run 'bin/rails runner -h' for help.
 
 undefined local variable or method `app' for #<Rails::Command::RunnerCommand:0x00007ff0d89cbac8>
+Running via Spring preloader in process 3847
+Please specify a valid ruby command or the path of a script to run.
+Run 'bin/rails runner -h' for help.
+
+undefined local variable or method `app' for #<Rails::Command::RunnerCommand:0x00007ff0d5afbd88>
+Running via Spring preloader in process 4008
+Please specify a valid ruby command or the path of a script to run.
+Run 'bin/rails runner -h' for help.
+
+undefined local variable or method `app' for #<Rails::Command::RunnerCommand:0x00007ff0d5e96128>
