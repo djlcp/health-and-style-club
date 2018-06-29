@@ -40,7 +40,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def after_sign_in_path_for(resource)
-    members_root_path
+    members_masterclasses_path
   end
 
   def configure_permitted_parameters

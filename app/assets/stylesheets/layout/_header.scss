@@ -1,12 +1,12 @@
 @import '../utilities/breakpoints';
 @import '../utilities/variables';
 
-.external-header {
+.header {
   padding: $spacing $spacing * 2;
   border-bottom: 3px solid $dark-pink;
 }
 
-.external-header__inner {
+.header__inner {
   max-width: $max-width;
   margin: 0 auto;
   display: flex;
@@ -14,26 +14,36 @@
   align-items: center;
 }
 
-.external-header__logo {
+.header__logo {
   font-size: 1.5rem;
   letter-spacing: 1.2px;
 }
 
-.external-header__desktop-nav {
+.header__logo--signed-in {
+  font-size: 1.3rem;
+  letter-spacing: 1.2px;
+  margin-bottom: 0;
+}
+
+.header__logo-small {
+  font-size: 0.8rem;
+}
+
+.header__desktop-nav {
   display: none;
   @include breakpoint(medium) {
     display: block;
   }
 }
 
-.external-header__mobile-nav {
+.header__mobile-nav {
   display: block;
   @include breakpoint(medium) {
     display: none;
   }
 }
 
-.external-header__desktop-nav-list {
+.header__desktop-nav-list {
   list-style: none;
   display: flex;
   align-items: center;
@@ -41,21 +51,26 @@
   margin: 0;
 }
 
-.external-header__desktop-nav-item {
+.header__desktop-nav-item {
   padding: $spacing;
-  a {
-    font-size: 1em;
-    transition: color 0.1s linear;
-    color: #212529;
-  }
+}
 
-  a:visited {
-    color: #212529;
-  }
+.header__desktop-nav-link {
+  font-size: 1em;
+  transition: color 0.1s linear;
+  color: #212529;
+}
 
-  a:hover {
-    color: #d15a8c;
-  }
+.header__desktop-nav-link--active {
+  border-bottom: 1px solid $dark-pink;
+}
+
+.header__desktop-nav-link:visited {
+  color: #212529;
+}
+
+.header__desktop-nav-link:hover {
+  color: #d15a8c;
 }
 
 // Old header styles
