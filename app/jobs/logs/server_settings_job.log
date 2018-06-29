@@ -1,0 +1,11 @@
+Running via Spring preloader in process 2606
+Running via Spring preloader in process 2741
+Running via Spring preloader in process 2907
+Running via Spring preloader in process 3043
+Running via Spring preloader in process 3175
+Running via Spring preloader in process 3375
+Running via Spring preloader in process 3706
+Please specify a valid ruby command or the path of a script to run.
+Run 'bin/rails runner -h' for help.
+
+undefined local variable or method `app' for #<Rails::Command::RunnerCommand:0x00007ff0d89cbac8>
