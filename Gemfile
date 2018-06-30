@@ -130,3 +130,8 @@ group :production do
    # gem 'pg'
    # ruby '2.5.1'
 end
+
+# Used for: Ordering posts in the collections
+# An ActiveRecord plugin for managing lists
+# https://github.com/swanandp/acts_as_list
+gem 'acts_as_list'

@@ -4,10 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_many :comments
+  has_many :collections
   has_many :masterclasses
   has_many :posts
   has_one :subscription
-  has_many :comments
 
   mount_uploader :bioavatar, Picture
   mount_uploader :biobackground, Picture

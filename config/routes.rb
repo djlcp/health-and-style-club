@@ -29,6 +29,11 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :admins do
+    root to: 'collections#index'
+    resources :collections
+  end
+
   resources :photos
   resources :photos, only: [:create]
   resources :posts do

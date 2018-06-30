@@ -1,0 +1,32 @@
+<div class="content-section">
+  <div class="content-wrap">
+    <h2>Collections</h2>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Number of Stages</th>
+          <th>Created by</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% Collection.all.each do |collection| %>
+          <tr>
+            <td><%= collection.name %></td>
+            <td><%= collection.collection_type.humanize %></td>
+            <td><%= collection.posts.count %></td>
+            <td><%= collection.user.full_name %></td>
+            <td>
+              <%= link_to edit_admins_collection_path(collection) do %>
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= link_to 'Create new collection', new_admins_collection_path, class: 'btn btn-pink' %>
+  </div>
+</div>
