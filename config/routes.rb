@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   # Members area
   namespace :members do
     root to: 'masterclasses#index'
+    resources :collections, only: [:show]
     resources :masterclasses
     resource :members_club, controller: 'members_club' do
       get :workout

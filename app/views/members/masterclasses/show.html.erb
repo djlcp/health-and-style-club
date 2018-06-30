@@ -4,7 +4,7 @@
 <p><%= @masterclass.text %></p>
 
 
-<% @masterclass.videos.welcome_video.order(sequence: :asc).each do |video| %>
+<% @masterclass.videos.welcome_video.each do |video| %>
 
 <% end %>
 
@@ -24,7 +24,7 @@
   </div>
 <% end %>
 
-<% @masterclass.videos.not_welcome_video.order(sequence: :asc).each do |video| %>
+<% @masterclass.videos.not_welcome_video.each do |video| %>
 
   <div class="">
 

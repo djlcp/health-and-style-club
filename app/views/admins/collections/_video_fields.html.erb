@@ -1,0 +1,20 @@
+<div class="nested-fields">
+  <hr class="divider" />
+  <div class="form-row">
+    <div class="col-12 col-sm-6">
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+    <div class="col-12 col-sm-6">
+      <%= f.label :position %>
+      <%= f.number_field :position %>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <%= f.label :link %>
+    <%= f.text_field :link %>
+  </div>
+
+  <%= link_to_remove_association "Remove video", f %>
+</div>

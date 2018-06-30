@@ -32,7 +32,9 @@ module Admins
       params.require(:collection).permit(
         :name,
         :collection_type,
-        collections_posts_attributes: %i[id post_id position _destroy]
+        :description,
+        :preview,
+        videos_attributes: %i[id title position link _destroy]
       )
     end
 

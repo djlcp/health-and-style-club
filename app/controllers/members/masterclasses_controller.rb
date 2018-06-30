@@ -57,7 +57,7 @@ module Members
         :title,
         :text,
         :user_id,
-        videos_attributes: [:id, :title, :link,:welcome_video, :sequence, :_destroy],
+        videos_attributes: [:id, :title, :link,:welcome_video, :position, :_destroy],
         events_attributes: [:id, :title, :link, :_destroy],
         documents_attributes: [:id, :title, :link, :_destroy]
       )

@@ -60,7 +60,9 @@ gem 'cancancan', '~> 1.13', '>= 1.13.1'
 # Use Devise for user authentication (Implemented by Raymond)
 gem 'devise', '~> 4.2'
 
-
+# User for: Integrating with Vimeo
+# A full featured Ruby implementation of the Vimeo API
+# https://github.com/matthooks/vimeo
 gem 'vimeo'
 
 
