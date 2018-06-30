@@ -13,7 +13,7 @@
 
   <div class="form-row">
     <%= f.label :link %>
-    <%= f.text_field :link %>
+    <%= f.text_field :link, placeholder: 'Format must be: https://player.vimeo.com/video/xxxxxxxxx' %>
   </div>
 
   <%= link_to_remove_association "Remove video", f %>
