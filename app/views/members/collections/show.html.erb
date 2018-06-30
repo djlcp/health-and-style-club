@@ -12,7 +12,7 @@
             <header class="card-header background-dark-grey text-center">
               <div class="d-flex justify-content-around">
                 <% @collection.videos.each_with_index do |video, index| %>
-                  <% if @users_collection.stage > index %>
+                  <% if @users_collection.stage > index + 1 || @users_collection.complete? %>
                     <i class="fa fa-2x fa-fw fa-check-circle-o text-light-pink" aria-hidden="true"></i>
                   <% else %>
                     <i class="fa fa-2x fa-fw fa-circle-o text-light-pink" aria-hidden="true"></i>

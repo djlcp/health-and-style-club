@@ -9,14 +9,14 @@
             <div class="d-flex flex-column justify-content-center align-items-center">
               <h5 class="text-light-pink mb-0"><%= collection.name %></h5>
               <span class="mt-2">
-                        <% collection.videos.each_with_index do |video, index| %>
-                          <% if current_user.users_collections.where(collection: collection).first&.stage || 0 > index %>
-                            <i class="fa fa-2x fa-fw fa-check-circle-o text-light-pink" aria-hidden="true"></i>
-                          <% else %>
-                            <i class="fa fa-2x fa-fw fa-circle-o text-light-pink" aria-hidden="true"></i>
-                          <% end %>
-                        <% end %>
-                      </span>
+                <% collection.videos.each_with_index do |video, index| %>
+                  <% if current_user.users_collections.where(collection: collection).first&.stage || 0 > index + 1 %>
+                    <i class="fa fa-2x fa-fw fa-check-circle-o text-light-pink" aria-hidden="true"></i>
+                  <% else %>
+                    <i class="fa fa-2x fa-fw fa-circle-o text-light-pink" aria-hidden="true"></i>
+                  <% end %>
+                <% end %>
+              </span>
             </div>
           </header>
           <% if collection.preview.present? %>
