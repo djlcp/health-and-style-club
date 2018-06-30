@@ -60,7 +60,9 @@ gem 'cancancan', '~> 1.13', '>= 1.13.1'
 # Use Devise for user authentication (Implemented by Raymond)
 gem 'devise', '~> 4.2'
 
-
+# User for: Integrating with Vimeo
+# A full featured Ruby implementation of the Vimeo API
+# https://github.com/matthooks/vimeo
 gem 'vimeo'
 
 
@@ -130,3 +132,8 @@ group :production do
    # gem 'pg'
    # ruby '2.5.1'
 end
+
+# Used for: Ordering posts in the collections
+# An ActiveRecord plugin for managing lists
+# https://github.com/swanandp/acts_as_list
+gem 'acts_as_list'

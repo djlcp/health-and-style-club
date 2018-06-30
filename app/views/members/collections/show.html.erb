@@ -1,0 +1,68 @@
+<%# Sets the video based on the last stage or the selected stage %>
+<% video = @collection.videos[@stage - 1] %>
+
+<div class="content-section">
+  <div class="content-wrap">
+    <h2 class="text-center mb-4"><%= @collection.name %></h2>
+    <p class="text-center"><%= @collection.description %></p>
+    <div class="container padding-top-bottom">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-11">
+          <div class="card">
+            <header class="card-header background-dark-grey text-center">
+              <div class="d-flex justify-content-around">
+                <% @collection.videos.each_with_index do |video, index| %>
+                  <% if @users_collection.stage > index + 1 || @users_collection.complete? %>
+                    <i class="fa fa-2x fa-fw fa-check-circle-o text-light-pink" aria-hidden="true"></i>
+                  <% else %>
+                    <i class="fa fa-2x fa-fw fa-circle-o text-light-pink" aria-hidden="true"></i>
+                  <% end %>
+                <% end %>
+              </div>
+            </header>
+            <div class="">
+
+              <div style="padding:56.15% 0 0 0;position:relative;">
+                <iframe src="<%= video.link %>" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="card-text">
+                <%= video.title %>
+              </p>
+              <div class="d-flex justify-content-between">
+                <%= button_to(
+                  'Previous Video',
+                  members_users_collection_path(@users_collection),
+                  params: { users_collection: { stage: @stage - 1 } },
+                  class: 'btn btn-pink',
+                  method: :patch,
+                  disabled: @stage <= 1
+                )%>
+                <% if  @stage >= @collection.videos.count %>
+                  <%= button_to(
+                    'Complete Collection',
+                    members_users_collection_path(@users_collection),
+                    params: { users_collection: { complete: true } },
+                    class: 'btn btn-pink',
+                    method: :patch
+                  ) %>
+                <% else %>
+                  <%= button_to(
+                    'Next Video',
+                    members_users_collection_path(@users_collection),
+                    params: { users_collection: { stage: @stage + 1 } },
+                    class: 'btn btn-pink',
+                    method: :patch
+                  ) %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://player.vimeo.com/api/player.js"></script>

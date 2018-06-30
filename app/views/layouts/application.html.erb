@@ -5,20 +5,19 @@
      @background_color = "vip_background"
    end %>
   <body class="<%= @background_color %>">
-    <%= render "layouts/header" %>
+    <div class="main-container">
+      <div class="main-header-wrapper">
+        <%= render "layouts/header" %>
+      </div>
 
-    <% if notice %>
-      <p class="alert alert-success" style="margin:0"><%= notice %></p>
-      <% end %>
-    <% if alert %>
-      <p class="alert alert-danger" style="margin:0"><%= alert %></p>
-      <% end %>
+      <div class="main-body-content">
+        <%= yield %>
+      </div>
 
-    <div>
-      <%= yield %>
+      <div class="main-footer-container">
+       <%= render "layouts/footer" %>
+      </div>
     </div>
-
-    <%= render "layouts/footer" %>
 
   </body>
 </html>
