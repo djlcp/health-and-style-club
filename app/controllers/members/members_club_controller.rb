@@ -6,7 +6,9 @@ module Members
       @collections = Collection.personal_styling
     end
 
-    def personal_development; end
+    def personal_development
+      @collections = Collection.personal_development
+    end
 
     def recipes; end
 

@@ -1,4 +1,5 @@
-<% video = @collection.videos.first %>
+<%# Sets the video based on the last stage or the selected stage %>
+<% video = @collection.videos[@stage - 1] %>
 
 <div class="content-section">
   <div class="content-wrap">
@@ -10,8 +11,12 @@
           <div class="card">
             <header class="card-header background-dark-grey text-center">
               <div class="d-flex justify-content-around">
-                <% @collection.videos.each do |video| %>
-                  <i class="fa fa-2x fa-fw fa-circle-thin text-large text-light-pink" aria-hidden="true"></i>
+                <% @collection.videos.each_with_index do |video, index| %>
+                  <% if @users_collection.stage > index %>
+                    <i class="fa fa-2x fa-fw fa-check-circle-o text-light-pink" aria-hidden="true"></i>
+                  <% else %>
+                    <i class="fa fa-2x fa-fw fa-circle-o text-light-pink" aria-hidden="true"></i>
+                  <% end %>
                 <% end %>
               </div>
             </header>
@@ -26,10 +31,32 @@
                 <%= video.title %>
               </p>
               <div class="d-flex justify-content-between">
-                <button class="btn btn-pink">Previous Video</button>
-                <button class="btn btn-pink">Next Video</button>
+                <%= button_to(
+                  'Previous Video',
+                  members_users_collection_path(@users_collection),
+                  params: { users_collection: { stage: @stage - 1 } },
+                  class: 'btn btn-pink',
+                  method: :patch,
+                  disabled: @stage <= 1
+                )%>
+                <% if  @stage >= @collection.videos.count %>
+                  <%= button_to(
+                    'Complete Collection',
+                    members_users_collection_path(@users_collection),
+                    params: { users_collection: { complete: true } },
+                    class: 'btn btn-pink',
+                    method: :patch
+                  ) %>
+                <% else %>
+                  <%= button_to(
+                    'Next Video',
+                    members_users_collection_path(@users_collection),
+                    params: { users_collection: { stage: @stage + 1 } },
+                    class: 'btn btn-pink',
+                    method: :patch
+                  ) %>
+                <% end %>
               </div>
-
             </div>
           </div>
         </div>

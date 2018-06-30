@@ -28,6 +28,7 @@ Rails.application.routes.draw do
       get :recipes
       get 'member-orientation', to: :member_orientation
     end
+    resources :users_collections, only: [:update]
   end
 
   namespace :admins do

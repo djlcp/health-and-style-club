@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :masterclasses
   has_many :posts
   has_one :subscription
+  has_many :users_collections
 
   mount_uploader :bioavatar, Picture
   mount_uploader :biobackground, Picture

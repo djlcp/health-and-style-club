@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180726203235) do
+ActiveRecord::Schema.define(version: 20180726203237) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -137,6 +137,17 @@ ActiveRecord::Schema.define(version: 20180726203235) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "users_collections", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "user_id"
+    t.bigint "collection_id"
+    t.integer "stage"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "complete", default: false
+    t.index ["collection_id"], name: "index_users_collections_on_collection_id"
+    t.index ["user_id"], name: "index_users_collections_on_user_id"
+  end
+
   create_table "videos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
     t.integer "position"
@@ -166,4 +177,6 @@ ActiveRecord::Schema.define(version: 20180726203235) do
 
   add_foreign_key "collections", "users"
   add_foreign_key "comments", "posts"
+  add_foreign_key "users_collections", "collections"
+  add_foreign_key "users_collections", "users"
 end

@@ -5,34 +5,7 @@
     <div class="container">
       <div class="row">
 
-        <% @collections.each do |collection| %>
-
-          <div class="col-12 col-sm-6 col-md-4">
-            <div class="card h-100">
-              <%= link_to members_collection_path(collection) do %>
-                <header class="card-header background-dark-grey text-center">
-                  <div class="d-flex flex-column justify-content-center align-items-center">
-                    <h5 class="text-light-pink mb-0"><%= collection.name %></h5>
-                    <span class="mt-2">
-                      <% collection.videos.count.times do  %>
-                        <i class="fa fa-fw fa-circle-thin text-medium text-light-pink" aria-hidden="true"></i>
-                      <% end %>
-                    </span>
-                  </div>
-                </header>
-                <% if collection.preview.present? %>
-                  <%= image_tag collection.preview_url, class: 'card-img' %>
-                <% end %>
-                <div class="card-body">
-                  <p class="card-text">
-                    <%= collection.description %>
-                  </p>
-                </div>
-              <% end %>
-            </div>
-          </div>
-
-        <% end %>
+        <%= render 'collections', collections: @collections %>
 
       </div>
     </div>
