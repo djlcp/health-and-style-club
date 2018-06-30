@@ -35,6 +35,15 @@
     ) %>
   </div>
 
+  <div class="form-group">
+    <div class="pretty p-default p-round">
+      <%= form.check_box :paid_for %>
+      <div class="state p-danger-o">
+        <%= form.label :paid_for, 'Is this post only for paying users?' %>
+      </div>
+    </div>
+  </div>
+
   <div class="form-group" data-no-turbolink>
     <%= form.cktext_area :body_text, id: "ckeditor",  cols: 100, ckeditor: { toolbar: 'mini' } %>
   </div>

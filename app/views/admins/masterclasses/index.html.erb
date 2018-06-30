@@ -1,0 +1,30 @@
+<div class="content-section">
+  <div class="content-wrap">
+    <h2>Masterclasses</h2>
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th>Title</th>
+        <th>Text</th>
+        <th>User</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @masterclasses.each do |masterclass| %>
+        <tr>
+          <td><%= masterclass.title %></td>
+          <td><%= masterclass.text %></td>
+          <td><%= masterclass.user.full_name %></td>
+          <td>
+            <%= link_to edit_admins_masterclass_path(masterclass) do %>
+              <i class="fa fa-pencil" aria-hidden="true"></i>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+    <%= link_to 'New Masterclass', new_admins_masterclass_path, class: 'btn btn-pink' %>
+  </div>
+</div>

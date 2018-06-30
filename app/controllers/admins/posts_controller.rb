@@ -22,7 +22,7 @@ module Admins
 
     def update
       if @post.update(post_params)
-        redirect_to [:admins, @post], notice: 'Post updated.'
+        redirect_to admins_posts_path, notice: 'Post updated.'
       else
         render :edit
       end
@@ -43,7 +43,8 @@ module Admins
         :post,
         :post_description,
         :user_id,
-        :category
+        :category,
+        :paid_for
       )
     end
 

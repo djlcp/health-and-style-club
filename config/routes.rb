@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   namespace :members do
     root to: 'masterclasses#index'
     resources :collections, only: [:show]
-    resources :masterclasses
+    resources :masterclasses, only: %i[index show]
     resource :members_club, controller: 'members_club' do
       get :workout
       get 'personal-styling', to: :personal_styling
@@ -34,6 +34,7 @@ Rails.application.routes.draw do
   namespace :admins do
     root to: 'collections#index'
     resources :collections
+    resources :masterclasses
     resources :posts, only: %i[index new create edit update destroy]
   end
 
