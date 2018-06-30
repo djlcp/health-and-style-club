@@ -18,11 +18,11 @@
 <div class="form-row">
   <%= f.label :collection_type %><br/>
   <%= f.select(
-      :collection_type,
-      options_for_select(Collection.collection_types.keys.map{|type| [type.humanize, type]}),
-      { prompt: true },
-      class: 'form-control'
-      )%>
+    :collection_type,
+    options_for_select(Collection.collection_types.keys.map{|type| [type.humanize, type]}),
+    { prompt: true },
+    class: 'form-control'
+  )%>
 </div>
 
 <%= f.fields_for :videos do |video| %>

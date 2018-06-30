@@ -12,7 +12,7 @@ module Admins
     def create
       @post = current_user.posts.new(post_params)
       if @post.save
-        redirect_to posts_path, notice: 'Post added.'
+        redirect_to admins_posts_path, notice: 'Post added.'
       else
         render :new
       end
@@ -22,7 +22,7 @@ module Admins
 
     def update
       if @post.update(post_params)
-        redirect_to @post, notice: 'Post updated.'
+        redirect_to [:admins, @post], notice: 'Post updated.'
       else
         render :edit
       end
@@ -30,13 +30,21 @@ module Admins
 
     def destroy
       @post.destroy
-      redirect_to posts_path, notice: 'Your post was deleted.'
+      redirect_to admins_posts_path, notice: 'Your post was deleted.'
     end
 
     private
 
     def post_params
-      params.require(:post).permit(:title, :body_text, :image, :post, :post_description, :likes)
+      params.require(:post).permit(
+        :title,
+        :body_text,
+        :image,
+        :post,
+        :post_description,
+        :user_id,
+        :category
+      )
     end
 
     def set_post

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180726203237) do
+ActiveRecord::Schema.define(version: 20180726203238) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -94,6 +94,7 @@ ActiveRecord::Schema.define(version: 20180726203237) do
     t.integer "category_id"
     t.string "post_description"
     t.integer "likes"
+    t.integer "category"
   end
 
   create_table "subscriptions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
