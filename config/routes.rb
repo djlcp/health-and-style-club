@@ -34,11 +34,12 @@ Rails.application.routes.draw do
   namespace :admins do
     root to: 'collections#index'
     resources :collections
+    resources :posts, only: %i[index new create edit update destroy]
   end
 
   resources :photos
   resources :photos, only: [:create]
-  resources :posts do
+  resources :posts, only: %i[index show] do
     member do
       put "like", to: "posts#upvote"
       put "dislike", to: "links#downvote"
