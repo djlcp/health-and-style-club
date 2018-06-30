@@ -1,6 +1,6 @@
 module Admins
   class CollectionsController < Admins::NamespaceController
-    before_action :set_collection
+    before_action :set_collection, only: [:edit, :update]
     def index; end
 
     def new
@@ -18,7 +18,13 @@ module Admins
 
     def edit; end
 
-    def update; end
+    def update
+      if @collection.update(collection_params)
+        redirect_to admins_collections_path
+      else
+        render :edit
+      end
+    end
 
     private
 
@@ -26,7 +32,7 @@ module Admins
       params.require(:collection).permit(
         :name,
         :collection_type,
-        collections_posts_attributes: %i[post_id position _destroy]
+        collections_posts_attributes: %i[id post_id position _destroy]
       )
     end
 
