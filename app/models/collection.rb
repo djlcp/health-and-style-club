@@ -12,17 +12,15 @@ class Collection < ApplicationRecord
   # Attributes
   # --------------------------------------------------------------------
   enum collection_type: {
-    workout: 1,
-    recipe: 2,
-    personal_styling: 3,
-    personal_development: 4
+    personal_styling: 1,
+    personal_development: 2
   }
 
   # --------------------------------------------------------------------
   # Associations
   # --------------------------------------------------------------------
   belongs_to :user
-  has_many :videos, -> { order(position: :asc) }, as: :videoable, dependent: :destroy
+  has_many :videos, -> { order(position: :asc) }, as: :videoable, dependent: :destroy, inverse_of: :videoable
   has_many :users_collections
 
   # --------------------------------------------------------------------
