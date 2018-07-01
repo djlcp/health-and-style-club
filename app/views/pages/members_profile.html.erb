@@ -1,3 +1,23 @@
+  <% if @user.bioavatar?
+       image = @user.bioavatar.avatar
+     else
+       image = "contact.png"
+     end
+     if @user.biobackground?
+       background = @user.biobackground.cover_image_big
+     else
+       background = "bg.jpg"
+     end
+     if @user.role == "admin"
+       role_color = "#FF3E33"
+     elsif @user.role == "contributor"
+       role_color = "#74008C"
+     else
+       role_color = "#188C00"
+     end
+  %>
+
+
 <div class="container padding-top-bottom">
   <div class="row justify-content-center">
     <div class="col-md-10">
@@ -6,35 +26,34 @@
       </header>
       <div class="card">
         <div class="">
-          <%= image_tag @user.biobackground.cover_image_big, class: 'rounded', style: 'width: 100%; margin: 0; padding: 0;' %>
-          <%= image_tag @user.bioavatar.avatar, class:"rounded-circle profile-avatar border border-danger" %>
+          <%= image_tag background, class: 'rounded', style: 'width: 100%; margin: 0; padding: 0;' %>
+          <%= image_tag image, class:"rounded-circle profile-avatar border border-danger" %>
         </div>
         <div class="card-body">
           <h5 class="card-title text-center"><%= @user.full_name %></h5>
+          <h5 class="card-title text-center" style="color:<%= role_color %>"> <%= @user.role.capitalize %></h5>
           <div class="row">
             <div class="col-md-8 col-xs-12">
               <h5 class="card-title text-center"><small>Summary</small></h5>
-              <p class="card-text"><%= @user.bio %></p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              <p class="card-text text-center"><%= @user.bio %></p>
+              <p class="card-text text-center"><small class="text-muted">This user was created <%= time_ago_in_words(@user.created_at) %> ago.</small></p>
             </div>
 
-            <div class="col-md-4 col-xs-12">
+            <div class="col-md-4 col-xs-12 text-center">
               <h5 class="card-title text-center"><small>Social Media</small></h5>
               <% if @user.facebook || @user.youtube || @user.youtube || @user.twitter || @user.website %>
-                <div class="justify-content-around">
-                <% if @user.facebook%>
-                  <%= link_to "https://www.facebook.com/#{@user.facebook}" do %><i class="fa fa-facebook-square fa-2x social-icons-profile"></i> <% end %>
-                  <%end%><% if @user.pinterest%>
-                  <%= link_to "https://www.pinterest.com/#{@user.pinterest}" do %><i class="fa fa-pinterest-square fa-2x social-icons-profile"></i> <% end %>
-                  <%end%><% if @user.youtube%>
-                  <%= link_to "https://www.youtube.com/#{@user.youtube}" do %><i class="fa fa-youtube-square fa-2x social-icons-profile"></i> <% end %>
-                  <%end%><% if @user.twitter%>
-                  <%= link_to "https://www.twitter.com/#{@user.twitter}" do %><i class="fa fa-twitter-square fa-2x social-icons-profile"></i> <% end %>
-                  <%end%><% if @user.website%>
-                  <%= link_to "https://#{@user.website}" do %><i class="fa fa-globe fa-2x social-icons-profile"></i> <% end %>
+                <% if @user.facebook != ""%>
+                  <%= link_to "https://www.facebook.com/#{@user.facebook}" do %><i class="fa fa-facebook-square fa-2x social-icons-profile" style="color:#ffa3ac"></i> <% end %>
+                  <%end%><% if @user.pinterest != ""%>
+                  <%= link_to "https://www.pinterest.com/#{@user.pinterest}" do %><i class="fa fa-pinterest-square fa-2x social-icons-profile" style="color:#ffa3ac"></i> <% end %>
+                  <%end%><% if @user.youtube != ""%>
+                  <%= link_to "https://www.youtube.com/#{@user.youtube}" do %><i class="fa fa-youtube-square fa-2x social-icons-profile" style="color:#ffa3ac"></i> <% end %>
+                  <%end%><% if @user.twitter != ""%>
+                  <%= link_to "https://www.twitter.com/#{@user.twitter}" do %><i class="fa fa-twitter-square fa-2x social-icons-profile" style="color:#ffa3ac"></i> <% end %>
+                  <%end%><% if @user.website != ""%>
+                  <%= link_to "https://#{@user.website}" do %><i class="fa fa-globe fa-2x social-icons-profile" style="color:#ffa3ac"></i> <% end %>
                 <% end %>
               <% else %>
-                </div>
                 <a class="fa fas-globe fa-2x social-icons-profile"></a>
               <% end %>
             </div>

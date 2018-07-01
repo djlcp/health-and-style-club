@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   load_and_authorize_resource
   before_action :set_user
 
+
   def update
     @user = current_user
 
