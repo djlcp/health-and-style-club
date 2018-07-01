@@ -1,0 +1,39 @@
+
+<%= form_for @post do |form| %>
+
+  <div class="form-group">
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="form-group filechoose">
+    <%= form.label :Hero_image %><br>
+    <%= form.file_field :image %>
+  </div>
+
+<div class="form-group">
+  <%= form.label :post_description %><br>
+  <%= form.text_field :post_description %>
+</div>
+
+<div class="form-group" data-no-turbolink>
+  <%= form.cktext_area :body_text, id: "ckeditor",  cols: 100, ckeditor: { toolbar: 'mini' } %>
+</div>
+
+
+
+
+  <div class="form-group button" >
+    <%= form.submit "Submit", class: "btn btn-success" %>
+  </div>
+
+  <!-- <div class="form-check">
+    <#%= form.label :category_id %><br>
+    <#%= form.check_box :category_id %>
+  </div> -->
+
+<% end %>
+
+<script>
+        CKEDITOR.replace('ckeditor')
+</script>

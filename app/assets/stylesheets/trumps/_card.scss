@@ -1,0 +1,7 @@
+@import '../utilities/breakpoints';
+
+.card-img {
+  @include breakpoint(small) {
+    max-height: 190px;
+  }
+}

@@ -1,0 +1,23 @@
+<div class="profile-background-container d-flex align-items-center">
+  <%= image_tag post.image_url, class:"post-background" if post.image.present? %>
+</div>
+
+<div class="post-blocks">
+  <div class="post-content">
+    <h5 class="section-heading"><%= link_to post.title, post, style:  "color:#990051;" %></h5>
+    <h6 class="paragraph"><%= sanitize post.post_description, post %></h6>
+    <p>Posted by <%= post.user.first_name %> <%= post.user.surname%></p>
+
+    <div class="btn-group">
+      <%= link_to like_post_path(post), method: :put, class: "btn btn-default btn-sm" do %>
+        <span class="glyphicon glyphicon-chevron-up"></span>
+        Like
+        <%= post.get_upvotes.size %>
+      <% end %>
+      <br>
+      <div>
+        <p><%= post.created_at.strftime("%d %b %y") %></p>
+      </div>
+    </div>
+  </div>
+</div>

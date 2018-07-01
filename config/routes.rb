@@ -1,21 +1,52 @@
 Rails.application.routes.draw do
 
   root to: 'pages#home'
-
-  #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  #!!!!!!!!!GEM REQUIREMENTS!!!!!!!!!!!!
-  #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
+  #GEM REQUIREMENTS
   mount Ckeditor::Engine => '/ckeditor'
 
+  # External Pages
+  get 'about' => 'pages#about'
+  get 'become_contributor' => 'pages#become_contributor'
+  # Currently not being used
+  get 'faq' => 'pages#faq'
+  get 'fitness-and-nutrition' => 'pages#fitness_and_nutrition'
+  get 'our-masterclasses' => 'pages#masterclasses'
+  get 'personal-development' => 'pages#personal_development'
+  get 'personal-styling' => 'pages#personal_styling'
+  get 'privacy-policy' => 'pages#privacy_policy'
+  get 'termsandconditions' => 'pages#t_c_page'
 
-  #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  #!!!!!!!!!!!!!!GENERAL!!!!!!!!!!!!!!!!
-  #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  # Members area
+  namespace :members do
+    root to: 'masterclasses#index'
+    resources :collections, only: [:show]
+    resources :masterclasses, only: %i[index show]
+    resource :members_club, controller: 'members_club' do
+      get :workout
+      get 'personal-styling', to: :personal_styling
+      get 'personal-development', to: :personal_development
+      get :recipes
+      get 'member-orientation', to: :member_orientation
+    end
+    resources :posts, only: %i[index show] do
+      member do
+        put "like", to: "posts#upvote"
+        put "dislike", to: "links#downvote"
+      end
+    end
+    resources :users_collections, only: [:update]
+  end
+
+  namespace :admins do
+    root to: 'collections#index'
+    resources :collections
+    resources :masterclasses
+    resources :posts, only: %i[index new create edit update destroy]
+  end
 
   resources :photos
   resources :photos, only: [:create]
-  resources :posts do
+  resources :posts, only: %i[index show] do
     member do
       put "like", to: "posts#upvote"
       put "dislike", to: "links#downvote"
@@ -28,39 +59,13 @@ Rails.application.routes.draw do
   resources :contacts, only: [:new, :create]
   resources :categories
 
-# !!!!!!!!!!!!! MEMBERS PAGE !!!!!!!!!!!!!
+  # !!!!!!!!!!!!! MEMBERS PAGE !!!!!!!!!!!!!
 
   get 'members' => 'pages#members'
   get '/members/:id', to: 'pages#members_profile'
-
   get '/member_home' => 'pages#member_home'
 
-  # !!!!!!!!!!!!!STATIC PAGES!!!!!!!!!!!!!
-
-  get '/faq' => 'pages#faq'
-
-  get '/about' => 'pages#about'
-
-  get '/privacy-policy' => 'pages#privacy_policy'
-
-  get '/termsandconditions' => 'pages#t_c_page'
-
-  get '/abouthealthandfitness' => 'pages#static_fitness'
-
-  get '/aboutpersonalstyling' => 'pages#static_style'
-
-  get '/aboutpersonaldevelopment' => 'pages#static_personal-dev'
-
-  get '/aboutmasterclasses' => 'pages#static_masterclass'
-
-  get '/become_contributor' => 'pages#become_contributor'
-
-  #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  #!!!!!!!!!!!!MASTERCLASSES!!!!!!!!!!!!
-  #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-  resources :masterclasses, :videos, :events, :documents
-
+  # resources :masterclasses, :videos, :events, :documents
 
   #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   #!!!!!!!!!!!USER MANAGEMENT!!!!!!!!!!!

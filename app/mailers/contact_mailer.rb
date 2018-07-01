@@ -1,6 +1,6 @@
 class ContactMailer < ActionMailer::Base
   default from: 'from@example.com'
-  # layout 'mailer'
+  # pages 'mailer'
 
   def send_signup_email(user)
     @user = user

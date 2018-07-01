@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180726203227) do
+ActiveRecord::Schema.define(version: 20180726203240) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -28,6 +28,17 @@ ActiveRecord::Schema.define(version: 20180726203227) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["type"], name: "index_ckeditor_assets_on_type"
+  end
+
+  create_table "collections", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "collection_type"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.text "description"
+    t.string "preview"
+    t.index ["user_id"], name: "index_collections_on_user_id"
   end
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -82,7 +93,7 @@ ActiveRecord::Schema.define(version: 20180726203227) do
   create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
     t.text "body_text"
-    t.boolean "paid_for"
+    t.boolean "paid_for", default: false
     t.string "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -91,6 +102,8 @@ ActiveRecord::Schema.define(version: 20180726203227) do
     t.string "post_description"
     t.integer "likes"
     t.integer "user_id"
+    t.integer "category"
+    t.integer "sub_category"
   end
 
   create_table "serversettings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -141,13 +154,25 @@ ActiveRecord::Schema.define(version: 20180726203227) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "users_collections", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "user_id"
+    t.bigint "collection_id"
+    t.integer "stage"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "complete", default: false
+    t.index ["collection_id"], name: "index_users_collections_on_collection_id"
+    t.index ["user_id"], name: "index_users_collections_on_user_id"
+  end
+
   create_table "videos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
-    t.integer "sequence"
+    t.integer "position"
     t.string "link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "masterclass_id"
+    t.integer "videoable_id"
+    t.string "videoable_type"
   end
 
   create_table "votes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -166,5 +191,8 @@ ActiveRecord::Schema.define(version: 20180726203227) do
     t.index ["voter_type", "voter_id"], name: "index_votes_on_voter_type_and_voter_id"
   end
 
+  add_foreign_key "collections", "users"
   add_foreign_key "comments", "posts"
+  add_foreign_key "users_collections", "collections"
+  add_foreign_key "users_collections", "users"
 end

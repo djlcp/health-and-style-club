@@ -3,18 +3,11 @@
 # every 1.minute do
 #   runner "app/jobs/subscription_expiry.rb"
 # end
-
-
-
-
-
-
-
-
-
-
-
-
+#
+# set :output, "app/jobs/logs/server_settings_job.log"
+# every 60.minute do
+#   runner "app/jobs/server_settings.rb" , environment => "development"
+# end
 # Use this file to easily define all of your cron jobs.
 #
 # It's helpful, but not entirely necessary to understand cron before proceeding.
