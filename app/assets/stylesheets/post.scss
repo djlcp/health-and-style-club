@@ -238,3 +238,14 @@ a:hover {
 .like-button {
   color: red;
 }
+
+
+.margin-top-bottom {
+  margin-top: $spacing;
+  margin-bottom: $spacing;
+}
+
+.margin-sides {
+  margin-left: $spacing;
+  margin-right: $spacing;
+}

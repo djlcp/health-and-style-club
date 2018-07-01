@@ -6,15 +6,24 @@ class PagesController < ApplicationController
   end
 
   def members
-    @user = User.all
-    @admins = @user.where(role: 'admin', search_consent: 1)
-    @contributors = @user.where(role: 'contributor', search_consent: 1)
-    @subscribers = @user.joins(:subscription).where({"subscriptions.paid_for" => true}, role: 'subscriber', search_consent: 1)
-    @users = @admins + @subscribers + @contributors
+	  @users =
+		  User.all
+			  .joins('LEFT JOIN subscriptions ON subscriptions.user_id = users.id')
+			  .where('role IN (2,3) AND search_consent = 1 OR subscriptions.paid_for = 1 AND role = 1 AND search_consent = 1')
   end
 
   def members_profile
-    @user = User.find(params[:id])
+	  @user = User.find(params[:id])
+
+
+
+	  if @user.search_consent == true && @user.subscription.present? && @user.subscription.paid_for == true || @user.role == 'admin'&& @user.search_consent == true || @user.role == 'contributor' && @user.search_consent == true
+		  @user = User.find(params[:id])
+	  elsif @user == current_user
+		  @user = User.find(params[:id])
+	  else
+		  redirect_to members_path, alert: "I'm sorry, this user's information is private."
+	  end
   end
 
   def faq

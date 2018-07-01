@@ -10,7 +10,17 @@ module Members
       @collections = Collection.personal_development
     end
 
-    def recipes; end
+    def recipes
+
+      @breakfast = Post.breakfast
+      @lunch = Post.lunch
+      @dinner = Post.dinner
+      @snack = Post.snack
+      @desert = Post.desert
+
+
+
+    end
 
     def member_orientation; end
   end

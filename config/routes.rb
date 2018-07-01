@@ -28,6 +28,12 @@ Rails.application.routes.draw do
       get :recipes
       get 'member-orientation', to: :member_orientation
     end
+    resources :posts, only: %i[index show] do
+      member do
+        put "like", to: "posts#upvote"
+        put "dislike", to: "links#downvote"
+      end
+    end
     resources :users_collections, only: [:update]
   end
 
