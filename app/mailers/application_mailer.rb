@@ -1,6 +1,6 @@
 class ApplicationMailer < ActionMailer::Base
   default from: 'Health & Style Club'
-  # layout 'mailer'
+  # pages 'mailer'
 
   def send_signup_email(user)
     @user = user

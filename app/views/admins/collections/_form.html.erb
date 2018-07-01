@@ -1,0 +1,40 @@
+<%= render 'shared/model_errors', model: @collection %>
+
+<div class="form-row">
+  <%= f.label :name %><br/>
+  <%= f.text_field :name, class: "form-control" %>
+</div>
+
+<div class="form-row">
+  <%= f.label :description %><br/>
+  <%= f.text_area :description, class: "form-control" %>
+</div>
+
+<div class="form-row">
+  <%= f.label :preview %><br>
+  <%= f.file_field :preview %>
+</div>
+
+<div class="form-row">
+  <%= f.label :collection_type %><br/>
+  <%= f.select(
+    :collection_type,
+    options_for_select(Collection.collection_types.keys.map{|type| [type.humanize, type]}),
+    { prompt: true },
+    class: 'form-control'
+  )%>
+</div>
+
+<%= f.fields_for :videos do |video| %>
+
+  <%= render 'video_fields', f: video %>
+
+<% end %>
+
+<div class="links">
+  <%= link_to_add_association 'Add Video', f, :videos %>
+</div>
+
+<div class="form-row">
+  <%= f.submit class: 'mt-2 btn btn-pink' %>
+</div>

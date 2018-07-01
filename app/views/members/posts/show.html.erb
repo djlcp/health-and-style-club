@@ -1,0 +1,48 @@
+<section class="post-main">
+
+	<div class="admin-controls">
+	<% if current_user.try(:admin?) %>
+	<button type="button" class="btn btn-success"><%= link_to 'Edit post', edit_members_members_club_path %></button>
+	<button type="button" class="btn btn-danger">	<%= link_to 'Delete post', post_path, method: :delete, :data => {:confirm => 'Are you sure?'} %></button>
+
+	<% end %>
+
+	<% if current_user.try(:contributor?) %>
+		<button type="button" class="btn btn-success"><%= link_to 'Edit post', edit_members_members_club_path %></button>
+	<% end %>
+	</div>
+<br></br>
+	<div class="post-image-main profile-background-container border d-flex align-items-center">
+		<%= image_tag(@post.image_url.to_s, class:"post-background") %>
+	</div>
+
+<br>
+		<h1><%= @post.title %></h1>
+<br>
+		<h4>
+			<%= @post.post_description %>
+		</h4>
+		<br>
+
+	<div class="post-body-main iframe video">
+		<%= sanitize @post.body_text, tags: %w(p ul li ul iframe) %>
+	</div>
+
+	<div>
+		<%= link_to like_post_path(@post), method: :put, class: "btn btn-primary btn-lg" do %>
+				Like <%= @post.get_upvotes.size %>
+	<% end %>
+					</div>
+
+<br>
+<div>
+<%= render 'author' %>
+</div>
+<!--The below generates n error, so commenting out
+
+	<#%= render partial: 'comments/form', locals: { comment: @comment } %>
+
+-->
+
+
+</section>

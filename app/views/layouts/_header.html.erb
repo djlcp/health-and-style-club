@@ -1,22 +1,44 @@
-<header class="external-header">
+<header class="header">
 
-  <div class="external-header__inner">
+  <div class="header__inner">
 
     <%= link_to root_path, class: "main-header-title" do %>
-      <h1 class="external-header__logo">Health & Style Club</h1>
+      <h1 class="header__logo">Health & Style Club</h1>
     <% end %>
 
-    <nav class="external-header__desktop-nav">
-      <ul class="external-header__desktop-nav-list">
-        <li class="external-header__desktop-nav-item"><%= link_to "Fitness & Nutrition", abouthealthandfitness_path %></li>
-        <li class="external-header__desktop-nav-item"><%= link_to "Personal Styling", aboutpersonalstyling_path %></li>
-        <li class="external-header__desktop-nav-item"><%= link_to "Personal Development", aboutpersonaldevelopment_path %></li>
-        <li class="external-header__desktop-nav-item"><%= link_to "Masterclasses", aboutmasterclasses_path %></li>
-        <li class="external-header__desktop-nav-item"><%= link_to 'Log in', new_user_session_path %></li>
+    <nav class="header__desktop-nav">
+      <ul class="header__desktop-nav-list">
+        <li class="header__desktop-nav-item">
+          <%= nav_link_to fitness_and_nutrition_path, class: 'header__desktop-nav-link' do %>
+            Fitness & Nutrition
+          <% end %>
+        </li>
+        <li class="header__desktop-nav-item">
+          <%= nav_link_to personal_styling_path, class: 'header__desktop-nav-link' do %>
+            Personal Styling
+          <% end %>
+        </li>
+        <li class="header__desktop-nav-item">
+          <%= nav_link_to personal_development_path, class: 'header__desktop-nav-link' do %>
+            Personal Development
+          <% end %>
+        </li>
+        <li class="header__desktop-nav-item">
+          <%= nav_link_to our_masterclasses_path, class: 'header__desktop-nav-link' do %>
+            Masterclasses
+          <% end %>
+        </li>
+        <% if !user_signed_in? %>
+          <li class="header__desktop-nav-item">
+            <%= nav_link_to new_user_session_path, class: 'header__desktop-nav-link' do %>
+              Log in
+            <% end %>
+          </li>
+        <% end %>
       </ul>
     </nav>
 
-    <div class="external-header__mobile-nav">
+    <div class="header__mobile-nav">
       <ul class="mobile-nav__menu">
         <span class="mobile-nav__close"><i class="fa fa-2x fa-times mobile-nav-icon" aria-hidden="true"></i></span>
         <li class="mobile-nav__item"><%= link_to "Home", root_path %></li>

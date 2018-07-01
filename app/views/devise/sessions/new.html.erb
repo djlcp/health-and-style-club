@@ -4,8 +4,8 @@
     <div class="col-md-10">
       <div class="card">
         <header class="card-header">
-          <%= link_to "Create Account", new_user_registration_path, class: 'btn btn-outline-primary mt-1' %>
-          <%= link_to "Reset Password", new_user_password_path, class: 'float-right btn btn-outline-primary mt-1' %>
+          <%= link_to "Create Account", new_user_registration_path, class: 'btn btn btn-pink-outline mt-1' %>
+          <%= link_to "Reset Password", new_user_password_path, class: 'float-right btn btn btn-pink-outline mt-1' %>
         </header>
         <div class="card-body">
           <h4 class="text-center mt-2">Log In</h4>
@@ -30,12 +30,11 @@
               <% end %>
 
               <div class="actions top-padding">
-                <%= f.submit "Log In", class: "btn btn-primary btn-block" %>
+                <%= f.submit "Log In", class: "btn btn-pink btn-block" %>
               </div>
             </div>
           <% end %>
         </div>
-        <div class="border-top card-footer text-center"><%= render "devise/shared/links" %></div>
       </div>
     </div>
   </div>
