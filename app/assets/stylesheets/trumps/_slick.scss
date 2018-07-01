@@ -1,4 +1,22 @@
+@import '../utilities/variables';
+@import '../utilities/breakpoints';
+
 .slick-slide{
   //max-width: 400px;
   margin: 0 20px;
+}
+
+.slick-center {
+  border: 2px solid $dark-pink;
+  .masterclass-slider__inner {
+    min-height: 100%;
+  }
+  .masterclass-slider-description {
+    display: block;
+  }
+}
+
+.slick-track {
+  height: 200px !important;
+  overflow: hidden;
 }

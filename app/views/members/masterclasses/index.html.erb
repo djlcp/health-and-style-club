@@ -1,45 +1,27 @@
-<div class="container container-fluid">
-  <div class="row">
-    <div class="col-sm-12 col-md-9" style="background: blue">
-      Current masterclass
-    </div>
-    <div class="col-md-3 hide-sm-block" style="background: red">
-      Current contributor
+<% masterclass = Masterclass.first %>
+<div class="masterclass-hero">
+  <div class="masterclass-hero__left">
+    <h2 class="js-masterclass-title"><%= masterclass.title %></h2>
+    <h5 class="js-masterclass-expert-name"><%= masterclass.user.full_name %></h5>
+    <p class="js-masterclass-description"><%= masterclass.text %></p>
+    <div class="d-flex">
+      <%= link_to 'Go to Masterclass', members_masterclass_path(masterclass), class: 'btn btn-pink js-masterclass-link' %>
     </div>
   </div>
+  <div class="masterclass-hero__right js-masterclass-image" style="background-image: url(<%= masterclass.preview_url %>)">
+  </div>
+</div>
 
-  <div class="row">
-
-    <div class="col-sm-12 col-md-9">
-
-      <div class="row">
-
-        <% @masterclasses.each do |masterclass| %>
-
-          <div class="col-sm-12 col-md-4 pad-v-4">
-            <div class="masterclass-preview">
-              <%#= link_to masterclass do %>
-                <% if masterclass.preview.present? %>
-                  <%= image_tag masterclass.preview.url, class: 'masterclass-preview-image' %>
-                <% else %>
-                  <%= masterclass.title %>
-                <% end %>
-              <%# end %>
-            </div>
-          </div>
-
-        <% end %>
-
+<div class="js-masterclass-slider" data-ids="<%= @masterclasses.map(&:id) %>">
+  <% @masterclasses.each do |masterclass| %>
+    <div style="background-image: url(<%= masterclass.preview_url %>)" class="masterclass-slider">
+      <div class="masterclass-slider__inner">
+        <h5><%= masterclass.title %></h5>
+        <p>Expert: <%= masterclass.user.full_name %></p>
+        <p class="masterclass-slider-description">
+          <%= masterclass.text %>
+        </p>
       </div>
-
-      <%#= link_to 'Create a new masterclass', new_masterclass_path %>
-
     </div>
-
-    <div class="col hide-sm-block" style="background: purple">
-        Events and things
-    </div>
-
-  </div>
-
+  <% end %>
 </div>

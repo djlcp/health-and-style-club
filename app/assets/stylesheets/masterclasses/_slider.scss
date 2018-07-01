@@ -1,0 +1,33 @@
+@import '../utilities/variables';
+@import '../utilities/breakpoints';
+
+.masterclass-slider {
+  height: 200px !important;
+  border: 1px solid $light-pink;
+  display: flex !important;
+  flex-direction: column;
+}
+
+.masterclass-slider__inner {
+  transition: all 0.5s linear;
+  min-height: 0;
+  margin-top: auto;
+  background: $dark-grey;
+  color: $light-pink;
+  padding: $spacing $spacing 0;
+  position: relative;
+  opacity: 1;
+  z-index: 2;
+  h5 {
+    margin-bottom: 10px;
+  }
+  p {
+    color: $light-pink;
+    margin-bottom: 10px;
+  }
+}
+
+.masterclass-slider-description {
+  display: none;
+  margin-bottom: 10px
+}
