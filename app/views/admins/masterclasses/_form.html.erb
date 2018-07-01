@@ -1,4 +1,4 @@
-<%= form_for @masterclass do |form| %>
+<%= form_for [:admins, @masterclass] do |form| %>
 
   <% if @masterclass.errors.present? %>
     <ul>
@@ -28,7 +28,7 @@
     <%= form.select :user_id, options_from_collection_for_select(User.contributor, :id, :full_name), prompt: true %>
   </div>
 
-  <h3>Video</h3>
+  <h3>Videos</h3>
   <%= form.fields_for :videos do |video| %>
 
     <%= render 'video_fields', f: video %>

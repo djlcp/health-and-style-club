@@ -4,7 +4,7 @@
 
 <div class="post-blocks">
   <div class="post-content">
-    <h5 class="section-heading" style="color:#990051;"><%= link_to post.title, post %></h5>
+    <h5 class="section-heading"><%= link_to post.title, post, style:  "color:#990051;" %></h5>
     <h6 class="paragraph"><%= sanitize post.post_description, post %></h6>
     <p>Posted by <%= post.user.first_name %> <%= post.user.surname%></p>
 

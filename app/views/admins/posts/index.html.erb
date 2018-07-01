@@ -1,0 +1,36 @@
+<div class="content-section">
+  <div class="content-wrap">
+    <h2>Posts</h2>
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th>Title</th>
+        <th>Text</th>
+        <th>Description</th>
+        <th>Paid for</th>
+        <th>User</th>
+        <th>Category</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @posts.each do |post| %>
+        <tr>
+          <td><%= post.title %></td>
+          <td><%= sanitize(post.body_text.truncate(20)) %></td>
+          <td><%= post.post_description %></td>
+          <td><%= post.paid_for.to_s.humanize %></td>
+          <td><%= post.user.full_name %></td>
+          <td><%= post.category&.humanize %></td>
+          <td>
+            <%= link_to edit_admins_post_path(post) do %>
+              <i class="fa fa-pencil" aria-hidden="true"></i>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+    <%= link_to 'Create new Post', new_admins_post_path, class: 'btn btn-pink' %>
+  </div>
+</div>

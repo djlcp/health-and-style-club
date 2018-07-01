@@ -37,15 +37,23 @@
             <li class="mr-4">
               <%= link_to "Become a Contributor", become_contributor_path, class: 'external-footer-link' %>
             </li>
-            <li>
-              <%= link_to "Become a Member", new_subscription_path, class: 'external-footer-link' %>
-            </li>
+            <% if user_signed_in? %>
+              <% if current_user.admin? %>
+                <li class="mr-4">
+                  <%= link_to "Admin Area", admins_root_path, class: 'external-footer-link' %>
+                </li>
+                <li>
+                  <%= link_to "Member Area", members_root_path, class: 'external-footer-link' %>
+                </li>
+              <% end %>
+            <% else %>
+              <li>
+                <%= link_to "Become a Member", new_subscription_path, class: 'external-footer-link' %>
+              </li>
+            <% end %>
           </ul>
         </div>
-
       </div>
-
     </div>
-
   </footer>
 </div>

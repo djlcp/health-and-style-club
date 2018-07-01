@@ -28,11 +28,13 @@
             Masterclasses
           <% end %>
         </li>
-        <li class="header__desktop-nav-item">
-          <%= nav_link_to new_user_session_path, class: 'header__desktop-nav-link' do %>
-            Log in
-          <% end %>
-        </li>
+        <% if !user_signed_in? %>
+          <li class="header__desktop-nav-item">
+            <%= nav_link_to new_user_session_path, class: 'header__desktop-nav-link' do %>
+              Log in
+            <% end %>
+          </li>
+        <% end %>
       </ul>
     </nav>
 
