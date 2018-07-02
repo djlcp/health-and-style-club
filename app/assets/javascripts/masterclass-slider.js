@@ -2,7 +2,7 @@ $( document ).on('turbolinks:load', function() {
   $('.js-masterclass-slider').slick({
     centerMode: true,
     centerPadding: '60px',
-    slidesToShow: 3,
+    slidesToShow: 2,
     infinite: true,
     responsive: [
       {
@@ -11,7 +11,7 @@ $( document ).on('turbolinks:load', function() {
           arrows: false,
           centerMode: true,
           centerPadding: '40px',
-          slidesToShow: 3
+          slidesToShow: 2
         }
       },
       {
