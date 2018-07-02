@@ -6,7 +6,7 @@
   flex-wrap: wrap;
   min-height: 300px;
   @include breakpoint(large) {
-    min-height: 400px;
+    min-height: 480px;
   }
 }
 
