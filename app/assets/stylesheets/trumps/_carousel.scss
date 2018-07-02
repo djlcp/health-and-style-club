@@ -1,12 +1,16 @@
 @import '../utilities/variables';
+@import '../utilities/breakpoints';
 
 .carousel-caption {
-  top: 50px !important;
+  top: 20px !important;
   right: 20%;
   left: 20%;
   bottom: auto !important;
   padding: $spacing;
   border-radius: 10px;
+  @include breakpoint(medium) {
+    top: 50px !important;
+  }
 }
 
 .carousel-caption::after {
@@ -25,12 +29,18 @@
 .carousel-caption-title {
   opacity: 1;
   color: white;
-  font-size: 2.75em;
+  font-size: 1.5em;
   margin-bottom: 0;
+  @include breakpoint(medium) {
+    font-size: 2.75em;
+  }
 }
 
 .carousel-caption-text {
   opacity: 1;
   color: white;
-  font-size: 1.5em;
+  font-size: 1em;
+  @include breakpoint(medium) {
+    font-size: 1.5em;
+  }
 }

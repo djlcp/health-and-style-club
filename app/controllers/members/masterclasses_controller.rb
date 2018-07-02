@@ -6,6 +6,16 @@ module Members
 
     def show
       @masterclass = Masterclass.find(params[:id])
+      respond_to do |format|
+        format.html { render :show }
+        format.json do
+          render json: @masterclass.as_json.merge(
+            expert_name: @masterclass.user.full_name,
+            path: Rails.application.routes.url_helpers.members_masterclass_path(@masterclass),
+            image_path: @masterclass.preview_url
+          )
+        end
+      end
     end
 
     def new
