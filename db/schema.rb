@@ -101,10 +101,6 @@ ActiveRecord::Schema.define(version: 20180726203239) do
     t.integer "user_id"
   end
 
-  create_table "messages", id: :integer, unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text "email"
-  end
-
   create_table "photos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text "image_data"
     t.datetime "created_at", null: false
@@ -175,7 +171,7 @@ ActiveRecord::Schema.define(version: 20180726203239) do
     t.string "post_code"
     t.string "bio"
     t.string "bioavatar"
-    t.boolean "mailchimp"
+    t.string "biobackground"
     t.boolean "search_consent"
     t.string "facebook"
     t.string "pinterest"
