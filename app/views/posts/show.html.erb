@@ -28,15 +28,15 @@
 		<%= sanitize @post.body_text, tags: %w(p ul li ul iframe) %>
 	</div>
 
-	<div>
-		<%= link_to like_post_path(@post), method: :put, class: "btn btn-primary btn-lg" do %>
-				Like <%= @post.get_upvotes.size %>
-	<% end %>
-					</div>
+	<div style="padding-bottom: 10px; padding-left: 10px;">
+			      <%= link_to like_post_path(@post), method: :put do %>
+			        <i class="fa fa-heart icon"></i><div class="counter"><%= @post.get_upvotes.size %></p></div>
+			      <% end %>
+			      </div>
 
 <br>
 <div>
-<%= render 'author' %>
+<%= render 'author'%>
 </div>
 <!--The below generates n error, so commenting out
 
