@@ -1,16 +1,18 @@
-<% masterclass = Masterclass.first %>
-<div class="masterclass-hero">
-  <div class="masterclass-hero__left">
-    <h2 class="js-masterclass-title"><%= masterclass.title %></h2>
-    <h5 class="js-masterclass-expert-name"><%= masterclass.user.full_name %></h5>
-    <p class="js-masterclass-description"><%= masterclass.text %></p>
-    <div class="d-flex">
-      <%= link_to 'Go to Masterclass', members_masterclass_path(masterclass), class: 'btn btn-pink js-masterclass-link' %>
+<% if @masterclasses.present? %>
+  <% masterclass = @masterclasses.first %>
+  <div class="masterclass-hero">
+    <div class="masterclass-hero__left">
+      <h2 class="js-masterclass-title"><%= masterclass.title %></h2>
+      <h5 class="js-masterclass-expert-name"><%= masterclass.user.full_name %></h5>
+      <p class="js-masterclass-description"><%= masterclass.text %></p>
+      <div class="d-flex">
+        <%= link_to 'Go to Masterclass', members_masterclass_path(masterclass), class: 'btn btn-pink js-masterclass-link' %>
+      </div>
+    </div>
+    <div class="masterclass-hero__right js-masterclass-image" style="background-image: url(<%= masterclass.preview_url %>)">
     </div>
   </div>
-  <div class="masterclass-hero__right js-masterclass-image" style="background-image: url(<%= masterclass.preview_url %>)">
-  </div>
-</div>
+<% end %>
 
 <div class="js-masterclass-slider" data-ids="<%= @masterclasses.map(&:id) %>">
   <% @masterclasses.each do |masterclass| %>
