@@ -1,0 +1,35 @@
+@import '../utilities/variables';
+@import '../utilities/breakpoints';
+
+.masterclass-hero {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 300px;
+  @include breakpoint(large) {
+    min-height: 400px;
+  }
+}
+
+.masterclass-hero__left {
+  padding: $spacing;
+  color: $dark-grey;
+  width: 100%;
+  @include breakpoint(medium) {
+    padding: $spacing * 3;
+    width: 50%;
+  }
+}
+
+.masterclass-hero__right {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0 0 40px 20px white inset;
+  @include breakpoint(medium) {
+    width: 50%;
+  }
+}
+
+.masterclass-hero__image {
+  width: 100%;
+}
