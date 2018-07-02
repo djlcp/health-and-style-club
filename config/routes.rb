@@ -46,7 +46,7 @@ Rails.application.routes.draw do
 
   resources :photos
   resources :photos, only: [:create]
-  resources :posts, only: %i[index show] do
+  resources :posts do
     member do
       put "like", to: "posts#upvote"
       put "dislike", to: "links#downvote"
