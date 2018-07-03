@@ -1,20 +1,20 @@
-<h3 class="mb-3">Our Latest Masterclass</h3>
-<div class="masterclass-preview">
-  <div class="row">
-    <div class="col-md-6 order-sm-2 order-md-1">
-      <%= image_tag masterclass.preview_url, class: 'masterclass-preview-image' %>
-    </div>
-    <div class="col-md-1-2 order-sm-1 order-md-2 py-4">
+<h2 class="mb-5">Our Latest Masterclass</h2>
+<div class="container">
+  <div class="row ">
+    <div class="col-md-1-2 py-4">
       <h4>
         <%= if masterclass
-          masterclass.title
-        end%>
+              masterclass.title
+            end%>
       </h4>
       <p>
         <%= if masterclass
-            masterclass.text
-        end%>
+              masterclass.text
+            end%>
       </p>
+    </div>
+    <div class="col-md-6 align-self-end">
+      <%= image_tag masterclass.preview_url, class: 'masterclass-preview-image' %>
     </div>
   </div>
 </div>

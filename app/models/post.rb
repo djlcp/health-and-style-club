@@ -20,16 +20,15 @@ class Post < ApplicationRecord
   }
 
   belongs_to :user
-  # belongs_to :category
-  # belongs_to :masterclass
   has_many :comments
   has_many :collections_posts, -> { order(position: :asc) }, inverse_of: :post
   has_many :collections, through: :collections_posts
 
+  scope :free, -> { where(paid_for: false) }
+  scope :paid, -> { where(paid_for: false) }
+
 
   def breakfast
-  @breakfast = @recipies.select("sub_category, 1")
-    end
-
-
+    @breakfast = @recipies.select("sub_category, 1")
+  end
 end
