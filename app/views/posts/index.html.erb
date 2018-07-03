@@ -16,3 +16,9 @@
   <% end %>
 
 </div>
+
+<div style="float:left; padding-left:20px; padding-top:20px; padding-bottom:20px;">
+  <% if current_user.try(:admin?) %>
+<button type="button" class="btn btn-info" ><%= link_to 'New post', new_post_path, style:"color:#fff;" %></button>
+<% end %>
+</div>
