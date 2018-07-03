@@ -1,3 +1,7 @@
+<% if !user_signed_in? && !devise_controller? %>
+  <%= render 'shared/join_now' %>
+<% end %>
+
 <div class="external-footer-container">
   <footer class="external-footer">
 

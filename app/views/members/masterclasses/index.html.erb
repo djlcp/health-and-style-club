@@ -8,8 +8,16 @@
           <h2 class="js-masterclass-title"><%= masterclass.title %></h2>
           <h5 class="js-masterclass-expert-name"><%= masterclass.user.full_name %></h5>
           <p class="js-masterclass-description"><%= masterclass.text %></p>
+          <div class="author-box">
+            <div>
+              <%= image_tag masterclass.user.bioavatar.avatar %>
+            </div>
+            <p>
+              <%= masterclass.user.bio %>
+            </p>
+          </div>
           <div class="d-flex">
-            <%= link_to 'Go to Masterclass', members_masterclass_path(masterclass), class: 'btn btn-pink js-masterclass-link' %>
+            <%= link_to 'Go to Masterclass', members_masterclass_path(masterclass), class: 'btn btn-pink js-masterclass-link mt-3' %>
           </div>
         </div>
         <div class="masterclass-hero__right js-masterclass-image" style="background-image: url(<%= masterclass.preview_url %>)">
