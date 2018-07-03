@@ -1,6 +1,7 @@
 $( document ).on('turbolinks:load', function() {
   $('.js-masterclass-slider').slick({
     centerMode: true,
+    dots: true,
     centerPadding: '60px',
     slidesToShow: 2,
     infinite: true,
