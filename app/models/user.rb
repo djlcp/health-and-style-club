@@ -49,8 +49,8 @@ class User < ApplicationRecord
 
   def add_user_email
     begin
-      gibbon = Gibbon::Request.new(api_key: '781defdd2a6930c291fe5b1454133e64-us18')
-      gibbon.lists('ba67ca5110').members.create(
+      gibbon = Gibbon::Request.new(api_key: "ed2bcec02b5c238b9c838a0c50d821b6-us16")
+      gibbon.lists("0481d433c2").members.create(
         body: {
           email_address: email,
           status: 'subscribed',
