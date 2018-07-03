@@ -1,4 +1,4 @@
-<% if !user_signed_in? %>
+<% if !user_signed_in? && !devise_controller? %>
   <%= render 'shared/join_now' %>
 <% end %>
 

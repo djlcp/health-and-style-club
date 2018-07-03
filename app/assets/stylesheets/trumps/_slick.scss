@@ -20,3 +20,13 @@
   height: 200px !important;
   overflow: hidden;
 }
+
+.slick-arrow {
+  background-color: gainsboro !important;
+  border-radius: 10px;
+  padding: $spacing;
+}
+
+.slick-dots li button:before {
+  font-size: 30px !important;
+}
