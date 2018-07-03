@@ -1,14 +1,16 @@
 <section class="post-main">
 
+	<button type="button" class="btn btn-pink"><%= link_to 'Back to blog posts', posts_path, style:"color:#fff;" %></button>
+
 	<div class="admin-controls">
 	<% if current_user.try(:admin?) %>
-	<button type="button" class="btn btn-success"><%= link_to 'Edit post', edit_post_path %></button>
-	<button type="button" class="btn btn-danger">	<%= link_to 'Delete post', post_path, method: :delete, :data => {:confirm => 'Are you sure?'} %></button>
+	<button type="button" class="btn btn-info"><%= link_to 'Edit post', edit_post_path, style:"color:#fff;" %></button>
+	<button type="button" class="btn btn-danger"><%= link_to 'Delete post', post_path, method: :delete, :data => {:confirm => 'Are you sure?'}, style:"color:#fff;" %></button>
 
 	<% end %>
 
 	<% if current_user.try(:contributor?) %>
-		<button type="button" class="btn btn-success"><%= link_to 'Edit post', edit_post_path %></button>
+		<button type="button" class="btn btn-success"><%= link_to 'Edit post', edit_post_path, style:"color:#fff;" %></button>
 	<% end %>
 	</div>
 <br></br>
