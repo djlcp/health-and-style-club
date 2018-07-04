@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180726203239) do
+ActiveRecord::Schema.define(version: 20180726203240) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -101,6 +101,10 @@ ActiveRecord::Schema.define(version: 20180726203239) do
     t.integer "user_id"
   end
 
+  create_table "messages", id: :integer, unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text "email"
+  end
+
   create_table "photos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text "image_data"
     t.datetime "created_at", null: false
@@ -127,6 +131,7 @@ ActiveRecord::Schema.define(version: 20180726203239) do
     t.integer "category_id"
     t.string "post_description"
     t.integer "category"
+    t.integer "sub_category"
   end
 
   create_table "serversettings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -171,7 +176,7 @@ ActiveRecord::Schema.define(version: 20180726203239) do
     t.string "post_code"
     t.string "bio"
     t.string "bioavatar"
-    t.string "biobackground"
+    t.boolean "mailchimp"
     t.boolean "search_consent"
     t.string "facebook"
     t.string "pinterest"
