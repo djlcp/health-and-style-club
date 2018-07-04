@@ -19,16 +19,6 @@
   }
 }
 
-.masterclass-hero__right {
-  width: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  box-shadow: 0 0 40px 20px white inset;
-  @include breakpoint(medium) {
-    width: 50%;
-  }
-}
-
 .masterclass-hero__image {
   width: 100%;
 }
