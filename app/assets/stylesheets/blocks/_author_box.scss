@@ -6,4 +6,6 @@
   padding: $spacing;
   border-left: 1px solid $dark-pink;
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
