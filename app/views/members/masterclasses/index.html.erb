@@ -26,7 +26,7 @@
 
     <div class="js-masterclass-slider mt-5" data-ids="<%= @masterclasses.map(&:id) %>">
       <% @masterclasses.each do |masterclass| %>
-        <div style="background-image: url(<%= masterclass.preview_url %>)" class="masterclass-slider">
+        <div style="background-image: url(<%= masterclass.preview_url %>); background-position: center;" class="masterclass-slider">
           <div class="masterclass-slider__inner">
             <h5><%= masterclass.title %></h5>
             <p>Expert: <%= masterclass.user.full_name %></p>
