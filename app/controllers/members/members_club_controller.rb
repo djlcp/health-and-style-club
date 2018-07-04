@@ -11,7 +11,7 @@ module Members
     end
 
     def recipes
-      @meal_plans = Post.mealplan
+      @meal_plans = Post.meal_plan
       @breakfast = Post.breakfast
       @lunch = Post.lunch
       @dinner = Post.dinner
