@@ -36,7 +36,7 @@ $( document ).on('turbolinks:load', function() {
         $('.js-masterclass-expert-name').html(response.expert_name);
         $('.js-masterclass-description').html(response.text);
         $('.js-masterclass-link').attr('href', response.path);
-        $('.js-masterclass-image').css('background-image', 'url(' + response.image_path + ')');
+        $('.js-masterclass-image').css('background-image', 'linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)) url(' + response.image_path + ')');
       },
     });
   }
