@@ -4,15 +4,15 @@
     <% if @masterclasses.present? %>
       <% masterclass = @masterclasses.first %>
 
-      <div class="masterclass-hero">
+      <div class="masterclass-hero" style="background-image: url(<%= masterclass.preview_url %>)">
         <div class="masterclass-hero__left">
           <h2 class="js-masterclass-title"><%= masterclass.title %></h2>
           <p class="js-masterclass-description"><%= masterclass.text %></p>
           <div class="author-box">
-            <div class="mb-5">
+            <div class="mb-3">
               <%= image_tag masterclass.user.bioavatar.avatar, style: 'height: 100px; width: 100px; border-radius: 50%;' %>
             </div>
-            <h5 class="mb-2"><%= masterclass.user.full_name %></h5>
+            <h5 class="mb-3"><%= masterclass.user.full_name %></h5>
             <p>
               <%= masterclass.user.bio %>
             </p>
@@ -20,8 +20,6 @@
           <div class="d-flex">
             <%= link_to 'Go to Masterclass', members_masterclass_path(masterclass), class: 'btn btn-pink js-masterclass-link mt-3' %>
           </div>
-        </div>
-        <div class="masterclass-hero__right js-masterclass-image" style="background-image: url(<%= masterclass.preview_url %>)">
         </div>
       </div>
     <% end %>
