@@ -16,7 +16,6 @@
   width: 100%;
   @include breakpoint(medium) {
     padding: $spacing * 3;
-    width: 50%;
   }
 }
 
