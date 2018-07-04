@@ -10,7 +10,7 @@ module Admins
     end
 
     def create
-      @post = current_user.posts.new(post_params)
+      @post = Post.new(post_params)
       if @post.save
         redirect_to admins_posts_path, notice: 'Post added.'
       else
