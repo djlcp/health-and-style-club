@@ -34,13 +34,6 @@
             <% end %>
           </div>
         </div>
-        <div class="col-xs-12 col-md-4">
-          <div class="d-flex flex-column">
-            <% Masterclass.limit(1).offset(1).each do |masterclass| %>
-              <%= render "shared/masterclass_preview", masterclass: masterclass %>
-            <% end %>
-          </div>
-        </div>
       </div>
     </div>
   </div>
