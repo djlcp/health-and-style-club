@@ -1,5 +1,4 @@
-<div class="post-background d-flex align-items-center no-padding">
-  <%= image_tag post.image_url, class:"post-background" if post.image.present? %>
+<div class="post-background d-flex align-items-center no-padding" style="background-image: url(<%= post.image_url %>)">
 </div>
 
 <div class="post-blocks">
