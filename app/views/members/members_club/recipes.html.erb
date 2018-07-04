@@ -6,21 +6,21 @@
     <h4 class="text-center mt-5">Meal Plans</h4>
     <div class="row justify-content-center">
 
-      <% @meal_plans.each do |r| %>
-        <%= link_to members_post_path(r.id) do %>
-          <div class="card margin-sides margin-top-bottom" style="width: 14rem;">
-            <% if r.image? %>
-              <%= image_tag r.image.post_image_thumb %>
-            <% else %>
-              <img class="card-img-top" src="https://www.oxygenmag.com/.image/ar_16:9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cg_faces:center%2Cq_auto:good%2Cw_620/MTQ1MzQ3MzE0ODg4MDI1ODcz/image-placeholder-title.jpg" alt="Card image cap">
-            <% end %>
-            <div class="card-body">
-              <h5 class="card-title"><strong><%= r.title %></strong></h5>
-              <p class="card-text"><%= r.post_description %></p>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
+      <%# @meal_plans.each do |r| %>
+        <%#= link_to members_post_path(r.id) do %>
+<!--          <div class="card margin-sides margin-top-bottom" style="width: 14rem;">-->
+            <%# if r.image? %>
+              <%#= image_tag r.image.post_image_thumb %>
+            <%# else %>
+<!--              <img class="card-img-top" src="https://www.oxygenmag.com/.image/ar_16:9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cg_faces:center%2Cq_auto:good%2Cw_620/MTQ1MzQ3MzE0ODg4MDI1ODcz/image-placeholder-title.jpg" alt="Card image cap">-->
+            <%# end %>
+<!--            <div class="card-body">-->
+<!--              <h5 class="card-title"><strong><%#= r.title %></strong></h5>-->
+<!--              <p class="card-text"><%#= r.post_description %></p>-->
+<!--            </div>-->
+<!--          </div>-->
+        <%# end %>
+      <%# end %>
 
     </div>
 
