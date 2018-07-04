@@ -24,9 +24,9 @@
       <div class="row">
         <% @masterclass.documents.order(sequence: :asc).each do |document| %>
 
-          <div class="col-12 col-md-4">
+          <div class="col-12 col-md-4 py-4">
             <%= link_to document.link.url, target: '_blank' do %>
-              <%= image_tag(document.link.cover.url, class: "masterclass-preview") %>
+              <%= image_tag(document.link.cover.url, class: "masterclass-preview", style: 'width: 100%') %>
             <% end %>
           </div>
 
