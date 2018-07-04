@@ -20,14 +20,19 @@
       </div>
     <% end %>
 
-    <% @masterclass.documents.order(sequence: :asc).each do |document| %>
+    <div class="container">
+      <div class="row">
+        <% @masterclass.documents.order(sequence: :asc).each do |document| %>
 
-      <div>
-        <%= link_to document.link.url, target: '_blank' do %>
-          <%= image_tag(document.link.cover.url, class: "masterclass-preview") %>
+          <div class="col-12 col-md-4">
+            <%= link_to document.link.url, target: '_blank' do %>
+              <%= image_tag(document.link.cover.url, class: "masterclass-preview") %>
+            <% end %>
+          </div>
+
         <% end %>
       </div>
-    <% end %>
+    </div>
 
     <div class="container">
       <div class="row">
