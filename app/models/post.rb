@@ -12,11 +12,12 @@ class Post < ApplicationRecord
   }
 
   enum sub_category: {
-      breakfast: 1,
-      lunch: 2,
-      dinner: 3,
-      snack: 4,
-      desert: 5
+    breakfast: 1,
+    lunch: 2,
+    dinner: 3,
+    snack: 4,
+    desert: 5,
+    meal_plan: 6
   }
 
   belongs_to :user

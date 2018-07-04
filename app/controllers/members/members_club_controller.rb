@@ -11,15 +11,12 @@ module Members
     end
 
     def recipes
-
+      @meal_plans = Post.mealplan
       @breakfast = Post.breakfast
       @lunch = Post.lunch
       @dinner = Post.dinner
       @snack = Post.snack
       @desert = Post.desert
-
-
-
     end
 
     def member_orientation; end
