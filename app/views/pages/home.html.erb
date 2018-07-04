@@ -28,7 +28,7 @@
           </div>
           <div class="row">
             <% Post.free.each do |post| %>
-              <div class="card col-xs-12 col-sm-5 profile-card mb-5 bg-white rounded">
+              <div class="card col-xs-12 col-sm-3 profile-card mb-5 bg-white rounded">
                 <%= render "shared/post", post: post %>
               </div>
             <% end %>
