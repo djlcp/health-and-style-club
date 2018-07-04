@@ -19,7 +19,7 @@
     <%= form.label :category %><br>
     <%= form.select(
       :category,
-      options_for_select(Post.categories.keys.map {|category| [category.humanize, category]}),
+      options_for_select(Post.categories.keys.map {|category| [category.humanize, category]}, object.category),
       { prompt: true },
       class: 'form-control'
     ) %>
@@ -29,7 +29,7 @@
     <%= form.label :sub_category %><br>
     <%= form.select(
       :sub_category,
-      options_for_select(Post.sub_categories.keys.map {|category| [category.humanize, category]}),
+      options_for_select(Post.sub_categories.keys.map {|category| [category.humanize, category]}, object.sub_category),
       { prompt: true },
       class: 'form-control'
     ) %>
@@ -39,7 +39,7 @@
     <%= form.label :user_id %><br>
     <%= form.select(
       :user_id,
-      options_for_select(User.contributor.map {|user| [user.full_name, user.id]}),
+      options_for_select(User.contributor.map {|user| [user.full_name, user.id]}, object.user_id),
       { prompt: true },
       class: 'form-control'
     ) %>

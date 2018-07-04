@@ -17,9 +17,6 @@
             <div class="card-body">
               <h5 class="card-title"><strong><%= r.title %></strong></h5>
               <p class="card-text"><%= r.post_description %></p>
-              <p class="card-text">
-                <small><%= time_ago_in_words(r.created_at) %></small>
-              </p>
             </div>
           </div>
         <% end %>
