@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180726203241) do
+ActiveRecord::Schema.define(version: 20180726203242) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -131,7 +131,7 @@ ActiveRecord::Schema.define(version: 20180726203241) do
     t.string "phone"
     t.string "country"
     t.integer "role"
-    t.string "bio"
+    t.text "bio"
     t.string "bioavatar"
     t.string "biobackground"
     t.boolean "search_consent"
