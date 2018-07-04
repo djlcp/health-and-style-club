@@ -13,9 +13,9 @@
             <%= render "shared/current_masterclass", masterclass: Masterclass.last %>
           </div>
         <% end %>
-        <% if User.contributor.first.present? %>
+        <% if Masterclass.last.present? %>
           <div class= "col-xs-12 col-md-4 py-4 align-items-center">
-            <%= render "shared/contributor", contributor: User.contributor.first %>
+            <%= render "shared/contributor", contributor: Masterclass.last.user %>
           </div>
         <% end %>
       </div>
