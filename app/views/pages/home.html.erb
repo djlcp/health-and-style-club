@@ -13,18 +13,18 @@
             <%= render "shared/current_masterclass", masterclass: Masterclass.last %>
           </div>
         <% end %>
-        <% if User.contributor.first.present? %>
+        <% if Masterclass.last.present? %>
           <div class= "col-xs-12 col-md-4 py-4 align-items-center">
-            <%= render "shared/contributor", contributor: User.contributor.first %>
+            <%= render "shared/contributor", contributor: Masterclass.last.user %>
           </div>
         <% end %>
       </div>
 
       <div class="row">
         <div class="col-xs-12 col-md-8">
-          <div style="padding-top: 30px"">
+          <div style="padding-top: 30px">
             <h2>Fresh From Our Blog</h2>
-            <p class="mb-0">Keep updated on our lastest posts</p>
+            <%= link_to 'Read all our posts', posts_path, class: 'mb-0' %>
           </div>
           <div class="row">
             <% Post.free.each do |post| %>
