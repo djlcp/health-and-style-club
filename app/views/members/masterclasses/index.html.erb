@@ -4,7 +4,7 @@
     <% if @masterclasses.present? %>
       <% masterclass = @masterclasses.first %>
 
-      <div class="masterclass-hero js-masterclass-image" style="background-image: url(<%= masterclass.preview_url %>)">
+      <div class="masterclass-hero js-masterclass-image" style="linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), background-image: url(<%= masterclass.preview_url %>)">
         <div class="masterclass-hero__left">
           <h2 class="js-masterclass-title"><%= masterclass.title %></h2>
           <p class="js-masterclass-description"><%= masterclass.text %></p>
