@@ -1,34 +1,50 @@
+<div class="content-section">
+  <div class="content-wrap">
+    <h1 class="text-center"><%= @masterclass.title %></h1>
 
-<h1><%= @masterclass.title %></h1>
-
-<p><%= @masterclass.text %></p>
-
-
-<% @masterclass.videos.welcome_video.each do |video| %>
-
-<% end %>
-
-<% @masterclass.events.order(sequence: :asc).each do |event| %>
-
-  <div class="">
-    <%= event.link %>
-  </div>
-<% end %>
-
-<% @masterclass.documents.order(sequence: :asc).each do |document| %>
-
-  <div>
-    <%= link_to document.link.url, target: '_blank' do %>
-      <%= image_tag(document.link.cover.url, class: "masterclass-preview") %>
+    <% @masterclass.videos.welcome_video.each do |video| %>
+      <div style="padding:66.25% 0 0 0;position:relative;">
+        <iframe src="<%= video.link %>" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      </div>
+      <script src="https://player.vimeo.com/api/player.js"></script>
+      </div>
     <% end %>
+
+    <div class="expert-banner-container p-4 bor-l-1-pink">
+      <p class="text-center"><%= @masterclass.text %></p>
+    </div>
+
+    <% @masterclass.events.order(sequence: :asc).each do |event| %>
+      <div class="">
+        <%= event.link %>
+      </div>
+    <% end %>
+
+    <div class="container">
+      <div class="row">
+        <% @masterclass.documents.order(sequence: :asc).each do |document| %>
+
+          <div class="col-12 col-md-4 py-4">
+            <%= link_to document.link.url, target: '_blank' do %>
+              <%= image_tag(document.link.cover.url, class: "masterclass-preview", style: 'width: 100%') %>
+            <% end %>
+          </div>
+
+        <% end %>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <% @masterclass.videos.not_welcome_video.each do |video| %>
+
+          <div class="col-12 col-md-6">
+
+            <div style="padding:66.25% 0 0 0;position:relative;"><iframe src="<%= video.link %>" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+          </div>
+
+        <% end %>
+      </div>
+    </div>
   </div>
-<% end %>
-
-<% @masterclass.videos.not_welcome_video.each do |video| %>
-
-  <div class="">
-
-    <div style="padding:66.25% 0 0 0;position:relative;"><iframe src="<%= video.link %>" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
-  </div>
-
-<% end %>
+</div>

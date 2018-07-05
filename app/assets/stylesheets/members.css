@@ -21,15 +21,6 @@
     transition: all 1s ease;
 }
 
-.profile-card {
-    height: 300px;
-    margin: 20px;
-    padding: 0;
-    position: relative;
-    z-index: 1;
-    overflow-x: hidden;
-}
-
 .profile-background-container {
     height: 400px;
     overflow: hidden;

@@ -13,32 +13,29 @@
             <%= render "shared/current_masterclass", masterclass: Masterclass.last %>
           </div>
         <% end %>
-        <% if User.contributor.first.present? %>
+        <% if Masterclass.last.present? %>
           <div class= "col-xs-12 col-md-4 py-4 align-items-center">
-            <%= render "shared/contributor", contributor: User.contributor.first %>
+            <%= render "shared/contributor", contributor: Masterclass.last.user %>
           </div>
         <% end %>
       </div>
 
       <div class="row">
-        <div class="col-xs-12 col-md-8">
-          <div style="padding-top: 30px"">
+        <div class="col-12">
+          <div style="padding: 30px 0">
             <h2>Fresh From Our Blog</h2>
-            <p class="mb-0">Keep updated on our lastest posts</p>
+            <%= link_to 'Read all our posts', posts_path, class: 'mb-0' %>
           </div>
-          <div class="row">
-            <% Post.free.each do |post| %>
-              <div class="card col-xs-12 col-sm-5 profile-card mb-5 bg-white rounded">
-                <%= render "shared/post", post: post %>
-              </div>
-            <% end %>
-          </div>
-        </div>
-        <div class="col-xs-12 col-md-4">
-          <div class="d-flex flex-column">
-            <% Masterclass.limit(1).offset(1).each do |masterclass| %>
-              <%= render "shared/masterclass_preview", masterclass: masterclass %>
-            <% end %>
+          <div class="container">
+            <div class="row">
+              <% Post.free.order(created_at: :desc).limit(9).each do |post| %>
+                <div class="col-12 col-sm-6 col-md-4">
+                  <div class="card profile-card m-0 mb-5 bg-white rounded">
+                    <%= render "shared/post", post: post %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>

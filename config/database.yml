@@ -51,5 +51,4 @@ production:
   <<: *default
   database: hsclub_production
   username: root
-  password: <%= ENV['HSCLUB_DATABASE_PASSWORD'] %>
-  url: <%= ENV['DATABASE_URL'] %>
+  password: L0gitechnicals
