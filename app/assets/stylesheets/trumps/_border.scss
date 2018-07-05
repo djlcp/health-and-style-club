@@ -1,3 +1,9 @@
+@import '../utilities/variables';
+
 .bor-b-1 {
   border-bottom: 1px solid gainsboro;
+}
+
+.bor-l-1-pink {
+  border-left: 1px solid $dark-pink;
 }

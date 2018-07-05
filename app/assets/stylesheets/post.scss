@@ -1,4 +1,5 @@
-$spacing: 15px;
+@import './utilities/variables';
+@import './utilities/breakpoints';
 
 // Place all the styles related to the Post controller here.
 // They will automatically be included in application.scss.
@@ -28,7 +29,8 @@ $spacing: 15px;
 .post-background {
   object-fit: cover;
   width: 100%;
-  height: 100%;
+  background-size: cover;
+  height: 200px;
 }
 
 .post-blocks {
@@ -44,7 +46,6 @@ $spacing: 15px;
   width: 100%;
   font-weight: bold;
   padding-left: 5px;
-
 }
 
 .post-description {
@@ -65,8 +66,6 @@ $spacing: 15px;
   display: inline-block;
 }
 
-
-
 .no-padding {
   padding-right: 0;
   padding-right: 0;
@@ -75,7 +74,7 @@ $spacing: 15px;
 .post-content {
   font-family: 'Roboto', sans-serif;
 	font-size: 1rem;
-  padding: 1px;
+  padding: $spacing;
 }
 
 .post-body-thumb {
@@ -96,9 +95,6 @@ $spacing: 15px;
 }
 
 .post-main{
-  // display: flex;
-  // flex-wrap: wrap;
-
   margin: 20px 20%;
   text-align: left;
   font-family: 'Roboto', sans-serif;
@@ -112,24 +108,12 @@ $spacing: 15px;
   width: 100%;
   height: 450px;
   border: none;
-  // display: flex;
   flex-wrap: wrap;
   font-family: 'Roboto', sans-serif;
   font-size: 0.5rem;
   text-align: justify;
   padding: 1%;
-
-
-
 }
-
-// .post-body-main iframe {
-//   position: absolute;
-//       top: 0;
-//       left: 0;
-//       width: 100%;
-//       height: 100%;
-//     }
 
 .social-icons-profile {
     color: #dc3545;
@@ -155,7 +139,7 @@ $spacing: 15px;
 }
 
 .profile-card {
-    height: 300px;
+    height: 450px;
     margin: 20px;
     padding: 0;
     position: relative;
