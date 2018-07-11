@@ -32,10 +32,12 @@ $( document ).on('turbolinks:load', function() {
       url: 'masterclasses/' + id,
       dataType: 'JSON',
       success: function(response) {
+        console.log(response)
         $('.js-masterclass-title').html(response.title);
         $('.js-masterclass-expert-name').html(response.expert_name);
         $('.js-masterclass-description').html(response.text);
         $('.js-masterclass-link').attr('href', response.path);
+        $('.js-expert-image').attr('src', response.image_path);
         $('.js-masterclass-image').css('background-image', 'linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)) url(' + response.image_path + ')');
       },
     });

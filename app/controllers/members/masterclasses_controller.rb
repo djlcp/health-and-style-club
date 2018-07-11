@@ -11,6 +11,7 @@ module Members
         format.json do
           render json: @masterclass.as_json.merge(
             expert_name: @masterclass.user.full_name,
+            expert_image_path: @masterclass.user.bioavatar.avatar_url,
             path: Rails.application.routes.url_helpers.members_masterclass_path(@masterclass),
             image_path: @masterclass.preview_url
           )
