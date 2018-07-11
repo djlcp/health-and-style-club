@@ -44,6 +44,7 @@ module Admins
         :post_description,
         :user_id,
         :category,
+        :sub_category,
         :paid_for
       )
     end

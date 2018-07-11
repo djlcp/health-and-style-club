@@ -12,9 +12,11 @@
 	<% end %>
 	</div>
 <br></br>
-	<div class="post-image-main profile-background-container border d-flex align-items-center">
-		<%= image_tag(@post.image_url.to_s, class:"post-background") %>
-	</div>
+  <% if @post.image_url.present? %>
+    <div class="post-image-main profile-background-container border d-flex align-items-center">
+      <%= image_tag @post.image_url.to_s, class:"post-background", style: 'height: 100%' %>
+    </div>
+  <% end %>
 
 <br>
 		<h1><%= @post.title %></h1>
