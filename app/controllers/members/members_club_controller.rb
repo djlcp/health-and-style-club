@@ -10,6 +10,11 @@ module Members
       @collections = Collection.personal_development
     end
 
+    def workout
+      @collections = Collection.workout
+    end
+
+
     def recipes
       @meal_plans = Post.meal_plan
       @breakfast = Post.breakfast

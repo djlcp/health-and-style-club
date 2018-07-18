@@ -8,6 +8,7 @@
         <th>Text</th>
         <th>User</th>
         <th></th>
+        <th></th>
       </tr>
       </thead>
       <tbody>
@@ -19,6 +20,11 @@
           <td>
             <%= link_to edit_admins_masterclass_path(masterclass) do %>
               <i class="fa fa-pencil" aria-hidden="true"></i>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to admins_masterclass_path(masterclass), method: :delete, data: {confirm: 'Are you sure you want to delete the masterclass'} do %>
+              <i class="fa fa-trash" aria-hidden="true"></i>
             <% end %>
           </td>
         </tr>

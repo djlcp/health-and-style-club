@@ -26,7 +26,7 @@ class Post < ApplicationRecord
   has_many :collections, through: :collections_posts
 
   scope :free, -> { where(paid_for: false) }
-  scope :paid, -> { where(paid_for: false) }
+  scope :paid, -> { where(paid_for: true) }
 
 
   def breakfast

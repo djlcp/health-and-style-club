@@ -13,7 +13,8 @@ class Collection < ApplicationRecord
   # --------------------------------------------------------------------
   enum collection_type: {
     personal_styling: 1,
-    personal_development: 2
+    personal_development: 2,
+    workout: 3
   }
 
   # --------------------------------------------------------------------
@@ -32,15 +33,6 @@ class Collection < ApplicationRecord
     :description,
     presence: true
   )
-
-  validate :number_of_videos
-
-  def number_of_videos
-    # Need to use size instead of count because count doesn't include
-    # records held in memory
-    return if videos.size >= 2
-    errors.add(:base, 'a collection must have at least two videos')
-  end
 
   # --------------------------------------------------------------------
   # Callbacks

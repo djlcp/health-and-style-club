@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
   def index
     @categories = Category.all
-    @posts = Post.all
+    @posts = Post.free
     @posts = @posts.category(params[:category]) if params[:category].present?
   end
 
