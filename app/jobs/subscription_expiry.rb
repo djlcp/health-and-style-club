@@ -7,8 +7,8 @@ subscriptions.each do |s|
     if s.expiry_date.present?
 
       if Time.now.day >= s.expiry_date.day
-        s.paid_for = false
-        s.save
+        s.update(paid_for: false)
+        s.user.update(role: nil)
         puts "Subscription #{s.id} cancelled. #{Time.now}"
       end
 

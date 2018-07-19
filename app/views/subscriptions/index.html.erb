@@ -11,12 +11,21 @@
     padding-bottom: 10px;
     text-decoration: none;
   }
+  .subscription-container {
+    background-color: #fff;
+    border: #EFEFEF 2px solid;
+  }
+
+    .subscont {
+    background-color: #fff;
+    border: #fff 0px solid !important;
+  }
 </style>
 
 
 <div class="subscription-wrapper">
   <div class="subscription-page-container">
-    <div class="subscription-container col-md-10 col-xs-12">
+    <div class="subscription-container subscont col-md-10 col-xs-12">
 
 <!--          !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
 <!--          !!!!!!!!ACTIVE SUBSCRIPTION!!!!!!!!!!-->
@@ -30,7 +39,7 @@
             <p class="subsa"><%= @subscription_id.user_id %></p>
             <h2 class="subs">Chargebee ID</h2>
             <p class="subsa"><%= @subscription_id.chargebee_id %></p>
-            <a href="javascript:void(0)" data-cb-type="portal" class="btn btn-primary btn-lg" style="width: 100%">Manage subscription</a>
+            <a href="javascript:void(0)" data-cb-type="portal" class="btn btn-primary btn-lg subscription-button mt-5" style="width: 100%">Manage subscription</a>
           </div>
         <% end %>
 
@@ -47,7 +56,7 @@
             <p class="subsa"><%= @subscription_id.user_id %></p>
             <h2 class="subs">Chargebee ID</h2>
             <p class="subsa"><%= @subscription_id.chargebee_id %></p>
-            <a href="javascript:void(0)" data-cb-type="checkout" data-cb-plan-id="premium" class="btn btn-primary btn-lg" style="width: 100%">Subscribe</a>
+            <a href="javascript:void(0)" data-cb-type="checkout" data-cb-plan-id="premium" class="btn btn-primary btn-lg subscription-button mt-5" style="width: 100%">Subscribe</a>
           </div>
         <% end %>
 
@@ -64,7 +73,7 @@
           <p class="subs">Reason 1</p>
           <p class="subs">Reason 1</p>
           <p class="subs">Reason 1</p>
-          <a href="javascript:void(0)" data-cb-type="checkout" data-cb-plan-id="premium" class="btn btn-primary btn-lg" style="width: 100%">Subscribe</a>
+          <a href="javascript:void(0)" data-cb-type="checkout" data-cb-plan-id="premium" class="btn btn-primary btn-lg subscription-button mt-5" style="width: 100%">Subscribe</a>
         </div>
       <% end %>
 

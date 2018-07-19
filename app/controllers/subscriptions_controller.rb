@@ -6,12 +6,14 @@ class SubscriptionsController < ApplicationController
   status = params['content']['subscription']['status']
   subscription = Subscription.find_by(chargebee_id: subscription_id)
   auth = request.headers["Authorization"]
-  if auth == "Basic QWRtaW46aHNjbHVi"
+  if auth == "Basic QWRtaW46aHNjbHViX2Rldg=="
     if subscription
-      if status == "active"
-        subscription.update(paid_for: true)
-      else
+      if status == "canceled"
         subscription.update(paid_for: false)
+        subscription.user.update(role: nil)
+      else
+        subscription.update(paid_for: true)
+        subscription.user.update(role: 'subscriber')
       end
     end
   end
@@ -53,6 +55,7 @@ class SubscriptionsController < ApplicationController
   end
 
     def new
+      redirect_to subscriptions_path
       @subscription = Subscription.new
     end
 

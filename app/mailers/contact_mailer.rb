@@ -1,5 +1,5 @@
 class ContactMailer < ActionMailer::Base
-  default from: 'from@example.com'
+  default from: 'info@healthandstyleclub.com'
   # pages 'mailer'
 
   def send_signup_email(user)
