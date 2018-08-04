@@ -1,9 +1,38 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  before_action :variables
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :verify
 
-  #These variables are available in the whole app
+
+
+  def verify
+    if current_user
+      if current_user.role == 'standard'
+        @standard = true
+        @standard_loged_in = true
+        @logged_in = true
+      elsif current_user.role == 'subscriber'
+        @subscriber = true
+        @logged_in = true
+      elsif current_user.role == 'contributor'
+        @contributor = true
+        @logged_in = true
+      elsif current_user.role == 'admin'
+        @admin = true
+        @logged_in = true
+      end
+    else
+      @logged_out = true
+      @standard = true
+      @subscriber = false
+      @contributor = false
+      @admin = false
+    end
+  end
+
+  
+  # TODO: CHANGE THIS BLOCK!!!CHANGE THIS BLOCK!!!CHANGE THIS BLOCK!!!
+  # These variables are available in the whole app
   #
   # @signed_in      User signed in?
   # @paid           Subscription paid for?
@@ -29,16 +58,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
-
-    def index
-      @users = User.all
-    end
-
-
-
-  # def show
-  #   @user = User.find(params[:id])
-  # end
+  def index
+    @users = User.all
+  end
+  # TODO: CHANGE THIS BLOCK!!!CHANGE THIS BLOCK!!!CHANGE THIS BLOCK!!!
 
   protected
 

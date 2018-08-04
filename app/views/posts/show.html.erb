@@ -15,7 +15,7 @@
 	</div>
 <br></br>
 	<div class="post-image-main profile-background-container border d-flex align-items-center">
-		<%= image_tag(@post.image_url.to_s, class:"post-background", style: 'height: 100%') %>
+		<%# TODO: UNCOMENT THIS LINE= image_tag(@post.image_url.to_s, class:"post-background", style: 'height: 100%') %>
 	</div>
 
 <br>
@@ -31,9 +31,9 @@
 	</div>
 
 	<div style="padding-bottom: 10px; padding-left: 10px;">
-			      <%= link_to like_post_path(@post), method: :put do %>
+			      <%# TODO: UNCOMENT THIS LINE= link_to like_post_path(@post), method: :put do %>
 			        <i class="fa fa-heart icon"></i><div class="counter"><%= @post.get_upvotes.size %></p></div>
-			      <% end %>
+			      <%# TODO: UNCOMENT THIS LINE end %>
 			      </div>
 
 <br>

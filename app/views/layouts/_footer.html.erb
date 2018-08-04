@@ -29,33 +29,36 @@
             </div>
           </div>
         </div>
-
-        <div class="col-md-8 d-flex align-items-center justify-content-center">
-          <ul class="list-unstyled d-flex">
-            <li class="mr-4">
-              <%= link_to "Privacy Policy", privacy_policy_path, class: 'external-footer-link' %>
-            </li>
-            <li class="mr-4">
-            <%= link_to "Terms & Conditions", termsandconditions_path, class: 'external-footer-link' %>
-            </li>
-            <li class="mr-4">
-              <%= link_to "Become a Contributor", become_contributor_path, class: 'external-footer-link' %>
-            </li>
-            <% if user_signed_in? %>
-              <% if current_user.admin? %>
-                <li class="mr-4">
-                  <%= link_to "Admin Area", admins_root_path, class: 'external-footer-link' %>
-                </li>
-                <li>
-                  <%= link_to "Member Area", members_root_path, class: 'external-footer-link' %>
-                </li>
-              <% end %>
-            <% else %>
-              <li>
-                <%= link_to "Become a Member", new_subscription_path, class: 'external-footer-link' %>
+        <div class='column col-md-8'>
+          <div class="d-flex align-items-center justify-content-end">
+            <ul class="list-unstyled d-flex">
+              <li class="mr-4">
+                <%= link_to "Privacy Policy", privacy_policy_path, class: 'external-footer-link' %>
               </li>
-            <% end %>
-          </ul>
+              <li class="mr-4">
+                <%= link_to "Terms & Conditions", termsandconditions_path, class: 'external-footer-link' %>
+              </li>
+              <li class="mr-4">
+                <%= link_to "FAQ", faq_path, class: 'external-footer-link' %>
+              </li>
+              <li class="mr-4">
+                <%= link_to "About", about_path, class: 'external-footer-link' %>
+              </li>
+            </ul>
+          </div>
+          <div class="d-flex align-items-bottom justify-content-end">
+            <ul class="list-unstyled d-flex">
+              <li class="mr-4">
+                <%= link_to "Member's Area", root_path, class: 'external-footer-link' %> <!-- # TODO: UPDATE PATH -->
+              </li>
+              <li class="mr-4">
+                <%= link_to "Contributor's Area", root_path, class: 'external-footer-link' %> <!-- # TODO: UPDATE PATH -->
+              </li>
+              <li class="mr-4">
+                <%= link_to "Admin's Area", root_path, class: 'external-footer-link' %> <!-- # TODO: UPDATE PATH -->
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

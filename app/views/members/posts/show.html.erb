@@ -1,13 +1,13 @@
 <section class="post-main">
 
 	<div class="admin-controls">
-	<% if current_user.try(:admin?) %>
+	<% if current_user.role == 'admin' %>
 	<button type="button" class="btn btn-success"><%= link_to 'Edit post', edit_members_members_club_path %></button>
 	<button type="button" class="btn btn-danger">	<%= link_to 'Delete post', post_path, method: :delete, :data => {:confirm => 'Are you sure?'} %></button>
 
 	<% end %>
 
-	<% if current_user.try(:contributor?) %>
+	<% if current_user.role == 'contributor' %>
 		<button type="button" class="btn btn-success"><%= link_to 'Edit post', edit_members_members_club_path %></button>
 	<% end %>
 	</div>

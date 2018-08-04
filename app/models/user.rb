@@ -10,17 +10,17 @@ class User < ApplicationRecord
   has_many :posts
   has_one :subscription
   has_many :users_collections
-
-  mount_uploader :bioavatar, Picture
-  mount_uploader :biobackground, Picture
-
-  enum role: { subscriber: 1, contributor: 2, admin: 3}
-
+  
+  # mount_uploader :bioavatar, Picture # TODO: Uncoment
+  # mount_uploader :biobackground, Picture # TODO: Uncoment
+  
+  enum role: { standard: 1, subscriber: 2, contributor: 3, admin: 4}
+  
   before_save :strip_urls
-
+  
   after_create :set_role
   after_create :add_user_email
-
+  
   def full_name
 	  "#{first_name} #{surname}"
   end
@@ -65,5 +65,5 @@ class User < ApplicationRecord
   def set_role
     return if role
     update_column(:role, 1)
-  end
+    end
 end

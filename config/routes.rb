@@ -1,26 +1,43 @@
 Rails.application.routes.draw do
-
   root to: 'pages#home'
-  #GEM REQUIREMENTS
-  mount Ckeditor::Engine => '/ckeditor'
+  devise_for :users
+  resource :user
 
-  # External Pages
-  get 'about' => 'pages#about'
-  get 'become_contributor' => 'pages#become_contributor'
-  # Currently not being used
+  # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  # !!!!!!!!!!!!!!!STANDARD!!!!!!!!!!!!!!
+  # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   get 'faq' => 'pages#faq'
-  get 'fitness-and-nutrition' => 'pages#fitness_and_nutrition'
-  get 'our-masterclasses' => 'pages#masterclasses'
-  get 'personal-development' => 'pages#personal_development'
-  get 'personal-styling' => 'pages#personal_styling'
-  get 'privacy-policy' => 'pages#privacy_policy'
+  get 'home' => 'pages#home'
+  get 'about' => 'pages#about'
+  get 'contact' => 'pages#contact'
   get 'termsandconditions' => 'pages#t_c_page'
+  get 'privacy-policy' => 'pages#privacy_policy'
+  get 'our-masterclasses' => 'pages#masterclasses'
+  get 'personal-styling' => 'pages#personal_styling'
+  get 'become_contributor' => 'pages#become_contributor'
+  get 'personal-development' => 'pages#personal_development'
+  get 'fitness-and-nutrition' => 'pages#fitness_and_nutrition'
 
-  # Members area
+  # resources :photos # TODO: REMOVE RESOURCE
+  # resources :contents # TODO: REMOVE RESOURCE
+  # resources :comments # TODO: REMOVE RESOURCE
+  resources :posts
+  resources :attachments
+  resources :categories
+  resources :contacts, only: %i[new create]
+  resources :masterclasses
+
+  # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  # !!!!!!!!!!!!!!!MEMBERS!!!!!!!!!!!!!!!
+  # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   namespace :members do
     root to: 'masterclasses#index'
+    resource :user
     resources :collections, only: [:show]
     resources :masterclasses, only: %i[index show]
+    resources :users_collections, only: [:update]
+
+    # LINKS TO MEMBERS CLUB
     resource :members_club, controller: 'members_club' do
       get :workout
       get 'personal-styling', to: :personal_styling
@@ -28,52 +45,52 @@ Rails.application.routes.draw do
       get :recipes
       get 'member-orientation', to: :member_orientation
     end
+
+    # LIKE AND DISLIKE POSTS
     resources :posts, only: %i[index show] do
       member do
-        put "like", to: "posts#upvote"
-        put "dislike", to: "links#downvote"
+        put 'like', to: 'posts#upvote'
+        put 'dislike', to: 'links#downvote'
       end
     end
-    resources :users_collections, only: [:update]
   end
 
+  # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  # !!!!!!!!!!!!!!!ADMINS!!!!!!!!!!!!!!!!
+  # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   namespace :admins do
     root to: 'collections#index'
     resources :collections
     resources :masterclasses
-    resources :posts, only: %i[index new create edit update destroy]
+    resources :posts
   end
 
-  resources :photos
-  resources :photos, only: [:create]
-  resources :posts do
-    member do
-      put "like", to: "posts#upvote"
-      put "dislike", to: "links#downvote"
-    end
+  # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  # !!!!!!!!!!!!!!CK EDITOR!!!!!!!!!!!!!!
+  # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  mount Ckeditor::Engine => '/ckeditor'
+
+  # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  # !!!!!!!!!!!!!!!BILLING!!!!!!!!!!!!!!!
+  # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+  scope '/subscriptions', :controller => :subscriptions do
+    post :webhook_callback
   end
-  resources :contents
-  resources :comments
-  resources :posts_contents
-  resources :attachments
-  resources :contacts, only: [:new, :create]
-  resources :categories
 
-  # !!!!!!!!!!!!! MEMBERS PAGE !!!!!!!!!!!!!
+  resources :subscriptions do
+    get :new_sub, on: :collection
+  end
 
-  get 'members' => 'pages#members'
-  get '/members/:id', to: 'pages#members_profile'
-  get '/member_home' => 'pages#member_home'
-
-  # resources :masterclasses, :videos, :events, :documents
-
-  #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  #!!!!!!!!!!!USER MANAGEMENT!!!!!!!!!!!
-  #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-  devise_for :users
-  resource :user
-  get 'users/password_update' => 'users#password_update'
+  # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  # !!!!!!!!!!!!!!!TO BE CHANGED!!!!!!!!!!!!!!!
+  # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  # !!!!!!!!!!!!!!!TO BE CHANGED!!!!!!!!!!!!!!!# TODO:
+  # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  # !!!!!!!!!!!!!!!TO BE CHANGED!!!!!!!!!!!!!!!
+  # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   namespace :admin do
     resources :users
     # resources :contents
@@ -88,22 +105,6 @@ Rails.application.routes.draw do
     resources :categories
     resources :serversettings
     # resources :videos
-    root to: "users#index"
+    root to: 'users#index'
   end
-
-
-
-  #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  #!!!!!!!!!!!!!!!BILLING!!!!!!!!!!!!!!!
-  #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-  scope '/subscriptions', :controller => :subscriptions do
-    post :webhook_callback
-  end
-
-  resources :subscriptions do
-    get :new_sub, on: :collection
-  end
-
-
 end

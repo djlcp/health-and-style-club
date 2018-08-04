@@ -10,7 +10,7 @@ class SubscriptionsController < ApplicationController
     if subscription
       if status == "canceled"
         subscription.update(paid_for: false)
-        subscription.user.update(role: nil)
+        subscription.user.update(role: 'standard')
       else
         subscription.update(paid_for: true)
         subscription.user.update(role: 'subscriber')

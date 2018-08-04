@@ -4,7 +4,7 @@
     <div class="expert-banner-post p-4 d-flex align-items-start">
       <div class="row">
         <div class="col-12 col-lg-3">
-          <%= image_tag(@post.user && @post.user.bioavatar, class: "expert-banner-image")%>
+          <%# TODO: UNCOMENT THIS LINE= image_tag(@post.user && @post.user.bioavatar, class: "expert-banner-image")%>
         </div>
         <div class="col-12 col-lg-9">
           <h2 class="expert-name secondary-heading">Blog post by <%= @post.user.first_name %> <%= @post.user.surname%></h2>

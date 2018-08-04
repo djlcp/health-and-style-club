@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
   acts_as_votable
-  mount_uploader :image, Picture
+  # mount_uploader :image, Picture # TODO: UNCOMENT THIS LINE
 
   # scope :category, -> (category) { where category_id: category }
   enum category: {

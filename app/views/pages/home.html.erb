@@ -1,8 +1,8 @@
-<%= render "hero_home_page_banner" %>
+<%= render "pages/home/hero_home_page_banner" %>
 
-<%= render "what_is" %>
+<%= render "pages/home/what_is" %>
 
-<%= render "expert_banner" %>
+<%= render "pages/home/expert_banner" %>
 
 <div class="content-section">
   <div class="content-wrap">
@@ -24,17 +24,17 @@
         <div class="col-12">
           <div style="padding: 30px 0">
             <h2>Fresh From Our Blog</h2>
-            <%= link_to 'Read all our posts', posts_path, class: 'mb-0' %>
+            <%# TODO: UNCOMENT LINE = link_to 'Read all our posts', posts_path, class: 'mb-0' %> 
           </div>
           <div class="container">
             <div class="row">
-              <% Post.free.order(created_at: :desc).limit(9).each do |post| %>
+              <%# TODO: UNCOMENT LINE Post.free.order(created_at: :desc).limit(9).each do |post| %>
                 <div class="col-12 col-sm-6 col-md-4">
                   <div class="card profile-card m-0 mb-5 bg-white rounded">
-                    <%= render "shared/post", post: post %>
+                    <%# TODO: UNCOMENT LINE= render "shared/post", post: post %>
                   </div>
                 </div>
-              <% end %>
+              <%# TODO: UNCOMENT LINE end %>
             </div>
           </div>
         </div>
@@ -43,4 +43,4 @@
   </div>
 </div>
 
-<%= render "testimonial_banner" %>
+<%= render "pages/home/testimonial_banner" %>

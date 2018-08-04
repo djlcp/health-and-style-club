@@ -1,4 +1,4 @@
-<div class="post-background d-flex align-items-center no-padding" style="background-image: url(<%= post.image_url %>); background-position: center;">
+<div class="post-background d-flex align-items-center no-padding" style="background-image: url(<%# TODO: UNCOMENT THIS LINE= post.image_url %>); background-position: center;">
 </div>
 
 <div class="post-blocks">
@@ -7,9 +7,9 @@
       <h6 class="post-description"><%= sanitize post.post_description, post %></h6>
       <div><p style="font-size:0.75rem; padding-left: 5px;">Posted by <%= post.user.first_name %> <%= post.user.surname%> | <%= post.created_at.strftime("%d %b %y") %></p></div>
     <div style="padding-bottom: 10px; padding-left: 10px;">
-      <%= link_to like_post_path(post), method: :put do %>
+      <%# TODO: UNCOMENT THIS LINE= link_to like_post_path(post), method: :put do %>
         <i class="fa fa-heart icon"></i><div class="counter"><%= post.get_upvotes.size %></p></div>
-      <% end %>
+      <%# TODO: UNCOMENT THIS LINE end %>
       </div>
   </div>
 </div>
