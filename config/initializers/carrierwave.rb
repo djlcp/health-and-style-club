@@ -5,8 +5,8 @@ CarrierWave.configure do |config|
     provider: 'AWS',
     region: 'eu-west-2',
     :path_style            => true,
-    aws_access_key_id: 'AKIAJIWOHNGNT3XJD5OQ',
-    aws_secret_access_key: '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'
+    aws_access_key_id: 'AKIAJIWOsdfD5OQ',
+    aws_secret_access_key: 'bUP1RmsfAMJRmXi5mdsx'
   }
   config.fog_directory = 'healthstyleclub'
   config.fog_public = true
