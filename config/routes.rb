@@ -55,6 +55,30 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :contributors do
+    root to: 'masterclasses#index'
+    resource :user
+    resources :collections, only: [:show]
+    resources :masterclasses, only: %i[index show]
+    resources :users_collections, only: [:update]
+
+    # LINKS TO MEMBERS CLUB
+    resource :members_club, controller: 'members_club' do
+      get :workout
+      get 'personal-styling', to: :personal_styling
+      get 'personal-development', to: :personal_development
+      get :recipes
+      get 'member-orientation', to: :member_orientation
+    end
+
+    # LIKE AND DISLIKE POSTS
+    resources :posts, only: %i[index show] do
+      member do
+        put 'like', to: 'posts#upvote'
+        put 'dislike', to: 'links#downvote'
+      end
+    end
+  end
   # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   # !!!!!!!!!!!!!!!ADMINS!!!!!!!!!!!!!!!!
   # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

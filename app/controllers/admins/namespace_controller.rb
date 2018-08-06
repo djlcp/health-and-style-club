@@ -7,8 +7,8 @@ module Admins
     private
 
     def authenticate_admin
-      return if current_user.admin?
-      redirect_to members_root_path
+      redirect_to members_root_path if @subscriber
+      redirect_to contributors_root_path if @contributor
     end
   end
 end

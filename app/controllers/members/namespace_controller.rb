@@ -4,7 +4,7 @@ module Members
     before_action :verify_user
     layout 'members/application'
     def verify_user
-      redirect_to subscriptions_path if @standard || @contributor
+      redirect_to subscriptions_path, notice: 'You are not premium' if @standard || @contributor
     end
   end
 end

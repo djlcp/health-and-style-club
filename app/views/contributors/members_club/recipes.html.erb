@@ -1,0 +1,124 @@
+<div class="content-section">
+  <div class="content-wrap">
+
+    <h2 class="text-center mt-2">Recipes</h2>
+
+<!--    <h4 class="text-center mt-5">Meal Plans</h4>-->
+<!--    <div class="row justify-content-center">-->
+
+      <%# @meal_plans.each do |r| %>
+        <%#= link_to members_post_path(r.id) do %>
+<!--          <div class="card margin-sides margin-top-bottom" style="width: 14rem;">-->
+            <%# if r.image? %>
+              <%#= image_tag r.image.post_image_thumb %>
+            <%# else %>
+<!--              <img class="card-img-top" src="https://www.oxygenmag.com/.image/ar_16:9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cg_faces:center%2Cq_auto:good%2Cw_620/MTQ1MzQ3MzE0ODg4MDI1ODcz/image-placeholder-title.jpg" alt="Card image cap">-->
+            <%# end %>
+<!--            <div class="card-body">-->
+<!--              <h5 class="card-title"><strong><%#= r.title %></strong></h5>-->
+<!--              <p class="card-text"><%#= r.post_description %></p>-->
+<!--            </div>-->
+<!--          </div>-->
+        <%# end %>
+      <%# end %>
+
+<!--    </div>-->
+
+    <h4 class="text-center mt-5">Breakfast</h4>
+    <div class="row justify-content-center">
+
+      <% @breakfast.each do |r| %>
+        <%= link_to members_post_path(r.id) do %>
+          <div class="card margin-sides margin-top-bottom" style="width: 14rem;">
+            <% if r.image? %>
+              <%= image_tag r.image.post_image_thumb%>
+              <% else %>
+            <img class="card-img-top" src="https://www.oxygenmag.com/.image/ar_16:9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cg_faces:center%2Cq_auto:good%2Cw_620/MTQ1MzQ3MzE0ODg4MDI1ODcz/image-placeholder-title.jpg" alt="Card image cap">
+            <% end %>
+              <div class="card-body">
+              <h5 class="card-title"><strong><%= r.title%></strong></h5>
+              <p class="card-text"><%= r.post_description%></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+
+    </div>
+
+    <h4 class="text-center mt-5">Lunch</h4>
+      <div class="row justify-content-center">
+        <% @lunch.each do |r|%>
+          <%= link_to members_post_path(r.id) do %>
+          <div class="card margin-top-bottom margin-sides" style="width: 14rem;">
+            <% if r.image? %>
+              <%= image_tag r.image.post_image_thumb%>
+              <% else %>
+            <img class="card-img-top" src="http://joesbarfullerton.com/wp-content/uploads/2017/11/burger.jpg" alt="Card image cap">
+            <% end %>
+              <div class="card-body">
+              <h5 class="card-title"><strong><%= r.title%></strong></h5>
+              <p class="card-text"><%= r.post_description%></p>
+            </div>
+          </div>
+        <%end
+        end%>
+      </div>
+
+    <h4 class="text-center mt-5">Dinner</h4>
+      <div class="row justify-content-center">
+        <% @dinner.each do |r|%>
+          <%= link_to members_post_path(r.id) do %>
+          <div class="card margin-top-bottom margin-sides" style="width: 14rem;">
+            <% if r.image? %>
+              <%= image_tag r.image.post_image_thumb%>
+              <% else %>
+            <img class="card-img-top" src="http://www.435mag.com/images/cache/cache_5/cache_7/cache_0/DateNight_TN-56107075.jpeg?ver=1517968202&aspectratio=1.5009380863039" alt="Card image cap">
+            <% end %>
+              <div class="card-body">
+              <h5 class="card-title"><strong><%= r.title%></strong></h5>
+              <p class="card-text"><%= r.post_description%></p>
+            </div>
+          </div>
+        <%end
+          end%>
+      </div>
+
+    <h4 class="text-center mt-5">Snack</h4>
+      <div class="row justify-content-center">
+        <% @snack.each do |r|%>
+          <%= link_to members_post_path(r.id) do %>
+          <div class="card margin-top-bottom margin-sides" style="width: 14rem;">
+            <% if r.image? %>
+              <%= image_tag r.image.post_image_thumb%>
+              <% else %>
+            <img class="card-img-top" src="https://www.madewithnestle.ca/sites/default/files/styles/recipe_main_image/public/rolo_peanut_butter_sweet_and_salty_trail_mix_0.jpg" alt="Card image cap">
+            <% end %>
+              <div class="card-body">
+              <h5 class="card-title"><strong><%= r.title%></strong></h5>
+              <p class="card-text"><%= r.post_description%></p>
+            </div>
+          </div>
+        <%end
+        end%>
+      </div>
+
+    <h4 class="text-center mt-5">Desert</h4>
+      <div class="row justify-content-center">
+        <% @desert.each do |r| %>
+          <%= link_to members_post_path(r.id) do %>
+          <div class="card margin-top-bottom margin-sides" style="width: 14rem;">
+            <% if r.image? %>
+              <%= image_tag r.image.post_image_thumb%>
+              <% else %>
+            <img class="card-img-top" src="https://casamia.co.za/wp-content/uploads/2017/09/chocolate-fudge-cake-with-truffles-.jpg" alt="Card image cap">
+            <% end %>
+              <div class="card-body">
+              <h5 class="card-title"><strong><%= r.title%></strong></h5>
+              <p class="card-text"><%= r.post_description%></p>
+            </div>
+          </div>
+        <% end
+        end%>
+      </div>
+  </div>
+</div>

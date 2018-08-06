@@ -11,8 +11,8 @@ class User < ApplicationRecord
   has_one :subscription
   has_many :users_collections
   
-  # mount_uploader :bioavatar, Picture # TODO: Uncoment
-  # mount_uploader :biobackground, Picture # TODO: Uncoment
+  mount_uploader :bioavatar, Picture
+  mount_uploader :biobackground, Picture
   
   enum role: { standard: 1, subscriber: 2, contributor: 3, admin: 4}
   

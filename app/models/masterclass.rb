@@ -1,5 +1,5 @@
 class Masterclass < ApplicationRecord
-  # mount_uploader :preview, PreviewUploader # TODO: UNCOMENT
+  mount_uploader :preview, PreviewUploader
   has_many :videos, -> { order(position: :asc) }, as: :videoable, dependent: :destroy, inverse_of: :videoable
   has_many :events
   has_many :documents

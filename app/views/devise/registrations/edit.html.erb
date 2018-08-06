@@ -4,12 +4,12 @@
   if u.bioavatar?
      @image = u.bioavatar.avatar
    else
-     @image = "contact.png"
+     @image = "https://s3.eu-west-2.amazonaws.com/healthstyleclub/uploads/user/contact.png"
    end
    if u.biobackground?
      @cover = u.biobackground.cover_image
    else
-     @cover = "cover.jpg"
+     @cover = "https://s3.eu-west-2.amazonaws.com/healthstyleclub/uploads/user/background.jpg"
    end
    if u.role == "admin"
      role_color = "#FF3E33"

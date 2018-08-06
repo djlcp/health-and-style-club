@@ -46,7 +46,6 @@
                 <%= f.label :phone %><br/>
                 <%= f.phone_field :phone, autocomplete: "phone", class: "form-control" %>
               </div>
-
               <div class="col-xs-12 col-sm-6">
                 <%= f.label :country %><br/>
                 <select name="country" id="country" class="form-control">
@@ -299,6 +298,7 @@
             </div>
 
             </br></br>
+            <% if !@standard %>
             <h4 class="text-center">Public Profile</h4></br>
 
             <div class="form-row m-0">
@@ -370,6 +370,7 @@
               </div>
 
             </div>
+          <%end%>
 
             <div class="">
               <%= f.check_box :search_consent, style:'width: 15px'%>

@@ -6,7 +6,7 @@
     <% if u.bioavatar?
         image = u.bioavatar.avatar
       else
-        image = "contact.png"
+        image = "https://healthstyleclub.s3.amazonaws.com/uploads/user/bioavatar/5/avatar_contact.png"
       end
        if u.biobackground?
          background = u.biobackground.background
@@ -27,7 +27,7 @@
         <%= image_tag background, class:'profile-background' %>
       </div>
       <%= image_tag image, class:"rounded-circle profile-avatar border border-danger"%>
-      <%= link_to "#{members_path}/#{u.id}", class:'no-style' do %>
+      <%= link_to "#{members_user_path}/#{u.id}", class:'no-style' do %>
       <div class="profile-blocks">
         <div class="profile-content">
           <h5 class="profile-name"><%= u.first_name %> <%= u.surname %></h5>

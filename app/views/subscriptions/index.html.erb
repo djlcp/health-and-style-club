@@ -69,11 +69,13 @@
       <% if ! @subscription %>
         <div class="subscription-container" style="flex-direction: column">
           <h1 class="subs" style="padding-bottom: 20px;">Subscriptions </h1>
+          <h2 class='subs' style="padding-bottom: 20px;">£15 per month</h2> 
+          <h3 class='subs' style="padding-bottom: 20px;">Your membership includes access to all areas including previous masterclasses.</h3> 
           <h2 class="subs">Why should you subscribe?</h2>
           <p class="subs">You will have access to the Member’s Only premium content area with workout videos, recipes & meal plans, personal styling and personal development courses.</p>
           <p class="subs">Each month there will be a new Masterclass delivered by professional contributors from around the world on a wide array of topics. In addition, you will have access to all the previous masterclasses.</p>
           <p class="subs">Members are invite to the exclusive Health & Style Club Facebook community for members only where they can meet other members and ask their health & fitness, personal styling, and/ or personal development questions of our professional contributors. </p>
-          <a href="javascript:void(0)" data-cb-type="checkout" data-cb-plan-id="premium" class="btn btn-primary btn-lg subscription-button mt-5" style="width: 100%">Subscribe</a>
+          <%= link_to 'Subscribe', new_user_session_path, class:"btn btn-primary btn-lg subscription-button mt-5",  style:"width: 100%" %>
         </div>
       <% end %>
 

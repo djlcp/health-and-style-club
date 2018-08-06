@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180726203242) do
+ActiveRecord::Schema.define(version: 20180806004310) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -129,7 +129,7 @@ ActiveRecord::Schema.define(version: 20180726203242) do
     t.string "surname"
     t.string "phone"
     t.string "country"
-    t.integer "role"
+    t.integer "role", default: 1
     t.text "bio"
     t.string "bioavatar"
     t.string "biobackground"

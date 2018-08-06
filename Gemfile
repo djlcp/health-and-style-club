@@ -50,6 +50,7 @@ gem 'administrate-field-carrierwave', '~> 0.3.2'
 gem 'carrierwave', '~> 1.0'
 
 gem 'fog-aws'
+# gem 'fog', '>= 1.15.0'
 
 # Use mini_magick to resize images to webapp (Implemented by Raymond)
 gem 'mini_magick', '~> 4.8'

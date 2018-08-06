@@ -3,7 +3,7 @@ class PagesController < ApplicationController
   def home
     redirect_to admins_root_path if @admin
     redirect_to contributors_root_path if @contributor
-    redirect_to members_root_path if not @standard
+    redirect_to members_root_path if @subscriber
   end
 
   def contact

@@ -1,7 +1,7 @@
   <% if @user.bioavatar?
        image = @user.bioavatar.avatar
      else
-       image = "contact.png"
+       image = "https://healthstyleclub.s3.amazonaws.com/uploads/user/bioavatar/5/avatar_contact.png"
      end
      if @user.biobackground?
        background = @user.biobackground.cover_image_big
