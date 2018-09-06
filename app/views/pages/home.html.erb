@@ -24,17 +24,17 @@
         <div class="col-12">
           <div style="padding: 30px 0">
             <h2>Fresh From Our Blog</h2>
-            <%# TODO: UNCOMENT LINE = link_to 'Read all our posts', posts_path, class: 'mb-0' %> 
+            <% link_to 'Read all our posts', posts_path, class: 'mb-0' %> 
           </div>
           <div class="container">
             <div class="row">
-              <%# TODO: UNCOMENT LINE Post.free.order(created_at: :desc).limit(9).each do |post| %>
+              <% Post.free.order(created_at: :desc).limit(9).each do |post| %>
                 <div class="col-12 col-sm-6 col-md-4">
                   <div class="card profile-card m-0 mb-5 bg-white rounded">
-                    <%# TODO: UNCOMENT LINE= render "shared/post", post: post %>
+                    <% render "shared/post", post: post %>
                   </div>
                 </div>
-              <%# TODO: UNCOMENT LINE end %>
+              <% end %>
             </div>
           </div>
         </div>
